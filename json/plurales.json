@@ -1,0 +1,162 @@
+[
+    {
+        "pregunta": "cups",
+        "opciones": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "cats",
+        "opciones": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "books",
+        "opciones": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "cliffs",
+        "opciones": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "months",
+        "opciones": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "games",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "plans",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "songs",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "beds",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "crabs",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "dogs",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "calls",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "cars",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "keys",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "windows",
+        "opciones": [
+            "/z/",
+            "/s/",
+            "/ɪz/"
+        ]
+    },
+    {
+        "pregunta": "buses",
+        "opciones": [
+            "/ɪz/",
+            "/s/",
+            "/z/"
+        ]
+    },
+    {
+        "pregunta": "roses",
+        "opciones": [
+            "/ɪz/",
+            "/s/",
+            "/z/"
+        ]
+    },
+    {
+        "pregunta": "brushes",
+        "opciones": [
+            "/ɪz/",
+            "/s/",
+            "/z/"
+        ]
+    },
+    {
+        "pregunta": "watches",
+        "opciones": [
+            "/ɪz/",
+            "/s/",
+            "/z/"
+        ]
+    },
+    {
+        "pregunta": "judges",
+        "opciones": [
+            "/ɪz/",
+            "/s/",
+            "/z/"
+        ]
+    }
+]

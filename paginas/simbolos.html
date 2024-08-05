@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fonemas Consonánticos del Inglés</title>
+    <title>Consonantes AFI</title>
     <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/simbolos.css">
@@ -14,7 +14,7 @@
     <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
 
     <div class="container">
-        <h1>Fonemas Consonánticos del Inglés</h1>
+        <h1>Consonantes AFI</h1>
         <div class="grid-container" id="phonemeButtons">
             <!-- Buttons will be dynamically inserted here -->
         </div>
@@ -23,27 +23,27 @@
     <script>
         // Array of consonant phonemes and their corresponding audio file paths
         const phonemes = [
-            { symbol: 'p', audio: '../audios/p.m4a', type: 'sordo' },
-            { symbol: 'b', audio: '../audios/b.m4a', type: 'sonoro' },
-            { symbol: 't', audio: '../audios/t.m4a', type: 'sordo' },
-            { symbol: 'd', audio: '../audios/d.m4a', type: 'sonoro' },
-            { symbol: 'k', audio: '../audios/k.m4a', type: 'sordo' },
-            { symbol: 'g', audio: '../audios/g.m4a', type: 'sonoro' },
-            { symbol: 's', audio: '../audios/s.m4a', type: 'sordo' },
-            { symbol: 'z', audio: '../audios/z.m4a', type: 'sonoro' },
-            { symbol: 'ʃ', audio: '../audios/sh.m4a', type: 'sordo' }, // "sh" as in "she"
-            { symbol: 'ʒ', audio: '../audios/zh.m4a', type: 'sonoro' }, // "zh" as in "genre" or "measure"
-            { symbol: 'tʃ', audio: '../audios/ch.m4a', type: 'sordo' }, // "ch" as in "church"
-            { symbol: 'dʒ', audio: '../audios/j.m4a', type: 'sonoro' }, // "j" as in "judge"
-            { symbol: 'f', audio: '../audios/f.m4a', type: 'sordo' },
-            { symbol: 'v', audio: '../audios/v.m4a', type: 'sonoro' },
-            { symbol: 'θ', audio: '../audios/th.m4a', type: 'sordo' }, // voiceless "th" as in "therapy"
-            { symbol: 'ð', audio: '../audios/dh.m4a', type: 'sonoro' }, // voiced "th" as in "this"
-            { symbol: 'h', audio: '../audios/h.m4a', type: 'sordo' },
-            { symbol: 'l', audio: '../audios/l.m4a', type: 'sonoro' },
-            { symbol: 'r', audio: '../audios/r.m4a', type: 'sonoro' },
-            { symbol: 'w', audio: '../audios/w.m4a', type: 'sonoro' },
-            { symbol: 'j', audio: '../audios/y.m4a', type: 'sonoro' } // "y" as in "yay"
+            { symbol: 'p', audio: '../audios/p.mp3', type: 'sordo' },
+            { symbol: 'b', audio: '../audios/b.mp3', type: 'sonoro' },
+            { symbol: 't', audio: '../audios/t.mp3', type: 'sordo' },
+            { symbol: 'd', audio: '../audios/d.mp3', type: 'sonoro' },
+            { symbol: 'k', audio: '../audios/k.mp3', type: 'sordo' },
+            { symbol: 'g', audio: '../audios/g.mp3', type: 'sonoro' },
+            { symbol: 's', audio: '../audios/s.mp3', type: 'sordo' },
+            { symbol: 'z', audio: '../audios/z.mp3', type: 'sonoro' },
+            { symbol: 'ʃ', audio: '../audios/sh.mp3', type: 'sordo' }, // "sh" as in "she"
+            { symbol: 'ʒ', audio: '../audios/zh.mp3', type: 'sonoro' }, // "zh" as in "genre" or "measure"
+            { symbol: 'tʃ', audio: '../audios/ch.mp3', type: 'sordo' }, // "ch" as in "church"
+            { symbol: 'dʒ', audio: '../audios/j.mp3', type: 'sonoro' }, // "j" as in "judge"
+            { symbol: 'f', audio: '../audios/f.mp3', type: 'sordo' },
+            { symbol: 'v', audio: '../audios/v.mp3', type: 'sonoro' },
+            { symbol: 'θ', audio: '../audios/th.mp3', type: 'sordo' }, // voiceless "th" as in "therapy"
+            { symbol: 'ð', audio: '../audios/dh.mp3', type: 'sonoro' }, // voiced "th" as in "this"
+            { symbol: 'h', audio: '../audios/h.mp3', type: 'sordo' },
+            { symbol: 'l', audio: '../audios/l.mp3', type: 'sonoro' },
+            { symbol: 'r', audio: '../audios/r.mp3', type: 'sonoro' },
+            { symbol: 'w', audio: '../audios/w.mp3', type: 'sonoro' },
+            { symbol: 'j', audio: '../audios/y.mp3', type: 'sonoro' } // "y" as in "yay"
         ];
 
         // JavaScript

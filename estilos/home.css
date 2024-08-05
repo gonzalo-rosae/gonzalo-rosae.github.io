@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #000000; /* Añadido para asegurar el contraste con las sombras */
 }
 
 .container {
@@ -33,14 +34,17 @@ h1 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    transition-duration: 0.3s;
+    transition: all 0.3s ease; /* Cambiado para incluir todos los efectos */
     cursor: pointer;
     border-radius: 20px;
     position: relative;
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1); /* Sombra inicial */
 }
 
-.custom-button:hover {
+.custom-button:not(.prohibido):hover {
     outline: 5px solid blue;
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2); /* Sombra aumentada en hover */
 }
 
 .custom-button.prohibido:hover {
@@ -59,4 +63,9 @@ h1 {
     background-color: rgba(0, 0, 0, 0.675);
     border-radius: 5px;
     padding: 5px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
 }

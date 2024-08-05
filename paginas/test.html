@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Fonética Inglesa</title>
+    <link rel="stylesheet" href="../estilos/general.css">
+    <link rel="stylesheet" href="../estilos/test.css">
+</head>
+
+<body>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+    <div class="envoltura">
+        <div class="contenedor oculto" id="contenedorTest">
+            <div class="estado" id="estado"></div>
+            <div class="pregunta"></div>
+            <div class="alternativas">
+                <div class="opcion" onclick="verificarRespuesta(0)"></div>
+                <div class="opcion" onclick="verificarRespuesta(1)"></div>
+                <div class="opcion" onclick="verificarRespuesta(2)"></div>
+            </div>
+        </div>
+        <button class="boton oculto" id="botonEmpezar" onclick="empezarTest()">Empezar</button>
+        <button class="boton oculto" id="botonSiguiente" onclick="siguientePregunta()">Siguiente</button>
+    </div>
+
+    <script>
+        let preguntas = [];
+        let indicePreguntaActual = 0;
+        let cantidadRespuestasCorrectas = 0;
+
+        async function cargarPreguntas() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nombreTest = urlParams.get('nombre');
+
+            if (!nombreTest) {
+                document.querySelector('.envoltura').innerHTML = '<p>Tipo de test no especificado.</p>';
+                return;
+            }
+
+            try {
+                const respuesta = await fetch(`../json/${nombreTest}.json`);
+                if (!respuesta.ok) {
+                    throw new Error('Error al cargar el archivo JSON');
+                }
+                preguntas = await respuesta.json();
+                mezclarArray(preguntas); // Mezcla el array de preguntas
+            } catch (error) {
+                document.querySelector('.envoltura').innerHTML = `<p>Error al cargar el test: por favor, notifica a Gonzalo para que lo arregle.</p>`;
+            }
+        }
+
+        function mezclarArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function cargarPregunta(indice) {
+            const datosPregunta = preguntas[indice];
+            const elementoPregunta = document.querySelector('.pregunta');
+            const elementosOpciones = document.querySelectorAll('.opcion');
+
+            // Configura la pregunta
+            elementoPregunta.textContent = datosPregunta.pregunta;
+
+            // Desordena las opciones
+            const opcionesDesordenadas = [...datosPregunta.opciones];
+            mezclarArray(opcionesDesordenadas);
+
+            // Encuentra el índice de la opción correcta (la primera en el array original)
+            const opcionCorrecta = datosPregunta.opciones[0];
+            const indiceCorrectoEnDesordenado = opcionesDesordenadas.indexOf(opcionCorrecta);
+
+            // Configura cada opción
+            opcionesDesordenadas.forEach((opcion, i) => {
+                elementosOpciones[i].textContent = opcion;
+                elementosOpciones[i].classList.remove('correcto', 'incorrecto');
+                elementosOpciones[i].style.pointerEvents = 'auto'; // Habilitar clics
+                elementosOpciones[i].dataset.indiceCorrecto = indiceCorrectoEnDesordenado; // Guardar el índice correcto
+            });
+
+            actualizarEstado();
+        }
+
+        function verificarRespuesta(indiceSeleccionado) {
+            const opciones = document.querySelectorAll('.opcion');
+            let indiceCorrecto = null;
+
+            // Encuentra el índice correcto en la lista actual
+            opciones.forEach((opcion, i) => {
+                if (opcion.textContent === preguntas[indicePreguntaActual].opciones[0]) {
+                    indiceCorrecto = i;
+                }
+            });
+
+            opciones.forEach((opcion, i) => {
+                opcion.classList.remove('correcto', 'incorrecto');
+                opcion.style.pointerEvents = 'none'; // Desactivar clics después de la selección
+                if (i === indiceCorrecto) {
+                    opcion.classList.add('correcto');
+                    if (i === indiceSeleccionado) {
+                        cantidadRespuestasCorrectas++; // Solo sumar si la respuesta seleccionada es la correcta
+                    }
+                } else if (i === indiceSeleccionado) {
+                    opcion.classList.add('incorrecto');
+                }
+            });
+
+            // Solo mostrar el botón "Siguiente" después de seleccionar una respuesta
+            document.getElementById('botonSiguiente').classList.remove('oculto');
+        }
+
+        function siguientePregunta() {
+            const esUltimaPregunta = indicePreguntaActual === preguntas.length - 1;
+            if (esUltimaPregunta) {
+                mostrarResultados();
+            } else {
+                indicePreguntaActual++;
+                cargarPregunta(indicePreguntaActual);
+            }
+        }
+
+        function empezarTest() {
+            document.getElementById('botonEmpezar').classList.add('oculto');
+            document.getElementById('contenedorTest').classList.remove('oculto');
+            document.getElementsByClassName('contenedor')[0].classList.remove('oculto');
+            cargarPregunta(indicePreguntaActual);
+        }
+
+        function mostrarResultados() {
+            const contenedorTest = document.getElementById('contenedorTest');
+            contenedorTest.innerHTML = `<div class="resultado">Has acertado ${cantidadRespuestasCorrectas} de ${preguntas.length} preguntas</div>`;
+            document.getElementById('botonSiguiente').classList.add('oculto');
+        }
+
+        function actualizarEstado() {
+            document.getElementById('estado').textContent = `${indicePreguntaActual + 1}/${preguntas.length}`;
+        }
+
+        // Inicializar la página
+        cargarPreguntas().then(() => {
+            document.getElementById('botonEmpezar').classList.remove('oculto');
+            document.getElementById('contenedorTest').classList.add('oculto');
+            document.getElementById('botonSiguiente').classList.add('oculto');
+        });
+    </script>
+
+</body>
+
+</html>

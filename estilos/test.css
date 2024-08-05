@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--colorFondo);
+    color: var(--colorLetra);
+}
+
+.envoltura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.contenedor {
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    background-color: var(--colorFondo);
+    position: relative;
+}
+
+.pregunta {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.alternativas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.opcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    font-size: 1.8em;
+    cursor: pointer;
+    margin: 5px 0;
+    background-color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.opcion:hover {
+    background-color: #444;
+}
+
+.boton {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #555;
+    color: var(--colorLetra);
+    position: absolute;
+    bottom: -60px;
+    /* Mueve el botón fuera del contenedor */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #666;
+}
+
+.estado {
+    font-size: 1.2em;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.resultado {
+    font-size: 1.5em;
+}

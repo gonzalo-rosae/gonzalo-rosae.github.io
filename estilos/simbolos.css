@@ -1,0 +1,70 @@
+/* simbolos.css */
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Reducido de 20px a 15px */
+    justify-content: center;
+}
+
+.phoneme-pair {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.custom-button {
+    background-color: rgb(195, 195, 195);
+    border: none;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.textoBtn {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.sordo {
+    background-color: #F44336;
+}
+
+.sonoro {
+    background-color: #4CAF50;
+}
+
+.line-break {
+    grid-column: 1 / -1;
+    height: 15px; /* Reducido de 20px a 15px */
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .custom-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .textoBtn {
+        font-size: 18px;
+    }
+}

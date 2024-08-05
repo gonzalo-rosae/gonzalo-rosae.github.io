@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal - Principal</title>
+    <script src="../scripts/general.js"></script>
+    <link rel="stylesheet" href="../estilos/general.css">
+    <link rel="stylesheet" href="../estilos/consonantes.css">    
+</head>
+<body>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+    <div class="container">
+        <h1>Consonantes</h1>
+        <div class="button-container">
+            <button id="btnSimbolos" class="custom-button prohibido" onclick="noDisponible()"><span class="textoBtn">Repaso símbolos</span></button>
+            <button id="btnParticipios" class="custom-button" onclick="goToTest('participios')"><span class="textoBtn">Test participios en -ed</span></button>
+            <button id="btnSibilantes" class="custom-button" onclick="goToTest('sibilantes')"><span class="textoBtn">Test sibilantes</span></button>
+            <button id="btnAfricadas" class="custom-button" onclick="goToTest('africadas')"><span class="textoBtn">Test africadas</span></button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const identifier = sessionStorage.getItem('userIdentifier');
+            const token = sessionStorage.getItem('authToken');
+            
+            if (!(identifier && isValidToken(token, identifier))) {
+                redirectToLogin();
+            }
+        }
+
+        function isValidToken(token, identifier) {
+            try {
+                const decodedToken = atob(token);
+                const [storedIdentifier, timestamp, _] = decodedToken.split(':');
+                
+                // Verificar que el identificador en el token coincide con el almacenado
+                if (storedIdentifier !== identifier) return false;
+                
+                // Verificar que el token no tiene más de 1 hora de antigüedad
+                const tokenAge = Date.now() - parseInt(timestamp);
+                if (tokenAge > 3600000) return false; // 3600000 ms = 1 hora
+                
+                return true;
+            } catch (e) {
+                return false; // Si hay algún error en la decodificación, el token no es válido
+            }
+        }
+
+        function goToPage(page) {
+            window.location.href = page + ".html";
+        }
+
+        function goToTest(nombreTest) {
+            window.location.href = "test.html?nombre=" + nombreTest;
+        }
+
+        function redirectToLogin() {
+            sessionStorage.removeItem('userIdentifier');
+            sessionStorage.removeItem('authToken');
+            window.location.href = 'paginas/index.html';
+        }
+    </script>
+</body>
+</html>

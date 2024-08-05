@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.custom-button {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    outline: 5px solid transparent;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+}
+
+.custom-button:hover {
+    outline: 5px solid blue;
+}
+
+.custom-button.prohibido:hover {
+    outline: 5px solid red;
+}
+
+#btnConsonantes {
+    background-image: url('../imagenes/consonantes.png');
+}
+
+#btnVocales {
+    background-image: url('../imagenes/candado.png');
+}
+
+.textoBtn {
+    background-color: rgba(0, 0, 0, 0.675);
+    border-radius: 5px;
+    padding: 5px;
+}

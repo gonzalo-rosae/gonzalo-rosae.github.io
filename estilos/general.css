@@ -1,0 +1,39 @@
+:root {
+    --colorFondo: black;
+    --colorLetra: white;
+}
+
+
+* {
+    font-family: Arial, sans-serif;
+    background-color: var(--colorFondo);
+    color: var(--colorLetra);
+}
+
+.correcto {
+    border: 2px solid #0f0 !important;
+}
+
+.incorrecto {
+    border: 2px solid #f00 !important;
+}
+
+.oculto {
+    display: none;
+}
+
+.prohibido:hover {
+    cursor: not-allowed !important;
+}
+
+#flechaAtras {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--colorFondo);
+    background-color: var(--colorLetra);
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 25px;
+}

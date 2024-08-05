@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal - Inicio</title>
+    <link rel="stylesheet" href="estilos/general.css">
+    <link rel="stylesheet" href="estilos/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Portal de práctica</h1>
+        <h2>«Domina el acento británico»</h2>
+        <br>
+        <input type="text" id="userIdentifier" placeholder="Introduce tu identificador">
+        <button onclick="login()">Entrar</button>
+    </div>
+
+    <script>
+        const validIdentifiers = [
+            btoa('julioep24'),
+            btoa('esperanzamm24')
+        ];
+
+        function login() {
+            const inputIdentificador = document.getElementById('userIdentifier');
+            const identifier = inputIdentificador.value;
+            if (isValidIdentifier(identifier)) {
+                const token = generateToken(identifier);
+                sessionStorage.setItem('userIdentifier', identifier);
+                sessionStorage.setItem('authToken', token);
+                window.location.href = 'paginas/home.html';
+            } else {
+                alert('Identificador no válido. Por favor, inténtalo de nuevo.');
+                inputIdentificador.value = '';
+                inputIdentificador.focus();
+            }
+        }
+
+        function isValidIdentifier(identifier) {
+            return validIdentifiers.includes(btoa(identifier));
+        }
+
+        function generateToken(identifier) {
+            const timestamp = Date.now();
+            const randomPart = Math.random().toString(36).substr(2);
+            return btoa(`${identifier}:${timestamp}:${randomPart}`);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                login();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonemas Consonánticos del Inglés</title>
+    <link rel="stylesheet" href="../estilos/general.css">
+    <link rel="stylesheet" href="../estilos/simbolos.css">
+</head>
+
+<body>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+
+    <div class="container">
+        <h1>Fonemas Consonánticos del Inglés</h1>
+        <div class="grid-container" id="phonemeButtons">
+            <!-- Buttons will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Array of consonant phonemes and their corresponding audio file paths
+        const phonemes = [
+            { symbol: 'p', audio: '../audios/p.m4a', type: 'sordo' },
+            { symbol: 'b', audio: '../audios/b.m4a', type: 'sonoro' },
+            { symbol: 't', audio: '../audios/t.m4a', type: 'sordo' },
+            { symbol: 'd', audio: '../audios/d.m4a', type: 'sonoro' },
+            { symbol: 'k', audio: '../audios/k.m4a', type: 'sordo' },
+            { symbol: 'g', audio: '../audios/g.m4a', type: 'sonoro' },
+            { symbol: 's', audio: '../audios/s.m4a', type: 'sordo' },
+            { symbol: 'z', audio: '../audios/z.m4a', type: 'sonoro' },
+            { symbol: 'ʃ', audio: '../audios/sh.m4a', type: 'sordo' }, // "sh" as in "she"
+            { symbol: 'ʒ', audio: '../audios/zh.m4a', type: 'sonoro' }, // "zh" as in "genre" or "measure"
+            { symbol: 'tʃ', audio: '../audios/ch.m4a', type: 'sordo' }, // "ch" as in "church"
+            { symbol: 'dʒ', audio: '../audios/j.m4a', type: 'sonoro' }, // "j" as in "judge"
+            { symbol: 'f', audio: '../audios/f.m4a', type: 'sordo' },
+            { symbol: 'v', audio: '../audios/v.m4a', type: 'sonoro' },
+            { symbol: 'θ', audio: '../audios/th.m4a', type: 'sordo' }, // voiceless "th" as in "therapy"
+            { symbol: 'ð', audio: '../audios/dh.m4a', type: 'sonoro' }, // voiced "th" as in "this"
+            { symbol: 'h', audio: '../audios/h.m4a', type: 'sordo' },
+            { symbol: 'l', audio: '../audios/l.m4a', type: 'sonoro' },
+            { symbol: 'r', audio: '../audios/r.m4a', type: 'sonoro' },
+            { symbol: 'w', audio: '../audios/w.m4a', type: 'sonoro' },
+            { symbol: 'j', audio: '../audios/y.m4a', type: 'sonoro' } // "y" as in "yay"
+        ];
+
+        // JavaScript
+        function createPhonemeButton(phoneme) {
+            const button = document.createElement('button');
+            button.classList.add('custom-button', phoneme.type);
+            button.innerHTML = `<span class="textoBtn">${phoneme.symbol}</span>`;
+            button.onclick = () => playSound(phoneme.audio);
+            return button;
+        }
+
+        function playSound(audioSrc) {
+            const audio = new Audio(audioSrc);
+            audio.play();
+        }
+
+        function loadPhonemeButtons() {
+            const buttonContainer = document.getElementById('phonemeButtons');
+
+            // Define the order and pairs
+            const phonemeGroups = [
+                [['p', 'b'], ['t', 'd'], ['k', 'g']], // 6 oclusivas
+                [['s', 'z'], ['ʃ', 'ʒ'], ['tʃ', 'dʒ']], // 4 sibilantes + 2 africadas
+                [['f', 'v'], ['θ', 'ð'], ['h', null]], // 4 fricativas
+                [['r', 'l'], ['w', 'j'], [null, null]] // r + l, w + j, h solo
+            ];
+
+            phonemeGroups.forEach(group => {
+                group.forEach(pair => {
+                    const pairDiv = document.createElement('div');
+                    pairDiv.classList.add('phoneme-pair');
+
+                    pair.forEach(symbol => {
+                        if (symbol) {
+                            const phoneme = phonemes.find(p => p.symbol === symbol);
+                            if (phoneme) {
+                                const button = createPhonemeButton(phoneme);
+                                pairDiv.appendChild(button);
+                            }
+                        } else {
+                            // Add an empty space to maintain grid alignment
+                            const emptySpace = document.createElement('div');
+                            emptySpace.style.width = '60px';
+                            emptySpace.style.height = '60px';
+                            pairDiv.appendChild(emptySpace);
+                        }
+                    });
+
+                    buttonContainer.appendChild(pairDiv);
+                });
+
+                // Add a line break after each group except the last
+                if (group !== phonemeGroups[phonemeGroups.length - 1]) {
+                    const lineBreak = document.createElement('div');
+                    lineBreak.classList.add('line-break');
+                    buttonContainer.appendChild(lineBreak);
+                }
+            });
+        }
+
+        window.onload = loadPhonemeButtons;
+    </script>
+</body>
+
+</html>

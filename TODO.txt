@@ -1,0 +1,3 @@
+[] Símbolos: añadir nasales (m, n, ŋ)
+[] Símbolos: añadir juego parejas sordo-sonoro
+[] JSON info clientes: usuario, nombre, acento...

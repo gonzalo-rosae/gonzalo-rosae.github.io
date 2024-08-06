@@ -16,12 +16,10 @@
     <div class="container">
         <h1>Consonantes AFI</h1>
         <div class="grid-container" id="phonemeButtons">
-            <!-- Buttons will be dynamically inserted here -->
         </div>
     </div>
 
     <script>
-        // Array of consonant phonemes and their corresponding audio file paths
         const phonemes = [
             { symbol: 'p', audio: '../audios/p.mp3', type: 'sordo' },
             { symbol: 'b', audio: '../audios/b.mp3', type: 'sonoro' },
@@ -31,22 +29,24 @@
             { symbol: 'g', audio: '../audios/g.mp3', type: 'sonoro' },
             { symbol: 's', audio: '../audios/s.mp3', type: 'sordo' },
             { symbol: 'z', audio: '../audios/z.mp3', type: 'sonoro' },
-            { symbol: 'ʃ', audio: '../audios/sh.mp3', type: 'sordo' }, // "sh" as in "she"
-            { symbol: 'ʒ', audio: '../audios/zh.mp3', type: 'sonoro' }, // "zh" as in "genre" or "measure"
-            { symbol: 'tʃ', audio: '../audios/ch.mp3', type: 'sordo' }, // "ch" as in "church"
-            { symbol: 'dʒ', audio: '../audios/j.mp3', type: 'sonoro' }, // "j" as in "judge"
+            { symbol: 'ʃ', audio: '../audios/sh.mp3', type: 'sordo' },
+            { symbol: 'ʒ', audio: '../audios/zh.mp3', type: 'sonoro' },
+            { symbol: 'tʃ', audio: '../audios/ch.mp3', type: 'sordo' },
+            { symbol: 'dʒ', audio: '../audios/j.mp3', type: 'sonoro' },
             { symbol: 'f', audio: '../audios/f.mp3', type: 'sordo' },
             { symbol: 'v', audio: '../audios/v.mp3', type: 'sonoro' },
-            { symbol: 'θ', audio: '../audios/th.mp3', type: 'sordo' }, // voiceless "th" as in "therapy"
-            { symbol: 'ð', audio: '../audios/dh.mp3', type: 'sonoro' }, // voiced "th" as in "this"
+            { symbol: 'θ', audio: '../audios/th.mp3', type: 'sordo' },
+            { symbol: 'ð', audio: '../audios/dh.mp3', type: 'sonoro' },
             { symbol: 'h', audio: '../audios/h.mp3', type: 'sordo' },
             { symbol: 'l', audio: '../audios/l.mp3', type: 'sonoro' },
             { symbol: 'r', audio: '../audios/r.mp3', type: 'sonoro' },
             { symbol: 'w', audio: '../audios/w.mp3', type: 'sonoro' },
-            { symbol: 'j', audio: '../audios/y.mp3', type: 'sonoro' } // "y" as in "yay"
+            { symbol: 'j', audio: '../audios/y.mp3', type: 'sonoro' },
+            { symbol: 'm', audio: '../audios/m.mp3', type: 'sonoro' },
+            { symbol: 'n', audio: '../audios/n.mp3', type: 'sonoro' },
+            { symbol: 'ŋ', audio: '../audios/ng.mp3', type: 'sonoro' }
         ];
 
-        // JavaScript
         function createPhonemeButton(phoneme) {
             const button = document.createElement('button');
             button.classList.add('custom-button', phoneme.type);
@@ -63,12 +63,12 @@
         function loadPhonemeButtons() {
             const buttonContainer = document.getElementById('phonemeButtons');
 
-            // Define the order and pairs
             const phonemeGroups = [
-                [['p', 'b'], ['t', 'd'], ['k', 'g']], // 6 oclusivas
-                [['s', 'z'], ['ʃ', 'ʒ'], ['tʃ', 'dʒ']], // 4 sibilantes + 2 africadas
-                [['f', 'v'], ['θ', 'ð'], ['h', null]], // 4 fricativas
-                [['r', 'l'], ['w', 'j'], [null, null]] // r + l, w + j, h solo
+                [[null, 'm'], [null, 'n'], [null, 'ŋ']],
+                [['p', 'b'], ['t', 'd'], ['k', 'g']],
+                [['s', 'z'], ['ʃ', 'ʒ'], ['tʃ', 'dʒ']],
+                [['f', 'v'], ['θ', 'ð'], ['h', null]],
+                [['r', 'l'], ['w', 'j'], [null, null]]
             ];
 
             phonemeGroups.forEach(group => {

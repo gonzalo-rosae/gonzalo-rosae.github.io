@@ -1,13 +1,11 @@
 body,
 html {
-    margin: 0;
-    padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
 }
 
 h1 {
     margin-top: 0;
+    margin-bottom: 40px;
 }
 
 .container {
@@ -48,9 +46,6 @@ h1 {
     padding: 5px;
 }
 
-
-
-
 .button-container button:nth-child(1) {
     background-color: blue;    
 }
@@ -69,4 +64,12 @@ h1 {
 
 .button-container button:nth-child(5) {
     background-color: rgb(255, 42, 42);
+}
+
+
+
+@media (max-width: 600px) {
+    .custom-button {
+        width: 220px;
+    }
 }

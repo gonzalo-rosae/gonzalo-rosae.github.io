@@ -46,3 +46,21 @@ button:hover {
     background-color: #1e90ff;
     /* Azul dodger */
 }
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 220px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

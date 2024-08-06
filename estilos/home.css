@@ -3,16 +3,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     text-align: center;
+    width: 100%;
+    max-width: 800px;
 }
 
 h1 {
     margin-bottom: 40px;
+    font-size: 24px;
 }
 
 .button-container {
@@ -32,17 +37,17 @@ h1 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    transition: all 0.3s ease; /* Cambiado para incluir todos los efectos */
+    transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 20px;
     position: relative;
-    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1); /* Sombra inicial */
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
 }
 
 .custom-button:not(.prohibido):hover {
     outline: 5px solid blue;
-    transform: translateY(-5px); /* Efecto de elevación */
-    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2); /* Sombra aumentada en hover */
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
 }
 
 .custom-button.prohibido:hover {
@@ -66,4 +71,44 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
+}
+
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button-container {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        flex-grow: 1;
+    }
+
+    .custom-button {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 400px) {
+    .custom-button {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .textoBtn {
+        font-size: 16px;
+    }
 }

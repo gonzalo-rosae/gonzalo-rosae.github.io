@@ -10,6 +10,11 @@
     color: var(--colorLetra);
 }
 
+footer {
+    position: fixed;
+    bottom: 30px;
+}
+
 .correcto {
     border: 2px solid #0f0 !important;
 }
@@ -39,6 +44,10 @@
 }
 
 @media (max-width: 600px) {
+    body {
+        overflow: hidden;
+    }
+
     #flechaAtras {
         display: none;
     }

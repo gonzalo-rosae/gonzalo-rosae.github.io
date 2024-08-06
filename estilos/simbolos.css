@@ -1,66 +1,94 @@
-.container {
-    text-align: center;
-    padding: 20px;
-    max-width: 600px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-.grid-container {
-    margin-top: 50px;
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.tablaConsonantes {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.phoneme-pair {
+.grupoConsonantes {
     display: flex;
-    justify-content: center;
-    gap: 5px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.custom-button {
-    background-color: rgb(195, 195, 195);
-    border: none;
-    color: white;
+.tituloGrupo {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #aaa;
+    text-align: center;
+}
+
+.parConsonantes {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.btnConsonante {
     width: 60px;
     height: 60px;
+    margin: 2px;
+    background-color: #333;
+    border: 2px solid #555;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 1.2em;
     cursor: pointer;
-    border-radius: 4px;
-    margin: 0;
-}
-
-.textoBtn {
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    background-color: transparent;
+    border-radius: 8px;
 }
 
 .sordo {
-    background-color: #F44336;
+    border-color: #ff0000
 }
 
 .sonoro {
-    background-color: #4CAF50;
-}
-
-.line-break {
-    grid-column: 1 / -1;
-    height: 15px;
+    border-color: #149dff
 }
 
 @media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr;
+    h1 {
+        margin-bottom: 10px;
     }
-    
-    
-    .textoBtn {
-        font-size: 18px;
+
+    .tablaConsonantes {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .btnConsonante {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+
+    .tituloGrupo {
+        margin-top: 30px;
+        font-size: 1em;
     }
 }

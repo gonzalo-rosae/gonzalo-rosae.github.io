@@ -1,82 +1,86 @@
-[
-    {
-        "pregunta": "Church",
-        "opciones": [
-            "/ʧ/",
-            "/ʤ/",
-            "/ʒ/"
-        ]
-    },
-    {
-        "pregunta": "Judge",
-        "opciones": [
-            "/ʤ/",
-            "/ʧ/",
-            "/j/"
-        ]
-    },
-    {
-        "pregunta": "Tube",
-        "opciones": [
-            "/ʧ/",
-            "/ʤ/",
-            "/t/"
-        ]
-    },
-    {
-        "pregunta": "Giraffe",
-        "opciones": [
-            "/ʤ/",
-            "/ʧ/",
-            "/ʒ/"
-        ]
-    },
-    {
-        "pregunta": "During",
-        "opciones": [
-            "/ʤ/",
-            "/d/",
-            "/ʒ/"
-        ]
-    },
-    {
-        "pregunta": "Chicken",
-        "opciones": [
-            "/ʧ/",
-            "/k/",
-            "/ʃ/"
-        ]
-    },
-    {
-        "pregunta": "Genre",
-        "opciones": [
-            "/ʒ/",
-            "/g/",
-            "/ʤ/"
-        ]
-    },
-    {
-        "pregunta": "Joke",
-        "opciones": [
-            "/ʤ/",
-            "/j/",
-            "/ʧ/"
-        ]
-    },
-    {
-        "pregunta": "Ginger",
-        "opciones": [
-            "/ʤ/",
-            "/g/",
-            "/ʒ/"
-        ]
-    },
-    {
-        "pregunta": "Channel",
-        "opciones": [
-            "/ʧ/",
-            "/ʃ/",
-            "/k/"
-        ]
-    }
-]
+{
+    "titulo": "Africadas",
+    "instrucciones": "Selecciona el sonido por el que empieza la palabra",
+    "preguntas": [
+        {
+            "pregunta": "Church",
+            "opciones": [
+                "/ʧ/",
+                "/ʤ/",
+                "/ʒ/"
+            ]
+        },
+        {
+            "pregunta": "Judge",
+            "opciones": [
+                "/ʤ/",
+                "/ʧ/",
+                "/j/"
+            ]
+        },
+        {
+            "pregunta": "Tube",
+            "opciones": [
+                "/ʧ/",
+                "/ʤ/",
+                "/t/"
+            ]
+        },
+        {
+            "pregunta": "Giraffe",
+            "opciones": [
+                "/ʤ/",
+                "/ʧ/",
+                "/ʒ/"
+            ]
+        },
+        {
+            "pregunta": "During",
+            "opciones": [
+                "/ʤ/",
+                "/d/",
+                "/ʒ/"
+            ]
+        },
+        {
+            "pregunta": "Chicken",
+            "opciones": [
+                "/ʧ/",
+                "/k/",
+                "/ʃ/"
+            ]
+        },
+        {
+            "pregunta": "Genre",
+            "opciones": [
+                "/ʒ/",
+                "/g/",
+                "/ʤ/"
+            ]
+        },
+        {
+            "pregunta": "Joke",
+            "opciones": [
+                "/ʤ/",
+                "/j/",
+                "/ʧ/"
+            ]
+        },
+        {
+            "pregunta": "Ginger",
+            "opciones": [
+                "/ʤ/",
+                "/g/",
+                "/ʒ/"
+            ]
+        },
+        {
+            "pregunta": "Channel",
+            "opciones": [
+                "/ʧ/",
+                "/ʃ/",
+                "/k/"
+            ]
+        }
+    ]
+}

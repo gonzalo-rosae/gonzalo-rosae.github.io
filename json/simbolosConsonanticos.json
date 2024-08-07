@@ -1,194 +1,198 @@
-[
-    {
-        "pregunta": "/p/",
-        "opciones": [
-            "/b/",
-            "/m/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "/b/",
-        "opciones": [
-            "/p/",
-            "/m/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "/t/",
-        "opciones": [
-            "/d/",
-            "/n/",
-            "/k/"
-        ]
-    },
-    {
-        "pregunta": "/d/",
-        "opciones": [
-            "/t/",
-            "/n/",
-            "/k/"
-        ]
-    },
-    {
-        "pregunta": "/k/",
-        "opciones": [
-            "/g/",
-            "/ŋ/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "/g/",
-        "opciones": [
-            "/k/",
-            "/ŋ/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "/f/",
-        "opciones": [
-            "/v/",
-            "/p/",
-            "/θ/"
-        ]
-    },
-    {
-        "pregunta": "/v/",
-        "opciones": [
-            "/f/",
-            "/b/",
-            "/θ/"
-        ]
-    },
-    {
-        "pregunta": "/θ/",
-        "opciones": [
-            "/ð/",
-            "/f/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "/ð/",
-        "opciones": [
-            "/θ/",
-            "/v/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "/s/",
-        "opciones": [
-            "/z/",
-            "/ʃ/",
-            "/t/"
-        ]
-    },
-    {
-        "pregunta": "/z/",
-        "opciones": [
-            "/s/",
-            "/ʃ/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "/ʃ/",
-        "opciones": [
-            "/ʒ/",
-            "/s/",
-            "/t/"
-        ]
-    },
-    {
-        "pregunta": "/ʒ/",
-        "opciones": [
-            "/ʃ/",
-            "/z/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "/tʃ/",
-        "opciones": [
-            "/dʒ/",
-            "/t/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "/dʒ/",
-        "opciones": [
-            "/tʃ/",
-            "/d/",
-            "/ʒ/"
-        ]
-    },
-    {
-        "pregunta": "/m/",
-        "opciones": [
-            "no tiene",
-            "/ŋ/",
-            "/p/"
-        ]
-    },
-    {
-        "pregunta": "/n/",
-        "opciones": [
-            "no tiene",
-            "/ŋ/",
-            "/t/"
-        ]
-    },
-    {
-        "pregunta": "/ŋ/",
-        "opciones": [
-            "no tiene",
-            "/m/",
-            "/k/"
-        ]
-    },
-    {
-        "pregunta": "/r/",
-        "opciones": [
-            "no tiene",
-            "/l/",
-            "/w/"
-        ]
-    },
-    {
-        "pregunta": "/l/",
-        "opciones": [
-            "no tiene",
-            "/r/",
-            "/w/"
-        ]
-    },
-    {
-        "pregunta": "/j/",
-        "opciones": [
-            "no tiene",
-            "/w/",
-            "/r/"
-        ]
-    },
-    {
-        "pregunta": "/w/",
-        "opciones": [
-            "no tiene",
-            "/j/",
-            "/r/"
-        ]
-    },
-    {
-        "pregunta": "/h/",
-        "opciones": [
-            "no tiene",
-            "/ɦ/",
-            "/k/"
-        ]
-    }
-]
+{
+    "titulo": "Símbolos consonánticos",
+    "instrucciones": "Selecciona el equivalente sordo o sonoro del fonema presentado",
+    "preguntas": [
+        {
+            "pregunta": "/p/",
+            "opciones": [
+                "/b/",
+                "/m/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "/b/",
+            "opciones": [
+                "/p/",
+                "/m/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "/t/",
+            "opciones": [
+                "/d/",
+                "/n/",
+                "/k/"
+            ]
+        },
+        {
+            "pregunta": "/d/",
+            "opciones": [
+                "/t/",
+                "/n/",
+                "/k/"
+            ]
+        },
+        {
+            "pregunta": "/k/",
+            "opciones": [
+                "/g/",
+                "/ŋ/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "/g/",
+            "opciones": [
+                "/k/",
+                "/ŋ/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "/f/",
+            "opciones": [
+                "/v/",
+                "/p/",
+                "/θ/"
+            ]
+        },
+        {
+            "pregunta": "/v/",
+            "opciones": [
+                "/f/",
+                "/b/",
+                "/θ/"
+            ]
+        },
+        {
+            "pregunta": "/θ/",
+            "opciones": [
+                "/ð/",
+                "/f/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "/ð/",
+            "opciones": [
+                "/θ/",
+                "/v/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "/s/",
+            "opciones": [
+                "/z/",
+                "/ʃ/",
+                "/t/"
+            ]
+        },
+        {
+            "pregunta": "/z/",
+            "opciones": [
+                "/s/",
+                "/ʃ/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "/ʃ/",
+            "opciones": [
+                "/ʒ/",
+                "/s/",
+                "/t/"
+            ]
+        },
+        {
+            "pregunta": "/ʒ/",
+            "opciones": [
+                "/ʃ/",
+                "/z/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "/tʃ/",
+            "opciones": [
+                "/dʒ/",
+                "/t/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "/dʒ/",
+            "opciones": [
+                "/tʃ/",
+                "/d/",
+                "/ʒ/"
+            ]
+        },
+        {
+            "pregunta": "/m/",
+            "opciones": [
+                "no tiene",
+                "/ŋ/",
+                "/p/"
+            ]
+        },
+        {
+            "pregunta": "/n/",
+            "opciones": [
+                "no tiene",
+                "/ŋ/",
+                "/t/"
+            ]
+        },
+        {
+            "pregunta": "/ŋ/",
+            "opciones": [
+                "no tiene",
+                "/m/",
+                "/k/"
+            ]
+        },
+        {
+            "pregunta": "/r/",
+            "opciones": [
+                "no tiene",
+                "/l/",
+                "/w/"
+            ]
+        },
+        {
+            "pregunta": "/l/",
+            "opciones": [
+                "no tiene",
+                "/r/",
+                "/w/"
+            ]
+        },
+        {
+            "pregunta": "/j/",
+            "opciones": [
+                "no tiene",
+                "/w/",
+                "/r/"
+            ]
+        },
+        {
+            "pregunta": "/w/",
+            "opciones": [
+                "no tiene",
+                "/j/",
+                "/r/"
+            ]
+        },
+        {
+            "pregunta": "/h/",
+            "opciones": [
+                "no tiene",
+                "/ɦ/",
+                "/k/"
+            ]
+        }
+    ]
+}

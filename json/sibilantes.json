@@ -1,82 +1,86 @@
-[
-    {
-        "pregunta": "Nation",
-        "opciones": [
-            "/ʃ/",
-            "/s/",
-            "/ʒ/"
-        ]
-    },
-    {
-        "pregunta": "Vision",
-        "opciones": [
-            "/ʒ/",
-            "/s/",
-            "/ʃ/"
-        ]
-    },
-    {
-        "pregunta": "Social",
-        "opciones": [
-            "/ʃ/",
-            "/ʒ/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "Usual",
-        "opciones": [
-            "/ʒ/",
-            "/s/",
-            "/ʃ/"
-        ]
-    },
-    {
-        "pregunta": "Sexual",
-        "opciones": [
-            "/ʃ/",
-            "/ʒ/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "Pleasure",
-        "opciones": [
-            "/ʒ/",
-            "/s/",
-            "/ʃ/"
-        ]
-    },
-    {
-        "pregunta": "Sugar",
-        "opciones": [
-            "/ʃ/",
-            "/ʒ/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "Action",
-        "opciones": [
-            "/ʃ/",
-            "/ʒ/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "Decision",
-        "opciones": [
-            "/ʒ/",
-            "/ʃ/",
-            "/s/"
-        ]
-    },
-    {
-        "pregunta": "Asia",
-        "opciones": [
-            "/ʒ/",
-            "/s/",
-            "/ʃ/"
-        ]
-    }
-]
+{
+    "titulo": "Sibilantes",
+    "instrucciones": "Selecciona la consonante que encabeza la última sílaba de la palabra",
+    "preguntas": [
+        {
+            "pregunta": "Nation",
+            "opciones": [
+                "/ʃ/",
+                "/s/",
+                "/ʒ/"
+            ]
+        },
+        {
+            "pregunta": "Vision",
+            "opciones": [
+                "/ʒ/",
+                "/s/",
+                "/ʃ/"
+            ]
+        },
+        {
+            "pregunta": "Social",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Usual",
+            "opciones": [
+                "/ʒ/",
+                "/s/",
+                "/ʃ/"
+            ]
+        },
+        {
+            "pregunta": "Sexual",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Pleasure",
+            "opciones": [
+                "/ʒ/",
+                "/s/",
+                "/ʃ/"
+            ]
+        },
+        {
+            "pregunta": "Action",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Conclusion",
+            "opciones": [
+                "/ʒ/",
+                "/ʃ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Illusion",
+            "opciones": [
+                "/ʒ/",
+                "/ʃ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Asia",
+            "opciones": [
+                "/ʒ/",
+                "/s/",
+                "/ʃ/"
+            ]
+        }
+    ]
+}

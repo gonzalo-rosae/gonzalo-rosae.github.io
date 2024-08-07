@@ -1,162 +1,166 @@
-[
-    {
-        "pregunta": "Cups",
-        "opciones": [
-            "/s/",
-            "/z/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Cats",
-        "opciones": [
-            "/s/",
-            "/z/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Books",
-        "opciones": [
-            "/s/",
-            "/z/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Cliffs",
-        "opciones": [
-            "/s/",
-            "/z/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Months",
-        "opciones": [
-            "/s/",
-            "/z/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Games",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Plans",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Songs",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Beds",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Crabs",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Dogs",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Calls",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Cars",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Keys",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Windows",
-        "opciones": [
-            "/z/",
-            "/s/",
-            "/ɪz/"
-        ]
-    },
-    {
-        "pregunta": "Buses",
-        "opciones": [
-            "/ɪz/",
-            "/s/",
-            "/z/"
-        ]
-    },
-    {
-        "pregunta": "Roses",
-        "opciones": [
-            "/ɪz/",
-            "/s/",
-            "/z/"
-        ]
-    },
-    {
-        "pregunta": "Brushes",
-        "opciones": [
-            "/ɪz/",
-            "/s/",
-            "/z/"
-        ]
-    },
-    {
-        "pregunta": "Watches",
-        "opciones": [
-            "/ɪz/",
-            "/s/",
-            "/z/"
-        ]
-    },
-    {
-        "pregunta": "Judges",
-        "opciones": [
-            "/ɪz/",
-            "/s/",
-            "/z/"
-        ]
-    }
-]
+{
+    "titulo": "Plurales",
+    "instrucciones": "Selecciona la pronunciación correcta para el morfema plural -s",
+    "preguntas": [
+        {
+            "pregunta": "Cups",
+            "opciones": [
+                "/s/",
+                "/z/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Cats",
+            "opciones": [
+                "/s/",
+                "/z/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Books",
+            "opciones": [
+                "/s/",
+                "/z/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Cliffs",
+            "opciones": [
+                "/s/",
+                "/z/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Months",
+            "opciones": [
+                "/s/",
+                "/z/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Games",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Plans",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Songs",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Beds",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Crabs",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Dogs",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Calls",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Cars",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Keys",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Windows",
+            "opciones": [
+                "/z/",
+                "/s/",
+                "/ɪz/"
+            ]
+        },
+        {
+            "pregunta": "Buses",
+            "opciones": [
+                "/ɪz/",
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "Roses",
+            "opciones": [
+                "/ɪz/",
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "Brushes",
+            "opciones": [
+                "/ɪz/",
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "Watches",
+            "opciones": [
+                "/ɪz/",
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "Judges",
+            "opciones": [
+                "/ɪz/",
+                "/s/",
+                "/z/"
+            ]
+        }
+    ]
+}

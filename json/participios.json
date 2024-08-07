@@ -1,122 +1,126 @@
-[
-    {
-        "pregunta": "Hoped",
-        "opciones": [
-            "/t/",
-            "/d/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Sended",
-        "opciones": [
-            "/ɪd/",
-            "/t/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "Joined",
-        "opciones": [
-            "/d/",
-            "/t/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Watched",
-        "opciones": [
-            "/t/",
-            "/d/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Bathed",
-        "opciones": [
-            "/t/",
-            "/d/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Grabbed",
-        "opciones": [
-            "/d/",
-            "/t/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Loved",
-        "opciones": [
-            "/d/",
-            "/t/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Wanted",
-        "opciones": [
-            "/ɪd/",
-            "/t/",
-            "/d/"
-        ]
-    },
-    {
-        "pregunta": "Buzzed",
-        "opciones": [
-            "/d/",
-            "/t/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Liked",
-        "opciones": [
-            "/t/",
-            "/d/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Allowed",
-        "opciones": [
-            "/d/",
-            "/t/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Needed",
-        "opciones": [
-            "/ɪd/",
-            "/d/",
-            "/t/"
-        ]
-    },
-    {
-        "pregunta": "Bugged",
-        "opciones": [
-            "/d/",
-            "/t/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "Passed",
-        "opciones": [
-            "/t/",
-            "/d/",
-            "/ɪd/"
-        ]
-    },
-    {
-        "pregunta": "United",
-        "opciones": [
-            "/ɪd/",
-            "/d/",
-            "/t/"
-        ]
-    }
-]
+{
+    "titulo": "Participios",
+    "instrucciones": "Selecciona la pronunciación correcta para el morfema de participio -ed",
+    "preguntas": [
+        {
+            "pregunta": "Hoped",
+            "opciones": [
+                "/t/",
+                "/d/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Sended",
+            "opciones": [
+                "/ɪd/",
+                "/t/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "Joined",
+            "opciones": [
+                "/d/",
+                "/t/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Watched",
+            "opciones": [
+                "/t/",
+                "/d/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Bathed",
+            "opciones": [
+                "/t/",
+                "/d/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Grabbed",
+            "opciones": [
+                "/d/",
+                "/t/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Loved",
+            "opciones": [
+                "/d/",
+                "/t/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Wanted",
+            "opciones": [
+                "/ɪd/",
+                "/t/",
+                "/d/"
+            ]
+        },
+        {
+            "pregunta": "Buzzed",
+            "opciones": [
+                "/d/",
+                "/t/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Liked",
+            "opciones": [
+                "/t/",
+                "/d/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Allowed",
+            "opciones": [
+                "/d/",
+                "/t/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Needed",
+            "opciones": [
+                "/ɪd/",
+                "/d/",
+                "/t/"
+            ]
+        },
+        {
+            "pregunta": "Bugged",
+            "opciones": [
+                "/d/",
+                "/t/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "Passed",
+            "opciones": [
+                "/t/",
+                "/d/",
+                "/ɪd/"
+            ]
+        },
+        {
+            "pregunta": "United",
+            "opciones": [
+                "/ɪd/",
+                "/d/",
+                "/t/"
+            ]
+        }
+    ]
+}

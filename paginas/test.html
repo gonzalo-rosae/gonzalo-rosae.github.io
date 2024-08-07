@@ -13,6 +13,8 @@
 <body>
     <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
     <div class="envoltura">
+        <h1 id="titulo"></h1>
+        <div id="instrucciones"></div>
         <div class="contenedor oculto" id="contenedorTest">
             <div class="estado" id="estado"></div>
             <div class="pregunta"></div>
@@ -45,8 +47,18 @@
                 if (!respuesta.ok) {
                     throw new Error('Error al cargar el archivo JSON');
                 }
-                preguntas = await respuesta.json();
-                mezclarArray(preguntas); // Mezcla el array de preguntas
+                const datos = await respuesta.json();
+
+                if (datos.titulo) {
+                    document.getElementById("titulo").textContent = datos.titulo;
+                }
+                if (datos.instrucciones) {
+                    document.getElementById('instrucciones').textContent = datos.instrucciones;
+                }
+
+                preguntas = datos.preguntas || [];
+                mezclarArray(preguntas);
+
             } catch (error) {
                 document.querySelector('.envoltura').innerHTML = `<p>Error al cargar el test: por favor, notifica a Gonzalo para que lo arregle.</p>`;
             }
@@ -79,8 +91,8 @@
             opcionesDesordenadas.forEach((opcion, i) => {
                 elementosOpciones[i].textContent = opcion;
                 elementosOpciones[i].classList.remove('correcto', 'incorrecto');
-                elementosOpciones[i].style.pointerEvents = 'auto'; // Habilitar clics
-                elementosOpciones[i].dataset.indiceCorrecto = indiceCorrectoEnDesordenado; // Guardar el índice correcto
+                elementosOpciones[i].style.pointerEvents = 'auto';
+                elementosOpciones[i].dataset.indiceCorrecto = indiceCorrectoEnDesordenado;
             });
 
             actualizarEstado();
@@ -99,18 +111,18 @@
 
             opciones.forEach((opcion, i) => {
                 opcion.classList.remove('correcto', 'incorrecto');
-                opcion.style.pointerEvents = 'none'; // Desactivar clics después de la selección
+                // Desactivar clics después de la selección
+                opcion.style.pointerEvents = 'none';
                 if (i === indiceCorrecto) {
                     opcion.classList.add('correcto');
                     if (i === indiceSeleccionado) {
-                        cantidadRespuestasCorrectas++; // Solo sumar si la respuesta seleccionada es la correcta
+                        cantidadRespuestasCorrectas++;
                     }
                 } else if (i === indiceSeleccionado) {
                     opcion.classList.add('incorrecto');
                 }
             });
 
-            // Solo mostrar el botón "Siguiente" después de seleccionar una respuesta
             document.getElementById('botonSiguiente').classList.remove('oculto');
         }
 
@@ -122,10 +134,14 @@
                 indicePreguntaActual++;
                 cargarPregunta(indicePreguntaActual);
             }
+
+            document.getElementById('botonSiguiente').classList.add('oculto');
         }
 
         function empezarTest() {
+            document.getElementById('titulo').classList.add('oculto');
             document.getElementById('botonEmpezar').classList.add('oculto');
+            document.getElementById('instrucciones').classList.add('oculto');
             document.getElementById('contenedorTest').classList.remove('oculto');
             document.getElementsByClassName('contenedor')[0].classList.remove('oculto');
             cargarPregunta(indicePreguntaActual);

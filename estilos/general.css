@@ -1,6 +1,7 @@
 :root {
-    --colorFondo: black;
+    --colorFondo: rgb(20, 20, 20);
     --colorLetra: white;
+    --blancoAlfa: rgba(255, 255, 255, 0.08);
 }
 
 

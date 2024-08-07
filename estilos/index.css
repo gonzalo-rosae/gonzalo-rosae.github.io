@@ -20,6 +20,11 @@ body {
     margin: auto;
     position: relative;
     top: 20%;
+    background-color: var(--blancoAlfa);
+}
+
+.container > * {
+    background: none;
 }
 
 h1 {
@@ -29,16 +34,17 @@ h1 {
 }
 
 input {
+    background-color: var(--colorFondo) !important;
     padding: 10px;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    outline: none;
 }
 
 button {
-    background-color: #4169e1;
-    color: white;
+    background-color: #4169e1 !important;
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -48,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: #1e90ff;
+    background-color: #1e90ff !important;
 }
 
 footer {

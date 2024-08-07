@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal - Principal</title>
     <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
-    <script src="../scripts/general.js"></script>
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/consonantes.css">
+    <script src="../scripts/general.js"></script>
 </head>
 
 <body>
@@ -16,16 +16,16 @@
     <div class="container">
         <h1>Consonantes</h1>
         <div class="button-container">
-            <button id="btnSimbolos" class="custom-button" onclick="goToPage('simbolos')"><span
-                    class="textoBtn">Repaso símbolos</span></button>
-            <button id="btnParticipios" class="custom-button" onclick="goToTest('participios')"><span
-                    class="textoBtn">Test participios</span></button>
-            <button id="btnPlurales" class="custom-button" onclick="goToTest('plurales')"><span
-                    class="textoBtn">Test plurales</span></button>
+            <button id="btnSimbolos" class="custom-button" onclick="goToPage('simbolos')"><span class="textoBtn">Repaso
+                    símbolos</span></button>
             <button id="btnSibilantes" class="custom-button" onclick="goToTest('sibilantes')"><span
                     class="textoBtn">Test sibilantes</span></button>
             <button id="btnAfricadas" class="custom-button" onclick="goToTest('africadas')"><span class="textoBtn">Test
                     africadas</span></button>
+            <button id="btnParticipios" class="custom-button" onclick="goToTest('participios')"><span
+                    class="textoBtn">Test participios</span></button>
+            <button id="btnPlurales" class="custom-button" onclick="goToTest('plurales')"><span class="textoBtn">Test
+                    plurales</span></button>
         </div>
     </div>
 
@@ -55,14 +55,6 @@
             } catch (e) {
                 return false; // Si hay algún error en la decodificación, el token no es válido
             }
-        }
-
-        function goToPage(page) {
-            window.location.href = page + ".html";
-        }
-
-        function goToTest(nombreTest) {
-            window.location.href = "test.html?nombre=" + nombreTest;
         }
 
         function redirectToLogin() {

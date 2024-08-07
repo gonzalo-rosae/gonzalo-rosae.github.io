@@ -15,7 +15,7 @@
     <div class="envoltura">
         <h1 id="titulo"></h1>
         <div id="instrucciones"></div>
-        <div class="contenedor oculto" id="contenedorTest">
+        <div class="oculto" id="contenedorTest">
             <div class="estado" id="estado"></div>
             <div class="pregunta"></div>
             <div class="alternativas">
@@ -24,7 +24,8 @@
                 <div class="opcion" onclick="verificarRespuesta(2)"></div>
             </div>
         </div>
-        <button class="boton oculto" id="botonEmpezar" onclick="empezarTest()">Empezar</button>
+        <button class="boton oculto" id="botonVolverEmpezar" onclick="volverEmpezarTest()">Otra vez</button>
+        <button class="boton" id="botonEmpezar" onclick="empezarTest()">Empezar</button>
         <button class="boton oculto" id="botonSiguiente" onclick="siguientePregunta()">Siguiente</button>
     </div>
 
@@ -143,26 +144,56 @@
             document.getElementById('botonEmpezar').classList.add('oculto');
             document.getElementById('instrucciones').classList.add('oculto');
             document.getElementById('contenedorTest').classList.remove('oculto');
-            document.getElementsByClassName('contenedor')[0].classList.remove('oculto');
             cargarPregunta(indicePreguntaActual);
+        }
+
+        function volverEmpezarTest() {
+            indicePreguntaActual = 0;
+            cantidadRespuestasCorrectas = 0;
+
+            const contenedorTest = document.getElementById('contenedorTest');
+            contenedorTest.innerHTML = '';
+
+            const estado = document.createElement('div');
+            estado.id = 'estado';
+            estado.className = 'estado';
+            contenedorTest.appendChild(estado);
+
+            const pregunta = document.createElement('div');
+            pregunta.className = 'pregunta';
+            contenedorTest.appendChild(pregunta);
+
+            const alternativas = document.createElement('div');
+            alternativas.className = 'alternativas';
+
+            for (let i = 0; i < 3; i++) {
+                const opcion = document.createElement('div');
+                opcion.className = 'opcion';
+                opcion.onclick = () => verificarRespuesta(i);
+                alternativas.appendChild(opcion);
+            }
+
+            contenedorTest.appendChild(alternativas);
+
+            cargarPreguntas().then(() => {
+                cargarPregunta(indicePreguntaActual);
+                document.getElementById('botonVolverEmpezar').classList.add('oculto');
+                document.getElementById('botonSiguiente').classList.add('oculto');
+            });
         }
 
         function mostrarResultados() {
             const contenedorTest = document.getElementById('contenedorTest');
             contenedorTest.innerHTML = `<div class="resultado">Has acertado ${cantidadRespuestasCorrectas} de ${preguntas.length} preguntas</div>`;
             document.getElementById('botonSiguiente').classList.add('oculto');
+            document.getElementById('botonVolverEmpezar').classList.remove('oculto');
         }
 
         function actualizarEstado() {
             document.getElementById('estado').textContent = `${indicePreguntaActual + 1}/${preguntas.length}`;
         }
 
-        // Inicializar la página
-        cargarPreguntas().then(() => {
-            document.getElementById('botonEmpezar').classList.remove('oculto');
-            document.getElementById('contenedorTest').classList.add('oculto');
-            document.getElementById('botonSiguiente').classList.add('oculto');
-        });
+        cargarPreguntas();
     </script>
 
 </body>

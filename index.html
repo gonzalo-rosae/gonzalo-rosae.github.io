@@ -15,7 +15,7 @@
         <h1>Portal de práctica</h1>
         <h2>«Domina el acento británico»</h2>
         <br>
-        <input type="text" id="userIdentifier" placeholder="Introduce tu identificador">
+        <input type="text" id="inputID" placeholder="Introduce tu identificador">
         <button onclick="login()">Entrar</button>
     </div>
 
@@ -24,19 +24,26 @@
     </footer>
 
     <script>
-        const validIdentifiers = [
-            btoa('julioep24'),
-            btoa('esperanzamm24'),
-            btoa('admin')
-        ];
+        let usuarios = [];
+
+        fetch('json/usuarios.json')
+            .then(respuesta => respuesta.json())
+            .then(datos => {
+                usuarios = datos;
+            })
+            .catch(error => console.error('Error cargando usuarios:', error));
 
         function login() {
-            const inputIdentificador = document.getElementById('userIdentifier');
-            const identifier = inputIdentificador.value;
-            if (isValidIdentifier(identifier)) {
-                const token = generateToken(identifier);
-                sessionStorage.setItem('userIdentifier', identifier);
-                sessionStorage.setItem('authToken', token);
+            const inputIdentificador = document.getElementById('inputID');
+            const identificador = inputIdentificador.value;
+            const usuario = usuarios.find(u => u.identificador === identificador);
+
+            if (usuario) {
+                const token = generarToken(identificador);
+                sessionStorage.setItem('idUsuario', usuario.identificador);
+                sessionStorage.setItem('nombre', usuario.nombre);
+                sessionStorage.setItem('genero', usuario.genero);
+                sessionStorage.setItem('token', token);
                 window.location.href = 'paginas/home.html';
             } else {
                 alert('Identificador no válido. Por favor, inténtalo de nuevo.');
@@ -45,19 +52,18 @@
             }
         }
 
-        function isValidIdentifier(identifier) {
-            return validIdentifiers.includes(btoa(identifier));
-        }
-
-        function generateToken(identifier) {
+        function generarToken(identificador) {
             const timestamp = Date.now();
             const randomPart = Math.random().toString(36).substr(2);
-            return btoa(`${identifier}:${timestamp}:${randomPart}`);
+            return btoa(`${identificador}:${timestamp}:${randomPart}`);
         }
 
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 login();
+            }
+            else {
+                document.getElementById("inputID").focus();
             }
         });
     </script>

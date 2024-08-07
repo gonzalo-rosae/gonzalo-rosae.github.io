@@ -1,0 +1,20 @@
+[
+    {
+      "identificador": "julioep24",
+      "nombre": "Julio",
+      "genero": "hombre",
+      "programa": "Británico"
+    },
+    {
+      "identificador": "esperanzamm24",
+      "nombre": "Esperanza",
+      "genero": "mujer",
+      "programa": "Británico"
+    },
+    {
+      "identificador": "admin",
+      "nombre": "Administrador",
+      "genero": "hombre",
+      "programa": "Británico"
+    }
+  ]

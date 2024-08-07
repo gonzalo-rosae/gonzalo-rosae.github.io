@@ -31,35 +31,17 @@
 
     <script>
         window.onload = function () {
-            const identifier = sessionStorage.getItem('userIdentifier');
-            const token = sessionStorage.getItem('authToken');
+            const identificador = sessionStorage.getItem('idUsuario');
+            const token = sessionStorage.getItem('token');
 
-            if (!(identifier && isValidToken(token, identifier))) {
-                redirectToLogin();
+            if (!(identificador && tokenEsValido(token, identificador))) {
+                redirigirAIndex();
             }
         }
 
-        function isValidToken(token, identifier) {
-            try {
-                const decodedToken = atob(token);
-                const [storedIdentifier, timestamp, _] = decodedToken.split(':');
-
-                // Verificar que el identificador en el token coincide con el almacenado
-                if (storedIdentifier !== identifier) return false;
-
-                // Verificar que el token no tiene más de 1 hora de antigüedad
-                const tokenAge = Date.now() - parseInt(timestamp);
-                if (tokenAge > 3600000) return false; // 3600000 ms = 1 hora
-
-                return true;
-            } catch (e) {
-                return false; // Si hay algún error en la decodificación, el token no es válido
-            }
-        }
-
-        function redirectToLogin() {
-            sessionStorage.removeItem('userIdentifier');
-            sessionStorage.removeItem('authToken');
+        function redirigirAIndex() {
+            sessionStorage.removeItem('idUsuario');
+            sessionStorage.removeItem('token');
             window.location.href = 'paginas/index.html';
         }
     </script>

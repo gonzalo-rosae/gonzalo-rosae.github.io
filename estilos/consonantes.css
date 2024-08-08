@@ -38,7 +38,25 @@ h1 {
     transition-duration: 0.1s;
 }
 
-.custom-button:hover {
+.button-group {
+    display: flex;
+    width: 300px;
+    margin: 15px 0;
+    gap: 10px; /* Añadimos un gap para separar los botones */
+}
+
+.split-button {
+    width: calc(80% - 5px); /* Ajustamos el ancho restando la mitad del gap */
+    margin: 0;
+}
+
+.hot-button {
+    width: calc(20% - 5px); /* Ajustamos el ancho restando la mitad del gap */
+    font-size: 24px;
+    background-color: green;
+}
+
+.custom-button:hover, .hot-button:hover {
     outline: 3px solid white;
 }
 
@@ -51,12 +69,12 @@ h1 {
     background-color: blue;    
 }
 
-.button-container button:nth-child(2) {
+.button-container .button-group button:first-child {
     background-color: green;
 }
 
 .button-container button:nth-child(3) {
-    background-color: rgb(255, 98, 0);
+    background-color: rgb(196, 118, 0);
 }
 
 .button-container button:nth-child(4) {
@@ -64,13 +82,11 @@ h1 {
 }
 
 .button-container button:nth-child(5) {
-    background-color: rgb(255, 42, 42);
+    background-color: rgb(212, 24, 24);
 }
 
-
-
 @media (max-width: 600px) {
-    .custom-button {
+    .custom-button, .button-group {
         width: 220px;
     }
 }

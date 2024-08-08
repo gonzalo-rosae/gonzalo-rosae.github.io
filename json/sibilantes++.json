@@ -1,0 +1,86 @@
+{
+    "titulo": "Sibilantes (avanzado) 🔥",
+    "instrucciones": "Selecciona la consonante que encabeza la última sílaba de la palabra",
+    "preguntas": [
+        {
+            "pregunta": "Mansion",
+            "opciones": [
+                "/ʃ/",
+                "/s/",
+                "/ʒ/"
+            ]
+        },
+        {
+            "pregunta": "Fusion",
+            "opciones": [
+                "/ʒ/",
+                "/s/",
+                "/ʃ/"
+            ]
+        },
+        {
+            "pregunta": "Racial",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Passion",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Ensure",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Question",
+            "opciones": [
+                "/ʧ/",
+                "/t/",
+                "/ʃ/"
+            ]
+        },
+        {
+            "pregunta": "Quotient",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Suggestion",
+            "opciones": [
+                "/ʧ/",
+                "/t/",
+                "/ʃ/"
+            ]
+        },
+        {
+            "pregunta": "Pressure",
+            "opciones": [
+                "/ʃ/",
+                "/ʒ/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Leisure",
+            "opciones": [
+                "/ʒ/",
+                "/s/",
+                "/ʃ/"
+            ]
+        }
+    ]
+}

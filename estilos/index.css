@@ -15,8 +15,7 @@ body {
     border: solid white 2px;
     border-radius: 10px;
     text-align: center;
-    max-width: 400px;
-    width: 100%;
+    width: 400px;
     margin: auto;
     background-color: var(--blancoAlfa);
 }
@@ -39,6 +38,7 @@ input {
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
+    width: 55%;
 }
 
 button {
@@ -49,6 +49,7 @@ button {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
+    width: 20%;
 }
 
 button:hover {
@@ -58,7 +59,6 @@ button:hover {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: var(--blancoAlfa); /* Puedes ajustar según tu diseño */
     width: 100%;
     box-sizing: border-box;
 }
@@ -81,7 +81,7 @@ footer, footer > * {
     }
 
     input {
-        max-width: 180px;
+        width: 90%;
     }
 
     button {

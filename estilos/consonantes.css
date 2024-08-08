@@ -42,16 +42,16 @@ h1 {
     display: flex;
     width: 300px;
     margin: 15px 0;
-    gap: 10px; /* Añadimos un gap para separar los botones */
+    gap: 10px;
 }
 
 .split-button {
-    width: calc(80% - 5px); /* Ajustamos el ancho restando la mitad del gap */
+    width: calc(80% - 5px);
     margin: 0;
 }
 
 .hot-button {
-    width: calc(20% - 5px); /* Ajustamos el ancho restando la mitad del gap */
+    width: calc(20% - 5px);
     font-size: 24px;
     background-color: green;
 }
@@ -86,7 +86,4 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .custom-button, .button-group {
-        width: 220px;
-    }
 }

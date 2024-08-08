@@ -13,6 +13,8 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 100%; /* Asegúrate de que el contenedor ocupe el 100% del ancho */
+    max-width: 600px; /* Ajusta según sea necesario */
 }
 
 .pregunta {
@@ -85,12 +87,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     text-align: center;
-    max-width: 600px;
     width: 100%;
+    max-width: 400px; /* Ajusta según sea necesario */
     position: relative;
 }
 
 #titulo {
+    text-align: center;
     font-size: 36px;
     margin-top: -150px;
     margin-bottom: 100px;
@@ -103,8 +106,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     text-align: center;
-    max-width: 600px;
-    width: 100%;
+    width: 600px;
     margin-bottom: 50px;
 }
 
@@ -119,6 +121,10 @@ body {
     bottom: -60px;
 }
 
+#botonSiguiente {
+    width: 74.5%;
+}
+
 #botonVolverEmpezar {
     bottom: -100px;
 }
@@ -128,25 +134,33 @@ body {
         text-align: left;
         margin-top: 3px;
         margin-left: 5px;
-        font-size: 22px;
+        font-size: 1.5em;
     }
     
     .opcion {
-        font-size: large;
-        width: 43%;
-        height: 40px;
+        font-size: 1.5em;
+        width: 30%;
+        height: 80px;
     }
     
+    #titulo {
+        width: 80%;
+    }
+
     #instrucciones {
         width: 220px;
     }
 
     #contenedorTest {
-        width: 160px;
+        width: 60%;
     }
     
     #estado {
         font-size: 16px;
+    }
+
+    #botonSiguiente {
+        width: 68.5%;
     }
 
     #botonVolverEmpezar {

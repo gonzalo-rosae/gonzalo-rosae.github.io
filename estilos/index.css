@@ -81,6 +81,7 @@ footer, footer > * {
     }
 
     input {
+        font-size: 0.9em;
         width: 90%;
     }
 

@@ -117,7 +117,7 @@ button:hover {
     .btnTest {
         position: relative;
         left: 2.5%;
-        width: 80%; /* Ancho ajustado para móvil */
+        width: 80%;
         transform: none;
     }
 

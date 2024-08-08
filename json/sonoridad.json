@@ -1,0 +1,175 @@
+{
+  "titulo": "Sonoridad consonantes",
+  "instrucciones": "Selecciona si el fonema presentado es sordo o sonoro",
+  "numeroRespuestas": 2,
+  "preguntas": [
+    {
+      "pregunta": "/p/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/b/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/t/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/d/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/k/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/g/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/f/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/v/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/θ/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/ð/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/s/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/z/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/ʃ/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/ʒ/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/tʃ/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    },
+    {
+      "pregunta": "/dʒ/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/m/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/n/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/ŋ/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/r/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/l/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/j/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/w/",
+      "opciones": [
+        "sonoro",
+        "sordo"
+      ]
+    },
+    {
+      "pregunta": "/h/",
+      "opciones": [
+        "sordo",
+        "sonoro"
+      ]
+    }
+  ]
+}

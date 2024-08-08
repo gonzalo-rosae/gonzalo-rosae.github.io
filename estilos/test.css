@@ -112,7 +112,7 @@ body {
     position: absolute;
     text-align: center;
     width: 120px;
-    height: 80px;
+    height: 70px;
 }
 
 #botonEmpezar {
@@ -133,7 +133,7 @@ body {
     
     .opcion {
         font-size: large;
-        width: 40px;
+        width: 43%;
         height: 40px;
     }
     

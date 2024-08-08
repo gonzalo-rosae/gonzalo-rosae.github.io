@@ -19,11 +19,7 @@
         <div class="oculto" id="contenedorTest">
             <div class="estado" id="estado"></div>
             <div class="pregunta"></div>
-            <div class="alternativas">
-                <div class="opcion" onclick="verificarRespuesta(0)"></div>
-                <div class="opcion" onclick="verificarRespuesta(1)"></div>
-                <div class="opcion" onclick="verificarRespuesta(2)"></div>
-            </div>
+            <div class="alternativas"></div>
         </div>
         <button class="boton oculto" id="botonVolverEmpezar" onclick="volverEmpezarTest()">Otra vez</button>
         <button class="boton" id="botonEmpezar" onclick="empezarTest()">Empezar</button>
@@ -76,7 +72,8 @@
         function cargarPregunta(indice) {
             const datosPregunta = preguntas[indice];
             const elementoPregunta = document.querySelector('.pregunta');
-            const elementosOpciones = document.querySelectorAll('.opcion');
+            const contenedorAlternativas = document.querySelector('.alternativas');
+            contenedorAlternativas.innerHTML = ''; // Limpiar las alternativas anteriores
 
             // Configura la pregunta
             elementoPregunta.textContent = datosPregunta.pregunta;
@@ -89,12 +86,14 @@
             const opcionCorrecta = datosPregunta.opciones[0];
             const indiceCorrectoEnDesordenado = opcionesDesordenadas.indexOf(opcionCorrecta);
 
-            // Configura cada opción
+            // Crea las opciones dinámicamente
             opcionesDesordenadas.forEach((opcion, i) => {
-                elementosOpciones[i].textContent = opcion;
-                elementosOpciones[i].classList.remove('correcto', 'incorrecto');
-                elementosOpciones[i].style.pointerEvents = 'auto';
-                elementosOpciones[i].dataset.indiceCorrecto = indiceCorrectoEnDesordenado;
+                const elementoOpcion = document.createElement('div');
+                elementoOpcion.className = 'opcion';
+                elementoOpcion.textContent = opcion;
+                elementoOpcion.onclick = () => verificarRespuesta(i);
+                contenedorAlternativas.appendChild(elementoOpcion);
+                elementoOpcion.dataset.indiceCorrecto = indiceCorrectoEnDesordenado;
             });
 
             actualizarEstado();
@@ -166,14 +165,6 @@
 
             const alternativas = document.createElement('div');
             alternativas.className = 'alternativas';
-
-            for (let i = 0; i < 3; i++) {
-                const opcion = document.createElement('div');
-                opcion.className = 'opcion';
-                opcion.onclick = () => verificarRespuesta(i);
-                alternativas.appendChild(opcion);
-            }
-
             contenedorTest.appendChild(alternativas);
 
             cargarPreguntas().then(() => {

@@ -69,19 +69,27 @@ h1 {
     border-color: #149dff
 }
 
-#btnTest {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
+.btnTest {
     padding: 10px;
     border: 2px solid #ffffff;
     background-color: #333;
-    font-size: 1.2em;
+    font-size: 1.1em;
     cursor: pointer;
     border-radius: 8px;
+    position: absolute;
+    right: 25px;
+    width: 140px;
 }
 
-button:hover, #btnTest:hover {
+#testSonoridad {
+    bottom: 85px;
+}
+
+#testPares {
+    bottom: 25px;
+}
+
+button:hover {
     background-color: rgb(100, 100, 100);
 }
 
@@ -108,7 +116,7 @@ button:hover, #btnTest:hover {
         font-size: 1em;
     }
 
-    #btnTest {
+    #testPares {
         right: 50%;
         transform: translateX(50%);
         width: 80%;

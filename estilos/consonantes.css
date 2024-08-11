@@ -52,7 +52,7 @@ h1 {
 
 .hot-button {
     width: calc(20% - 5px);
-    font-size: 20px;
+    font-size: 22px;
     background-color: green;
 }
 
@@ -86,4 +86,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
+    .hot-button {
+        font-size: 20px;
+    }
 }

@@ -1,7 +1,7 @@
 {
   "titulo": "Sonoridad consonantes",
   "instrucciones": "Selecciona si el fonema presentado es sordo o sonoro",
-  "numeroRespuestas": 2,
+  "numRespuestas": 2,
   "preguntas": [
     {
       "pregunta": "/p/",

@@ -1,6 +1,7 @@
 {
     "titulo": "Sibilantes",
     "instrucciones": "Selecciona la consonante que encabeza la última sílaba de la palabra",
+    "numRespuestas": 3,
     "preguntas": [
         {
             "pregunta": "Nation",

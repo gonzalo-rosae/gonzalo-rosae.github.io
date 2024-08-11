@@ -52,7 +52,7 @@ h1 {
 
 .hot-button {
     width: calc(20% - 5px);
-    font-size: 22px;
+    font-size: 20px;
     background-color: green;
 }
 

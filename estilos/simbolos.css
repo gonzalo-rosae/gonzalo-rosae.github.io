@@ -8,7 +8,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    position: relative; /* Necesario para el posicionamiento absoluto de los botones en modo escritorio */
+    position: relative;
 }
 
 h1 {
@@ -93,6 +93,7 @@ button:hover {
 
 @media (max-width: 600px) {
     h1 {
+        font-size: 1.8em;
         margin-bottom: 10px;
     }
 
@@ -101,12 +102,13 @@ button:hover {
         gap: 10px;
         margin-left: 0px;
         margin-right: 0px;
+        margin-bottom: 100px;
     }
 
     .btnConsonante {
         width: 35px;
         height: 35px;
-        font-size: 1em;
+        font-size: 1.15em;
     }
 
     .tituloGrupo {
@@ -115,17 +117,20 @@ button:hover {
     }
 
     .btnTest {
-        position: relative;
-        left: 2.5%;
-        width: 80%;
+        position: fixed;
+        bottom: 0 !important;
+        width: 50%;
+        height: 55px;
         transform: none;
-    }
-
-    #testPares {
-        bottom: 0px;
+        border-radius: 0;
+        z-index: 1000;
     }
 
     #testSonoridad {
-        bottom: 15px;
+        left: 0;
+    }
+
+    #testPares {
+        left: 50%;
     }
 }

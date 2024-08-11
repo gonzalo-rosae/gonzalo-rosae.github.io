@@ -1,6 +1,7 @@
 {
     "titulo": "Participios",
     "instrucciones": "Selecciona la pronunciación correcta para el morfema de participio -ed",
+    "numRespuestas": 3,
     "preguntas": [
         {
             "pregunta": "Hoped",

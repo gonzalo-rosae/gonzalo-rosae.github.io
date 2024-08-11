@@ -1,6 +1,7 @@
 {
     "titulo": "Pares consonánticos",
     "instrucciones": "Selecciona el equivalente sordo o sonoro del fonema presentado",
+    "numRespuestas": 3,
     "preguntas": [
         {
             "pregunta": "/p/",

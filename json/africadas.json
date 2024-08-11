@@ -1,6 +1,7 @@
 {
     "titulo": "Africadas",
     "instrucciones": "Selecciona el sonido por el que empieza la palabra",
+    "numRespuestas": 3,
     "preguntas": [
         {
             "pregunta": "Church",

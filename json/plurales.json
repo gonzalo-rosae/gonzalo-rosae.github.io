@@ -1,6 +1,7 @@
 {
     "titulo": "Plurales",
     "instrucciones": "Selecciona la pronunciación correcta para el morfema plural -s",
+    "numRespuestas": 3,
     "preguntas": [
         {
             "pregunta": "Cups",

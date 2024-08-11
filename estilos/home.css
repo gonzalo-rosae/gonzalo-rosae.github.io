@@ -100,15 +100,15 @@ h1 {
 
 @media (max-width: 400px) {
     .custom-button {
-        width: 150px;
-        height: 150px;
+        width: 170px;
+        height: 170px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .textoBtn {
-        font-size: 16px;
+        font-size: 18px;
     }
 }

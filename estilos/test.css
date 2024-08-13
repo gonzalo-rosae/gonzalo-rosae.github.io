@@ -177,7 +177,8 @@ body {
         width: 68.5%;
     }
 
-    #botonVolverEmpezar {
+    #botonEmpezar, #botonVolverEmpezar {
+        width: 120px;
         height: 60px;
     }
 }

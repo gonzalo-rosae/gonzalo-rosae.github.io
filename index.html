@@ -15,7 +15,7 @@
         <h1>Portal de práctica</h1>
         <h2>«Domina el acento británico»</h2>
         <br>
-        <input type="text" id="inputID" placeholder="Introduce tu identificador">
+        <input type="text" id="inputID" placeholder="Introduce tu identificador" autocomplete="username">
         <button onclick="login()">Entrar</button>
     </div>
 
@@ -43,6 +43,8 @@
                 sessionStorage.setItem('idUsuario', usuario.identificador);
                 sessionStorage.setItem('nombre', usuario.nombre);
                 sessionStorage.setItem('genero', usuario.genero);
+                sessionStorage.setItem('consonantes', usuario.progreso.consonantes);
+                sessionStorage.setItem('vocales', usuario.progreso.vocales);
                 sessionStorage.setItem('token', token);
                 window.location.href = 'paginas/home.html';
             } else {

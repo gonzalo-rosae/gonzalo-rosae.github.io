@@ -69,7 +69,7 @@ h1 {
     background-color: blue;    
 }
 
-.button-container .button-group button:first-child {
+.button-container button:nth-child(2), .button-container .button-group button:first-child {
     background-color: green;
 }
 

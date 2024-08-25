@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Vocales</title>
+    <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
+    <link rel="stylesheet" href="../estilos/general.css">
+    <link rel="stylesheet" href="../estilos/AFI_vocales.css">
+    <script src="../scripts/general.js"></script>
+</head>
+
+<body>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+
+    <div class="contenedor">
+        <div class="leyenda">
+            <h3>Leyenda</h3>
+            <div class="botones-leyenda">
+                <button class="tipo todos">Todos</button>
+                <button class="tipo corta">Vocal corta</button>
+                <button class="tipo larga">Vocal larga</button>
+                <button class="tipo diptongo">Diptongo</button>
+            </div>
+        </div>
+        <div>
+            <div class="etiquetas">
+                <span class="etiqueta-izquierda">Anterior</span>
+                <span class="etiqueta-derecha">Posterior</span>
+            </div>
+            <div class="diagrama">
+                <button class="btnVocal diptongo"><span class="simbolo">ɪj</span>
+                    <span class="ejemplo">FL<span class="subrayado">EE</span>CE</span></button>
+                <button class="btnVacio"></button>
+                <button class="btnVocal diptongo"><span class="simbolo">ʉw</span>
+                    <span class="ejemplo">G<span class="subrayado">OO</span>SE</span></button>
+                <button class="btnVocal corta"><span class="simbolo">ɪ</span>
+                    <span class="ejemplo">K<span class="subrayado">I</span>T</span></button>
+                <button class="btnVocal corta"><span class="simbolo">ɵ</span>
+                    <span class="ejemplo">F<span class="subrayado">OO</span>T</span></button>
+                <button class="btnVocal larga"><span class="simbolo">oː</span>
+                    <span class="ejemplo">N<span class="subrayado">OR</span>TH</span></button>
+                <button class="btnVocal larga"><span class="simbolo">ɪː</span>
+                    <span class="ejemplo">N<span class="subrayado">EAR</span></span></button>
+                <button class="btnVocal diptongo"><span class="simbolo">əw</span>
+                    <span class="ejemplo">G<span class="subrayado">OA</span>T</span></button>
+                <button class="btnVocal diptongo"><span class="simbolo">oj</span>
+                    <span class="ejemplo">CH<span class="subrayado">OI</span>CE</span></button>
+                <button class="btnVocal diptongo"><span class="simbolo">ɛj</span>
+                    <span class="ejemplo">F<span class="subrayado">A</span>CE</span></button>
+                <button class="btnVocal corta"><span class="simbolo">ə</span>
+                    <span class="ejemplo">LETT<span class="subrayado">ER</span></span></button>
+                <button class="btnVacio"></button>
+                <button class="btnVocal corta"><span class="simbolo">ɛ</span>
+                    <span class="ejemplo">DR<span class="subrayado">E</span>SS</span></button>
+                <button class="btnVocal larga"><span class="simbolo">əː</span>
+                    <span class="ejemplo">N<span class="subrayado">UR</span>SE</span></button>
+                <button class="btnVocal corta"><span class="simbolo">ɔ</span>
+                    <span class="ejemplo">L<span class="subrayado">O</span>T</span></button>
+                <button class="btnVocal larga"><span class="simbolo">ɛː</span>
+                    <span class="ejemplo">SQU<span class="subrayado">ARE</span></span></button>
+                <button class="btnVocal corta"><span class="simbolo">ʌ</span>
+                    <span class="ejemplo">STR<span class="subrayado">U</span>T</span></button>
+                <button class="btnVocal larga"><span class="simbolo">ɑː</span>
+                    <span class="ejemplo">ST<span class="subrayado">AR</span>T</span></button>
+                <button class="btnVocal corta"><span class="simbolo">a</span>
+                    <span class="ejemplo">TR<span class="subrayado">A</span>P</span></button>
+                <button class="btnVocal diptongo"><span class="simbolo">aw</span>
+                    <span class="ejemplo">M<span class="subrayado">OU</span>TH</span></button>
+                <button class="btnVocal diptongo"><span class="simbolo">ɑj</span>
+                    <span class="ejemplo">PR<span class="subrayado">I</span>CE</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mapeoSimbolos = {
+            'ɪj': 'ij',
+            'ʉw': 'uw',
+            'ɪ': 'i',
+            'ɵ': 'o-',
+            'oː': 'o.',
+            'ɪː': 'i.',
+            'əw': 'ew',
+            'oj': 'oj',
+            'ɛj': 'ej',
+            'ə': 'schwa',
+            'ɛ': 'e',
+            'əː': 'schwa.',
+            'ɔ': 'o',
+            'ɛː': 'e.',
+            'ʌ': 'v',
+            'ɑː': 'a.',
+            'a': 'a',
+            'aw': 'aw',
+            'ɑj': 'aj'
+        };
+
+        function escuchar(letra) {
+            const nombreLatinizado = mapeoSimbolos[letra] || letra;
+            const nombreAudio = `../audios/vocales/${nombreLatinizado}.mp3`;
+            const audio = new Audio(nombreAudio);
+            if (audio) audio.play();
+            else alert("No se ha encontrado el audio " + nombreLatinizado + ".mp3");
+        }
+
+        const botonesVocales = document.querySelectorAll('.btnVocal');
+        botonesVocales.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const simbolo = btn.querySelector('.simbolo').textContent;
+                escuchar(simbolo);
+            });
+        });
+
+        const botonesFiltro = document.querySelectorAll('.tipo');
+        botonesFiltro.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tipo = btn.classList[1];
+                botonesVocales.forEach(vocalBtn => {
+                    if (tipo == "todos" || vocalBtn.classList.contains(tipo)) {
+                        vocalBtn.classList.remove('oculto');
+                    } else {
+                        vocalBtn.classList.add('oculto');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -19,7 +19,7 @@
             <button id="btnConsonantes" class="custom-button" onclick="goToPage('consonantes')">
                 <span class="textoBtn">Consonantes</span>
             </button>
-            <button id="btnVocales" class="custom-button prohibido" onclick="prohibido()">
+            <button id="btnVocales" class="custom-button" onclick="goToPage('vocales')">
                 <span class="textoBtn">Vocales</span>
             </button>
         </div>
@@ -30,12 +30,21 @@
             const identificador = sessionStorage.getItem('idUsuario');
             const nombre = sessionStorage.getItem('nombre');
             const genero = sessionStorage.getItem('genero');
+            const consonantes = sessionStorage.getItem('consonantes');
+            const vocales = sessionStorage.getItem('vocales');
             const token = sessionStorage.getItem('token');
 
             if (identificador && nombre && genero && tokenEsValido(token, identificador)) {
                 var saludo = genero.toLowerCase() === 'hombre' ? 'Bienvenido' : 'Bienvenida';
                 saludo = `${saludo}, ${nombre}`;
                 document.getElementById('saludo').textContent = saludo;
+                const btnVocales = document.getElementById('btnVocales');
+                if (vocales < 1) {
+                    btnVocales.classList.add('prohibido');
+                    btnVocales.onclick = function () {
+                        prohibido();
+                    };
+                }
             } else {
                 redirigirAIndex();
             }

@@ -1,71 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagrama de Vocales</title>
+    <title>Portal - Principal</title>
     <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="../estilos/general.css">
-    <link rel="stylesheet" href="../estilos/vocales.css">
-    <script src="../scripts/general.js"></script>    
+    <link rel="stylesheet" href="../estilos/consonantes.css">
+    <script src="../scripts/general.js"></script>
 </head>
+
 <body>
-    <div class="contenedor">
-        <div class="leyenda">
-            <h3>Leyenda</h3>
-            <button class="tipo corta">Vocal corta</button>
-            <button class="tipo larga">Vocal larga</button>
-            <button class="tipo diptongo">Diptongo</button>
-        </div>
-        <div>
-            <div class="etiquetas">
-                <span class="etiqueta-izquierda">Anterior</span>
-                <span class="etiqueta-derecha">Posterior</span>
-            </div>
-            <div class="diagrama">
-                <button class="btnVocal diptongo"><span class="simbolo">ɪj</span><span class="ejemplo">FLEECE</span></button>
-                <button class="btnVocal diptongo"><span class="simbolo">ʉw</span><span class="ejemplo">GOOSE</span></button>
-                <button class="btnVocal corta"><span class="simbolo">ɪ</span><span class="ejemplo">KIT</span></button>
-                <button class="btnVocal corta"><span class="simbolo">ɵ</span><span class="ejemplo">FOOT</span></button>
-                <button class="btnVocal larga"><span class="simbolo">oː</span><span class="ejemplo">NORTH</span></button>
-                <button class="btnVocal diptongo"><span class="simbolo">ɪ:</span><span class="ejemplo">NEAR</span></button>
-                <button class="btnVocal diptongo"><span class="simbolo">əw</span><span class="ejemplo">GOAT</span></button>
-                <button class="btnVocal diptongo"><span class="simbolo">oj</span><span class="ejemplo">CHOICE</span></button>
-                <button class="btnVocal diptongo"><span class="simbolo">ɛj</span><span class="ejemplo">FACE</span></button>
-                <button class="btnVocal corta"><span class="simbolo">ə</span><span class="ejemplo">LETTER</span></button>
-                <button class="btnVocal corta"><span class="simbolo">ɛ</span><span class="ejemplo">DRESS</span></button>
-                <button class="btnVocal larga"><span class="simbolo">ə:</span><span class="ejemplo">NURSE</span></button>
-                <button class="btnVocal corta"><span class="simbolo">ɔ</span><span class="ejemplo">LOT</span></button>
-                <button class="btnVocal larga"><span class="simbolo">ɛ:</span><span class="ejemplo">SQUARE</span></button>
-                <button class="btnVocal larga"><span class="simbolo">ʌ</span><span class="ejemplo">STRUT</span></button>
-                <button class="btnVocal larga"><span class="simbolo">ɑ:</span><span class="ejemplo">START</span></button>
-                <button class="btnVocal corta"><span class="simbolo">a</span><span class="ejemplo">TRAP</span></button>
-                <button class="btnVocal diptongo"><span class="simbolo">aw</span><span class="ejemplo">MOUTH</span></button>
-                <button class="btnVocal diptongo"><span class="simbolo">ɑj</span><span class="ejemplo">PRICE</span></button>
-            </div>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+    <div class="container">
+        <h1>Vocales</h1>
+        <div class="button-container">
+            <button id="btnSimbolos" class="custom-button" onclick="goToPage('AFI_vocales')"><span class="textoBtn">Repaso símbolos</span></button>
+            <button id="btnSchwa" class="custom-button" onclick="goToTest('schwa')"><span class="textoBtn">Test schwa</span></button>
         </div>
     </div>
 
     <script>
-        const mapeoSimbolos = {
-            // TODO
-        };
+        window.onload = function () {
+            const identificador = sessionStorage.getItem('idUsuario');
+            const token = sessionStorage.getItem('token');
 
-        function escuchar(letra) {
-            const nombreLatinizado = mapeoSimbolos[letra] || letra;
-            const nombreAudio = `../audios/${nombreLatinizado}.mp3`;
-            const audio = new Audio(nombreAudio);
-            if (audio) audio.play();
-            else alert("No se ha encontrado el audio " + nombreLatinizado + ".mp3");
+            if (!(identificador && tokenEsValido(token, identificador))) {
+                redirigirAIndex();
+            }
         }
 
-        const botones = document.querySelectorAll('.btnVocal');
-        botones.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const btnVocal = btn.textContent;
-                escuchar(btnVocal);
-            });
-        });
+        function redirigirAIndex() {
+            sessionStorage.removeItem('idUsuario');
+            sessionStorage.removeItem('token');
+            window.location.href = 'paginas/index.html';
+        }
     </script>
 </body>
+
 </html>

@@ -3,18 +3,30 @@
       "identificador": "julioep24",
       "nombre": "Julio",
       "genero": "hombre",
-      "programa": "Británico"
+      "programa": "Británico",
+      "progreso": {
+        "consonantes": "6",
+        "vocales": "0"
+      }
     },
     {
       "identificador": "esperanzamm24",
       "nombre": "Esperanza",
       "genero": "mujer",
-      "programa": "Británico"
+      "programa": "Británico",
+      "progreso": {
+        "consonantes": "6",
+        "vocales": "2"
+      }
     },
     {
       "identificador": "admin",
       "nombre": "Administrador",
       "genero": "hombre",
-      "programa": "Británico"
+      "programa": "Británico",
+      "progreso": {
+        "consonantes": "100",
+        "vocales": "100"
+      }
     }
   ]

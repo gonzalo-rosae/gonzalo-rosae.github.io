@@ -1,0 +1,77 @@
+{
+    "titulo": "Schwa",
+    "instrucciones": "Deduce si la vocal seleccionada entre ⟨paréntesis angulares⟩ se pronuncia como schwa (/ə/) o no",
+    "numRespuestas": 2,
+    "preguntas": [
+        {
+            "pregunta": "⟨a⟩gain",
+            "opciones": [
+                "sí",
+                "no"
+            ]
+        },
+        {
+            "pregunta": "par⟨e⟩nt",
+            "opciones": [
+                "sí",
+                "no"
+            ]
+        },
+        {
+            "pregunta": "s⟨u⟩pply",
+            "opciones": [
+                "sí",
+                "no"
+            ]
+        },
+        {
+            "pregunta": "penc⟨i⟩l",
+            "opciones": [
+                "sí",
+                "no"
+            ]
+        },
+        {
+            "pregunta": "⟨o⟩btain",
+            "opciones": [
+                "sí",
+                "no"
+            ]
+        },
+        {
+            "pregunta": "v⟨i⟩sit",
+            "opciones": [
+                "no",
+                "sí"
+            ]
+        },
+        {
+            "pregunta": "s⟨e⟩cond",
+            "opciones": [
+                "no",
+                "sí"
+            ]
+        },
+        {
+            "pregunta": "s⟨u⟩nny",
+            "opciones": [
+                "no",
+                "sí"
+            ]
+        },
+        {
+            "pregunta": "pr⟨o⟩blem",
+            "opciones": [
+                "no",
+                "sí"
+            ]
+        },
+        {
+            "pregunta": "tr⟨a⟩vel",
+            "opciones": [
+                "no",
+                "sí"
+            ]
+        }
+    ]
+}

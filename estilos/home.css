@@ -59,6 +59,10 @@ h1 {
 }
 
 #btnVocales {
+    background-image: url('../imagenes/vocales.png');
+}
+
+#btnConsonantes.prohibido, #btnVocales.prohibido {
     background-image: url('../imagenes/candado.png');
 }
 

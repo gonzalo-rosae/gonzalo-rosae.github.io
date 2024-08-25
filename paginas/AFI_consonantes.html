@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consonantes AFI</title>
+    <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
+    <link rel="stylesheet" href="../estilos/general.css">
+    <link rel="stylesheet" href="../estilos/AFI_consonantes.css">
+    <script src="../scripts/general.js"></script> 
+</head>
+
+<body>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+
+    <div class="contenedor">
+        <h1>Consonantes AFI</h1>
+
+        <div class="tablaConsonantes">
+            <div class="grupoConsonantes">
+                <div class="tituloGrupo">Oclusivas</div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">p</button>
+                    <button class="btnConsonante sonoro">b</button>
+                </div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">t</button>
+                    <button class="btnConsonante sonoro">d</button>
+                </div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">k</button>
+                    <button class="btnConsonante sonoro">g</button>
+                </div>
+            </div>
+
+            <div class="grupoConsonantes">
+                <div class="tituloGrupo">Fricativas</div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">f</button>
+                    <button class="btnConsonante sonoro">v</button>
+                </div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">θ</button>
+                    <button class="btnConsonante sonoro">ð</button>
+                </div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">s</button>
+                    <button class="btnConsonante sonoro">z</button>
+                </div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">ʃ</button>
+                    <button class="btnConsonante sonoro">ʒ</button>
+                </div>
+            </div>
+
+            <div class="grupoConsonantes">
+                <div class="tituloGrupo">Africadas</div>
+                <div class="parConsonantes">
+                    <button class="btnConsonante sordo">tʃ</button>
+                    <button class="btnConsonante sonoro">dʒ</button>
+                </div>
+            </div>
+
+            <div class="grupoConsonantes">
+                <div class="tituloGrupo">Nasales</div>
+                <button class="btnConsonante sonoro">m</button>
+                <button class="btnConsonante sonoro">n</button>
+                <button class="btnConsonante sonoro">ŋ</button>
+            </div>
+
+            <div class="grupoConsonantes">
+                <div class="tituloGrupo">Aproximantes</div>
+                <button class="btnConsonante sonoro">r</button>
+                <button class="btnConsonante sonoro">l</button>
+                <button class="btnConsonante sonoro">j</button>
+                <button class="btnConsonante sonoro">w</button>
+            </div>
+
+            <div class="grupoConsonantes">
+                <div class="tituloGrupo">Glotal</div>
+                <button class="btnConsonante other sordo">h</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="testSonoridad" class="btnTest" onclick="goToTest('sonoridad')">Test sonoridad</button>
+    <button id="testPares" class="btnTest" onclick="goToTest('paresConsonanticos')">Test pares</button>
+
+    <script>
+        const mapeoSimbolos = {
+            'θ': 'th',
+            'ð': 'dh',
+            'ʃ': 'sh',
+            'ʒ': 'zh',
+            'tʃ': 'ch',
+            'dʒ': 'j',
+            'j': 'y',
+            'ŋ': 'ng'
+        };
+
+        function escuchar(letra) {
+            const nombreLatinizado = mapeoSimbolos[letra] || letra;
+            const nombreAudio = `../audios/consonantes/${nombreLatinizado}.mp3`;
+            new Audio(nombreAudio).play();
+        }
+
+        const botones = document.querySelectorAll('.btnConsonante');
+        botones.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sonido = btn.textContent;
+                escuchar(sonido);
+            });
+        });
+    </script>
+</body>
+
+</html>

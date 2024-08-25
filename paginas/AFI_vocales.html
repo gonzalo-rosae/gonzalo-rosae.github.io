@@ -9,19 +9,20 @@
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/AFI_vocales.css">
     <script src="../scripts/general.js"></script>
+    <script src="../scripts/AFI_vocales.js"></script>
 </head>
 
 <body>
     <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
-
     <div class="contenedor">
-        <div class="leyenda">
-            <h3>Leyenda</h3>
-            <div class="botones-leyenda">
-                <button class="tipo todos">Todos</button>
-                <button class="tipo corta">Vocal corta</button>
-                <button class="tipo larga">Vocal larga</button>
-                <button class="tipo diptongo">Diptongo</button>
+        <div class="filtros">
+            <h1>Vocales AFI</h1>
+            <h3>Filtro</h3>
+            <div class="botones-filtro">
+                <button class="filtro todos">Todas</button>
+                <button class="filtro corta">Vocales cortas</button>
+                <button class="filtro larga">Vocales largas</button>
+                <button class="filtro diptongo">Diptongos</button>
             </div>
         </div>
         <div>
@@ -73,60 +74,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const mapeoSimbolos = {
-            'ɪj': 'ij',
-            'ʉw': 'uw',
-            'ɪ': 'i',
-            'ɵ': 'o-',
-            'oː': 'o.',
-            'ɪː': 'i.',
-            'əw': 'ew',
-            'oj': 'oj',
-            'ɛj': 'ej',
-            'ə': 'schwa',
-            'ɛ': 'e',
-            'əː': 'schwa.',
-            'ɔ': 'o',
-            'ɛː': 'e.',
-            'ʌ': 'v',
-            'ɑː': 'a.',
-            'a': 'a',
-            'aw': 'aw',
-            'ɑj': 'aj'
-        };
-
-        function escuchar(letra) {
-            const nombreLatinizado = mapeoSimbolos[letra] || letra;
-            const nombreAudio = `../audios/vocales/${nombreLatinizado}.mp3`;
-            const audio = new Audio(nombreAudio);
-            if (audio) audio.play();
-            else alert("No se ha encontrado el audio " + nombreLatinizado + ".mp3");
-        }
-
-        const botonesVocales = document.querySelectorAll('.btnVocal');
-        botonesVocales.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const simbolo = btn.querySelector('.simbolo').textContent;
-                escuchar(simbolo);
-            });
-        });
-
-        const botonesFiltro = document.querySelectorAll('.tipo');
-        botonesFiltro.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tipo = btn.classList[1];
-                botonesVocales.forEach(vocalBtn => {
-                    if (tipo == "todos" || vocalBtn.classList.contains(tipo)) {
-                        vocalBtn.classList.remove('oculto');
-                    } else {
-                        vocalBtn.classList.add('oculto');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

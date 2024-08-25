@@ -6,6 +6,10 @@ body {
     margin: 0;
 }
 
+h1 {
+    font-size: 1.8rem;
+}
+
 .contenedor {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -14,32 +18,35 @@ body {
     border-radius: 10px;
 }
 
-.leyenda {
+.filtros {
     display: flex;
     flex-direction: column;
     width: 70%;
     gap: 10px;
-    margin-right: 70px;
+    margin-right: 80px;
 }
 
-.leyenda h3 {
+.filtros h3 {
     text-align: center;
     margin-bottom: 5px;
 }
 
-.botones-leyenda {
+.botones-filtro {
     display: grid;
-    gap: 10px;
+    gap: 15px;
     height: 100%;
 }
 
-.tipo {
-    padding: 5px;
+.filtro {
     border-radius: 5px;
     text-align: center;
     border: none;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.1em;
+}
+
+.filtro:hover {
+    outline: 3px solid white;
 }
 
 .todos { background-color: grey; }
@@ -55,7 +62,7 @@ body {
 
 .btnVocal {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
     border-radius: 5px;
     background-color: transparent;
@@ -67,17 +74,25 @@ body {
     justify-content: center;
 }
 
+.btnVocal span {
+    background-color: transparent;
+}
+
+.btnVocal:hover {
+    background-color: rgb(40, 40, 40);
+}
+
 .btnVacio {
     border: none;
 }
 
 .simbolo {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 
 .ejemplo {
-    font-size: 0.8em;
+    font-size: 0.7em;
     margin-top: 5px;
 }
 
@@ -89,3 +104,54 @@ body {
 
 .etiqueta-izquierda { justify-self: start; }
 .etiqueta-derecha { justify-self: end; }
+
+@media (max-width: 600px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .filtros {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .botones-filtro {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .filtro {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    h3 {
+        display: none;
+    }
+
+    .diagrama {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .btnVocal {
+        padding: 6px;
+        font-size: 0.9em;
+    }
+
+    .simbolo {
+        font-size: 1.1em;
+    }
+
+    .ejemplo {
+        font-size: 0.6em;
+    }
+}

@@ -54,6 +54,21 @@ h1 {
     outline: 5px solid red;
 }
 
+#btnCerrarSesion {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#btnCerrarSesion:hover {
+    cursor: pointer;
+    background-color: rgb(255, 70, 70);
+}
+
 #btnConsonantes {
     background-image: url('../imagenes/consonantes.png');
 }

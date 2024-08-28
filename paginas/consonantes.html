@@ -16,14 +16,16 @@
     <div class="container">
         <h1>Consonantes</h1>
         <div class="contenedorBotones">
-            <button id="btnSimbolos" class="btnSeccion" onclick="irAPagina('AFI_consonantes')"><span class="textoBtn">Repaso símbolos</span></button>
-            <div class="button-group">
-                <button id="btnSibilantes" class="btnSeccion split-button" onclick="realizarTest('sibilantes')"><span class="textoBtn">Test sibilantes</span></button>
-                <button id="btnSibilantesHot" class="btnSeccion split-button hot-button" onclick="realizarTest('sibilantes++')">🔥</button>
+            <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <div class="grupoBotones">
+                <button id="btn2" class="btnSeccion split-button" onclick="prohibido()"><span
+                        class="textoBtn">??</span></button>
+                <button id="btn3" class="btnSeccion split-button hot-button" onclick="prohibido()"><span
+                        class="textoBtn">??</span></button>
             </div>
-            <button id="btnAfricadas" class="btnSeccion" onclick="realizarTest('africadas')"><span class="textoBtn">Test africadas</span></button>
-            <button id="btnParticipios" class="btnSeccion" onclick="realizarTest('participios')"><span class="textoBtn">Test participios</span></button>
-            <button id="btnPlurales" class="btnSeccion" onclick="realizarTest('plurales')"><span class="textoBtn">Test plurales</span></button>
+            <button id="btn4" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn5" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn6" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
         </div>
     </div>
 
@@ -31,9 +33,58 @@
         window.onload = function () {
             const identificador = sessionStorage.getItem('idUsuario');
             const token = sessionStorage.getItem('token');
+            const consonantes = sessionStorage.getItem('consonantes');
 
             if (!(identificador && tokenEsValido(token, identificador))) {
                 cerrarSesion();
+            } else {
+                cargarBotones(consonantes);
+            }
+        }
+
+        function cargarBotones(consonantes) {
+            numBotonesDesbloqueados = parseInt(consonantes, 10);
+
+            const infoBotones = [
+                {
+                    id: 'btn1',
+                    texto: 'Repaso símbolos',
+                    onclick: () => irAPagina('AFI_consonantes'),
+                },
+                {
+                    id: 'btn2',
+                    texto: 'Test sibilantes',
+                    onclick: () => realizarTest('sibilantes'),
+                },
+                {
+                    id: 'btn3',
+                    texto: '🔥',
+                    onclick: () => realizarTest('sibilantes++'),
+                },
+                {
+                    id: 'btn4',
+                    texto: 'Test africadas',
+                    onclick: () => realizarTest('africadas'),
+                },
+                {
+                    id: 'btn5',
+                    texto: 'Test participios',
+                    onclick: () => realizarTest('participios'),
+                },
+                {
+                    id: 'btn6',
+                    texto: 'Test plurales',
+                    onclick: () => realizarTest('plurales'),
+                },
+            ];
+
+
+            for (let i = 0; i < numBotonesDesbloqueados; i++) {
+                if (i < infoBotones.length) {
+                    const btn = document.getElementById(infoBotones[i].id);
+                    btn.onclick = infoBotones[i].onclick;
+                    btn.querySelector('.textoBtn').textContent = infoBotones[i].texto;
+                }
             }
         }
     </script>

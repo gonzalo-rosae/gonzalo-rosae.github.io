@@ -38,7 +38,7 @@ h1 {
     transition-duration: 0.1s;
 }
 
-.button-group {
+.grupoBotones {
     display: flex;
     width: 300px;
     margin: 15px 0;
@@ -69,7 +69,7 @@ h1 {
     background-color: blue;    
 }
 
-.contenedorBotones button:nth-child(2), .contenedorBotones .button-group button:first-child {
+.contenedorBotones button:nth-child(2), .contenedorBotones .grupoBotones button:first-child {
     background-color: green;
 }
 

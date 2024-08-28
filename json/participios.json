@@ -2,6 +2,7 @@
     "titulo": "Participios",
     "instrucciones": "Selecciona la pronunciación correcta para el morfema de participio -ed",
     "numRespuestas": 3,
+    "mismasOpciones": [ "/t/", "/d/", "/ɪd/" ],
     "preguntas": [
         {
             "pregunta": "Hoped",

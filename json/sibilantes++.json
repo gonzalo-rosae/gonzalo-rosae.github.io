@@ -2,12 +2,13 @@
     "titulo": "Sibilantes (avanzado) 🔥",
     "instrucciones": "Selecciona la consonante que encabeza la última sílaba de la palabra",
     "numRespuestas": 3,
+    "mismasOpciones": [ "/ʃ/", "/ʒ/", "/ʧ/" ],
     "preguntas": [
         {
             "pregunta": "Mansion",
             "opciones": [
                 "/ʃ/",
-                "/s/",
+                "/ʧ/",
                 "/ʒ/"
             ]
         },
@@ -15,7 +16,7 @@
             "pregunta": "Fusion",
             "opciones": [
                 "/ʒ/",
-                "/s/",
+                "/ʧ/",
                 "/ʃ/"
             ]
         },
@@ -24,7 +25,7 @@
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
-                "/s/"
+                "/ʧ/"
             ]
         },
         {
@@ -32,7 +33,7 @@
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
-                "/s/"
+                "/ʧ/"
             ]
         },
         {
@@ -40,14 +41,14 @@
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
-                "/s/"
+                "/ʧ/"
             ]
         },
         {
             "pregunta": "Question",
             "opciones": [
                 "/ʧ/",
-                "/t/",
+                "/ʒ/",
                 "/ʃ/"
             ]
         },
@@ -56,14 +57,14 @@
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
-                "/s/"
+                "/ʧ/"
             ]
         },
         {
             "pregunta": "Suggestion",
             "opciones": [
                 "/ʧ/",
-                "/t/",
+                "/ʒ/",
                 "/ʃ/"
             ]
         },
@@ -72,14 +73,14 @@
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
-                "/s/"
+                "/ʧ/"
             ]
         },
         {
             "pregunta": "Leisure",
             "opciones": [
                 "/ʒ/",
-                "/s/",
+                "/ʧ/",
                 "/ʃ/"
             ]
         }

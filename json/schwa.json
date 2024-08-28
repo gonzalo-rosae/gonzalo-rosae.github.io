@@ -2,6 +2,7 @@
     "titulo": "Schwa",
     "instrucciones": "Deduce si la vocal seleccionada entre ⟨paréntesis angulares⟩ se pronuncia como schwa (/ə/) o no",
     "numRespuestas": 2,
+    "mismasOpciones": [ "sí", "no" ],
     "preguntas": [
         {
             "pregunta": "⟨a⟩gain",

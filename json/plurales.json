@@ -2,6 +2,7 @@
     "titulo": "Plurales",
     "instrucciones": "Selecciona la pronunciación correcta para el morfema plural -s",
     "numRespuestas": 3,
+    "mismasOpciones": [ "/s/", "/z/", "/ɪz/" ],
     "preguntas": [
         {
             "pregunta": "Cups",

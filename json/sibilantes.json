@@ -2,6 +2,7 @@
     "titulo": "Sibilantes",
     "instrucciones": "Selecciona la consonante que encabeza la última sílaba de la palabra",
     "numRespuestas": 3,
+    "mismasOpciones": [ "/s/", "/ʃ/", "/ʒ/" ],
     "preguntas": [
         {
             "pregunta": "Nation",

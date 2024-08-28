@@ -2,6 +2,7 @@
   "titulo": "Sonoridad consonantes",
   "instrucciones": "Selecciona si el fonema presentado es sordo o sonoro",
   "numRespuestas": 2,
+  "mismasOpciones": [ "sordo", "sonoro" ],
   "preguntas": [
     {
       "pregunta": "/p/",

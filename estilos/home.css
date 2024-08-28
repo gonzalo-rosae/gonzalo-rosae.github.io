@@ -20,13 +20,13 @@ h1 {
     font-size: 28px;
 }
 
-.button-container {
+.contenedorBotones {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-.custom-button {
+.btnSeccion {
     width: 200px;
     height: 200px;
     background-size: cover;
@@ -44,13 +44,13 @@ h1 {
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
 }
 
-.custom-button:not(.prohibido):hover {
+.btnSeccion:not(.prohibido):hover {
     outline: 5px solid blue;
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
 }
 
-.custom-button.prohibido:hover {
+.btnSeccion.prohibido:hover {
     outline: 5px solid red;
 }
 
@@ -103,7 +103,7 @@ h1 {
         flex-direction: column;
     }
 
-    .button-container {
+    .contenedorBotones {
         margin-top: 20px;
         flex-direction: column;
         align-items: center;
@@ -111,14 +111,14 @@ h1 {
         flex-grow: 1;
     }
 
-    .custom-button {
+    .btnSeccion {
         width: 180px;
         height: 180px;
     }
 }
 
 @media (max-width: 400px) {
-    .custom-button {
+    .btnSeccion {
         width: 170px;
         height: 170px;
     }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal - Principal</title>
+    <title>Portal práctica</title>
     <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/home.css">
@@ -15,11 +15,11 @@
     <img id="btnCerrarSesion" src="../imagenes/cerrar_sesion.png" alt="Cerrar sesión" onclick="window.history.back()">
     <div class="container">
         <h1 id="saludo">Hola, Usuario</h1>
-        <div class="button-container">
-            <button id="btnConsonantes" class="custom-button" onclick="goToPage('consonantes')">
+        <div class="contenedorBotones">
+            <button id="btnConsonantes" class="btnSeccion" onclick="irAPagina('consonantes')">
                 <span class="textoBtn">Consonantes</span>
             </button>
-            <button id="btnVocales" class="custom-button" onclick="goToPage('vocales')">
+            <button id="btnVocales" class="btnSeccion" onclick="irAPagina('vocales')">
                 <span class="textoBtn">Vocales</span>
             </button>
         </div>
@@ -30,7 +30,6 @@
             const identificador = sessionStorage.getItem('idUsuario');
             const nombre = sessionStorage.getItem('nombre');
             const genero = sessionStorage.getItem('genero');
-            const consonantes = sessionStorage.getItem('consonantes');
             const vocales = sessionStorage.getItem('vocales');
             const token = sessionStorage.getItem('token');
 
@@ -38,6 +37,7 @@
                 var saludo = genero.toLowerCase() === 'hombre' ? 'Bienvenido' : 'Bienvenida';
                 saludo = `${saludo}, ${nombre}`;
                 document.getElementById('saludo').textContent = saludo;
+                // ¿Vocales prohibidas?
                 const btnVocales = document.getElementById('btnVocales');
                 if (vocales < 1) {
                     btnVocales.classList.add('prohibido');
@@ -45,8 +45,9 @@
                         prohibido();
                     };
                 }
+                // Consonantes nunca prohibidas
             } else {
-                redirigirAIndex();
+                cerrarSesion();
             }
         }
     </script>

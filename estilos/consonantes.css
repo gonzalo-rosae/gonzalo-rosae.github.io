@@ -18,13 +18,13 @@ h1 {
     box-sizing: border-box;
 }
 
-.button-container {
+.contenedorBotones {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.custom-button {
+.btnSeccion {
     width: 300px;
     height: 50px;
     margin: 15px 0;
@@ -56,7 +56,7 @@ h1 {
     background-color: green;
 }
 
-.custom-button:hover, .hot-button:hover {
+.btnSeccion:hover, .hot-button:hover {
     outline: 3px solid white;
 }
 
@@ -65,23 +65,23 @@ h1 {
     padding: 5px;
 }
 
-.button-container button:nth-child(1) {
+.contenedorBotones button:nth-child(1) {
     background-color: blue;    
 }
 
-.button-container button:nth-child(2), .button-container .button-group button:first-child {
+.contenedorBotones button:nth-child(2), .contenedorBotones .button-group button:first-child {
     background-color: green;
 }
 
-.button-container button:nth-child(3) {
+.contenedorBotones button:nth-child(3) {
     background-color: rgb(196, 118, 0);
 }
 
-.button-container button:nth-child(4) {
+.contenedorBotones button:nth-child(4) {
     background-color: purple;
 }
 
-.button-container button:nth-child(5) {
+.contenedorBotones button:nth-child(5) {
     background-color: rgb(212, 24, 24);
 }
 

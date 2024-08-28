@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal - Principal</title>
+    <title>Portal práctica</title>
     <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/consonantes.css">
@@ -15,15 +15,15 @@
     <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
     <div class="container">
         <h1>Consonantes</h1>
-        <div class="button-container">
-            <button id="btnSimbolos" class="custom-button" onclick="goToPage('AFI_consonantes')"><span class="textoBtn">Repaso símbolos</span></button>
+        <div class="contenedorBotones">
+            <button id="btnSimbolos" class="btnSeccion" onclick="irAPagina('AFI_consonantes')"><span class="textoBtn">Repaso símbolos</span></button>
             <div class="button-group">
-                <button id="btnSibilantes" class="custom-button split-button" onclick="goToTest('sibilantes')"><span class="textoBtn">Test sibilantes</span></button>
-                <button id="btnSibilantesHot" class="custom-button split-button hot-button" onclick="goToTest('sibilantes++')">🔥</button>
+                <button id="btnSibilantes" class="btnSeccion split-button" onclick="realizarTest('sibilantes')"><span class="textoBtn">Test sibilantes</span></button>
+                <button id="btnSibilantesHot" class="btnSeccion split-button hot-button" onclick="realizarTest('sibilantes++')">🔥</button>
             </div>
-            <button id="btnAfricadas" class="custom-button" onclick="goToTest('africadas')"><span class="textoBtn">Test africadas</span></button>
-            <button id="btnParticipios" class="custom-button" onclick="goToTest('participios')"><span class="textoBtn">Test participios</span></button>
-            <button id="btnPlurales" class="custom-button" onclick="goToTest('plurales')"><span class="textoBtn">Test plurales</span></button>
+            <button id="btnAfricadas" class="btnSeccion" onclick="realizarTest('africadas')"><span class="textoBtn">Test africadas</span></button>
+            <button id="btnParticipios" class="btnSeccion" onclick="realizarTest('participios')"><span class="textoBtn">Test participios</span></button>
+            <button id="btnPlurales" class="btnSeccion" onclick="realizarTest('plurales')"><span class="textoBtn">Test plurales</span></button>
         </div>
     </div>
 
@@ -33,14 +33,8 @@
             const token = sessionStorage.getItem('token');
 
             if (!(identificador && tokenEsValido(token, identificador))) {
-                redirigirAIndex();
+                cerrarSesion();
             }
-        }
-
-        function redirigirAIndex() {
-            sessionStorage.removeItem('idUsuario');
-            sessionStorage.removeItem('token');
-            window.location.href = 'paginas/index.html';
         }
     </script>
 </body>

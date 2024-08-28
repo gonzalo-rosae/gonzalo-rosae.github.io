@@ -67,7 +67,7 @@
         overflow: hidden;
     }
 
-    #flechaAtras {
+    #flechaAtras, #btnCerrarSesion {
         display: none;
     }
 }

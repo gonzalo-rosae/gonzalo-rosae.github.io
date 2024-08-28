@@ -6,15 +6,15 @@ function prohibido() {
     alert("Todavía no tienes acceso a esta sección");
 }
 
-function goToPage(page) {
+function irAPagina(page) {
     window.location.href = "/paginas/" + page + ".html";
 }
 
-function goToTest(nombreTest) {
+function realizarTest(nombreTest) {
     window.location.href = "/paginas/test.html?nombre=" + encodeURIComponent(nombreTest);
 }
 
-function redirigirAIndex() {
+function cerrarSesion() {
     sessionStorage.removeItem('idUsuario');
     sessionStorage.removeItem('token');
     window.location.href = '/index.html';

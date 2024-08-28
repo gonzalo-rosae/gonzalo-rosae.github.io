@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal - Principal</title>
+    <title>Portal práctica</title>
     <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/consonantes.css">
@@ -15,12 +15,12 @@
     <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
     <div class="container">
         <h1>Vocales</h1>
-        <div class="button-container">
-            <button id="btn1" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn2" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn3" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn4" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn5" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
+        <div class="contenedorBotones">
+            <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn2" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn3" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn4" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn5" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
         </div>
     </div>
 
@@ -31,34 +31,28 @@
             const vocales = sessionStorage.getItem('vocales');
 
             if (!(identificador && tokenEsValido(token, identificador))) {
-                redirigirAIndex();
+                cerrarSesion();
             } else {
-                setupButtons(vocales);
+                cargarBotones(vocales);
             }
         }
 
-        function redirigirAIndex() {
-            sessionStorage.removeItem('idUsuario');
-            sessionStorage.removeItem('token');
-            window.location.href = 'paginas/index.html';
-        }
+        function cargarBotones(vocales) {
+            numBotonesDesbloqueados = parseInt(vocales, 10);
 
-        function setupButtons(vocales) {
-            botonesDesbloqueados = parseInt(vocales, 10);
-
-            const buttonConfigs = [
-                { id: 'btn1', text: 'Repaso símbolos', onclick: () => goToPage('AFI_vocales') },
-                { id: 'btn2', text: 'Test schwa', onclick: () => goToTest('schwa') },
-                { id: 'btn3', text: 'Test prefijos', onclick: () => goToTest('prefijos') },
+            const infoBotones = [
+                { id: 'btn1', text: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
+                { id: 'btn2', text: 'Test schwa', onclick: () => realizarTest('schwa') },
+                { id: 'btn3', text: 'Test prefijos', onclick: () => realizarTest('prefijos') },
                 { id: 'btn4', text: '??', onclick: () => prohibido() },
                 { id: 'btn5', text: '??', onclick: () => prohibido() }
             ];
 
-            for (let i = 0; i < botonesDesbloqueados; i++) {
-                if (i < buttonConfigs.length) {
-                    const btn = document.getElementById(buttonConfigs[i].id);
-                    btn.onclick = buttonConfigs[i].onclick;
-                    btn.querySelector('.textoBtn').textContent = buttonConfigs[i].text;
+            for (let i = 0; i < numBotonesDesbloqueados; i++) {
+                if (i < infoBotones.length) {
+                    const btn = document.getElementById(infoBotones[i].id);
+                    btn.onclick = infoBotones[i].onclick;
+                    btn.querySelector('.textoBtn').textContent = infoBotones[i].text;
                 }
             }
         }

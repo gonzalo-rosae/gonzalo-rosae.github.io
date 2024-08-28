@@ -16,11 +16,11 @@
     <div class="container">
         <h1>Vocales</h1>
         <div class="button-container">
-            <button id="btnSimbolos" class="custom-button" onclick="goToPage('AFI_vocales')"><span class="textoBtn">Repaso símbolos</span></button>
-            <button id="btnSchwa" class="custom-button" onclick="goToTest('schwa')"><span class="textoBtn">Test schwa</span></button>
-            <button id="" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn1" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn2" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn3" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn4" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <button id="btn5" class="custom-button" onclick="prohibido()"><span class="textoBtn">??</span></button>
         </div>
     </div>
 
@@ -28,9 +28,12 @@
         window.onload = function () {
             const identificador = sessionStorage.getItem('idUsuario');
             const token = sessionStorage.getItem('token');
+            const vocales = sessionStorage.getItem('vocales');
 
             if (!(identificador && tokenEsValido(token, identificador))) {
                 redirigirAIndex();
+            } else {
+                setupButtons(vocales);
             }
         }
 
@@ -38,6 +41,26 @@
             sessionStorage.removeItem('idUsuario');
             sessionStorage.removeItem('token');
             window.location.href = 'paginas/index.html';
+        }
+
+        function setupButtons(vocales) {
+            botonesDesbloqueados = parseInt(vocales, 10);
+
+            const buttonConfigs = [
+                { id: 'btn1', text: 'Repaso símbolos', onclick: () => goToPage('AFI_vocales') },
+                { id: 'btn2', text: 'Test schwa', onclick: () => goToTest('schwa') },
+                { id: 'btn3', text: 'Test prefijos', onclick: () => goToTest('prefijos') },
+                { id: 'btn4', text: '??', onclick: () => prohibido() },
+                { id: 'btn5', text: '??', onclick: () => prohibido() }
+            ];
+
+            for (let i = 0; i < botonesDesbloqueados; i++) {
+                if (i < buttonConfigs.length) {
+                    const btn = document.getElementById(buttonConfigs[i].id);
+                    btn.onclick = buttonConfigs[i].onclick;
+                    btn.querySelector('.textoBtn').textContent = buttonConfigs[i].text;
+                }
+            }
         }
     </script>
 </body>

@@ -2,6 +2,8 @@
     --colorFondo: rgb(20, 20, 20);
     --colorLetra: white;
     --blancoAlfa: rgba(255, 255, 255, 0.08);
+    --colorBoton: #555;
+    --colorBotonHover: #666;
 }
 
 
@@ -28,6 +30,10 @@
 }
 
 .oculto {
+    display: none !important;
+}
+
+.invisible {
     visibility: hidden !important;
 }
 
@@ -41,14 +47,19 @@
 
 #flechaAtras {
     position: absolute;
+    z-index: 100;
     top: 30px;
     left: 30px;
-    color: var(--colorFondo);
-    background-color: var(--colorLetra);
+    color: var(--colorLetra);
+    background-color: var(--colorBoton);
     border-radius: 5px;
     text-decoration: none;
     padding: 5px;
     font-size: 25px;
+}
+
+#flechaAtras:hover {
+    background-color: var(--colorBotonHover);
 }
 
 @media (max-width: 600px) {

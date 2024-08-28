@@ -1,0 +1,148 @@
+{
+    "titulo": "Prefijos",
+    "instrucciones": "Deduce si el prefijo de las siguientes palabras se pronuncia como monoptongo o como diptongo",
+    "numRespuestas": 2,
+    "preguntas": [
+        {
+            "pregunta": "⟨di⟩vision",
+            "opciones": [
+                "/dɪ/",
+                "/dɑj/"
+            ]
+        },
+        {
+            "pregunta": "⟨di⟩gest",
+            "opciones": [
+                "/dɑj/",
+                "/dɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨dis⟩count",
+            "opciones": [
+                "/dɪs/",
+                "/dɑjs/"
+            ]
+        },
+        {
+            "pregunta": "⟨di⟩verse",
+            "opciones": [
+                "/dɑj/",
+                "/dɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩polar",
+            "opciones": [
+                "/bɑj/",
+                "/bɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩lingual",
+            "opciones": [
+                "/bɑj/",
+                "/bɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩blical",
+            "opciones": [
+                "/bɪ/",
+                "/bɑj/"
+            ]
+        },
+        {
+            "pregunta": "⟨Bi⟩ble",
+            "opciones": [
+                "/bɑj/",
+                "/bɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩cycle",
+            "opciones": [
+                "/bɑj/",
+                "/bɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩as",
+            "opciones": [
+                "/bɑj/",
+                "/bɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨micro⟩scope",
+            "opciones": [
+                "/ˈmɑjkrə/",
+                "/ˈmakrəw/"
+            ]
+        },
+        {
+            "pregunta": "⟨micro⟩chip",
+            "opciones": [
+                "/ˈmɑjkrəw/",
+                "/ˈmakrəw/"
+            ]
+        },
+        {
+            "pregunta": "⟨macro⟩economics",
+            "opciones": [
+                "/ˈmakrəw/",
+                "/ˈmɑjkrəw/"
+            ]
+        },
+        {
+            "pregunta": "⟨macro⟩biotic",
+            "opciones": [
+                "/ˈmakrəw/",
+                "/ˈmɑjkrəw/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩bliography",
+            "opciones": [
+                "/bɪ/",
+                "/bɑj/"
+            ]
+        },
+        {
+            "pregunta": "⟨di⟩dactic",
+            "opciones": [
+                "/dɑj/",
+                "/dɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩directional",
+            "opciones": [
+                "/bɑj/",
+                "/bɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨dis⟩guise",
+            "opciones": [
+                "/dɪs/",
+                "/dɑjs/"
+            ]
+        },
+        {
+            "pregunta": "⟨bi⟩ology",
+            "opciones": [
+                "/bɑj/",
+                "/bɪ/"
+            ]
+        },
+        {
+            "pregunta": "⟨di⟩vorce",
+            "opciones": [
+                "/dɪ/",
+                "/dɑj/"
+            ]
+        }
+    ]
+    
+}

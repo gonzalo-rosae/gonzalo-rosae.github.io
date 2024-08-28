@@ -39,14 +39,13 @@ window.onload = function() {
     
     const botonesFiltro = document.querySelectorAll('.filtro');
     botonesFiltro.forEach(btn => {
-        console.log("exec!");
         btn.addEventListener('click', () => {
             const filtro = btn.classList[1];
             botonesVocales.forEach(vocalBtn => {
                 if (filtro == "todos" || vocalBtn.classList.contains(filtro)) {
-                    vocalBtn.classList.remove('oculto');
+                    vocalBtn.classList.remove('invisible');
                 } else {
-                    vocalBtn.classList.add('oculto');
+                    vocalBtn.classList.add('invisible');
                 }
             });
         });

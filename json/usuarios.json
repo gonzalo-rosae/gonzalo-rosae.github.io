@@ -6,7 +6,7 @@
       "programa": "Británico",
       "progreso": {
         "consonantes": "6",
-        "vocales": "0"
+        "vocales": "2"
       }
     },
     {
@@ -17,6 +17,16 @@
       "progreso": {
         "consonantes": "6",
         "vocales": "2"
+      }
+    },
+    {
+      "identificador": "pilarmp24",
+      "nombre": "Pilar",
+      "genero": "mujer",
+      "programa": "Británico",
+      "progreso": {
+        "consonantes": "1",
+        "vocales": "0"
       }
     },
     {

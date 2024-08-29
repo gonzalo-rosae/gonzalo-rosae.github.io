@@ -21,8 +21,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 90px;
+    margin-right: 90px;
 }
 
 .grupoConsonantes {
@@ -46,8 +46,8 @@ h1 {
 }
 
 .btnConsonante {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     margin: 2px;
     border: 2px solid #555;
     color: #fff;
@@ -75,8 +75,8 @@ h1 {
     cursor: pointer;
     border-radius: 8px;
     position: absolute;
-    right: 25px;
-    width: 140px;
+    right: 30px;
+    width: 160px;
 }
 
 #testSonoridad {
@@ -84,7 +84,7 @@ h1 {
 }
 
 #testPares {
-    bottom: 25px;
+    bottom: 30px;
 }
 
 button:hover {

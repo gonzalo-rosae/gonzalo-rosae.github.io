@@ -17,10 +17,10 @@
         <h1>Consonantes</h1>
         <div class="contenedorBotones">
             <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <div class="grupoBotones">
-                <button id="btn2" class="btnSeccion split-button" onclick="prohibido()"><span
+            <div class="grupoBotones grupoOculto">
+                <button id="btn2" class="btnSeccion btnPartido" onclick="prohibido()"><span
                         class="textoBtn">??</span></button>
-                <button id="btn3" class="btnSeccion split-button hot-button" onclick="prohibido()"><span
+                <button id="btn3" class="btnSeccion btnPartido btnAvanzado" onclick="prohibido()"><span
                         class="textoBtn">??</span></button>
             </div>
             <button id="btn4" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
@@ -44,36 +44,41 @@
 
         function cargarBotones(consonantes) {
             numBotonesDesbloqueados = parseInt(consonantes, 10);
-
             const infoBotones = [
                 {
                     id: 'btn1',
                     texto: 'Repaso símbolos',
+                    nivel: 'Básico',
                     onclick: () => irAPagina('AFI_consonantes'),
                 },
                 {
                     id: 'btn2',
                     texto: 'Test sibilantes',
+                    nivel: 'Básico',
                     onclick: () => realizarTest('sibilantes'),
                 },
                 {
                     id: 'btn3',
                     texto: '🔥',
+                    nivel: 'Avanzado',
                     onclick: () => realizarTest('sibilantes++'),
                 },
                 {
                     id: 'btn4',
                     texto: 'Test africadas',
+                    nivel: 'Básico',
                     onclick: () => realizarTest('africadas'),
                 },
                 {
                     id: 'btn5',
                     texto: 'Test participios',
+                    nivel: 'Básico',
                     onclick: () => realizarTest('participios'),
                 },
                 {
                     id: 'btn6',
                     texto: 'Test plurales',
+                    nivel: 'Básico',
                     onclick: () => realizarTest('plurales'),
                 },
             ];
@@ -81,9 +86,13 @@
 
             for (let i = 0; i < numBotonesDesbloqueados; i++) {
                 if (i < infoBotones.length) {
-                    const btn = document.getElementById(infoBotones[i].id);
-                    btn.onclick = infoBotones[i].onclick;
-                    btn.querySelector('.textoBtn').textContent = infoBotones[i].texto;
+                    const infoBtn = infoBotones[i];
+                    const btn = document.getElementById(infoBtn.id);
+                    btn.onclick = infoBtn.onclick;
+                    btn.querySelector('.textoBtn').textContent = infoBtn.texto;
+                    if (infoBtn.nivel == 'Avanzado') {
+                        btn.parentElement.classList.remove("grupoOculto");
+                    }
                 }
             }
         }

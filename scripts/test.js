@@ -96,7 +96,7 @@ function verificarRespuesta(indiceSeleccionado, indiceOpcionCorrecta) {
         }
     });
 
-    document.getElementById('botonSiguiente').classList.remove('oculto');
+    document.getElementById('btnSiguiente').classList.remove('oculto');
 }
 
 
@@ -116,12 +116,12 @@ function siguientePregunta() {
         cargarPregunta(indicePreguntaActual);
     }
 
-    document.getElementById('botonSiguiente').classList.add('oculto');
+    document.getElementById('btnSiguiente').classList.add('oculto');
 }
 
 function empezarTest() {
     document.getElementById('titulo').classList.add('oculto');
-    document.getElementById('botonEmpezar').classList.add('oculto');
+    document.getElementById('btnEmpezar').classList.add('oculto');
     document.getElementById('instrucciones').classList.add('oculto');
     document.getElementById('contenedorTest').classList.remove('oculto');
     cargarPregunta(indicePreguntaActual);
@@ -132,6 +132,7 @@ function volverEmpezarTest() {
     cantidadRespuestasCorrectas = 0;
 
     const contenedorTest = document.getElementById('contenedorTest');
+    contenedorTest.classList.remove('oculto')
     contenedorTest.innerHTML = '';
 
     const estado = document.createElement('div');
@@ -146,18 +147,42 @@ function volverEmpezarTest() {
     alternativas.id = 'alternativas';
     contenedorTest.appendChild(alternativas);
 
+    const barraExitoRellenada = document.querySelector('.barraExitoRellenada');
+    barraExitoRellenada.style.width = `0%`;
+
     cargarPreguntas().then(() => {
         cargarPregunta(indicePreguntaActual);
-        document.getElementById('botonVolverEmpezar').classList.add('oculto');
-        document.getElementById('botonSiguiente').classList.add('oculto');
+        document.getElementById('btnVolverEmpezar').classList.add('oculto');
+        document.getElementById('btnSiguiente').classList.add('oculto');
+        document.getElementById('contenedorResultado').classList.add('oculto');
     });
 }
 
 function mostrarResultados() {
-    const contenedorTest = document.getElementById('contenedorTest');
-    contenedorTest.innerHTML = `<div class="resultado">Has acertado ${cantidadRespuestasCorrectas} de ${preguntas.length} preguntas</div>`;
-    document.getElementById('botonSiguiente').classList.add('oculto');
-    document.getElementById('botonVolverEmpezar').classList.remove('oculto');
+    const porcentajeExito = cantidadRespuestasCorrectas / preguntas.length * 100;
+
+    // Configuramos la barra de éxito
+    const contenedorResultado = document.getElementById('contenedorResultado');
+    contenedorResultado.classList.remove("oculto");
+    const barraExitoRellenada = document.querySelector('.barraExitoRellenada');
+    var color;
+    if (porcentajeExito < 50) color = "red";
+    else if (porcentajeExito < 70) color = "#b3cf07";
+    else if (porcentajeExito < 90) color = "green";
+    else color = "gold";
+    barraExitoRellenada.style.backgroundColor = color;
+    setTimeout(() => {
+        barraExitoRellenada.style.width = `${porcentajeExito}%`;
+    }, 50);
+
+    // Informamos al usuario
+    const informacionResultado = document.getElementById('informacionResultado');
+    informacionResultado.innerText = `Has acertado ${cantidadRespuestasCorrectas} de ${preguntas.length} preguntas`;
+
+    // Modificamos los botones visibles
+    document.getElementById('contenedorTest').classList.add('oculto');
+    document.getElementById('btnSiguiente').classList.add('oculto');
+    document.getElementById('btnVolverEmpezar').classList.remove('oculto');
 }
 
 function actualizarEstado() {
@@ -167,21 +192,21 @@ function actualizarEstado() {
 function añadirAtajosTeclado() {
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Enter' || event.key === '0') {
-            const botonEmpezar = document.getElementById("botonEmpezar");
-            const botonSiguiente = document.getElementById("botonSiguiente");
-            const botonVolverEmpezar = document.getElementById("botonVolverEmpezar");
-            
-            if (botonEmpezar && !botonEmpezar.classList.contains('oculto')) {
-                botonEmpezar.click();
+            const btnEmpezar = document.getElementById("btnEmpezar");
+            const btnSiguiente = document.getElementById("btnSiguiente");
+            const btnVolverEmpezar = document.getElementById("btnVolverEmpezar");
+
+            if (btnEmpezar && !btnEmpezar.classList.contains('oculto')) {
+                btnEmpezar.click();
             }
-            else if (botonSiguiente && !botonSiguiente.classList.contains('oculto')) {
-                botonSiguiente.click();
+            else if (btnSiguiente && !btnSiguiente.classList.contains('oculto')) {
+                btnSiguiente.click();
             }
-            else if (botonVolverEmpezar && !botonVolverEmpezar.classList.contains('oculto')) {
-                botonVolverEmpezar.click();
+            else if (btnVolverEmpezar && !btnVolverEmpezar.classList.contains('oculto')) {
+                btnVolverEmpezar.click();
             }
         }
-        else if (event.key >= 1 && event.key <= 3) {
+        else if (event.key >= 1 && event.key <= 3 && btnVolverEmpezar.classList.contains('oculto')) {
             const alternativas = document.querySelectorAll('#alternativas .opcion');
             const indice = parseInt(event.key) - 1;
 

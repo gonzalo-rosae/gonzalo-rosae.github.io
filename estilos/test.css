@@ -50,12 +50,12 @@ body {
     background-color: #444;
 }
 
-.de2respuestas > .opcion {
+.de2respuestas>.opcion {
     width: 160px;
     height: 100px;
 }
 
-.de3respuestas > .opcion {
+.de3respuestas>.opcion {
     width: 100px;
     height: 100px;
 }
@@ -65,7 +65,8 @@ body {
     font-size: 1.2em;
     cursor: pointer;
     border-radius: 5px;
-    border: none;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     background-color: var(--colorBoton);
     color: var(--colorLetra);
     position: absolute;
@@ -89,8 +90,29 @@ body {
     padding: 5px;
 }
 
-.resultado {
+#contenedorResultado {
+    padding: 40px 40px 40px 40px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
     font-size: 1.5em;
+}
+
+#barraExito {
+    width: 350px;
+    height: 20px;
+    background-color: #d5d5d5;
+    margin-top: 25px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.barraExitoRellenada {
+    width: 0%;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1.2s;
 }
 
 #contenedorTest {
@@ -122,22 +144,23 @@ body {
     margin-bottom: 50px;
 }
 
-#botonEmpezar, #botonVolverEmpezar {
+#btnEmpezar,
+#btnVolverEmpezar {
     position: absolute;
     text-align: center;
     width: 120px;
     height: 70px;
 }
 
-#botonEmpezar {
+#btnEmpezar {
     bottom: -60px;
 }
 
-#botonSiguiente {
-    width: 74.5%;
+#btnSiguiente {
+    width: 74%;
 }
 
-#botonVolverEmpezar {
+#btnVolverEmpezar {
     bottom: -100px;
 }
 
@@ -148,23 +171,23 @@ body {
         margin-left: 5px;
         font-size: 1.5em;
     }
-    
+
     #pregunta.preguntaCorta {
         font-size: 2em;
     }
 
-    .de2respuestas > .opcion {
+    .de2respuestas>.opcion {
         font-size: 1.5em;
         width: 45%;
         height: 80px;
     }
 
-    .de3respuestas > .opcion {
+    .de3respuestas>.opcion {
         font-size: 1.5em;
         width: 28%;
         height: 70px;
     }
-    
+
     #titulo {
         width: 80%;
     }
@@ -176,17 +199,30 @@ body {
     #contenedorTest {
         width: 60%;
     }
-    
+
     #estado {
         font-size: 16px;
     }
 
-    #botonSiguiente {
+    #btnSiguiente {
         width: 68.5%;
     }
 
-    #botonEmpezar, #botonVolverEmpezar {
+    #btnEmpezar,
+    #btnVolverEmpezar {
         width: 120px;
         height: 60px;
+    }
+
+    #contenedorResultado {
+        width: 60%;
+        padding: 20px;
+        border: 2px solid white;
+        font-size: 0.95em;
+    }
+    
+    #barraExito {
+        width: 98%;
+        margin-top: 15px;
     }
 }

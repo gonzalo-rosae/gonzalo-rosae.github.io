@@ -8,6 +8,7 @@
     <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/test.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="../scripts/general.js"></script>
     <script src="../scripts/test.js"></script>
 </head>
@@ -16,15 +17,21 @@
     <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
     <div class="envoltura">
         <h1 id="titulo"></h1>
+        <div id="contenedorResultado" class="oculto">
+            <div id="informacionResultado"></div>
+            <div id="barraExito">
+                <div class="barraExitoRellenada"></div>
+            </div>
+        </div>
         <div id="instrucciones"></div>
         <div class="oculto" id="contenedorTest">
             <div id="estado"></div>
             <div id="pregunta"></div>
             <div id="alternativas"></div>
         </div>
-        <button class="boton oculto" id="botonVolverEmpezar" onclick="volverEmpezarTest()">Otra vez</button>
-        <button class="boton" id="botonEmpezar" onclick="empezarTest()">Empezar</button>
-        <button class="boton oculto" id="botonSiguiente" onclick="siguientePregunta()">Siguiente</button>
+        <button class="boton oculto" id="btnVolverEmpezar" onclick="volverEmpezarTest()">Otra vez</button>
+        <button class="boton" id="btnEmpezar" onclick="empezarTest()">Empezar</button>
+        <button class="boton oculto" id="btnSiguiente" onclick="siguientePregunta()">Siguiente</button>
     </div>
 </body>
 

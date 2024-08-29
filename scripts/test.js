@@ -155,6 +155,7 @@ function volverEmpezarTest() {
         document.getElementById('btnVolverEmpezar').classList.add('oculto');
         document.getElementById('btnSiguiente').classList.add('oculto');
         document.getElementById('contenedorResultado').classList.add('oculto');
+        document.getElementById('contenedorResultado').classList.remove("dorado");
     });
 }
 
@@ -165,11 +166,16 @@ function mostrarResultados() {
     const contenedorResultado = document.getElementById('contenedorResultado');
     contenedorResultado.classList.remove("oculto");
     const barraExitoRellenada = document.querySelector('.barraExitoRellenada');
+    var mensajeResultado = `Has acertado ${cantidadRespuestasCorrectas} de ${preguntas.length} preguntas`;
     var color;
     if (porcentajeExito < 50) color = "red";
     else if (porcentajeExito < 70) color = "#b3cf07";
-    else if (porcentajeExito < 90) color = "green";
-    else color = "gold";
+    else if (porcentajeExito < 100) color = "green";
+    else if (porcentajeExito == 100) {
+        color = "gold";
+        contenedorResultado.classList.add("dorado");
+        mensajeResultado = `¡Has acertado las ${preguntas.length} preguntas!`
+    }
     barraExitoRellenada.style.backgroundColor = color;
     setTimeout(() => {
         barraExitoRellenada.style.width = `${porcentajeExito}%`;
@@ -177,7 +183,7 @@ function mostrarResultados() {
 
     // Informamos al usuario
     const informacionResultado = document.getElementById('informacionResultado');
-    informacionResultado.innerText = `Has acertado ${cantidadRespuestasCorrectas} de ${preguntas.length} preguntas`;
+    informacionResultado.innerText = mensajeResultado;
 
     // Modificamos los botones visibles
     document.getElementById('contenedorTest').classList.add('oculto');

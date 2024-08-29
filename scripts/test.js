@@ -99,7 +99,6 @@ function verificarRespuesta(indiceSeleccionado, indiceOpcionCorrecta) {
     document.getElementById('botonSiguiente').classList.remove('oculto');
 }
 
-// ... (el resto de las funciones permanecen iguales)
 
 function mezclarArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -165,4 +164,33 @@ function actualizarEstado() {
     document.getElementById('estado').textContent = `${indicePreguntaActual + 1}/${preguntas.length}`;
 }
 
+function añadirAtajosTeclado() {
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === '0') {
+            const botonEmpezar = document.getElementById("botonEmpezar");
+            const botonSiguiente = document.getElementById("botonSiguiente");
+            const botonVolverEmpezar = document.getElementById("botonVolverEmpezar");
+            
+            if (botonEmpezar && !botonEmpezar.classList.contains('oculto')) {
+                botonEmpezar.click();
+            }
+            else if (botonSiguiente && !botonSiguiente.classList.contains('oculto')) {
+                botonSiguiente.click();
+            }
+            else if (botonVolverEmpezar && !botonVolverEmpezar.classList.contains('oculto')) {
+                botonVolverEmpezar.click();
+            }
+        }
+        else if (event.key >= 1 && event.key <= 3) {
+            const alternativas = document.querySelectorAll('#alternativas .opcion');
+            const indice = parseInt(event.key) - 1;
+
+            if (alternativas[indice]) {
+                alternativas[indice].click();
+            }
+        }
+    });
+}
+
 cargarPreguntas();
+añadirAtajosTeclado();

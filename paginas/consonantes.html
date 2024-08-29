@@ -96,6 +96,18 @@
                 }
             }
         }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key >= '1' && event.key <= '6') {
+                let buttonId = 'btn' + event.key;
+
+                let button = document.getElementById(buttonId);
+
+                if (button) {
+                    button.click();
+                }
+            }
+        });
     </script>
 </body>
 

@@ -49,6 +49,14 @@
             } else {
                 cerrarSesion();
             }
+
+            const btnConsonantes = document.getElementById("btnConsonantes");
+            const btnVocales = document.getElementById("btnVocales");
+            const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+            document.addEventListener('keydown', function (event) {
+                if (event.key === '1' || event.key == 'c') btnConsonantes.click();
+                else if (event.key === '2'  || event.key == 'v') btnVocales.click();
+            });
         }
     </script>
 </body>

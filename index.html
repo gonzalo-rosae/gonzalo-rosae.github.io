@@ -25,6 +25,7 @@
 
     <script>
         let usuarios = [];
+        let input = document.getElementById("inputID");
 
         fetch('json/usuarios.json')
             .then(respuesta => respuesta.json())
@@ -64,8 +65,9 @@
             if (event.key === 'Enter') {
                 login();
             }
-            else {
-                document.getElementById("inputID").focus();
+            else if (document.activeElement != input) {
+                input.focus();
+                if (event.key == 'Backspace') input.value = "";
             }
         });
     </script>

@@ -5,7 +5,7 @@
     "mismasOpciones": [ "/s/", "/ʃ/", "/ʒ/" ],
     "preguntas": [
         {
-            "pregunta": "Nation",
+            "pregunta": "nation",
             "opciones": [
                 "/ʃ/",
                 "/s/",
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "pregunta": "Vision",
+            "pregunta": "vision",
             "opciones": [
                 "/ʒ/",
                 "/s/",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "pregunta": "Social",
+            "pregunta": "social",
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "pregunta": "Usual",
+            "pregunta": "usual",
             "opciones": [
                 "/ʒ/",
                 "/s/",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "pregunta": "Sexual",
+            "pregunta": "sexual",
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
@@ -45,7 +45,7 @@
             ]
         },
         {
-            "pregunta": "Pleasure",
+            "pregunta": "pleasure",
             "opciones": [
                 "/ʒ/",
                 "/s/",
@@ -53,7 +53,7 @@
             ]
         },
         {
-            "pregunta": "Action",
+            "pregunta": "action",
             "opciones": [
                 "/ʃ/",
                 "/ʒ/",
@@ -61,7 +61,7 @@
             ]
         },
         {
-            "pregunta": "Conclusion",
+            "pregunta": "conclusion",
             "opciones": [
                 "/ʒ/",
                 "/ʃ/",
@@ -69,7 +69,7 @@
             ]
         },
         {
-            "pregunta": "Illusion",
+            "pregunta": "illusion",
             "opciones": [
                 "/ʒ/",
                 "/ʃ/",

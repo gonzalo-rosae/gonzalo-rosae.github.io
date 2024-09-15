@@ -24,11 +24,16 @@ h1 {
     align-items: center;
 }
 
+.filaBtn {
+    width: 100%;
+    font-size: 0;
+}
+
 .btnSeccion {
     width: 300px;
     height: 50px;
-    margin: 15px 0;
     padding: 10px;
+    margin: 10px 0;
     font-size: 18px;
     cursor: pointer;
     text-align: center;
@@ -36,64 +41,50 @@ h1 {
     color: white;
     border-radius: 5px;
     transition-duration: 0.1s;
+    vertical-align: top;
 }
 
-.grupoBotones {
-    display: flex;
-    width: 300px;
-    margin: 15px 0;
-    gap: 10px;
-}
-
-.grupoBotones.grupoOculto > button:first-child {
-    width: 100%;
-}
-
-.grupoBotones.grupoOculto > button:last-child {
-    display: none;
-}
-
-.btnPartido {
-    width: calc(80% - 5px);
-    margin: 0;
-}
-
-.btnAvanzado {
-    width: calc(20% - 5px);
-    font-size: 22px;
-    background-color: green;
-}
-
-.btnSeccion:hover, .btnAvanzado:hover {
+.btnSeccion:hover {
     outline: 3px solid white;
+}
+
+
+.btnPartido .btnSeccion:nth-child(1) {
+    width: calc(80% - 8px);
+    margin-right: 8px;
+}
+
+.btnPartido .btnSeccion:nth-child(2) {
+    width: 20%;
+    font-size: 22px;
 }
 
 .textoBtn {
     background-color: transparent;
 }
 
-.contenedorBotones button:nth-child(1) {
-    background-color: blue;    
+.contenedorBotones .filaBtn:nth-child(1) .btnSeccion {
+    background-color: blue;
 }
 
-.contenedorBotones button:nth-child(2), .contenedorBotones .grupoBotones button:first-child {
+.contenedorBotones .filaBtn:nth-child(2) .btnSeccion {
     background-color: green;
 }
 
-.contenedorBotones button:nth-child(3) {
+.contenedorBotones .filaBtn:nth-child(3) .btnSeccion {
     background-color: rgb(196, 118, 0);
 }
 
-.contenedorBotones button:nth-child(4) {
+.contenedorBotones .filaBtn:nth-child(4) .btnSeccion {
     background-color: purple;
 }
 
-.contenedorBotones button:nth-child(5) {
+.contenedorBotones .filaBtn:nth-child(5) .btnSeccion {
     background-color: rgb(212, 24, 24);
 }
 
 @media (max-width: 600px) {
-    .btnAvanzado {
+    .btnPartido .btnSeccion:nth-child(2) {
         font-size: 20px;
     }
 }

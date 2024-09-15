@@ -4,7 +4,7 @@
     "numRespuestas": 3,
     "preguntas": [
         {
-            "pregunta": "Church",
+            "pregunta": "church",
             "opciones": [
                 "/ʧ/",
                 "/ʤ/",
@@ -12,7 +12,7 @@
             ]
         },
         {
-            "pregunta": "Judge",
+            "pregunta": "judge",
             "opciones": [
                 "/ʤ/",
                 "/ʧ/",
@@ -20,7 +20,7 @@
             ]
         },
         {
-            "pregunta": "Tube",
+            "pregunta": "tube",
             "opciones": [
                 "/ʧ/",
                 "/ʤ/",
@@ -28,7 +28,7 @@
             ]
         },
         {
-            "pregunta": "Giraffe",
+            "pregunta": "giraffe",
             "opciones": [
                 "/ʤ/",
                 "/ʧ/",
@@ -36,7 +36,7 @@
             ]
         },
         {
-            "pregunta": "During",
+            "pregunta": "during",
             "opciones": [
                 "/ʤ/",
                 "/d/",
@@ -44,7 +44,7 @@
             ]
         },
         {
-            "pregunta": "Chicken",
+            "pregunta": "chicken",
             "opciones": [
                 "/ʧ/",
                 "/k/",
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "pregunta": "Genre",
+            "pregunta": "genre",
             "opciones": [
                 "/ʒ/",
                 "/g/",
@@ -60,7 +60,7 @@
             ]
         },
         {
-            "pregunta": "Joke",
+            "pregunta": "joke",
             "opciones": [
                 "/ʤ/",
                 "/j/",
@@ -68,7 +68,7 @@
             ]
         },
         {
-            "pregunta": "Ginger",
+            "pregunta": "ginger",
             "opciones": [
                 "/ʤ/",
                 "/g/",
@@ -76,7 +76,7 @@
             ]
         },
         {
-            "pregunta": "Channel",
+            "pregunta": "channel",
             "opciones": [
                 "/ʧ/",
                 "/ʃ/",

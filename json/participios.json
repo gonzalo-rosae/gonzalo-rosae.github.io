@@ -5,7 +5,7 @@
     "mismasOpciones": [ "/t/", "/d/", "/ɪd/" ],
     "preguntas": [
         {
-            "pregunta": "Hoped",
+            "pregunta": "hoped",
             "opciones": [
                 "/t/",
                 "/d/",
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "pregunta": "Sended",
+            "pregunta": "sended",
             "opciones": [
                 "/ɪd/",
                 "/t/",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "pregunta": "Joined",
+            "pregunta": "joined",
             "opciones": [
                 "/d/",
                 "/t/",
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "pregunta": "Watched",
+            "pregunta": "watched",
             "opciones": [
                 "/t/",
                 "/d/",
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "pregunta": "Bathed",
+            "pregunta": "bathed",
             "opciones": [
                 "/t/",
                 "/d/",
@@ -45,7 +45,7 @@
             ]
         },
         {
-            "pregunta": "Grabbed",
+            "pregunta": "grabbed",
             "opciones": [
                 "/d/",
                 "/t/",
@@ -53,7 +53,7 @@
             ]
         },
         {
-            "pregunta": "Loved",
+            "pregunta": "loved",
             "opciones": [
                 "/d/",
                 "/t/",
@@ -61,7 +61,7 @@
             ]
         },
         {
-            "pregunta": "Wanted",
+            "pregunta": "wanted",
             "opciones": [
                 "/ɪd/",
                 "/t/",
@@ -69,7 +69,7 @@
             ]
         },
         {
-            "pregunta": "Buzzed",
+            "pregunta": "buzzed",
             "opciones": [
                 "/d/",
                 "/t/",
@@ -77,7 +77,7 @@
             ]
         },
         {
-            "pregunta": "Liked",
+            "pregunta": "liked",
             "opciones": [
                 "/t/",
                 "/d/",
@@ -85,7 +85,7 @@
             ]
         },
         {
-            "pregunta": "Allowed",
+            "pregunta": "allowed",
             "opciones": [
                 "/d/",
                 "/t/",
@@ -93,7 +93,7 @@
             ]
         },
         {
-            "pregunta": "Needed",
+            "pregunta": "needed",
             "opciones": [
                 "/ɪd/",
                 "/d/",
@@ -101,7 +101,7 @@
             ]
         },
         {
-            "pregunta": "Bugged",
+            "pregunta": "bugged",
             "opciones": [
                 "/d/",
                 "/t/",
@@ -109,7 +109,7 @@
             ]
         },
         {
-            "pregunta": "Passed",
+            "pregunta": "passed",
             "opciones": [
                 "/t/",
                 "/d/",
@@ -117,7 +117,7 @@
             ]
         },
         {
-            "pregunta": "United",
+            "pregunta": "united",
             "opciones": [
                 "/ɪd/",
                 "/d/",

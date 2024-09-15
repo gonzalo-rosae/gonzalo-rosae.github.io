@@ -16,11 +16,22 @@
     <div class="container">
         <h1>Vocales</h1>
         <div class="contenedorBotones">
-            <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn2" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn3" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn4" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            <button id="btn5" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            <div class="filaBtn">
+                <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
+            <div class="filaBtn">
+                <button id="btn2" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
+            <div class="filaBtn">
+                <button id="btn3" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
+            <div class="filaBtn btnPartido">
+                <button id="btn4" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn5" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
+            <div class="filaBtn">
+                <button id="btn6" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
         </div>
     </div>
 
@@ -41,24 +52,25 @@
             numBotonesDesbloqueados = parseInt(vocales, 10);
 
             const infoBotones = [
-                { id: 'btn1', text: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
-                { id: 'btn2', text: 'Test schwa', onclick: () => realizarTest('schwa') },
-                { id: 'btn3', text: 'Test prefijos', onclick: () => realizarTest('prefijos') },
-                { id: 'btn4', text: '??', onclick: () => prohibido() },
-                { id: 'btn5', text: '??', onclick: () => prohibido() }
+                { id: 'btn1', texto: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
+                { id: 'btn2', texto: 'Test schwa', onclick: () => realizarTest('schwa') },
+                { id: 'btn3', texto: 'Test prefijos', onclick: () => realizarTest('prefijos') },
+                { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
+                { id: 'btn5', texto: '🔥', onclick: () => realizarTest('pronunciacionO++') },
+                { id: 'btn6', texto: '??', onclick: () => prohibido() }
             ];
 
             for (let i = 0; i < numBotonesDesbloqueados; i++) {
                 if (i < infoBotones.length) {
                     const btn = document.getElementById(infoBotones[i].id);
                     btn.onclick = infoBotones[i].onclick;
-                    btn.querySelector('.textoBtn').textContent = infoBotones[i].text;
+                    btn.querySelector('.textoBtn').textContent = infoBotones[i].texto;
                 }
             }
         }
 
         document.addEventListener('keydown', function (event) {
-            if (event.key >= '1' && event.key <= '5') {
+            if (event.key >= '1' && event.key <= '6') {
                 let buttonId = 'btn' + event.key;
 
                 let button = document.getElementById(buttonId);

@@ -1,0 +1,151 @@
+{
+    "titulo": "Pronunciación ⟨o⟩",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨o⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/ɔ/",
+        "/ʌ/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "son",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "some",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "love",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "come",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "front",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "month",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "done",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "none",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "ton",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "hot",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "job",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "lot",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "sorry",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "pocket",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "comment",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "popular",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "blog",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "positive",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "problem",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "possible",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        }
+    ]
+}

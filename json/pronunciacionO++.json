@@ -1,0 +1,151 @@
+{
+    "titulo": "Pronunciación ⟨o⟩ (avanzado) 🔥",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨o⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/ɔ/",
+        "/ʌ/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "tonge",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "monk",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "sponge",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "dove",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "other",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "L⟨o⟩ndon",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "money",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "honey",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "Monday",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "mother",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "worry",
+            "opciones": [
+                "/ʌ/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "responsible",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "college",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "hospital",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "contact",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "content",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "policy",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "Scotland",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "modern",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        },
+        {
+            "pregunta": "project",
+            "opciones": [
+                "/ɔ/",
+                "/ʌ/"
+            ]
+        }
+    ]
+}

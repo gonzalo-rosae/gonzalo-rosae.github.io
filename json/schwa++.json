@@ -1,0 +1,147 @@
+{
+    "titulo": "Schwa (avanzado) 🔥",
+    "instrucciones": "Elige el sonido correcto para las vocales entre ⟨paréntesis angulares⟩",
+    "numRespuestas": 2,
+    "preguntas": [
+        {
+            "pregunta": "g⟨o⟩rilla",
+            "opciones": [
+                "/ə/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "sil⟨e⟩nt",
+            "opciones": [
+                "/ə/",
+                "/ɛ/"
+            ]
+        },
+        {
+            "pregunta": "⟨o⟩fficial",
+            "opciones": [
+                "/ə/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "terr⟨i⟩ble",
+            "opciones": [
+                "/ə/",
+                "/ɪ/"
+            ]
+        },
+        {
+            "pregunta": "p⟨o⟩lice",
+            "opciones": [
+                "/ə/",
+                "/ɔ/"
+            ]
+        },
+        {
+            "pregunta": "alb⟨u⟩m",
+            "opciones": [
+                "/ə/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "Afric⟨a⟩",
+            "opciones": [
+                "/ə/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "popul⟨ar⟩",
+            "opciones": [
+                "/ə/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "broth⟨er⟩",
+            "opciones": [
+                "/ə/",
+                "/ɛː/"
+            ]
+        },
+        {
+            "pregunta": "col⟨our⟩",
+            "opciones": [
+                "/ə/",
+                "/əː/"
+            ]
+        },
+        {
+            "pregunta": "bec⟨o⟩me",
+            "opciones": [
+                "/ʌ/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "pl⟨a⟩tform",
+            "opciones": [
+                "/a/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "ens⟨ure⟩",
+            "opciones": [
+                "/oː/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "not⟨i⟩ce",
+            "opciones": [
+                "/ɪ/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "ev⟨e⟩nt",
+            "opciones": [
+                "/ɛ/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "capt⟨ai⟩n",
+            "opciones": [
+                "/ɪ/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "stor⟨a⟩ge",
+            "opciones": [
+                "/ɪ/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "al⟨o⟩ng",
+            "opciones": [
+                "/ɔ/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "ver⟨y⟩",
+            "opciones": [
+                "/ɪj/",
+                "/ə/"
+            ]
+        },
+        {
+            "pregunta": "unit⟨e⟩d",
+            "opciones": [
+                "/ɪ/",
+                "/ə/"
+            ]
+        }
+    ]
+}

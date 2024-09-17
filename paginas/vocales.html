@@ -19,8 +19,9 @@
             <div class="filaBtn">
                 <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
-            <div class="filaBtn">
+            <div class="filaBtn btnPartido">
                 <button id="btn2" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn6" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn">
                 <button id="btn3" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
@@ -30,7 +31,7 @@
                 <button id="btn5" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn">
-                <button id="btn6" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn7" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
         </div>
     </div>
@@ -54,10 +55,11 @@
             const infoBotones = [
                 { id: 'btn1', texto: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
                 { id: 'btn2', texto: 'Test schwa', onclick: () => realizarTest('schwa') },
+                { id: 'btn6', texto: '🔥', onclick: () => realizarTest('schwa++') },
                 { id: 'btn3', texto: 'Test prefijos', onclick: () => realizarTest('prefijos') },
                 { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
                 { id: 'btn5', texto: '🔥', onclick: () => realizarTest('pronunciacionO++') },
-                { id: 'btn6', texto: '??', onclick: () => prohibido() }
+                { id: 'btn7', texto: '??', onclick: () => prohibido() }
             ];
 
             for (let i = 0; i < numBotonesDesbloqueados; i++) {

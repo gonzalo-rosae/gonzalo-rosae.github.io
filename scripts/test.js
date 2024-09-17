@@ -170,7 +170,10 @@ function mostrarResultados() {
     var color;
     if (porcentajeExito < 50) color = "red";
     else if (porcentajeExito < 70) color = "#b3cf07";
-    else if (porcentajeExito < 100) color = "green";
+    else if (porcentajeExito < 100) {
+        color = "00bc00";
+        contenedorResultado.classList.add("verdoso");
+    }
     else if (porcentajeExito == 100) {
         color = "gold";
         contenedorResultado.classList.add("dorado");

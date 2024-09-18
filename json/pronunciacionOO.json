@@ -1,0 +1,151 @@
+{
+    "titulo": "Pronunciación ⟨oo⟩",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨oo⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/ʉw/",
+        "/ɵ/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "too",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "room",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "soon",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "moon",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "food",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "zoom",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "shoot",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "choose",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "tooth",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "zoo",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "mood",
+            "opciones": [
+                "/ʉw/",
+                "/ɵ/"
+            ]
+        },
+        {
+            "pregunta": "look",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "good",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "book",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "took",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "wood",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "cook",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "hood",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "hook",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        },
+        {
+            "pregunta": "foot",
+            "opciones": [
+                "/ɵ/",
+                "/ʉw/"
+            ]
+        }
+    ]
+}

@@ -3,128 +3,220 @@
     "instrucciones": "Deduce la palabra a partir de su transcripción",
     "preguntas": [
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈlɪtəl/",
+            "solucion": "little"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈsɪmpəl/",
+            "solucion": "simple"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈsɪstəm/",
+            "solucion": "system"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈspɛʃəl/",
+            "solucion": "special"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/əˈdrɛs/",
+            "solucion": "address"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈsɛkənd/",
+            "solucion": "second"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈtravəl/",
+            "solucion": "travel"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈnaʃ(ə)nəl/",
+            "solucion": "national"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈʧanəl/",
+            "solucion": "channel"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈɔfə/",
+            "solucion": "offer"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈmɔdən/",
+            "solucion": "modern"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/əˈkrɔs/",
+            "solucion": "across"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈwɵmən/",
+            "solucion": "woman"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈʃɵgə/",
+            "solucion": "sugar"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈwɵdənt/",
+            "solucion": "wouldn't"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈkʌlʧə/",
+            "solucion": "culture"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈʌðə/",
+            "solucion": "other"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈʌndə/",
+            "solucion": "under"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈrɪjdə/",
+            "solucion": "reader"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈlɪjgəl/",
+            "solucion": "legal"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/pəˈlɪjs/",
+            "solucion": "police"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈlɛjtəst/",
+            "solucion": "latest"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/təˈdɛj/",
+            "solucion": "today"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈpɛjpə/",
+            "solucion": "paper"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈɑjlənd/",
+            "solucion": "island"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ʤəˈlɑj/",
+            "solucion": "July"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈtɑjtəl/",
+            "solucion": "title"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/əˈvojd/",
+            "solucion": "avoid"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈtojlət/",
+            "solucion": "toilet"
         },
         {
-            "pregunta": "",
-            "solucion": ""
+            "pregunta": "/ˈpojzən/",
+            "solucion": "poison"
         },
         {
-            "pregunta": "bɔm",
-            "solucion": "bomb"
+            "pregunta": "/əˈlaw/",
+            "solucion": "allow"
+        },
+        {
+            "pregunta": "/ˈpawə/",
+            "solucion": "power"
+        },
+        {
+            "pregunta": "/ˈʃawə/",
+            "solucion": "shower"
+        },
+        {
+            "pregunta": "/ˈəwvə/",
+            "solucion": "over"
+        },
+        {
+            "pregunta": "/ˈləwkəl/",
+            "solucion": "local"
+        },
+        {
+            "pregunta": "/ˈsəwʃəl/",
+            "solucion": "social"
+        },
+        {
+            "pregunta": "/ˈgʉwgəl/",
+            "solucion": "google"
+        },
+        {
+            "pregunta": "/ˈsʉwpə/",
+            "solucion": "super"
+        },
+        {
+            "pregunta": "/ˈhjʉwmən/",
+            "solucion": "human"
+        },
+        {
+            "pregunta": "/kəˈrɪː/",
+            "solucion": "career"
+        },
+        {
+            "pregunta": "/əˈpɪː/",
+            "solucion": "appear"
+        },
+        {
+            "pregunta": "/ˈʧɪːfəl/",
+            "solucion": "cheerful"
+        },
+        {
+            "pregunta": "/kəmˈpɛː/",
+            "solucion": "compare"
+        },
+        {
+            "pregunta": "/əˈwɛː/",
+            "solucion": "aware"
+        },
+        {
+            "pregunta": "/rɪˈpɛː/",
+            "solucion": "repair"
+        },
+        {
+            "pregunta": "/ˈɑːftə/",
+            "solucion": "after"
+        },
+        {
+            "pregunta": "/ˈpɑːtnə/",
+            "solucion": "partner"
+        },
+        {
+            "pregunta": "/ˈgɑːdən/",
+            "solucion": "garden"
+        },
+        {
+            "pregunta": "/ˈoːdə/",
+            "solucion": "order"
+        },
+        {
+            "pregunta": "/ˈwoːtə/",
+            "solucion": "water"
+        },
+        {
+            "pregunta": "/ˈoːgəst/",
+            "solucion": "August"
+        },
+        {
+            "pregunta": "/ˈvəːʒən/",
+            "solucion": "version"
+        },
+        {
+            "pregunta": "/ˈpəːsən/",
+            "solucion": "person"
+        },
+        {
+            "pregunta": "/ˈpəːpəl/",
+            "solucion": "purple"
         }
     ]
 }

@@ -1,0 +1,30 @@
+#respuestaCorrecta {
+    font-size: 1.8em;
+}
+
+#inputRespuesta {
+    font-size: 1.8em;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+#inputRespuesta.correcta, #respuestaCorrecta {
+    color: greenyellow;
+}
+
+#inputRespuesta.incorrecta {
+    color: red;
+}
+
+#pregunta,
+#respuesta,#respuestaCorrecta {
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}

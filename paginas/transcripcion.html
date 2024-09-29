@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal práctica</title>
+    <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
+    <link rel="stylesheet" href="../estilos/general.css">
+    <link rel="stylesheet" href="../estilos/test.css">
+    <link rel="stylesheet" href="../estilos/transcripcion.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="../scripts/general.js"></script>
+    <script src="../scripts/transcripcion.js"></script>
+</head>
+
+<body>
+</body>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+    <div class="envoltura">
+        <h1 id="titulo"></h1>
+        <div class="cajitas">
+            <div id="pregunta"></div>
+            <div id="respuesta"><input id="inputRespuesta" type="text"></div>
+            <div id="respuestaCorrecta" class="oculto"></div>
+        </div>
+        <button class="boton" id="btnComprobar" onclick="comprobarTest()">Comprobar</button>
+    </div>
+</html>

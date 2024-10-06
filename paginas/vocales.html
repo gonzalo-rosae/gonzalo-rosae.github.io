@@ -32,6 +32,8 @@
             </div>
             <div class="filaBtn">
                 <button id="btn7" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div><div class="filaBtn">
+                <button id="btn8" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
         </div>
     </div>
@@ -41,6 +43,7 @@
             const identificador = sessionStorage.getItem('idUsuario');
             const token = sessionStorage.getItem('token');
             const vocales = sessionStorage.getItem('vocales');
+            var infoBotones;
 
             if (!(identificador && tokenEsValido(token, identificador))) {
                 cerrarSesion();
@@ -52,14 +55,15 @@
         function cargarBotones(vocales) {
             numBotonesDesbloqueados = parseInt(vocales, 10);
 
-            const infoBotones = [
+            infoBotones = [
                 { id: 'btn1', texto: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
                 { id: 'btn2', texto: 'Test schwa', onclick: () => realizarTest('schwa') },
                 { id: 'btn6', texto: '🔥', onclick: () => realizarTest('schwa++') },
                 { id: 'btn3', texto: 'Test prefijos', onclick: () => realizarTest('prefijos') },
                 { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
                 { id: 'btn5', texto: '🔥', onclick: () => realizarTest('pronunciacionO++') },
-                { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', onclick: () => realizarTest('pronunciacionOO') }
+                { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', onclick: () => realizarTest('pronunciacionOO') },
+                { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', onclick: () => realizarTest('pronunciacionA') }
             ];
 
             for (let i = 0; i < numBotonesDesbloqueados; i++) {
@@ -72,7 +76,7 @@
         }
 
         document.addEventListener('keydown', function (event) {
-            if (event.key >= '1' && event.key <= '6') {
+            if (event.key >= '1' && event.key <= infoBotones.length.toString()) {
                 let buttonId = 'btn' + event.key;
 
                 let button = document.getElementById(buttonId);

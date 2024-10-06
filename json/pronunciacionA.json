@@ -1,0 +1,152 @@
+{
+    "titulo": "Pronunciación ⟨a⟩",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨a⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/a/",
+        "/ɑː/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "and",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "that",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "travel",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "back",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "map",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "action",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "family",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "thanks",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "plan",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "crash",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+
+        {
+            "pregunta": "after",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "dance",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "last",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "part",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "can't",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "staff",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "spa",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "glass",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "bath",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "task",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        }
+    ]
+}

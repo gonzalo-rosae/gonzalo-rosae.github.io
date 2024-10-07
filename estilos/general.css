@@ -4,6 +4,7 @@
     --blancoAlfa: rgba(255, 255, 255, 0.08);
     --colorBoton: #333;
     --colorBotonHover: #444;
+    --azulTema: #0070C0;
 }
 
 
@@ -26,7 +27,7 @@
 }
 
 .sonoro {
-    color: #0070C0;
+    color: var(--azulTema);
 }
 
 .oculto {

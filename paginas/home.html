@@ -13,7 +13,7 @@
 
 <body>
     <img id="btnCerrarSesion" src="../imagenes/cerrar_sesion.png" alt="Cerrar sesión" onclick="window.history.back()">
-    <button id="btnRetoDiario" src="" alt="Reto diario" onclick="irAPagina('transcripcion')">?</button>
+    <button id="btnTranscripciones" alt="Reto diario" onclick="irAPagina('transcripcion')">✏️</button>
     <div class="container">
         <h1 id="saludo">Hola, Usuario</h1>
         <div class="contenedorBotones">
@@ -32,6 +32,7 @@
             const nombre = sessionStorage.getItem('nombre');
             const genero = sessionStorage.getItem('genero');
             const vocales = sessionStorage.getItem('vocales');
+            const cursoFinalizado = sessionStorage.getItem('cursoFinalizado');
             const token = sessionStorage.getItem('token');
 
             if (identificador && nombre && genero && tokenEsValido(token, identificador)) {
@@ -47,6 +48,9 @@
                     };
                 }
                 // Consonantes nunca prohibidas
+                if (cursoFinalizado == "no") {
+                    document.getElementById("btnTranscripciones").classList.add("oculto");
+                }
             } else {
                 cerrarSesion();
             }

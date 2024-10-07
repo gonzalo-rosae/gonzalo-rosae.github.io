@@ -6,7 +6,8 @@
       "programa": "Británico",
       "progreso": {
         "consonantes": "6",
-        "vocales": "6"
+        "vocales": "6",
+        "cursoFinalizado": "no"
       }
     },
     {
@@ -16,7 +17,8 @@
       "programa": "Británico",
       "progreso": {
         "consonantes": "6",
-        "vocales": "8"
+        "vocales": "8",
+        "cursoFinalizado": "sí"
       }
     },
     {
@@ -26,7 +28,8 @@
       "programa": "Británico",
       "progreso": {
         "consonantes": "1",
-        "vocales": "0"
+        "vocales": "0",
+        "cursoFinalizado": "no"
       }
     },
     {
@@ -36,7 +39,8 @@
       "programa": "Británico",
       "progreso": {
         "consonantes": "100",
-        "vocales": "100"
+        "vocales": "100",
+        "cursoFinalizado": "sí"
       }
     }
   ]

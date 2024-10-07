@@ -1,30 +1,125 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--colorFondo);
+    color: var(--colorLetra);
+}
+
+#titulo {
+    text-align: center;
+    font-size: 36px;
+    margin-top: -80px;
+    margin-bottom: 80px;
+}
+
+.cajitas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.grupo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#pregunta,
+#respuesta,
 #respuestaCorrecta {
     font-size: 1.8em;
+    padding: 20px;
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    flex: 1;
+}
+
+.mini-boton {
+    border: 2px solid white;
+    background: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+.mini-boton:hover {
+    background: white;
+    color: black;
 }
 
 #inputRespuesta {
-    font-size: 1.8em;
+    font-size: 1em;
     text-align: center;
     border: none;
     outline: none;
+    width: 100%;
 }
 
-#inputRespuesta.correcta, #respuestaCorrecta {
+#inputRespuesta.correcta,
+#respuestaCorrecta {
     color: greenyellow;
+}
+
+#respuestaCorrecta {
+    margin-left: 5px;
 }
 
 #inputRespuesta.incorrecta {
     color: red;
 }
 
-#pregunta,
-#respuesta,#respuestaCorrecta {
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-    position: relative;
+#inputRespuesta.incorrecta,
+#respuestaCorrecta:not(.oculto) {
+    width: 160px !important;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .cajitas {
+        gap: 5px;
+    }
+
+    #titulo {
+        font-size: 24px;
+        margin-top: -80px;
+        margin-bottom: 60px;
+    }
+
+    #pregunta,
+    #respuesta,
+    #respuestaCorrecta {
+        font-size: 1.2em;
+        padding: 10px;
+        height: auto;
+        max-width: 260px;
+    }
+
+    .grupo {
+        gap: 10px;
+        margin-bottom: 5px;
+    }
+
+    .mini-boton {
+        margin-left: 0;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    #inputRespuesta.incorrecta,
+    #respuestaCorrecta:not(.oculto) {
+        width: 90px !important;
+    }
 }

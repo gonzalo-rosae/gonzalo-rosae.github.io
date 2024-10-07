@@ -68,21 +68,20 @@ h1 {
     background-color: rgb(255, 70, 70);
 }
 
-#btnRetoDiario {
-    display: none;
+#btnTranscripciones {
     position: absolute;
+    border: none;
     top: 30px;
     right: 30px;
-    width: 35px;
-    height: 35px;
-    color: black;
+    width: 45px;
+    height: 45px;
     background-color: rgb(255, 255, 255);
+    font-size: 1.4em;
     border-radius: 5px;
-    padding: 10px;
 }
-#btnRetoDiario:hover {
+#btnTranscripciones:hover {
     cursor: pointer;
-    background-color: rgb(255, 70, 70);
+    background-color: var(--azulTema);
 }
 
 
@@ -131,6 +130,11 @@ h1 {
     .btnSeccion {
         width: 180px;
         height: 180px;
+    }
+
+    #btnTranscripciones {
+        top: auto;
+        bottom: 0px;
     }
 }
 

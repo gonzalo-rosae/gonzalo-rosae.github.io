@@ -1,5 +1,6 @@
 var preguntas, datosPregunta;
 var inputRespuesta, respuestaCorrecta, btnComprobar, btnNuevaPalabra;
+var ultimoIndice, indicesAleatorios;
 
 async function cargarPreguntas() {
     try {
@@ -21,7 +22,13 @@ async function cargarPreguntas() {
         btnComprobar = document.getElementById("btnComprobar");
         btnNuevaPalabra = document.getElementById("btnNuevaPalabra");
         preguntas = datos.preguntas || [];
-        //mezclarArray(preguntas);
+
+        ultimoIndice = parseInt(localStorage.getItem('ultimoIndice') || '0');
+        indicesAleatorios = JSON.parse(localStorage.getItem('indicesAleatorios'));
+        if (!indicesAleatorios || ultimoIndice === 0) {
+            indicesAleatorios = Array.from({ length: preguntas.length }, (_, i) => i).sort(() => Math.random() - 0.5);
+            localStorage.setItem('indicesAleatorios', JSON.stringify(indicesAleatorios));
+        }
         cargarNuevaPregunta();
 
     } catch (error) {
@@ -30,23 +37,31 @@ async function cargarPreguntas() {
 }
 
 function cargarNuevaPregunta() {
-    var ultimoIndice = parseInt(localStorage.getItem('ultimoIndice') || '0');
-    datosPregunta = preguntas[ultimoIndice++];
+    // Seleccionar la pregunta correspondiente al índice aleatorio actual
+    datosPregunta = preguntas[indicesAleatorios[ultimoIndice++]];
+
+    // Verificar si se han recorrido todas las preguntas
     if (ultimoIndice >= preguntas.length) ultimoIndice = 0;
+
+    // Guardar el índice actualizado en `localStorage`
     localStorage.setItem('ultimoIndice', ultimoIndice);
 
+    // Actualizar la pregunta en el DOM
     const elementoPregunta = document.querySelector('#pregunta');
     elementoPregunta.textContent = datosPregunta.pregunta;
-    
+
+    // Resetear el campo de entrada de la respuesta
     const elementoInputRespuesta = document.querySelector('#inputRespuesta');
-    inputRespuesta.disabled = false;
+    elementoInputRespuesta.disabled = false;
     elementoInputRespuesta.value = "";
     elementoInputRespuesta.classList.remove("correcta");
     elementoInputRespuesta.classList.remove("incorrecta");
 
+    // Ajustar la visibilidad de otros elementos según el estado
     btnComprobar.classList.remove("invisible");
     respuestaCorrecta.classList.add("oculto");
 }
+
 
 function añadirAtajosTeclado() {
     document.addEventListener('keydown', function (event) {

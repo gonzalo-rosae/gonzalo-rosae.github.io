@@ -32,10 +32,11 @@
             </div>
             <div class="filaBtn">
                 <button id="btn7" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-            </div><div class="filaBtn">
-                <button id="btn8" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
-        </div>
+            <div class="filaBtn btnPartido">
+                <button id="btn8" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn9" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
     </div>
 
     <script>
@@ -63,7 +64,8 @@
                 { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
                 { id: 'btn5', texto: '🔥', onclick: () => realizarTest('pronunciacionO++') },
                 { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', onclick: () => realizarTest('pronunciacionOO') },
-                { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', onclick: () => realizarTest('pronunciacionA') }
+                { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', onclick: () => realizarTest('pronunciacionA') },
+                { id: 'btn9', texto: '🔥', onclick: () => realizarTest('pronunciacionA++') }
             ];
 
             for (let i = 0; i < numBotonesDesbloqueados; i++) {

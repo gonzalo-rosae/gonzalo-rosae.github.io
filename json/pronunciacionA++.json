@@ -1,0 +1,152 @@
+{
+    "titulo": "Pronunciación ⟨a⟩",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨a⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/a/",
+        "/ɑː/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "have",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "relax",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "map",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "tags",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "add",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "black",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "land",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "bank",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "stand",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+        {
+            "pregunta": "brand",
+            "opciones": [
+                "/a/",
+                "/ɑː/"
+            ]
+        },
+
+        {
+            "pregunta": "bra",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "chance",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "fast",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "mark",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "plant",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "graph",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "father",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "pass",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "branch",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        },
+        {
+            "pregunta": "ask",
+            "opciones": [
+                "/ɑː/",
+                "/a/"
+            ]
+        }
+    ]
+}

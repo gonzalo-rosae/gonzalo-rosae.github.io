@@ -85,6 +85,23 @@ h1 {
 }
 
 
+#btnCertificado {
+    position: absolute;
+    border: none;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(255, 255, 255);
+    font-size: 1.4em;
+    border-radius: 5px;
+}
+#btnCertificado:hover {
+    cursor: pointer;
+    background-color: var(--azulTema);
+}
+
+
 #btnConsonantes {
     background-image: url('../imagenes/consonantes.png');
 }

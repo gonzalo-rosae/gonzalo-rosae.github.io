@@ -43,11 +43,14 @@
                 const token = generarToken(identificador);
                 sessionStorage.setItem('idUsuario', usuario.identificador);
                 sessionStorage.setItem('nombre', usuario.nombre);
+                sessionStorage.setItem('apellidos', usuario.apellidos);
                 sessionStorage.setItem('genero', usuario.genero);
                 sessionStorage.setItem('consonantes', usuario.progreso.consonantes);
                 sessionStorage.setItem('vocales', usuario.progreso.vocales);
+                sessionStorage.setItem('cursoFinalizado', usuario.progreso.cursoFinalizado);
                 sessionStorage.setItem('token', token);
                 window.location.href = 'paginas/home.html';
+                console.log("apellidos: " + sessionStorage.getItem("apellidos"));
             } else {
                 alert('Identificador no válido. Por favor, inténtalo de nuevo.');
                 inputIdentificador.value = '';

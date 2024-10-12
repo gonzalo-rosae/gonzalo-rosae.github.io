@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="../estilos/general.css">
     <link rel="stylesheet" href="../estilos/home.css">
     <script src="../scripts/general.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
 </head>
 
 <body>
     <img id="btnCerrarSesion" src="../imagenes/cerrar_sesion.png" alt="Cerrar sesión" onclick="window.history.back()">
-    <button id="btnTranscripciones" alt="Reto diario" onclick="irAPagina('transcripcion')">✏️</button>
+    <button id="btnTranscripciones" class="oculto" alt="Ejercicios transcripción"
+        onclick="irAPagina('transcripcion')">✏️</button>
     <div class="container">
         <h1 id="saludo">Hola, Usuario</h1>
         <div class="contenedorBotones">
@@ -25,15 +27,18 @@
             </button>
         </div>
     </div>
+    <button id="btnCertificado" class="oculto" alt="Certificado finalización"
+        onclick="descargarCertificado()">🏅</button>
 
     <script>
+        var identificador, nombre, genero, vocales, cursoFinalizado, token;
         window.onload = function () {
-            const identificador = sessionStorage.getItem('idUsuario');
-            const nombre = sessionStorage.getItem('nombre');
-            const genero = sessionStorage.getItem('genero');
-            const vocales = sessionStorage.getItem('vocales');
-            const cursoFinalizado = sessionStorage.getItem('cursoFinalizado');
-            const token = sessionStorage.getItem('token');
+            identificador = sessionStorage.getItem('idUsuario');
+            nombre = sessionStorage.getItem('nombre');
+            genero = sessionStorage.getItem('genero');
+            vocales = sessionStorage.getItem('vocales');
+            cursoFinalizado = sessionStorage.getItem('cursoFinalizado');
+            token = sessionStorage.getItem('token');
 
             if (identificador && nombre && genero && tokenEsValido(token, identificador)) {
                 var saludo = genero.toLowerCase() === 'hombre' ? 'Bienvenido' : 'Bienvenida';
@@ -48,8 +53,9 @@
                     };
                 }
                 // Consonantes nunca prohibidas
-                if (cursoFinalizado == "no") {
-                    document.getElementById("btnTranscripciones").classList.add("oculto");
+                if (cursoFinalizado != "no") {
+                    document.getElementById("btnTranscripciones").classList.remove("oculto");
+                    document.getElementById("btnCertificado").classList.remove("oculto");
                 }
             } else {
                 cerrarSesion();
@@ -60,9 +66,76 @@
             const btnCerrarSesion = document.getElementById("btnCerrarSesion");
             document.addEventListener('keydown', function (event) {
                 if (event.key === '1' || event.key == 'c') btnConsonantes.click();
-                else if (event.key === '2'  || event.key == 'v') btnVocales.click();
+                else if (event.key === '2' || event.key == 'v') btnVocales.click();
             });
         }
+
+        const { jsPDF } = window.jspdf;
+
+        function descargarCertificado() {
+            if (!confirm("¿Quieres descargar tu certificado de finalización?")) return;
+
+            // Crear el documento en formato A4 horizontal
+            const doc = new jsPDF({
+                orientation: 'landscape',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            // Tamaño de la página A4 horizontal
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const pageHeight = doc.internal.pageSize.getHeight();
+            const colorBlanco = [255, 255, 255];
+            const colorNegro = [220, 220, 220];
+
+            // 1. Establecer el fondo en color #0070C0
+            doc.setFillColor("#0070C0");
+            doc.rect(0, 0, pageWidth, pageHeight, 'F'); // 'F' para llenar la forma con el color
+
+            // 2. Agregar un borde blanco
+            doc.setDrawColor(...colorBlanco); // Color blanco
+            doc.setLineWidth(3); // Grosor del borde
+            doc.rect(10, 10, pageWidth - 20, pageHeight - 20); // Margen de 10mm
+
+            // 3. Agregar el logotipo
+           
+
+            // 4. Título principal del certificado en letras blancas
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(30);
+            doc.setTextColor(...colorBlanco);
+            doc.text("Certificado de Finalización", pageWidth / 2, 50, { align: "center" });
+
+            // 5. Nombre del alumno
+            doc.setFontSize(22);    
+            var tratamiento = sessionStorage.getItem("genero") == "hombre" ? "don" : "doña";
+            doc.setTextColor(...colorNegro);
+            doc.text(`Este certificado se otorga a ${tratamiento}:`, pageWidth / 2, 90, { align: "center" });
+            doc.setFontSize(30);
+            var nombreAlumno = sessionStorage.getItem("nombre") + " " + sessionStorage.getItem("apellidos");
+            doc.setTextColor(...colorBlanco);
+            doc.text(`${nombreAlumno}`, pageWidth / 2, 105, { align: "center" });
+
+            // 6. Descripción del logro
+            doc.setFontSize(18);
+            doc.setTextColor(...colorNegro);
+            doc.text(
+                "Por haber completado satisfactoriamente el curso «Domina el acento británico»",
+                pageWidth / 2,
+                125,
+                { align: "center" }
+            );
+
+            // 7. Fecha
+            doc.setTextColor(...colorBlanco);
+            doc.text(`Fecha: ${cursoFinalizado}`, pageWidth / 2, 175, { align: "center" });
+
+            // 8. Agregar la firma (como una imagen)
+
+            // 9. Guardar el PDF
+            doc.save(`certificado-finalización.pdf`);
+        }
+
     </script>
 </body>
 

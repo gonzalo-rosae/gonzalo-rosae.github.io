@@ -1,0 +1,31 @@
+{
+    "titulo": "Textos de práctica",
+    "instrucciones": "Utiliza estos textos para practicar cada uno de los fonemas",
+    "textos": [
+        {
+            "nombre": "v",
+            "contenido": "Victor and Vanessa went to the valley, where vibrant vines climbed the fence. They marveled at the view, with vivid green leaves glowing in the sunlight, and admired the variety of vines growing in every way.",
+            "marcas": []
+        },
+        {
+            "nombre": "z",
+            "contenido": "Sara zipped her coat and settled by the stream, feeling the breeze. As she took a sip from her drink, a buzzing sound broke the silence.",
+            "marcas": []
+        },
+        {
+            "nombre": "zh",
+            "contenido": "The Confucian philosophy emphasizes balance and harmony in life, but the confusion around the concept often leads to errors. Yet, some find these Asian teachings clear.",
+            "marcas": []
+        },
+        {
+            "nombre": "j",
+            "contenido": "The professor just told us to choose our projects carefully. She will judge me and Jimmy’s.",
+            "marcas": []
+        },
+        {
+            "nombre": "In a fine garden",
+            "contenido": "In a fine garden, you might find vines that twist and grow. If you sit by the vine, you could sip your tea and listen to the Confucian teachings while enjoying a joke. Sometimes, people might confuse the meaning of words, which can be quite a puzzle. You might wonder if they loathe the challenge or simply enjoy it. On a cold day, a warm drink could make it easier to understand the subtle differences between sounds like fine and vine, or choke and joke.",
+            "marcas": []
+        }
+    ]
+}

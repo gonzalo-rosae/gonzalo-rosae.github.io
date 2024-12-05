@@ -59,6 +59,22 @@ h1 {
     font-size: 22px;
 }
 
+#btnTextos {
+    position: absolute;
+    border: none;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(121, 121, 121);
+    font-size: 1.4em;
+    border-radius: 5px;
+}
+#btnTextos:hover {
+    cursor: pointer;
+    background-color: var(--azulTema);
+}
+
 .textoBtn {
     background-color: transparent;
 }

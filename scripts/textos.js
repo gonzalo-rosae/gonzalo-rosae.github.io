@@ -1,6 +1,7 @@
 var textos;
 var inputRespuesta, respuestaCorrecta;
 var indiceActual;
+var nombreAudioActual;
 var btnReanudarAudio, btnAnterior, btnPosterior;
 
 async function cargarTextos() {
@@ -52,13 +53,17 @@ function cargarNuevoTexto(sentido) {
     // Actualizar el texto en el DOM
     const elementoNombreTexto = document.querySelector('#nombre');
     const elementoContenidoTexto = document.querySelector('#contenido');
-    elementoNombreTexto.textContent = textoActual.nombre;
+    elementoNombreTexto.textContent = textoActual.titulo;
     const contenidoConMarcas = textoActual.contenido.split('').map((char, index) => {
         if (textoActual.marcas.includes(index)) {
             return `<span style="color: orange;">${char}</span>`;
         }
         return char;
     }).join('');
+
+    // Creamos el nombre del audio actual
+    var nombre = "texto_" + textoActual.nombreAudio.toLowerCase().replace(/\s+/g, "_");
+    nombreAudioActual = `../audios/textos/${nombre}.mp3`;
     
     // Insertar el contenido con marcas como HTML
     elementoContenidoTexto.innerHTML = contenidoConMarcas;
@@ -69,11 +74,6 @@ function cargarNuevoTexto(sentido) {
 let audioActual = null;
 
 function reanudarAudio() {
-    var nombre = "texto_" + document.querySelector("#nombre").textContent
-        .toLowerCase()
-        .replace(/\s+/g, "_");
-    const nombreAudio = `../audios/textos/${nombre}.mp3`;
-
     // Si ya hay un audio reproduciéndose
     if (audioActual && !audioActual.paused) {
         audioActual.pause(); // Pausa el audio
@@ -83,7 +83,7 @@ function reanudarAudio() {
 
     // Si no hay audio o está en pausa, crea/reanuda
     if (!audioActual) {
-        audioActual = new Audio(nombreAudio);
+        audioActual = new Audio(nombreAudioActual);
 
         audioActual.addEventListener("error", () => {
             alert("No se ha encontrado el audio " + nombre + ".mp3");

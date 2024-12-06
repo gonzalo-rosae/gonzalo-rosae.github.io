@@ -55,7 +55,7 @@ function cargarNuevoTexto(sentido) {
     elementoNombreTexto.textContent = textoActual.nombre;
     const contenidoConMarcas = textoActual.contenido.split('').map((char, index) => {
         if (textoActual.marcas.includes(index)) {
-            return `<span style="color: red;">${char}</span>`;
+            return `<span style="color: orange;">${char}</span>`;
         }
         return char;
     }).join('');

@@ -20,10 +20,8 @@
                 <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn btnPartido">
-                <button id="btn2" class="btnSeccion" onclick="prohibido()"><span
-                        class="textoBtn">??</span></button>
-                <button id="btn3" class="btnSeccion" onclick="prohibido()"><span
-                        class="textoBtn">??</span></button>
+                <button id="btn2" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn3" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn">
                 <button id="btn4" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
@@ -36,24 +34,24 @@
             </div>
         </div>
     </div>
-    <button id="btnTextos" class="" alt="Textos práctica"
-    onclick="irAPagina('textos')">🗒️</button>
+    <button id="btnTextos" class="" alt="Textos práctica" onclick="irAPagina('textos')">🗒️</button>
 
     <script>
         window.onload = function () {
             const identificador = sessionStorage.getItem('idUsuario');
             const token = sessionStorage.getItem('token');
             const consonantes = sessionStorage.getItem('consonantes');
+            const consonantesExtra = sessionStorage.getItem('consonantesExtra');
 
             if (!(identificador && tokenEsValido(token, identificador))) {
                 cerrarSesion();
             } else {
-                cargarBotones(consonantes);
+                cargarBotones(consonantes, consonantesExtra);
             }
         }
 
-        function cargarBotones(consonantes) {
-            numBotonesDesbloqueados = parseInt(consonantes, 10);
+        function cargarBotones(consonantes, consonantesExtra) {
+            var numBotonesDesbloqueados = parseInt(consonantes, 10);
             const infoBotones = [
                 {
                     id: 'btn1',
@@ -93,7 +91,6 @@
                 },
             ];
 
-
             for (let i = 0; i < numBotonesDesbloqueados; i++) {
                 if (i < infoBotones.length) {
                     const infoBtn = infoBotones[i];
@@ -103,6 +100,17 @@
                     if (infoBtn.nivel == 'Avanzado') {
                         btn.parentElement.classList.remove("grupoOculto");
                     }
+                }
+            }
+
+            var indiceExtra = parseInt(consonantesExtra, 10);
+            if (indiceExtra != -1) {
+                var infoBtn = infoBotones[indiceExtra];
+                var btn = document.getElementById(infoBtn.id);
+                btn.onclick = infoBtn.onclick;
+                btn.querySelector('.textoBtn').textContent = infoBtn.texto;
+                if (infoBtn.nivel == 'Avanzado') {
+                    btn.parentElement.classList.remove("grupoOculto");
                 }
             }
         }

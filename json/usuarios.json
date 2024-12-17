@@ -7,7 +7,9 @@
     "programa": "Británico",
     "progreso": {
       "consonantes": "1",
+      "consonantesExtra": "4",
       "vocales": "0",
+      "vocalesExtra": "-1",      
       "cursoFinalizado": "no"
     }
   },
@@ -19,7 +21,9 @@
     "programa": "Británico",
     "progreso": {
       "consonantes": "6",
+      "consonantesExtra": "-1",
       "vocales": "6",
+      "vocalesExtra": "-1",      
       "cursoFinalizado": "no"
     }
   },
@@ -31,7 +35,9 @@
     "programa": "Británico",
     "progreso": {
       "consonantes": "6",
+      "consonantesExtra": "-1",
       "vocales": "8",
+      "vocalesExtra": "-1",      
       "cursoFinalizado": "07/10/2024"
     }
   },
@@ -43,7 +49,9 @@
     "programa": "Británico",
     "progreso": {
       "consonantes": "1",
+      "consonantesExtra": "-1",
       "vocales": "0",
+      "vocalesExtra": "-1",      
       "cursoFinalizado": "no"
     }
   },
@@ -55,7 +63,9 @@
     "programa": "Británico",
     "progreso": {
       "consonantes": "100",
+      "consonantesExtra": "-1",
       "vocales": "100",
+      "vocalesExtra": "-1",      
       "cursoFinalizado": "01/01/2000"
     }
   }

@@ -37,59 +37,67 @@
                 <button id="btn8" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
                 <button id="btn9" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
-    </div>
+        </div>
 
-    <script>
-        window.onload = function () {
-            const identificador = sessionStorage.getItem('idUsuario');
-            const token = sessionStorage.getItem('token');
-            const vocales = sessionStorage.getItem('vocales');
-            var infoBotones;
+        <script>
+            window.onload = function () {
+                const identificador = sessionStorage.getItem('idUsuario');
+                const token = sessionStorage.getItem('token');
+                const vocales = sessionStorage.getItem('vocales');
+                const vocalesExtra = sessionStorage.getItem('vocalesExtra');
+                var infoBotones;
 
-            if (!(identificador && tokenEsValido(token, identificador))) {
-                cerrarSesion();
-            } else {
-                cargarBotones(vocales);
-            }
-        }
-
-        function cargarBotones(vocales) {
-            numBotonesDesbloqueados = parseInt(vocales, 10);
-
-            infoBotones = [
-                { id: 'btn1', texto: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
-                { id: 'btn2', texto: 'Test schwa', onclick: () => realizarTest('schwa') },
-                { id: 'btn6', texto: '🔥', onclick: () => realizarTest('schwa++') },
-                { id: 'btn3', texto: 'Test prefijos', onclick: () => realizarTest('prefijos') },
-                { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
-                { id: 'btn5', texto: '🔥', onclick: () => realizarTest('pronunciacionO++') },
-                { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', onclick: () => realizarTest('pronunciacionOO') },
-                { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', onclick: () => realizarTest('pronunciacionA') },
-                { id: 'btn9', texto: '🔥', onclick: () => realizarTest('pronunciacionA++') }
-            ];
-
-            for (let i = 0; i < numBotonesDesbloqueados; i++) {
-                if (i < infoBotones.length) {
-                    const btn = document.getElementById(infoBotones[i].id);
-                    btn.onclick = infoBotones[i].onclick;
-                    btn.querySelector('.textoBtn').textContent = infoBotones[i].texto;
+                if (!(identificador && tokenEsValido(token, identificador))) {
+                    cerrarSesion();
+                } else {
+                    cargarBotones(vocales, vocalesExtra);
                 }
             }
-        }
 
-        document.addEventListener('keydown', function (event) {
-            if (event.key >= '1' && event.key <= infoBotones.length.toString()) {
-                let buttonId = 'btn' + event.key;
+            function cargarBotones(vocales, vocalesExtra) {
+                var numBotonesDesbloqueados = parseInt(vocales, 10);
 
-                let button = document.getElementById(buttonId);
+                infoBotones = [
+                    { id: 'btn1', texto: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
+                    { id: 'btn2', texto: 'Test schwa', onclick: () => realizarTest('schwa') },
+                    { id: 'btn6', texto: '🔥', onclick: () => realizarTest('schwa++') },
+                    { id: 'btn3', texto: 'Test prefijos', onclick: () => realizarTest('prefijos') },
+                    { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
+                    { id: 'btn5', texto: '🔥', onclick: () => realizarTest('pronunciacionO++') },
+                    { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', onclick: () => realizarTest('pronunciacionOO') },
+                    { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', onclick: () => realizarTest('pronunciacionA') },
+                    { id: 'btn9', texto: '🔥', onclick: () => realizarTest('pronunciacionA++') }
+                ];
 
-                if (button) {
-                    button.click();
+                for (let i = 0; i < numBotonesDesbloqueados; i++) {
+                    if (i < infoBotones.length) {
+                        const btn = document.getElementById(infoBotones[i].id);
+                        btn.onclick = infoBotones[i].onclick;
+                        btn.querySelector('.textoBtn').textContent = infoBotones[i].texto;
+                    }
+                }
+
+                var indiceExtra = parseInt(vocalesExtra, 10);
+                if (indiceExtra != -1) {
+                    const btn = document.getElementById(infoBotones[indiceExtra].id);
+                    btn.onclick = infoBotones[indiceExtra].onclick;
+                    btn.querySelector('.textoBtn').textContent = infoBotones[indiceExtra].texto;
                 }
             }
-        });
 
-    </script>
+            document.addEventListener('keydown', function (event) {
+                if (event.key >= '1' && event.key <= infoBotones.length.toString()) {
+                    let buttonId = 'btn' + event.key;
+
+                    let button = document.getElementById(buttonId);
+
+                    if (button) {
+                        button.click();
+                    }
+                }
+            });
+
+        </script>
 </body>
 
 </html>

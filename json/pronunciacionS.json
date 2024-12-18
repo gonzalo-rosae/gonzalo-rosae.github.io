@@ -1,0 +1,151 @@
+{
+    "titulo": "Pronunciación ⟨s⟩",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨s⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/s/",
+        "/z/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "this",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "is",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "was",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "does",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "has",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "as",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "us",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "his",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "these",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "those",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "set",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "small",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "reset",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "see",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "some",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "slim",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "previous",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "delicious",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "virus",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "status",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        }
+    ]
+}

@@ -32,6 +32,10 @@
             <div class="filaBtn">
                 <button id="btn6" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
+            <div class="filaBtn btnPartido">
+                <button id="btn7" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn8" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
         </div>
     </div>
     <button id="btnTextos" class="" alt="Textos práctica" onclick="irAPagina('textos')">🗒️</button>
@@ -89,10 +93,22 @@
                     nivel: 'Básico',
                     onclick: () => realizarTest('plurales'),
                 },
+                {
+                    id: 'btn7',
+                    texto: 'Test pronunciación ⟨s⟩',
+                    nivel: 'Básico',
+                    onclick: () => realizarTest('pronunciacionS')
+                },
+                { 
+                    id: 'btn8',
+                    texto: '🔥',
+                    nivel: 'Avanzado',
+                    onclick: () => realizarTest('pronunciacionS++')
+                }
             ];
 
-            for (let i = 0; i < numBotonesDesbloqueados; i++) {
-                if (i < infoBotones.length) {
+            for (let i = 0; i < infoBotones.length; i++) {
+                if (i < numBotonesDesbloqueados) {
                     const infoBtn = infoBotones[i];
                     const btn = document.getElementById(infoBtn.id);
                     btn.onclick = infoBtn.onclick;
@@ -116,7 +132,7 @@
         }
 
         document.addEventListener('keydown', function (event) {
-            if (event.key >= '1' && event.key <= '6') {
+            if (event.key >= '1' && event.key <= '8') {
                 let buttonId = 'btn' + event.key;
 
                 let button = document.getElementById(buttonId);

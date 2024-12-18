@@ -1,0 +1,221 @@
+{
+    "titulo": "Pronunciación ⟨s⟩ (avanzado) 🔥",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨s⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/s/",
+        "/z/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "case",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "mouse",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "bus",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "cri⟨s⟩is",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "basic",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "abuse",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "increase",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "promise",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "paradise",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "episode",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "empha⟨s⟩is",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "philosophy",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "obesity",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "comparison",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "suppose",
+            "opciones": [
+                "/s/",
+                "/z/"
+            ]
+        },
+        {
+            "pregunta": "please",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "rise",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "cause",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "cheese",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "choose",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "rose",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "easy",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "president",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "visit",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "music",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "because",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "season",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "Chinese",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "design",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        },
+        {
+            "pregunta": "position",
+            "opciones": [
+                "/z/",
+                "/s/"
+            ]
+        }
+    ]
+}

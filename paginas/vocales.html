@@ -69,8 +69,8 @@
                     { id: 'btn9', texto: '🔥', onclick: () => realizarTest('pronunciacionA++') }
                 ];
 
-                for (let i = 0; i < numBotonesDesbloqueados; i++) {
-                    if (i < infoBotones.length) {
+                for (let i = 0; i < infoBotones.length; i++) {
+                    if (i < numBotonesDesbloqueados) {
                         const btn = document.getElementById(infoBotones[i].id);
                         btn.onclick = infoBotones[i].onclick;
                         btn.querySelector('.textoBtn').textContent = infoBotones[i].texto;

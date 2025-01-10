@@ -6,8 +6,8 @@
     "genero": "hombre",
     "programa": "Británico",
     "progreso": {
-      "consonantes": "1",
-      "consonantesExtra": "4",
+      "consonantes": "5",
+      "consonantesExtra": "-1",
       "vocales": "0",
       "vocalesExtra": "-1",      
       "cursoFinalizado": "no"

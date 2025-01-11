@@ -5,6 +5,7 @@ var nombreAudioActual;
 var btnReanudarAudio, btnAnterior, btnPosterior;
 
 async function cargarTextos() {
+
     try {
         const doc = await fetch(`../json/textos.json`);
         if (!doc.ok) {
@@ -15,13 +16,10 @@ async function cargarTextos() {
         if (datos.titulo) {
             document.getElementById("titulo").textContent = datos.titulo;
         }
-        if (datos.instrucciones) {
-            //document.getElementById('instrucciones').textContent = datos.instrucciones;
-        }
 
         btnReanudarAudio = document.getElementById("btnReanudarAudio");
         btnAnterior = document.getElementById("btnAnterior");
-        btnPosterior = document.getElementById("btnPosterior");
+        btnPosterior = document.getElementById("btnPosterior");    
 
         textos = datos.textos || [];
 
@@ -62,7 +60,16 @@ function cargarNuevoTexto(sentido) {
     }).join('');
 
     // Creamos el nombre del audio actual
-    var nombre = "texto_" + textoActual.nombreAudio.toLowerCase().replace(/\s+/g, "_");
+    var nombreCorto = textoActual.nombreAudio.toLowerCase();
+    if (nombreCorto == "") {
+        btnReanudarAudio.textContent = "🔇";
+        btnReanudarAudio.disabled = true;
+    }
+    else {
+        btnReanudarAudio.textContent = "▶️";
+        btnReanudarAudio.disabled = false;
+    }
+    var nombre = "texto_" + nombreCorto.replace(/\s+/g, "_");
     nombreAudioActual = `../audios/textos/${nombre}.mp3`;
     
     // Insertar el contenido con marcas como HTML

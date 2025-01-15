@@ -5,7 +5,9 @@
         {
             "titulo": "Fonema /v/",
             "contenido": "Victor and Vanessa went to the valley, where vibrant vines climbed the fence. They marveled at the view, with vivid green leaves glowing in the sunlight, and admired the variety of vines growing in every way.",
-            "marcas": [
+            "marcas": [],
+            "marcasSordas": [],
+            "marcasSonoras": [
                 0,
                 11,
                 31,
@@ -25,7 +27,9 @@
         {
             "titulo": "Fonema /z/",
             "contenido": "Sara zipped her coat and settled by the stream, feeling the breeze. As she took a sip from her drink, a buzzing sound broke the silence.",
-            "marcas": [
+            "marcas": [],
+            "marcasSordas": [],
+            "marcasSonoras": [
                 5,
                 64,
                 106,
@@ -36,7 +40,9 @@
         {
             "titulo": "Fonema /ʒ/",
             "contenido": "The Confucian philosophy emphasizes balance and harmony in life, but the confusion around the concept often leads to errors. Yet, some find these Asian teachings clear.",
-            "marcas": [
+            "marcas": [],
+            "marcasSordas": [],
+            "marcasSonoras": [
                 78,
                 147
             ],
@@ -45,7 +51,9 @@
         {
             "titulo": "Fonema /ʤ/",
             "contenido": "The professor just told us to choose our projects carefully. She will judge me and Jimmy’s.",
-            "marcas": [
+            "marcas": [],
+            "marcasSordas": [],
+            "marcasSonoras": [
                 14,
                 44,
                 64,
@@ -59,7 +67,9 @@
         {
             "titulo": "Fonemas sonoros inexistentes en español",
             "contenido": "In a fine garden, you might find vines that twist and grow. If you sit by the vine, you could sip your tea and listen to the Confucian teachings while enjoying a joke. Sometimes, people might confuse the meaning of words, which can be quite a puzzle. You might wonder if they loathe the challenge or simply enjoy it. On a cold day, a warm drink could make it easier to understand the subtle differences between sounds like fine and vine, or choke and joke.",
-            "marcas": [
+            "marcas": [],
+            "marcasSordas": [],
+            "marcasSonoras": [
                 33,
                 37,
                 39,
@@ -100,6 +110,8 @@
             "titulo": "Relación grafías-fonemas importantes",
             "contenido": "During a YouTube tutorial, I saw Portugal's beauty and quantum gadgets. The tutor shared Physics notes from Japan and Germany. It reminded me of a TV show with a Mauritius dish and ancient Asian species. In Brazil, I enjoyed xylophone music and a prized dessert. Munich's architecture school blends design, choir echoes, tech labs, chemistry, and engineering students.",
             "marcas": [],
+            "marcasSordas": [],
+            "marcasSonoras": [],
             "nombreAudio": "grafias fonemas importantes"
         },
         {
@@ -143,6 +155,8 @@
                 268,
                 269
             ],
+            "marcasSordas": [],
+            "marcasSonoras": [],
             "nombreAudio": "consonantes iniciales"
         },
         {
@@ -189,30 +203,139 @@
                 453,
                 454
             ],
+            "marcasSordas": [],
+            "marcasSonoras": [],
             "nombreAudio": ""
         },
         {
             "titulo": "Plurales",
             "contenido": "Cats and dogs chase butterflies in gardens near cliffs. Buses and cars pass by open windows as judges watch from their offices. Children sing songs about roses and brushes while playing games with cups and books. Months go by, and houses fill with dusty gloves and old watches. Crabs scuttle on beaches as plans for distant trips take shape. In cozy rooms, people read about famous races, their voices soft like breezes.",
             "marcas": [],
+            "marcasSordas": [
+                3,
+                30,
+                53,
+                200,
+                210,
+                218
+            ],
+            "marcasSonoras": [
+                12,
+                41,
+                60,
+                69,
+                90,
+                100,
+                125,
+                146,
+                158,
+                170,
+                190,
+                236,
+                259,
+                275,
+                282,
+                301,
+                310,
+                354,
+                386,
+                400,
+                418
+            ],
             "nombreAudio": "plurales"
         },
         {
             "titulo": "Grafía ⟨s⟩ problemática (1)",
             "contenido": "This is the book his friend recommended, but it wasn’t as interesting as he had hoped. He says it does get better, but it doesn’t start well. It isn’t clear whether it has a role in the plot or the characters, as those details weren't given. He hasn't finished it yet, but these early chapters are slower compared to those in his other novel.",
             "marcas": [],
+            "marcasSordas": [
+                3
+            ],
+            "marcasSonoras": [
+                6,
+                19,
+                50,
+                56,
+                71,
+                93,
+                101,
+                125,
+                146,
+                170,
+                207,
+                211,
+                216,
+                225,
+                247,
+                276,
+                292,
+                320,
+                328
+            ],
             "nombreAudio": "s problematica 1"
         },
         {
             "titulo": "Grafía ⟨s⟩ problemática (2)",
             "contenido": "Susan, whose presence brought a pleasant surprise, chose to raise a positive proposal during the visit to the museum, but the noise of the busy season caused a brief pause. Her advisor, wise and calm, offered praise, urging her not to lose ease in her position, while others rose to praise her design, a result of much effort and resolve.",
             "marcas": [],
+            "marcasSordas": [],
+            "marcasSonoras": [
+                2,
+                10,
+                16,
+                36,
+                47,
+                54,
+                63,
+                70,
+                82,
+                99,
+                112,
+                129,
+                141,
+                147,
+                154,
+                169,
+                181,
+                188,
+                213,
+                237,
+                242,
+                254,
+                273,
+                277,
+                287,
+                296,
+                306,
+                332
+            ],
             "nombreAudio": "s problematica 2"
         },
         {
             "titulo": "Grafías problemáticas",
             "contenido": "On a quiet isle, a handsome islander called Thomas answered his grandmother's call, while enjoying a gourmet buffet. He was having two swordfish sandwiches (which contain lots of iron) while watching a cabaret on Windsor's grand aisle. In the distance, a Monet painting hung in a chalet, a testament to the timeless ballet grace.",
-            "marcas": [],
+            "marcas": [
+                12,
+                22,
+                29,
+                45,
+                54,
+                68,
+                107,
+                114,
+                132,
+                136,
+                148,
+                180,
+                208,
+                216,
+                231,
+                259,
+                285,
+                321
+            ],
+            "marcasSordas": [],
+            "marcasSonoras": [],
             "nombreAudio": "grafias problematicas"
         }
     ]

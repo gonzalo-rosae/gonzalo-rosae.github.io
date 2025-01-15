@@ -56,6 +56,12 @@ function cargarNuevoTexto(sentido) {
         if (textoActual.marcas.includes(index)) {
             return `<span style="color: orange;">${char}</span>`;
         }
+        else if (textoActual.marcasSordas.includes(index)) {
+            return `<span style="color: #ff3a3a;">${char}</span>`;
+        }
+        else if (textoActual.marcasSonoras.includes(index)) {
+            return `<span style="color: #00c2ff;">${char}</span>`;
+        }
         return char;
     }).join('');
 

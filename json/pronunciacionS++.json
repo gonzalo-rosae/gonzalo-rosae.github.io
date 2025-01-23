@@ -43,7 +43,7 @@
             ]
         },
         {
-            "pregunta": "abuse",
+            "pregunta": "purchase",
             "opciones": [
                 "/s/",
                 "/z/"
@@ -78,7 +78,7 @@
             ]
         },
         {
-            "pregunta": "empha⟨s⟩is",
+            "pregunta": "emphasi⟨s⟩",
             "opciones": [
                 "/s/",
                 "/z/"
@@ -108,8 +108,8 @@
         {
             "pregunta": "suppose",
             "opciones": [
-                "/s/",
-                "/z/"
+                "/z/",
+                "/s/"
             ]
         },
         {
@@ -190,7 +190,7 @@
             ]
         },
         {
-            "pregunta": "season",
+            "pregunta": "sea⟨s⟩on",
             "opciones": [
                 "/z/",
                 "/s/"

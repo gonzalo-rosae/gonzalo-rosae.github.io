@@ -1,0 +1,152 @@
+{
+    "titulo": "Pronunciación ⟨x⟩",
+    "instrucciones": "Selecciona el fonema con el que se pronuncia la ⟨x⟩ en cada palabra",
+    "numRespuestas": 2,
+    "mismasOpciones": [
+        "/ks/",
+        "/gz/"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "exist",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "exact",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "exam",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "exhausting",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "example",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "exotic",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "exhibit",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "Alexander",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "executive",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "exaggerate",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+
+        {
+            "pregunta": "auxiliary",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        },
+        {
+            "pregunta": "next",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "Alexa",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "exercise",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "sexy",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "Texas",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "flexible",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "Mexico",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "execution",
+            "opciones": [
+                "/ks/",
+                "/gz/"
+            ]
+        },
+        {
+            "pregunta": "exhume",
+            "opciones": [
+                "/gz/",
+                "/ks/"
+            ]
+        }
+    ]
+}

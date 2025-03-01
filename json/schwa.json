@@ -5,14 +5,28 @@
     "mismasOpciones": [ "sí", "no" ],
     "preguntas": [
         {
-            "pregunta": "⟨a⟩gain",
+            "pregunta": "gorill⟨a⟩",
             "opciones": [
                 "sí",
                 "no"
             ]
         },
         {
-            "pregunta": "par⟨e⟩nt",
+            "pregunta": "it⟨e⟩m",
+            "opciones": [
+                "sí",
+                "no"
+            ]
+        },
+        {
+            "pregunta": "cous⟨i⟩n",
+            "opciones": [
+                "sí",
+                "no"
+            ]
+        },
+        {
+            "pregunta": "p⟨o⟩lice",
             "opciones": [
                 "sí",
                 "no"
@@ -20,20 +34,6 @@
         },
         {
             "pregunta": "s⟨u⟩pply",
-            "opciones": [
-                "sí",
-                "no"
-            ]
-        },
-        {
-            "pregunta": "penc⟨i⟩l",
-            "opciones": [
-                "sí",
-                "no"
-            ]
-        },
-        {
-            "pregunta": "⟨o⟩btain",
             "opciones": [
                 "sí",
                 "no"

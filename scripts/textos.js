@@ -7,7 +7,14 @@ var btnReanudarAudio, btnAnterior, btnPosterior;
 async function cargarTextos() {
 
     try {
-        const doc = await fetch(`../json/textos.json`);
+        let referrer = document.referrer;
+        if (referrer.includes("consonantes.html")) {
+            jsonUrl = `../json/textos_consonantes.json`;
+        } else if (referrer.includes("vocales.html")) {
+            jsonUrl = `../json/textos_vocales.json`;
+        }
+
+        const doc = await fetch(jsonUrl);
         if (!doc.ok) {
             throw new Error('Error al cargar el archivo JSON');
         }

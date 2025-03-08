@@ -3,6 +3,8 @@ var inputRespuesta, respuestaCorrecta;
 var indiceActual;
 var nombreAudioActual;
 var btnReanudarAudio, btnAnterior, btnPosterior;
+var marcasActivadas = true;
+var audioActual = null;
 
 async function cargarTextos() {
 
@@ -47,13 +49,15 @@ function cargarNuevoTexto(sentido) {
     }
     indiceActual += sentido;
 
+    // Reiniciamos el texto del botón de las marcas
+    btnMarcas.textContent = "🚀";
+
     // Verificar si se han recorrido todos los textos
     if (indiceActual < 0) indiceActual = textos.length - 1;
     if (indiceActual >= textos.length) indiceActual = 0;
 
     // Seleccionar el texto correspondiente al índice actual
     var textoActual = textos[indiceActual];
-    console.log(textoActual);
 
     // Actualizar el texto en el DOM
     const elementoNombreTexto = document.querySelector('#nombre');
@@ -61,13 +65,13 @@ function cargarNuevoTexto(sentido) {
     elementoNombreTexto.textContent = textoActual.titulo;
     const contenidoConMarcas = textoActual.contenido.split('').map((char, index) => {
         if (textoActual.marcas.includes(index)) {
-            return `<span style="color: orange;">${char}</span>`;
+            return `<span class="marca marcaNeutra">${char}</span>`;
         }
         else if (textoActual.marcasSordas.includes(index)) {
-            return `<span style="color: #ff3a3a;">${char}</span>`;
+            return `<span class="marca marcaSorda">${char}</span>`;
         }
         else if (textoActual.marcasSonoras.includes(index)) {
-            return `<span style="color: #00c2ff;">${char}</span>`;
+            return `<span class="marca marcaSonora">${char}</span>`;
         }
         return char;
     }).join('');
@@ -89,9 +93,26 @@ function cargarNuevoTexto(sentido) {
     elementoContenidoTexto.innerHTML = contenidoConMarcas;
 }
 
+function alternarMarcas() {
+    marcasActivadas = !marcasActivadas;
+    
+    let marcas = document.querySelectorAll('.marca');
+    let btnMarcas = document.getElementById('btnMarcas');
 
-// Variable global para guardar la instancia de Audio
-let audioActual = null;
+    if (marcasActivadas) {
+        // Reactivamos las marcas eliminando la clase .desactivada
+        marcas.forEach(marca => {
+            marca.classList.remove('desactivada');
+        });
+        btnMarcas.textContent = "🚀";
+    } else {
+        // Desactivamos las marcas añadiendo la clase .desactivada
+        marcas.forEach(marca => {
+            marca.classList.add('desactivada');
+        });
+        btnMarcas.textContent = "🆘";
+    }
+}
 
 function reanudarAudio() {
     // Si ya hay un audio reproduciéndose

@@ -48,6 +48,16 @@ body {
     text-align: left;
 }
 
+.marcaNeutra:not(.desactivada) {
+    color: orange;
+}
+.marcaSorda:not(.desactivada) {
+    color: red;
+}
+.marcaSonora:not(.desactivada) {
+    color: rgb(39, 179, 255);
+}
+
 .boton {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
@@ -68,10 +78,22 @@ body {
     color: black;
 }
 
-#contenedorBotones {
+#btnMarcas {
+    font-size: 2em;
     position: absolute;
-    bottom: 30px;
+    bottom: 35px;
+    right: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#contenedorBotones {
+    position: absolute;
+    bottom: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
 }

@@ -5,7 +5,7 @@
         {
             "titulo": "Schwa (pt. 1)",
             "contenido": "At eight o’clock, the official address for the Olympic event began, and the media gathered to obtain original data. In America, opinions varied, but Lily and her mother agreed that the athletes’ behaviour was spectacular. After dinner, they sat on the sofa, watching the monitor, and discussed how similar yet amazing the competitors were. After that, they looked at the calendar, to colour their next viewing session.",
-            "marcas": [],
+            "marcas": [9,22,31,47,86,87,94,101,113,119,125,128,159,160,166,167,169,201,202,203,218,219,225,226,232,233,255,276,277,303,304,310,330,331,343,344,377,378,387,388,389],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "schwa i"
@@ -13,15 +13,15 @@
         {
             "titulo": "Schwa (pt. 2)",
             "contenido": "In America, it’s amazing how popular social media has become, with people around the world sharing opinions on various platforms. The original data suggests that television remains a powerful medium, despite the rise of digital options. Education plays a crucial role, as it helps guide behaviour and develop wisdom. Doctors, teachers, and editors are all responsible for ensuring that information is available and understandable. Meanwhile, in areas like tourism and criticism, the regular appearance of controversial opinions can often lead to significant discussions about the impact of culture on society.",
-            "marcas": [],
+            "marcas": [3,9,17,34,35,40,41,48,74,99,115,116,134,140,146,169,170,186,187,189,231,232,243,244,259,260,293,294,313,321,322,331,332,344,345,363,366,394,395,402,406,409,418,419,425,428,448,488,489,491,497,515,516,519,554,565,566,570],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "schwa ii"
         },
         {
             "titulo": "Formas débiles",
-            "contenido": "I can see why you were worried about the event yesterday. Mary was supposed to help, but she has not been feeling well lately. They were happy with the arrangements, although they could've used more time to prepare. I have noticed that they knew. He could have done more, but given the circumstances, we must appreciate his efforts. Do you think we should plan another event soon? Does it seem like a good idea? I must admit, organizing these events can be quite exhausting.",
-            "marcas": [],
+            "contenido": "I can see why you were worried about the event yesterday. Mary was supposed to help, but she has not been feeling well lately. They were happy with the arrangements, although they could have used more time to prepare. I have noticed that they knew. He could have done more, but given the circumstances, we must appreciate his efforts. Do you think we should plan another event soon? Does it seem like a good idea? I must admit, organizing these events can be quite exhausting.",
+            "marcas": [3,15,16,19,20,21,64,77,86,94,133,134,135,181,182,187,207,221,235,253,254,259,275,286,307,336,339,340,353,354,384,385,401,417,453],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "formas debiles"

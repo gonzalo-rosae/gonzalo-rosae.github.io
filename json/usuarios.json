@@ -8,8 +8,10 @@
     "progreso": {
       "consonantes": "8",
       "consonantesExtra": "-1",
+      "textosConsonantes": "100",
       "vocales": "3",
-      "vocalesExtra": "-1",      
+      "vocalesExtra": "-1",
+      "textosVocales": "",     
       "cursoFinalizado": "no"
     }
   },
@@ -22,8 +24,10 @@
     "progreso": {
       "consonantes": "6",
       "consonantesExtra": "-1",
+      "textosConsonantes": "100",
       "vocales": "6",
-      "vocalesExtra": "-1",      
+      "vocalesExtra": "-1",
+      "textosVocales": "100",      
       "cursoFinalizado": "no"
     }
   },
@@ -36,23 +40,11 @@
     "progreso": {
       "consonantes": "6",
       "consonantesExtra": "-1",
+      "textosConsonantes": "100",
       "vocales": "8",
-      "vocalesExtra": "-1",      
+      "vocalesExtra": "-1",
+      "textosVocales": "100",      
       "cursoFinalizado": "07/10/2024"
-    }
-  },
-  {
-    "identificador": "pilarpm24",
-    "nombre": "Pilar",
-    "apellidos": "Palacio Moreno",
-    "genero": "mujer",
-    "programa": "Británico",
-    "progreso": {
-      "consonantes": "1",
-      "consonantesExtra": "-1",
-      "vocales": "0",
-      "vocalesExtra": "-1",      
-      "cursoFinalizado": "no"
     }
   },
   {
@@ -64,8 +56,10 @@
     "progreso": {
       "consonantes": "100",
       "consonantesExtra": "-1",
+      "textosConsonantes": "100",
       "vocales": "100",
-      "vocalesExtra": "-1",      
+      "vocalesExtra": "-1",
+      "textosVocales": "100",      
       "cursoFinalizado": "01/01/2000"
     }
   }

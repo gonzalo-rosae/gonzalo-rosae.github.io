@@ -22,7 +22,8 @@
                 181,
                 199
             ],
-            "nombreAudio": "v"
+            "nombreAudio": "v",
+            "contieneMarcas": true
         },
         {
             "titulo": "Fonema /z/",
@@ -35,7 +36,8 @@
                 106,
                 107
             ],
-            "nombreAudio": "z"
+            "nombreAudio": "z",
+            "contieneMarcas": true
         },
         {
             "titulo": "Fonema /ʒ/",
@@ -46,7 +48,8 @@
                 78,
                 147
             ],
-            "nombreAudio": "zh"
+            "nombreAudio": "zh",
+            "contieneMarcas": true
         },
         {
             "titulo": "Fonema /ʤ/",
@@ -62,7 +65,8 @@
                 73,
                 83
             ],
-            "nombreAudio": "j"
+            "nombreAudio": "j",
+            "contieneMarcas": true
         },
         {
             "titulo": "Fonemas sonoros inexistentes en español",
@@ -104,7 +108,8 @@
                 432,
                 451
             ],
-            "nombreAudio": "in a fine garden"
+            "nombreAudio": "in a fine garden",
+            "contieneMarcas": true
         },
         {
             "titulo": "Relación grafías-fonemas importantes",
@@ -112,7 +117,8 @@
             "marcas": [],
             "marcasSordas": [],
             "marcasSonoras": [],
-            "nombreAudio": "grafias fonemas importantes"
+            "nombreAudio": "grafias fonemas importantes",
+            "contieneMarcas": false
         },
         {
             "titulo": "Conjuntos de consonantes (iniciales)",
@@ -157,7 +163,8 @@
             ],
             "marcasSordas": [],
             "marcasSonoras": [],
-            "nombreAudio": "consonantes iniciales"
+            "nombreAudio": "consonantes iniciales",
+            "contieneMarcas": true
         },
         {
             "titulo": "Conjuntos de consonantes (finales)",
@@ -205,7 +212,8 @@
             ],
             "marcasSordas": [],
             "marcasSonoras": [],
-            "nombreAudio": "consonantes finales"
+            "nombreAudio": "consonantes finales",
+            "contieneMarcas": true
         },
         {
             "titulo": "Plurales",
@@ -242,7 +250,8 @@
                 400,
                 418
             ],
-            "nombreAudio": "plurales"
+            "nombreAudio": "plurales",
+            "contieneMarcas": true
         },
         {
             "titulo": "Grafía ⟨s⟩ problemática (1)",
@@ -272,7 +281,8 @@
                 320,
                 328
             ],
-            "nombreAudio": "s problematica 1"
+            "nombreAudio": "s problematica 1",
+            "contieneMarcas": true
         },
         {
             "titulo": "Grafía ⟨s⟩ problemática (2)",
@@ -309,7 +319,8 @@
                 306,
                 332
             ],
-            "nombreAudio": "s problematica 2"
+            "nombreAudio": "s problematica 2",
+            "contieneMarcas": true
         },
         {
             "titulo": "Grafías problemáticas",
@@ -336,7 +347,8 @@
             ],
             "marcasSordas": [],
             "marcasSonoras": [],
-            "nombreAudio": "grafias problematicas"
+            "nombreAudio": "grafias problematicas",
+            "contieneMarcas": true
         },
         {
             "titulo": "Relación grafías-fonemas importantes: excepciones",
@@ -344,7 +356,8 @@
             "marcas": [88,89,90,91,167,168,169,170,217,218,219,220,318,319,320,335,336,337,343,344,345,358,359,360,361,368,369,370,371,372,376,377,378,379,427,428,429,430,435,436,437,438,502,503,504,505,548,549,550,551],
             "marcasSordas": [],
             "marcasSonoras": [],
-            "nombreAudio": ""
+            "nombreAudio": "",
+            "contieneMarcas": true
         },
         {
             "titulo": "Texto repaso general",
@@ -352,7 +365,8 @@
             "marcas": [],
             "marcasSordas": [],
             "marcasSonoras": [],
-            "nombreAudio": "repaso general"
+            "nombreAudio": "repaso general",
+            "contieneMarcas": false
         }
     ]
 }

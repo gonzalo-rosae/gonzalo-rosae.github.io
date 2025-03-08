@@ -2,7 +2,7 @@ var textos;
 var inputRespuesta, respuestaCorrecta;
 var indiceActual;
 var nombreAudioActual;
-var btnReanudarAudio, btnAnterior, btnPosterior;
+var btnReanudarAudio, btnAnterior, btnPosterior, btnMarcas;
 var marcasActivadas = true;
 var audioActual = null;
 
@@ -28,7 +28,8 @@ async function cargarTextos() {
 
         btnReanudarAudio = document.getElementById("btnReanudarAudio");
         btnAnterior = document.getElementById("btnAnterior");
-        btnPosterior = document.getElementById("btnPosterior");    
+        btnPosterior = document.getElementById("btnPosterior");
+        btnMarcas = document.getElementById("btnMarcas");    
 
         textos = datos.textos || [];
 
@@ -49,8 +50,9 @@ function cargarNuevoTexto(sentido) {
     }
     indiceActual += sentido;
 
-    // Reiniciamos el texto del botón de las marcas
+    // Reiniciamos el texto del botón de las marcas y su variable
     btnMarcas.textContent = "🚀";
+    marcasActivadas = true;
 
     // Verificar si se han recorrido todos los textos
     if (indiceActual < 0) indiceActual = textos.length - 1;
@@ -63,19 +65,33 @@ function cargarNuevoTexto(sentido) {
     const elementoNombreTexto = document.querySelector('#nombre');
     const elementoContenidoTexto = document.querySelector('#contenido');
     elementoNombreTexto.textContent = textoActual.titulo;
-    const contenidoConMarcas = textoActual.contenido.split('').map((char, index) => {
-        if (textoActual.marcas.includes(index)) {
-            return `<span class="marca marcaNeutra">${char}</span>`;
-        }
-        else if (textoActual.marcasSordas.includes(index)) {
-            return `<span class="marca marcaSorda">${char}</span>`;
-        }
-        else if (textoActual.marcasSonoras.includes(index)) {
-            return `<span class="marca marcaSonora">${char}</span>`;
-        }
-        return char;
-    }).join('');
+    var contenidoFinal;
 
+    if (textoActual.contieneMarcas) {
+        // Visibilizamos el botón de marcas
+        btnMarcas.classList.remove('oculto');
+
+        // Cargamos el texto con marcas
+        contenidoFinal = textoActual.contenido.split('').map((char, index) => {
+            if (textoActual.marcas.includes(index)) {
+                return `<span class="marca marcaNeutra">${char}</span>`;
+            }
+            else if (textoActual.marcasSordas.includes(index)) {
+                return `<span class="marca marcaSorda">${char}</span>`;
+            }
+            else if (textoActual.marcasSonoras.includes(index)) {
+                return `<span class="marca marcaSonora">${char}</span>`;
+            }
+            return char;
+        }).join('');
+    } else {
+        // Invisibilizamos el botón de marcas
+        btnMarcas.classList.add('oculto');
+
+        // Cargamos el texto tal cual
+        contenidoFinal = textoActual.contenido;
+    }
+    
     // Creamos el nombre del audio actual
     var nombreCorto = textoActual.nombreAudio.toLowerCase();
     if (nombreCorto == "") {
@@ -90,14 +106,14 @@ function cargarNuevoTexto(sentido) {
     nombreAudioActual = `../audios/textos/${nombre}.mp3`;
     
     // Insertar el contenido con marcas como HTML
-    elementoContenidoTexto.innerHTML = contenidoConMarcas;
+    elementoContenidoTexto.innerHTML = contenidoFinal;
 }
 
 function alternarMarcas() {
+    console.log("Alternando marcas: de " + marcasActivadas + " a " + !marcasActivadas);
     marcasActivadas = !marcasActivadas;
     
     let marcas = document.querySelectorAll('.marca');
-    let btnMarcas = document.getElementById('btnMarcas');
 
     if (marcasActivadas) {
         // Reactivamos las marcas eliminando la clase .desactivada

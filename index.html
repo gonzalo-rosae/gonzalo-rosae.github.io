@@ -46,13 +46,14 @@
                 sessionStorage.setItem('apellidos', usuario.apellidos);
                 sessionStorage.setItem('genero', usuario.genero);
                 sessionStorage.setItem('consonantes', usuario.progreso.consonantes);
-                sessionStorage.setItem('consonantesExtra', usuario.progreso.consonantesExtra);
+                sessionStorage.setItem('consonantesExtra', usuario.progreso.consonantesExtra)
+                sessionStorage.setItem('textosConsonantes', usuario.progreso.textosConsonantes);
                 sessionStorage.setItem('vocales', usuario.progreso.vocales);
                 sessionStorage.setItem('vocalesExtra', usuario.progreso.vocalesExtra);
+                sessionStorage.setItem('textosVocales', usuario.progreso.textosVocales);
                 sessionStorage.setItem('cursoFinalizado', usuario.progreso.cursoFinalizado);
                 sessionStorage.setItem('token', token);
                 window.location.href = 'paginas/home.html';
-                console.log("apellidos: " + sessionStorage.getItem("apellidos"));
             } else {
                 alert('Identificador no válido. Por favor, inténtalo de nuevo.');
                 inputIdentificador.value = '';

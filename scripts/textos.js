@@ -2,7 +2,7 @@ var textos;
 var inputRespuesta, respuestaCorrecta;
 var indiceActual;
 var nombreAudioActual;
-var btnReanudarAudio, btnAnterior, btnPosterior, btnMarcas;
+var btnReanudarAudio, btnAnterior, btnPosterior, btnReducirVelocidad, btnAumentarVelocidad, btnVelocidadAudio, btnMarcas;
 var marcasActivadas = true;
 var audioActual = null;
 
@@ -32,6 +32,9 @@ async function cargarTextos() {
         btnReanudarAudio = document.getElementById("btnReanudarAudio");
         btnAnterior = document.getElementById("btnAnterior");
         btnPosterior = document.getElementById("btnPosterior");
+        btnReducirVelocidad = document.getElementById("btnReducirVelocidad");
+        btnAumentarVelocidad = document.getElementById("btnAumentarVelocidad");
+        btnVelocidadAudio = document.getElementById("btnVelocidadAudio");
         btnMarcas = document.getElementById("btnMarcas");    
 
         // Cogemos solo los textos desbloqueados
@@ -132,6 +135,42 @@ function alternarMarcas() {
         });
         btnMarcas.textContent = "🆘";
     }
+}
+
+function cambiarVelocidadAudio(variacion) {
+    // Modificamos la velocidad del audio actual
+    if (audioActual) {
+        let velocidad = audioActual.playbackRate;
+        let nuevaVelocidad = velocidad + variacion;
+
+        if (nuevaVelocidad == 0) { 
+            // Deshabilitamos el botón de reducir velocidad
+            btnReducirVelocidad.disabled = true;
+        } else if (nuevaVelocidad == 2.25) {
+            // Deshabilitamos el botón de aumentar velocidad
+            btnAumentarVelocidad.disabled = true;
+        } else {
+            // Habilitamos los botones de velocidad
+            btnReducirVelocidad.disabled = false;
+            btnAumentarVelocidad.disabled = false;
+        
+            // Cambiamos la velocidad del audio
+            audioActual.playbackRate = nuevaVelocidad;
+
+            if (nuevaVelocidad == 0.25 || nuevaVelocidad == 0.75 || nuevaVelocidad == 1.25 || nuevaVelocidad == 1.75) {
+                // Reducimos el tamaño del texto del botón
+                btnVelocidadAudio.classList.add("minimizado");
+            }
+            else {
+                // Restablecemos el tamaño normal del texto del botón
+                btnVelocidadAudio.classList.remove("minimizado");
+            }
+    
+            // Mostramos la velocidad actual en el botón
+            btnVelocidadAudio.textContent = "x" + nuevaVelocidad;
+        }
+    }
+
 }
 
 function reanudarAudio() {

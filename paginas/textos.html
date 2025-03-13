@@ -21,9 +21,9 @@
         <div class="grupo">
             <div id="nombre"></div>
             <div id="contenido">Texto</div>
-            <button id="btnReducirVelocidad" class="boton" onclick="cambiarVelocidadAudio(-0.25)">➖</button>
-            <button id="btnVelocidadAudio" class="boton" disabled>x1</button>
-            <button id="btnAumentarVelocidad" class="boton" onclick="cambiarVelocidadAudio(0.25)">➕</button>
+            <button id="btnReducirVelocidad" class="boton" onclick="cambiarVelocidadAudio(event, -0.25)" oncontextmenu="cambiarVelocidadAudio(event, -1)">➖</button>
+            <span id="btnVelocidadAudio" class="boton" oncontextmenu="cambiarVelocidadAudio(event, 0)">x1</span>
+            <button id="btnAumentarVelocidad" class="boton" onclick="cambiarVelocidadAudio(event, 0.25)" oncontextmenu="cambiarVelocidadAudio(event, 1)">➕</button>
             <button id="btnMarcas" class="boton" onclick="alternarMarcas()">🚀</button>
             <div id="contenedorBotones">
                 <button id="btnAnterior" class="boton" onclick="cargarNuevoTexto(-1)">⏪</button>

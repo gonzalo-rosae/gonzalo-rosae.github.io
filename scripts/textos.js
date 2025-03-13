@@ -3,6 +3,7 @@ var inputRespuesta, respuestaCorrecta;
 var indiceActual;
 var nombreAudioActual;
 var btnReanudarAudio, btnAnterior, btnPosterior, btnReducirVelocidad, btnAumentarVelocidad, btnVelocidadAudio, btnMarcas;
+var velocidadAudio = 1;
 var marcasActivadas = true;
 var audioActual = null;
 
@@ -35,7 +36,7 @@ async function cargarTextos() {
         btnReducirVelocidad = document.getElementById("btnReducirVelocidad");
         btnAumentarVelocidad = document.getElementById("btnAumentarVelocidad");
         btnVelocidadAudio = document.getElementById("btnVelocidadAudio");
-        btnMarcas = document.getElementById("btnMarcas");    
+        btnMarcas = document.getElementById("btnMarcas");
 
         // Cogemos solo los textos desbloqueados
         textos = datos.textos.filter((texto, index) => index < numTextosDesbloqueados) || [];
@@ -98,7 +99,7 @@ function cargarNuevoTexto(sentido) {
         // Cargamos el texto tal cual
         contenidoFinal = textoActual.contenido;
     }
-    
+
     // Creamos el nombre del audio actual
     var nombreCorto = textoActual.nombreAudio.toLowerCase();
     if (nombreCorto == "") {
@@ -111,7 +112,7 @@ function cargarNuevoTexto(sentido) {
     }
     var nombre = "texto_" + nombreCorto.replace(/\s+/g, "_");
     nombreAudioActual = `../audios/textos/${nombre}.mp3`;
-    
+
     // Insertar el contenido con marcas como HTML
     elementoContenidoTexto.innerHTML = contenidoFinal;
 }
@@ -119,7 +120,7 @@ function cargarNuevoTexto(sentido) {
 function alternarMarcas() {
     console.log("Alternando marcas: de " + marcasActivadas + " a " + !marcasActivadas);
     marcasActivadas = !marcasActivadas;
-    
+
     let marcas = document.querySelectorAll('.marca');
 
     if (marcasActivadas) {
@@ -137,39 +138,39 @@ function alternarMarcas() {
     }
 }
 
-function cambiarVelocidadAudio(variacion) {
+function cambiarVelocidadAudio(event, variacion) {
+    // Prevenimos el comportamiento por defecto del botón
+    event.preventDefault();
+
     // Modificamos la velocidad del audio actual
-    if (audioActual) {
-        let velocidad = audioActual.playbackRate;
-        let nuevaVelocidad = velocidad + variacion;
+    if (variacion == 0) velocidadAudio = 1;
+    else if (variacion == -1) velocidadAudio = 0.25;
+    else if (variacion == 1) velocidadAudio = 2;
+    else velocidadAudio += variacion;
 
-        if (nuevaVelocidad == 0) { 
-            // Deshabilitamos el botón de reducir velocidad
-            btnReducirVelocidad.disabled = true;
-        } else if (nuevaVelocidad == 2.25) {
-            // Deshabilitamos el botón de aumentar velocidad
-            btnAumentarVelocidad.disabled = true;
-        } else {
-            // Habilitamos los botones de velocidad
-            btnReducirVelocidad.disabled = false;
-            btnAumentarVelocidad.disabled = false;
-        
-            // Cambiamos la velocidad del audio
-            audioActual.playbackRate = nuevaVelocidad;
+    // Habilitamos los botones de velocidad
+    btnReducirVelocidad.disabled = false;
+    btnAumentarVelocidad.disabled = false;
 
-            if (nuevaVelocidad == 0.25 || nuevaVelocidad == 0.75 || nuevaVelocidad == 1.25 || nuevaVelocidad == 1.75) {
-                // Reducimos el tamaño del texto del botón
-                btnVelocidadAudio.classList.add("minimizado");
-            }
-            else {
-                // Restablecemos el tamaño normal del texto del botón
-                btnVelocidadAudio.classList.remove("minimizado");
-            }
-    
-            // Mostramos la velocidad actual en el botón
-            btnVelocidadAudio.textContent = "x" + nuevaVelocidad;
-        }
+    // Cambiamos la velocidad del audio
+    if (audioActual) audioActual.playbackRate = velocidadAudio;
+
+    // Deshabilitación en los extremos del rango
+    if (velocidadAudio == 0.25) btnReducirVelocidad.disabled = true;
+    else if (velocidadAudio == 2) btnAumentarVelocidad.disabled = true;
+
+    // Cambiamos el tamaño del texto del botón si es número largo
+    if (velocidadAudio == 0.25 || velocidadAudio == 0.75 || velocidadAudio == 1.25 || velocidadAudio == 1.75) {
+        // Reducimos el tamaño del texto del botón
+        btnVelocidadAudio.classList.add("minimizado");
     }
+    else {
+        // Restablecemos el tamaño normal del texto del botón
+        btnVelocidadAudio.classList.remove("minimizado");
+    }
+
+    // Mostramos la velocidad actual en el botón
+    btnVelocidadAudio.textContent = "x" + velocidadAudio;
 
 }
 
@@ -195,6 +196,9 @@ function reanudarAudio() {
             btnReanudarAudio.textContent = "▶️"; // Cambia el texto del botón a "play"
             audioActual = null; // Libera la instancia cuando termine
         });
+
+        // Establecemos la velocidad inicial del audio
+        audioActual.playbackRate = velocidadAudio;
     }
 
     btnReanudarAudio.textContent = "⏸️";
@@ -211,14 +215,27 @@ function recomenzarAudio() {
 
 function añadirAtajosTeclado() {
     document.addEventListener('keydown', function (event) {
-        if (event.key == 'Enter' || event.key == 'ArrowUp' || event.key == 'ArrowDown') {
-            btnReanudarAudio.click();
-        }
-        else if (event.key == 'ArrowLeft') {
-            btnAnterior.click();
-        }
-        else if (event.key == 'ArrowRight') {
-            btnPosterior.click();
+        switch (event.key) {
+            case 'ArrowLeft':
+                btnAnterior.click();
+                break;
+            case 'ArrowRight':
+                btnPosterior.click();
+                break;
+            case 'ArrowDown':
+            case '-':
+                btnReducirVelocidad.click();
+                break;
+            case 'ArrowUp':
+            case '+':
+                btnAumentarVelocidad.click();
+                break;
+            case 'm':
+                btnMarcas.click();
+                break;
+            case 'Enter':
+                btnReanudarAudio.click();
+                break;
         }
     });
 }

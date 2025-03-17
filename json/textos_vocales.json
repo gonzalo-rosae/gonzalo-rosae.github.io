@@ -31,11 +31,11 @@
         },
         {
             "titulo": "Fonema /ɪ/",
-            "contenido": "In the midst of a chill winter, Lila decided to visit her sister, Kim, who lived in a little village built near the river. The wind whipped through the trees, creating a soft rythm like a song’s lyrics, and the leaves flickered in the crisp air. ",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contenido": "In the midst of a chill winter, Lila decided to visit her sister, Kim, who lived in a little village built near the river. The wind whipped through the trees, creating a soft rhythm like a song’s lyrics, and the leaves flickered in the crisp air.",
+            "contieneMarcas": true,
+            "marcas": [0,8,20,25,33,42,49,51,59,67,76,81,87,94,97,102,103,117,128,134,164,177,197,199,221,229,238],
             "marcasSordas": [],
-            "marcasSonoras": [],
+            "marcasSonoras": [38],
             "nombreAudio": "i"
         },
         {

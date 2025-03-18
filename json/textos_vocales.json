@@ -41,8 +41,8 @@
         {
             "titulo": "Fonema /ɛ/",
             "contenido": "Ben stepped into the red tent at the end of the dense forest. He bent down to check the wet bed and felt the soft texture of the net. Next, he spread the bread and butter on a plate, setting it beside his tent. The smell of freshly baked bread made him feel content. Then, he said: “I want to do this again”.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [1,6,22,26,37,49,66,80,89,93,101,115,130,135,146,147,156,157,184,206,217,226,240,241,262,269,277,278,303,304],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "e"
@@ -50,8 +50,8 @@
         {
             "titulo": "Fonema /ɔ/",
             "contenido": "The blog was about a hot day in Australia, where a dog sat on top of a rock by the river, watching a frog hop off a log. It was not the best quality day for the wasp that flew by, as it got trapped near a shop. The job was not easy, but what could one do? In Austria, they had a similar fault in the vault of their systems. Equality and quantity often don't match, and again, it was up to someone to wash away the problems, just like you watch a river flow over a rock.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [6,22,32,33,52,63,72,91,103,107,110,117,129,143,162,187,207,216,224,239,259,260,288,289,301,302,327,339,346,401,416,439,465],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "o"

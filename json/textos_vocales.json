@@ -59,8 +59,8 @@
         {
             "titulo": "Fonema /a/",
             "contenido": "Jack had a plan to track the man who left a map at the back of the van. It was a bad idea, but Dad was mad to try, even though the land was full of traps. They needed to find the bank, but a mass of facts and tags slowed them down. In the end, the man paid the tax and left without looking back.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [1,6,13,21,30,45,56,68,82,96,104,132,150,180,192,200,210,249,262,291],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "a"

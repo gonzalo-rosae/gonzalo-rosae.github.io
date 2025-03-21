@@ -95,8 +95,8 @@
         {
             "titulo": "Diptongo /ɪj/",
             "contenido": "Pete and Steve took a trip to Sydney to see the green sea. They agreed on spotting monkeys and turkeys during their journey east. 'Please, let's not miss any key sights', said Steve. They had only three days left in the city and still needed to visit the famous street with many Chinese restaurants.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [1,11,34,35,41,42,50,51,55,56,67,68,87,88,99,100,121,122,124,125,133,134,156,159,160,178,195,200,201,223,236,237,265,266,278,283],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "ij"

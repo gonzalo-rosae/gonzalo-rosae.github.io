@@ -1,5 +1,12 @@
 [
   {
+    "identificador": "miguelbs25",
+    "nombre": "Miguel",
+    "apellidos": "Barrero Sáez",
+    "genero": "hombre",
+    "programa": "Gramatical"
+  },
+  {
     "identificador": "vicenteep24",
     "nombre": "Vicente",
     "apellidos": "Esplá Palacio",

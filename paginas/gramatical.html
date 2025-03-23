@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="icon" href="../imagenes/favicon.ico" type="images/x-icon">
+    <style>
+        #btnCerrarSesion {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 25px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #btnCerrarSesion:hover {
+            cursor: pointer;
+            background-color: rgb(255, 70, 70);
+        }
+
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #quiz-container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.365);
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            text-align: center;
+            background-color: #2e2e2e;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #counter {
+            font-weight: bold;
+        }
+
+        #checkButton {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #checkButton:hover {
+            background-color: #0056b3;
+        }
+
+        #nextButton {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #nextButton:hover {
+            background-color: #1e7e34;
+        }
+
+        .correct {
+            background-color: #4caf50;
+        }
+
+        .incorrect {
+            background-color: #e74c3c;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="btnCerrarSesion" src="../imagenes/cerrar_sesion.png" alt="Cerrar sesión" onclick="window.history.back()">
+    <div id="quiz-container">
+        <p id="counter"></p>
+        <p id="question"></p>
+        <input type="text" id="answerInput">
+        <button id="checkButton">Corregir</button>
+        <p id="feedbackBox" class="hidden"></p>
+        <button id="nextButton" class="hidden">Siguiente</button>
+    </div>
+    <script>
+        const questions = [
+            { "question": "Tengo un coche rojo", "answer": "I have a red car" },
+            { "question": "Es muy difícil de entender", "answer": "It’s difficult to understand" },
+            { "question": "Me explicó el problema", "answer": "He explained the problem to me" },
+            { "question": "¡Escúchame!", "answer": "Listen to me!" },
+            { "question": "Depende de la situación", "answer": "It depends on the situation" },
+            { "question": "El hermano de María es médico", "answer": "Maria’s brother is a physician" },
+            { "question": "Ahora tengo 22 años", "answer": "I’m 22 years old now" },
+            { "question": "Estoy de acuerdo", "answer": "I agree" },
+            { "question": "¿Qué significa esta palabra?", "answer": "What does this word mean?" },
+            { "question": "La vida es bella", "answer": "Life is beautiful" },
+            { "question": "La gente está feliz", "answer": "People are happy" },
+            { "question": "Ella está casada con el presidente", "answer": "She’s married to the president" },
+            { "question": "Estoy pensando en lo que me dijiste", "answer": "I’m thinking about what you told me" },
+            { "question": "El partido fue cancelado por la lluvia", "answer": "The match was cancelled because of the rain" },
+            { "question": "Este ejercicio es más fácil", "answer": "This exercise is easier" },
+            { "question": "Mamá, tengo hambre", "answer": "Mum, I’m hungry" },
+            { "question": "¿Cuál es tu color favorito?", "answer": "What’s your favourite colour?" },
+            { "question": "¿Cuál es tu color favorito: el rojo o el azul?", "answer": "Which is your favourite colour: red or blue?" },
+            { "question": "¿Qué país es este?", "answer": "Which country is this?" },
+            { "question": "Dime qué país es este", "answer": "Tell me which country this is" },
+            { "question": "¿De quién estás hablando?", "answer": "Who are you talking about?" },
+            { "question": "Esta es la casa en la que crecí", "answer": "This is the house I grew in" },
+            { "question": "Yo me río siempre con mi tío", "answer": "I always laugh with my uncle" }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const counter = document.getElementById("counter");
+        const questionBox = document.getElementById("question");
+        const answerInput = document.getElementById("answerInput");
+        const checkButton = document.getElementById("checkButton");
+        const feedbackBox = document.getElementById("feedbackBox");
+        const nextButton = document.getElementById("nextButton");
+
+        function normalize(text) {
+            return text.toLowerCase().replace(/[.,!?\"“”’]/g, '').replace(/‘/g, "'");
+        }
+
+        function loadQuestion() {
+            counter.textContent = `Pregunta ${currentQuestion + 1} de ${questions.length}`;
+            questionBox.textContent = questions[currentQuestion].question;
+            answerInput.value = "";
+            feedbackBox.classList.add("hidden");
+            nextButton.classList.add("hidden");
+            answerInput.classList.remove("correct", "incorrect");
+            answerInput.focus();
+        }
+
+        checkButton.addEventListener("click", () => {
+            const userAnswer = normalize(answerInput.value.trim());
+            const correctAnswers = questions[currentQuestion].answer.split(" / ").map(ans => normalize(ans));
+            if (correctAnswers.includes(userAnswer)) {
+                answerInput.classList.add("correct");
+                score++;
+                nextButton.classList.remove("hidden");
+            } else {
+                answerInput.classList.add("incorrect");
+                feedbackBox.textContent = questions[currentQuestion].answer;
+                feedbackBox.classList.remove("hidden");
+                nextButton.classList.remove("hidden");
+            }
+        });
+
+        nextButton.addEventListener("click", () => {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                alert(`Test finalizado. Puntuación: ${score}/${questions.length}`);
+                currentQuestion = 0;
+                score = 0;
+                loadQuestion();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                if (nextButton.classList.contains("hidden")) {
+                    checkButton.click();
+                } else {
+                    nextButton.click();
+                }
+            } else {
+                answerInput.focus();
+            }
+        });
+
+        loadQuestion();
+    </script>
+</body>
+
+</html>

@@ -106,6 +106,12 @@
         .hidden {
             display: none;
         }
+
+        #aviso {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 
@@ -119,6 +125,7 @@
         <p id="feedbackBox" class="hidden"></p>
         <button id="nextButton" class="hidden">Siguiente</button>
     </div>
+    <p id="aviso">*Introduce las traducciones sin usar contracciones. Por ejemplo: it's → it is</p>
     <script>
         const questions = [
             { "question": "Tengo un coche rojo", "answer": "I have a red car" },

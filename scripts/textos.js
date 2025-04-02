@@ -208,9 +208,12 @@ function reanudarAudio() {
     });
 }
 
-function recomenzarAudio() {
-    audioActual.currentTime = 0; // Opcional: reinicia desde el principio
-    audioActual = null; // Libera la instancia
+function reiniciarAudio() {
+    if (audioActual) {
+        audioActual.pause(); // Pausa el audio
+        btnReanudarAudio.textContent = "▶️";
+        audioActual.currentTime = 0; // Opcional: reinicia desde el principio
+    }
 }
 
 function añadirAtajosTeclado() {
@@ -232,6 +235,11 @@ function añadirAtajosTeclado() {
                 break;
             case 'm':
                 btnMarcas.click();
+                break;
+            case 'r':
+            case 's':
+            case 'p':
+                btnReanudarAudio.click();
                 break;
             case 'Enter':
                 btnReanudarAudio.click();

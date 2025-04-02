@@ -32,6 +32,10 @@ body {
     flex: 1;
 }
 
+#botonesVelocidad *:not(span) {
+    font-size: 1em;
+}
+
 #nombre {
     position: absolute;
     top: 120px;
@@ -65,7 +69,6 @@ body {
     padding: 20px;
     cursor: pointer;
     margin-left: 10px;
-    font-size: 1.5em;
     transition: background-color 0.3s;
     width: 60px;
     height: 60px;
@@ -82,27 +85,8 @@ body {
     cursor: not-allowed;
 }
 
-#btnReducirVelocidad {
-    position: absolute;
-    bottom: 35px;
-    left: 35px;
-}
-
-#btnVelocidadAudio {
-    cursor: default;
-    position: absolute;
-    bottom: 35px;
-    left: 105px;
-}
-
 #btnVelocidadAudio.minimizado {
-    font-size: 1.25em;
-}
-
-#btnAumentarVelocidad {
-    position: absolute;
-    bottom: 35px;
-    left: 175px;
+    font-size: 0.75em;
 }
 
 #btnMarcas {
@@ -115,7 +99,18 @@ body {
     align-items: center;
 }
 
-#contenedorBotones {
+#botonesVelocidad {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+}
+
+#botonesReproduccion {
     position: absolute;
     bottom: 35px;
     display: flex;
@@ -123,4 +118,8 @@ body {
     align-items: center;
     padding: 0;
     border: none;
+}
+
+@media (max-width: 600px) {
+    
 }

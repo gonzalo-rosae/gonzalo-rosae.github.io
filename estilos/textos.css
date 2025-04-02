@@ -121,5 +121,36 @@ body {
 }
 
 @media (max-width: 600px) {
-    
+    #titulo {
+        font-size: 28px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #nombre {
+        font-size: 1.3em;
+        top: 80px;
+    }
+
+    #contenido {
+        width: 75%;
+        font-size: 1.1em;
+        top: 140px;
+    }
+
+    #botonesVelocidad {
+        bottom: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #botonesReproduccion {
+        bottom: 30px;
+        left: 30px;
+    }
+
+    #btnMarcas {
+        bottom: 30px;
+        right: 30px;
+    }
 }

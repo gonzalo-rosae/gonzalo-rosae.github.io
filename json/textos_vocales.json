@@ -104,8 +104,8 @@
         {
             "titulo": "Diptongo /ɑj/",
             "contenido": "One night under the high sky, a shy guy named Mike decided it was time for a change. He checked the price of flights to Thailand and Dubai. 'Why not?' he thought, feeling a rise of excitement. With a final click, he did buy them and said goodbye to his old life.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [5,21,27,34,37,38,47,54,67,102,111,122,123,136,137,143,174,184,201,221,222,243,244,258],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "aj"

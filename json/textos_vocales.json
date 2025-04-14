@@ -131,8 +131,8 @@
         {
             "titulo": "Diptongo /əw/",
             "contenido": "On the road to the coast, I took a note on my phone. The load was heavy, but I don’t mind. Most days, I like to go alone, but today, the boat was waiting by the oak, ready to show me the way home.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [8,9,20,21,36,48,58,59,80,92,113,117,138,139,161,162,177,178,192],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "ow"

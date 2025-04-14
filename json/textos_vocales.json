@@ -67,9 +67,9 @@
         },
         {
             "titulo": "Fonema /ɵ/",
-            "contenido": "TEXTO NO DISPONIBLE",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contenido": "The wolf named Wolff stood under the hood of a thick bush, waiting to see if he could catch sight of the wool-clad herder. He took a good look around, eyes sharp as he crouched low, near the wood, where he often hid. His foot pressed lightly against a fallen branch as if testing if it would snap. 'Should I push forward or pull back?' he wondered, knowing that one wrong move could mean his plans would fail. He felt the full weight of his decision, just like the bull that would put its strength to the test.",
+            "contieneMarcas": true,
+            "marcas": [5,16,23,24,38,39,54,81,82,106,107,127,128,134,135,139,140,192,193,222,223,287,288,301,302,309,325,378,379,399,400,423,466,476,477,482],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "u"

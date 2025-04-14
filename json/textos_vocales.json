@@ -140,10 +140,10 @@
         {
             "titulo": "Diptongo /ʉw/",
             "contenido": "Hugh knew the route to the room where the group waited. He put on his new suit and shoes, grabbed a tube of blue glue, and drank some juice. It was true—June was the best time for a cruise with a view.",
-            "contieneMarcas": false,
+            "contieneMarcas": true,
             "marcas": [],
-            "marcasSordas": [],
-            "marcasSonoras": [],
+            "marcasSordas": [15,16,28,29,44,45,75,76,85,86,101,110,111,115,116,135,136,150,151,154,184,185],
+            "marcasSonoras": [1,7,8,71,72,197,198,199],
             "nombreAudio": "uw"
         },
         {

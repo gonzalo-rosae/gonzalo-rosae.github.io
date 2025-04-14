@@ -112,9 +112,9 @@
         },
         {
             "titulo": "Diptongo /oj/",
-            "contenido": "At some point, Roy and Floyd decided to join an adventure. With the choice of travelling, they boys couldn’t resist the joy of hitting the road. With excitement in their voices, they set off to fill their voids.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contenido": "At some point, Roy and Floyd decided to join an adventure. With the choice of travelling, the boys couldn’t resist the joy of hitting the road. With excitement in their voices, they set off to fill their voids.",
+            "contieneMarcas": true,
+            "marcas": [9,10,16,17,25,26,41,42,70,71,95,96,120,121,170,171,205,206],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "oj"

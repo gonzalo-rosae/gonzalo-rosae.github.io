@@ -122,8 +122,8 @@
         {
             "titulo": "Diptongo /aw/",
             "contenido": "In a small town down south, a proud crowd gathered in front of a brown house. They lounged around, enjoying the sound of music, wondering how they found that spot. Now, the crown of the town was the Mount festival.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [12,13,17,18,22,23,32,33,38,39,67,68,72,73,84,85,93,94,113,114,148,149,175,176,188,189,200,201],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "aw"

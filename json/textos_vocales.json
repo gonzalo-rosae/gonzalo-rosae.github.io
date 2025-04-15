@@ -176,8 +176,8 @@
         {
             "titulo": "Fonema /ɑː/ (pt. 1)",
             "contenido": "We sat in the park, watching the stars and having a laugh as my aunt told stories of her childhood, when she would march around the farm and calm her calf by the hearth. Our hearts were full, enjoying half the night together.",
-            "contieneMarcas": false,
-            "marcas": [],
+            "contieneMarcas": true,
+            "marcas": [15,16,35,36,53,54,64,65,116,117,133,134,142,143,151,152,163,164,165,175,176,177,202,203],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "a:1"

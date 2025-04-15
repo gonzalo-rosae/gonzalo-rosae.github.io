@@ -154,3 +154,15 @@ body {
         right: 30px;
     }
 }
+
+@media (max-width: 400px) {
+  .boton {
+    width: 30px;
+    height: 30px;
+    font-size: 1em !important;
+  }
+
+  #botonesVelocidad {
+    bottom: 90px;
+  }
+}

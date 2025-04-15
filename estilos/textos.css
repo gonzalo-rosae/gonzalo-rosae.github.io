@@ -56,7 +56,7 @@ body {
     color: orange;
 }
 .marcaSorda:not(.desactivada) {
-    color: red;
+    color: #ff3a3a;
 }
 .marcaSonora:not(.desactivada) {
     color: rgb(39, 179, 255);

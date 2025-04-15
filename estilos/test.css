@@ -222,10 +222,7 @@ body {
     #btnVolverEmpezar {
         width: 120px;
         height: 60px;
-    }
-
-    #btnEmpezar {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     #contenedorResultado {

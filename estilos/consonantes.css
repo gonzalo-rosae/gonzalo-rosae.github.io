@@ -107,4 +107,8 @@ h1 {
     .btnPartido .btnSeccion:nth-child(2) {
         font-size: 20px;
     }
+
+    .btnPartido .textoBtn {
+        font-size: 17px;
+    }
 }

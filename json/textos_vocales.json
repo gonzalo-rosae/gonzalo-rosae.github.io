@@ -195,7 +195,7 @@
             "titulo": "Fonema /əː/",
             "contenido": "The girl heard the first word from her firm boss: 'Work hard, and you’ll earn your place in this world.' She felt the urge to turn and leave, but knew it was worth it. The girl’s journey began at birth, with each moment shaping her.",
             "contieneMarcas": true,
-            "marcas": [5,6,20,21,26,27,40,41,52,53,98,99,118,119,127,128,159,160,176,177,180,181,182,197,198,229,230],
+            "marcas": [5,6,20,21,26,27,40,41,52,53,98,99,118,119,127,128,159,160,173,174,180,181,182,197,198,229,230],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "x."

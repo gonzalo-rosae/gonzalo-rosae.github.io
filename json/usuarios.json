@@ -18,7 +18,8 @@
       "textosConsonantes": "100",
       "vocales": "6",
       "vocalesExtra": "-1",
-      "textosVocales": "9",     
+      "textosVocales": "9",
+      "transcripciones": "vocal corta",     
       "cursoFinalizado": "no"
     }
   },
@@ -34,7 +35,8 @@
       "textosConsonantes": "100",
       "vocales": "6",
       "vocalesExtra": "-1",
-      "textosVocales": "100",      
+      "textosVocales": "100", 
+      "transcripciones": "diptongo",     
       "cursoFinalizado": "no"
     }
   },
@@ -50,7 +52,8 @@
       "textosConsonantes": "100",
       "vocales": "8",
       "vocalesExtra": "-1",
-      "textosVocales": "100",      
+      "textosVocales": "100", 
+      "transcripciones": "vocal larga",     
       "cursoFinalizado": "07/10/2024"
     }
   },
@@ -66,7 +69,8 @@
       "textosConsonantes": "100",
       "vocales": "100",
       "vocalesExtra": "-1",
-      "textosVocales": "100",      
+      "textosVocales": "100", 
+      "transcripciones": "vocal larga",     
       "cursoFinalizado": "01/01/2000"
     }
   }

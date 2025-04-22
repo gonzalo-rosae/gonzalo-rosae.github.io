@@ -37,6 +37,7 @@
             nombre = sessionStorage.getItem('nombre');
             genero = sessionStorage.getItem('genero');
             vocales = sessionStorage.getItem('vocales');
+            transcripciones = sessionStorage.getItem('transcripciones');
             cursoFinalizado = sessionStorage.getItem('cursoFinalizado');
             token = sessionStorage.getItem('token');
 
@@ -56,6 +57,8 @@
                 if (cursoFinalizado != "no") {
                     document.getElementById("btnTranscripciones").classList.remove("oculto");
                     document.getElementById("btnCertificado").classList.remove("oculto");
+                } else if (transcripciones != "no") {
+                    document.getElementById("btnTranscripciones").classList.remove("oculto");                    
                 }
             } else {
                 cerrarSesion();

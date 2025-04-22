@@ -3,219 +3,273 @@
     "instrucciones": "Deduce la palabra a partir de su transcripción",
     "preguntas": [
         {
-            "pregunta": "/ˈlɪtəl/",
+            "transcripcion": "/ˈlɪtəl/",
+            "contiene": "vocal corta",
             "solucion": "little"
         },
         {
-            "pregunta": "/ˈsɪmpəl/",
+            "transcripcion": "/ˈsɪmpəl/",
+            "contiene": "vocal corta",
             "solucion": "simple"
         },
         {
-            "pregunta": "/ˈsɪstəm/",
+            "transcripcion": "/ˈsɪstəm/",
+            "contiene": "vocal corta",
             "solucion": "system"
         },
         {
-            "pregunta": "/ˈspɛʃəl/",
+            "transcripcion": "/ˈspɛʃəl/",
+            "contiene": "vocal corta",
             "solucion": "special"
         },
         {
-            "pregunta": "/əˈdrɛs/",
+            "transcripcion": "/əˈdrɛs/",
+            "contiene": "vocal corta",
             "solucion": "address"
         },
         {
-            "pregunta": "/ˈsɛkənd/",
+            "transcripcion": "/ˈsɛkənd/",
+            "contiene": "vocal corta",
             "solucion": "second"
         },
         {
-            "pregunta": "/ˈtravəl/",
+            "transcripcion": "/ˈtravəl/",
+            "contiene": "vocal corta",
             "solucion": "travel"
         },
         {
-            "pregunta": "/ˈnaʃ(ə)nəl/",
+            "transcripcion": "/ˈnaʃ(ə)nəl/",
+            "contiene": "vocal corta",
             "solucion": "national"
         },
         {
-            "pregunta": "/ˈʧanəl/",
+            "transcripcion": "/ˈʧanəl/",
+            "contiene": "vocal corta",
             "solucion": "channel"
         },
         {
-            "pregunta": "/ˈɔfə/",
+            "transcripcion": "/ˈɔfə/",
+            "contiene": "vocal corta",
             "solucion": "offer"
         },
         {
-            "pregunta": "/ˈmɔdən/",
+            "transcripcion": "/ˈmɔdən/",
+            "contiene": "vocal corta",
             "solucion": "modern"
         },
         {
-            "pregunta": "/əˈkrɔs/",
+            "transcripcion": "/əˈkrɔs/",
+            "contiene": "vocal corta",
             "solucion": "across"
         },
         {
-            "pregunta": "/ˈwɵmən/",
+            "transcripcion": "/ˈwɵmən/",
+            "contiene": "vocal corta",
             "solucion": "woman"
         },
         {
-            "pregunta": "/ˈʃɵgə/",
+            "transcripcion": "/ˈʃɵgə/",
+            "contiene": "vocal corta",
             "solucion": "sugar"
         },
         {
-            "pregunta": "/ˈwɵdənt/",
+            "transcripcion": "/ˈwɵdənt/",
+            "contiene": "vocal corta",
             "solucion": "wouldn't"
         },
         {
-            "pregunta": "/ˈkʌlʧə/",
+            "transcripcion": "/ˈkʌlʧə/",
+            "contiene": "vocal corta",
             "solucion": "culture"
         },
         {
-            "pregunta": "/ˈʌðə/",
+            "transcripcion": "/ˈʌðə/",
+            "contiene": "vocal corta",
             "solucion": "other"
         },
         {
-            "pregunta": "/ˈʌndə/",
+            "transcripcion": "/ˈʌndə/",
+            "contiene": "vocal corta",
             "solucion": "under"
         },
         {
-            "pregunta": "/ˈrɪjdə/",
+            "transcripcion": "/ˈrɪjdə/",
+            "contiene": "diptongo",
             "solucion": "reader"
         },
         {
-            "pregunta": "/ˈlɪjgəl/",
+            "transcripcion": "/ˈlɪjgəl/",
+            "contiene": "diptongo",
             "solucion": "legal"
         },
         {
-            "pregunta": "/pəˈlɪjs/",
+            "transcripcion": "/pəˈlɪjs/",
+            "contiene": "diptongo",
             "solucion": "police"
         },
         {
-            "pregunta": "/ˈlɛjtəst/",
+            "transcripcion": "/ˈlɛjtəst/",
+            "contiene": "diptongo",
             "solucion": "latest"
         },
         {
-            "pregunta": "/təˈdɛj/",
+            "transcripcion": "/təˈdɛj/",
+            "contiene": "diptongo",
             "solucion": "today"
         },
         {
-            "pregunta": "/ˈpɛjpə/",
+            "transcripcion": "/ˈpɛjpə/",
+            "contiene": "diptongo",
             "solucion": "paper"
         },
         {
-            "pregunta": "/ˈɑjlənd/",
+            "transcripcion": "/ˈɑjlənd/",
+            "contiene": "diptongo",
             "solucion": "island"
         },
         {
-            "pregunta": "/ʤəˈlɑj/",
+            "transcripcion": "/ʤəˈlɑj/",
+            "contiene": "diptongo",
             "solucion": "July"
         },
         {
-            "pregunta": "/ˈtɑjtəl/",
+            "transcripcion": "/ˈtɑjtəl/",
+            "contiene": "diptongo",
             "solucion": "title"
         },
         {
-            "pregunta": "/əˈvojd/",
+            "transcripcion": "/əˈvojd/",
+            "contiene": "diptongo",
             "solucion": "avoid"
         },
         {
-            "pregunta": "/ˈtojlət/",
+            "transcripcion": "/ˈtojlət/",
+            "contiene": "diptongo",
             "solucion": "toilet"
         },
         {
-            "pregunta": "/ˈpojzən/",
+            "transcripcion": "/ˈpojzən/",
+            "contiene": "diptongo",
             "solucion": "poison"
         },
         {
-            "pregunta": "/əˈlaw/",
+            "transcripcion": "/əˈlaw/",
+            "contiene": "diptongo",
             "solucion": "allow"
         },
         {
-            "pregunta": "/ˈpawə/",
+            "transcripcion": "/ˈpawə/",
+            "contiene": "diptongo",
             "solucion": "power"
         },
         {
-            "pregunta": "/ˈʃawə/",
+            "transcripcion": "/ˈʃawə/",
+            "contiene": "diptongo",
             "solucion": "shower"
         },
         {
-            "pregunta": "/ˈəwvə/",
+            "transcripcion": "/ˈəwvə/",
+            "contiene": "diptongo",
             "solucion": "over"
         },
         {
-            "pregunta": "/ˈləwkəl/",
+            "transcripcion": "/ˈləwkəl/",
+            "contiene": "diptongo",
             "solucion": "local"
         },
         {
-            "pregunta": "/ˈsəwʃəl/",
+            "transcripcion": "/ˈsəwʃəl/",
+            "contiene": "diptongo",
             "solucion": "social"
         },
         {
-            "pregunta": "/ˈgʉwgəl/",
+            "transcripcion": "/ˈgʉwgəl/",
+            "contiene": "diptongo",
             "solucion": "google"
         },
         {
-            "pregunta": "/ˈsʉwpə/",
+            "transcripcion": "/ˈsʉwpə/",
+            "contiene": "diptongo",
             "solucion": "super"
         },
         {
-            "pregunta": "/ˈhjʉwmən/",
+            "transcripcion": "/ˈhjʉwmən/",
+            "contiene": "diptongo",
             "solucion": "human"
         },
         {
-            "pregunta": "/kəˈrɪː/",
+            "transcripcion": "/kəˈrɪː/",
+            "contiene": "vocal larga",
             "solucion": "career"
         },
         {
-            "pregunta": "/əˈpɪː/",
+            "transcripcion": "/əˈpɪː/",
+            "contiene": "vocal larga",
             "solucion": "appear"
         },
         {
-            "pregunta": "/ˈʧɪːfəl/",
+            "transcripcion": "/ˈʧɪːfəl/",
+            "contiene": "vocal larga",
             "solucion": "cheerful"
         },
         {
-            "pregunta": "/kəmˈpɛː/",
+            "transcripcion": "/kəmˈpɛː/",
+            "contiene": "vocal larga",
             "solucion": "compare"
         },
         {
-            "pregunta": "/əˈwɛː/",
+            "transcripcion": "/əˈwɛː/",
+            "contiene": "vocal larga",
             "solucion": "aware"
         },
         {
-            "pregunta": "/rɪˈpɛː/",
+            "transcripcion": "/rɪˈpɛː/",
+            "contiene": "vocal larga",
             "solucion": "repair"
         },
         {
-            "pregunta": "/ˈɑːftə/",
+            "transcripcion": "/ˈɑːftə/",
+            "contiene": "vocal larga",
             "solucion": "after"
         },
         {
-            "pregunta": "/ˈpɑːtnə/",
+            "transcripcion": "/ˈpɑːtnə/",
+            "contiene": "vocal larga",
             "solucion": "partner"
         },
         {
-            "pregunta": "/ˈgɑːdən/",
+            "transcripcion": "/ˈgɑːdən/",
+            "contiene": "vocal larga",
             "solucion": "garden"
         },
         {
-            "pregunta": "/ˈoːdə/",
+            "transcripcion": "/ˈoːdə/",
+            "contiene": "vocal larga",
             "solucion": "order"
         },
         {
-            "pregunta": "/ˈwoːtə/",
+            "transcripcion": "/ˈwoːtə/",
+            "contiene": "vocal larga",
             "solucion": "water"
         },
         {
-            "pregunta": "/ˈoːgəst/",
+            "transcripcion": "/ˈoːgəst/",
+            "contiene": "vocal larga",
             "solucion": "August"
         },
         {
-            "pregunta": "/ˈvəːʒən/",
+            "transcripcion": "/ˈvəːʒən/",
+            "contiene": "vocal larga",
             "solucion": "version"
         },
         {
-            "pregunta": "/ˈpəːsən/",
+            "transcripcion": "/ˈpəːsən/",
+            "contiene": "vocal larga",
             "solucion": "person"
         },
         {
-            "pregunta": "/ˈpəːpəl/",
+            "transcripcion": "/ˈpəːpəl/",
+            "contiene": "vocal larga",
             "solucion": "purple"
         }
     ]

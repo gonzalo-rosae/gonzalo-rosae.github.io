@@ -1,4 +1,4 @@
-var preguntas, datosPregunta;
+var preguntas, preguntasFiltradas, datosPregunta;
 var inputRespuesta, respuestaCorrecta, btnComprobar, btnNuevaPalabra;
 var ultimoIndice, indicesAleatorios;
 
@@ -17,16 +17,20 @@ async function cargarPreguntas() {
             //document.getElementById('instrucciones').textContent = datos.instrucciones;
         }
 
+        let ordenTranscripciones = ["vocal corta", "diptongo", "vocal larga"];
+        let desbloqueado = sessionStorage.getItem("transcripciones");
+
         inputRespuesta = document.getElementById("inputRespuesta");
         respuestaCorrecta = document.getElementById("respuestaCorrecta");
         btnComprobar = document.getElementById("btnComprobar");
         btnNuevaPalabra = document.getElementById("btnNuevaPalabra");
         preguntas = datos.preguntas || [];
+        preguntasFiltradas = preguntas.filter(pregunta => ordenTranscripciones.indexOf(pregunta.contiene) <= ordenTranscripciones.indexOf(desbloqueado));
 
         ultimoIndice = parseInt(localStorage.getItem('ultimoIndice') || '0');
         indicesAleatorios = JSON.parse(localStorage.getItem('indicesAleatorios'));
         if (!indicesAleatorios || ultimoIndice === 0) {
-            indicesAleatorios = Array.from({ length: preguntas.length }, (_, i) => i).sort(() => Math.random() - 0.5);
+            indicesAleatorios = Array.from({ length: preguntasFiltradas.length }, (_, i) => i).sort(() => Math.random() - 0.5);
             localStorage.setItem('indicesAleatorios', JSON.stringify(indicesAleatorios));
         }
         cargarNuevaPregunta();
@@ -38,17 +42,17 @@ async function cargarPreguntas() {
 
 function cargarNuevaPregunta() {
     // Seleccionar la pregunta correspondiente al índice aleatorio actual
-    datosPregunta = preguntas[indicesAleatorios[ultimoIndice++]];
+    datosPregunta = preguntasFiltradas[indicesAleatorios[ultimoIndice++]];
 
     // Verificar si se han recorrido todas las preguntas
-    if (ultimoIndice >= preguntas.length) ultimoIndice = 0;
+    if (ultimoIndice >= preguntasFiltradas.length) ultimoIndice = 0;
 
     // Guardar el índice actualizado en `localStorage`
     localStorage.setItem('ultimoIndice', ultimoIndice);
 
     // Actualizar la pregunta en el DOM
     const elementoPregunta = document.querySelector('#pregunta');
-    elementoPregunta.textContent = datosPregunta.pregunta;
+    elementoPregunta.textContent = datosPregunta.transcripcion;
 
     // Resetear el campo de entrada de la respuesta
     const elementoInputRespuesta = document.querySelector('#inputRespuesta');

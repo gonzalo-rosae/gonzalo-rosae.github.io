@@ -168,6 +168,16 @@
             "solucion": "police"
         },
         {
+            "transcripcion": "/məˈrɪjn/",
+            "contiene": "diptongo",
+            "solucion": "marine"
+        },
+        {
+            "transcripcion": "/rɪˈlɪjs/",
+            "contiene": "diptongo",
+            "solucion": "release"
+        },
+        {
             "transcripcion": "/ˈlɛjtəst/",
             "contiene": "diptongo",
             "solucion": "latest"
@@ -181,6 +191,16 @@
             "transcripcion": "/ˈpɛjpə/",
             "contiene": "diptongo",
             "solucion": "paper"
+        },
+        {
+            "transcripcion": "/strɛjt/",
+            "contiene": "diptongo",
+            "solucion": "straight"
+        },
+        {
+            "transcripcion": "/ˈhɔlədɛj/",
+            "contiene": "diptongo",
+            "solucion": "holiday"
         },
         {
             "transcripcion": "/ˈɑjlənd/",
@@ -198,6 +218,16 @@
             "solucion": "title"
         },
         {
+            "transcripcion": "/səbˈskrɑjb/",
+            "contiene": "diptongo",
+            "solucion": "subscribe"
+        },
+        {
+            "transcripcion": "/gɑjd/",
+            "contiene": "diptongo",
+            "solucion": "guide"
+        },
+        {
             "transcripcion": "/əˈvojd/",
             "contiene": "diptongo",
             "solucion": "avoid"
@@ -211,6 +241,16 @@
             "transcripcion": "/ˈpojzən/",
             "contiene": "diptongo",
             "solucion": "poison"
+        },
+        {
+            "transcripcion": "/ʤojn/",
+            "contiene": "diptongo",
+            "solucion": "join"
+        },
+        {
+            "transcripcion": "/bojz/",
+            "contiene": "diptongo",
+            "solucion": "boys"
         },
         {
             "transcripcion": "/əˈlaw/",
@@ -228,6 +268,16 @@
             "solucion": "shower"
         },
         {
+            "transcripcion": "/əˈbawt/",
+            "contiene": "diptongo",
+            "solucion": "about"
+        },
+        {
+            "transcripcion": "/wɪˈðawt/",
+            "contiene": "diptongo",
+            "solucion": "without"
+        },
+        {
             "transcripcion": "/ˈəwvə/",
             "contiene": "diptongo",
             "solucion": "over"
@@ -243,6 +293,16 @@
             "solucion": "social"
         },
         {
+            "transcripcion": "/ðəwz/",
+            "contiene": "diptongo",
+            "solucion": "those"
+        },
+        {
+            "transcripcion": "/ˈfəwtəw/",
+            "contiene": "diptongo",
+            "solucion": "photo"
+        },
+        {
             "transcripcion": "/ˈgʉwgəl/",
             "contiene": "diptongo",
             "solucion": "google"
@@ -256,6 +316,16 @@
             "transcripcion": "/ˈhjʉwmən/",
             "contiene": "diptongo",
             "solucion": "human"
+        },
+        {
+            "transcripcion": "/njʉwz/",
+            "contiene": "diptongo",
+            "solucion": "news"
+        },
+        {
+            "transcripcion": "/mʉwn/",
+            "contiene": "diptongo",
+            "solucion": "moon"
         },
         {
             "transcripcion": "/kəˈrɪː/",

@@ -18,6 +18,16 @@
             "solucion": "system"
         },
         {
+            "transcripcion": "/ˈɪmɪʤ/",
+            "contiene": "vocal corta",
+            "solucion": "image"
+        },
+        {
+            "transcripcion": "/ˈwɪmɪn/",
+            "contiene": "vocal corta",
+            "solucion": "women"
+        },
+        {
             "transcripcion": "/ˈspɛʃəl/",
             "contiene": "vocal corta",
             "solucion": "special"
@@ -31,6 +41,16 @@
             "transcripcion": "/ˈsɛkənd/",
             "contiene": "vocal corta",
             "solucion": "second"
+        },
+        {
+            "transcripcion": "/əˈgɛn/",
+            "contiene": "vocal corta",
+            "solucion": "again"
+        },
+        {
+            "transcripcion": "/θrɛt/",
+            "contiene": "vocal corta",
+            "solucion": "threat"
         },
         {
             "transcripcion": "/ˈtravəl/",
@@ -48,6 +68,16 @@
             "solucion": "channel"
         },
         {
+            "transcripcion": "/kraʃ/",
+            "contiene": "vocal corta",
+            "solucion": "crash"
+        },
+        {
+            "transcripcion": "/ʤəˈpan/",
+            "contiene": "vocal corta",
+            "solucion": "Japan"
+        },
+        {
             "transcripcion": "/ˈɔfə/",
             "contiene": "vocal corta",
             "solucion": "offer"
@@ -56,6 +86,16 @@
             "transcripcion": "/ˈmɔdən/",
             "contiene": "vocal corta",
             "solucion": "modern"
+        },
+        {
+            "transcripcion": "/əˈkrɔs/",
+            "contiene": "vocal corta",
+            "solucion": "across"
+        },
+        {
+            "transcripcion": "/wɔʧ/",
+            "contiene": "vocal corta",
+            "solucion": "watch"
         },
         {
             "transcripcion": "/əˈkrɔs/",
@@ -78,6 +118,16 @@
             "solucion": "wouldn't"
         },
         {
+            "transcripcion": "/ˈɪnpɵt/",
+            "contiene": "vocal corta",
+            "solucion": "input"
+        },
+        {
+            "transcripcion": "/ˈmanhɵd/",
+            "contiene": "vocal corta",
+            "solucion": "manhood"
+        },
+        {
             "transcripcion": "/ˈkʌlʧə/",
             "contiene": "vocal corta",
             "solucion": "culture"
@@ -91,6 +141,16 @@
             "transcripcion": "/ˈʌndə/",
             "contiene": "vocal corta",
             "solucion": "under"
+        },
+        {
+            "transcripcion": "/əˈbʌv/",
+            "contiene": "vocal corta",
+            "solucion": "above"
+        },
+        {
+            "transcripcion": "/ɪˈnʌf/",
+            "contiene": "vocal corta",
+            "solucion": "enough"
         },
         {
             "transcripcion": "/ˈrɪjdə/",

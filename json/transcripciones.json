@@ -343,6 +343,16 @@
             "solucion": "cheerful"
         },
         {
+            "transcripcion": "//",
+            "contiene": "vocal larga",
+            "solucion": ""
+        },
+        {
+            "transcripcion": "//",
+            "contiene": "vocal larga",
+            "solucion": ""
+        },
+        {
             "transcripcion": "/kəmˈpɛː/",
             "contiene": "vocal larga",
             "solucion": "compare"
@@ -356,6 +366,16 @@
             "transcripcion": "/rɪˈpɛː/",
             "contiene": "vocal larga",
             "solucion": "repair"
+        },
+        {
+            "transcripcion": "/əˈfɛːz/",
+            "contiene": "vocal larga",
+            "solucion": "affairs"
+        },
+        {
+            "transcripcion": "/prɪˈpɛːd/",
+            "contiene": "vocal larga",
+            "solucion": "prepared"
         },
         {
             "transcripcion": "/ˈɑːftə/",
@@ -373,6 +393,16 @@
             "solucion": "garden"
         },
         {
+            "transcripcion": "/mɑːʧ/",
+            "contiene": "vocal larga",
+            "solucion": "march"
+        },
+        {
+            "transcripcion": "/klɑːs/",
+            "contiene": "vocal larga",
+            "solucion": "class"
+        },
+        {
             "transcripcion": "/ˈoːdə/",
             "contiene": "vocal larga",
             "solucion": "order"
@@ -388,6 +418,16 @@
             "solucion": "August"
         },
         {
+            "transcripcion": "/noːθ/",
+            "contiene": "vocal larga",
+            "solucion": "north"
+        },
+        {
+            "transcripcion": "/səˈpoːt/",
+            "contiene": "vocal larga",
+            "solucion": "support"
+        },
+        {
             "transcripcion": "/ˈvəːʒən/",
             "contiene": "vocal larga",
             "solucion": "version"
@@ -401,6 +441,16 @@
             "transcripcion": "/ˈpəːpəl/",
             "contiene": "vocal larga",
             "solucion": "purple"
+        },
+        {
+            "transcripcion": "/səːʧ/",
+            "contiene": "vocal larga",
+            "solucion": "search"
+        },
+        {
+            "transcripcion": "/rɪˈtəːn/",
+            "contiene": "vocal larga",
+            "solucion": "return"
         }
     ]
 }

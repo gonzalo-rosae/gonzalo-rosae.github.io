@@ -2,9 +2,10 @@ var textos;
 var inputRespuesta, respuestaCorrecta;
 var indiceActual;
 var nombreAudioActual;
-var btnReanudarAudio, btnAnterior, btnPosterior, btnReducirVelocidad, btnAumentarVelocidad, btnVelocidadAudio, btnMarcas;
+var btnReanudarAudio, btnAnterior, btnPosterior, btnReducirVelocidad, btnAumentarVelocidad, btnVelocidadAudio, btnMarcas, btnTranscripciones;
 var velocidadAudio = 1;
 var marcasActivadas = true;
+var transcripcionesActivadas = true;
 var audioActual = null;
 
 async function cargarTextos() {
@@ -37,6 +38,7 @@ async function cargarTextos() {
         btnAumentarVelocidad = document.getElementById("btnAumentarVelocidad");
         btnVelocidadAudio = document.getElementById("btnVelocidadAudio");
         btnMarcas = document.getElementById("btnMarcas");
+        btnTranscripciones = document.getElementById("btnTranscripciones");
 
         // Cogemos solo los textos desbloqueados
         textos = datos.textos.filter((texto, index) => index < numTextosDesbloqueados) || [];
@@ -78,6 +80,7 @@ function cargarNuevoTexto(sentido) {
     if (textoActual.contieneMarcas) {
         // Visibilizamos el botón de marcas
         btnMarcas.classList.remove('oculto');
+        btnTranscripciones.classList.add('oculto');
 
         // Cargamos el texto con marcas
         contenidoFinal = textoActual.contenido.split('').map((char, index) => {
@@ -95,10 +98,41 @@ function cargarNuevoTexto(sentido) {
     } else {
         // Invisibilizamos el botón de marcas
         btnMarcas.classList.add('oculto');
+        btnTranscripciones.classList.remove('oculto');
 
-        // Cargamos el texto tal cual
-        contenidoFinal = textoActual.contenido;
+        if (textoActual.contieneTranscripciones && transcripcionesActivadas) {
+            contenidoFinal = textoActual.contenidoTranscrito.replace(/\[([əɪɔɛaʌ])\]/g, (match, fonema) => {
+                let clase = 'fonema ';
+
+                switch (fonema) {
+                    case 'ə':
+                        clase += 'fonema-azul';
+                        break;
+                    case 'ɪ':
+                        clase += 'fonema-rojo';
+                        break;
+                    case 'ɔ':
+                        clase += 'fonema-naranja';
+                        break;
+                    case 'ɛ':
+                        clase += 'fonema-verde';
+                        break;
+                    case 'a':
+                        clase += 'fonema-rosa';
+                        break;
+                    case 'ʌ':
+                        clase += 'fonema-morado';
+                        break;
+                    default:
+                        clase += 'fonema-neutro'; // solo por seguridad
+                }
+
+                return `<span class="${clase}">[${fonema}]</span>`;
+            });
+        }
+        else { contenidoFinal = textoActual.contenido; }
     }
+
 
     // Creamos el nombre del audio actual
     var nombreCorto = textoActual.nombreAudio.toLowerCase();
@@ -118,7 +152,6 @@ function cargarNuevoTexto(sentido) {
 }
 
 function alternarMarcas() {
-    console.log("Alternando marcas: de " + marcasActivadas + " a " + !marcasActivadas);
     marcasActivadas = !marcasActivadas;
 
     let marcas = document.querySelectorAll('.marca');
@@ -136,6 +169,12 @@ function alternarMarcas() {
         });
         btnMarcas.textContent = "🆘";
     }
+}
+
+function alternarTranscripciones() {
+    transcripcionesActivadas = !transcripcionesActivadas;
+    cargarNuevoTexto(0); // Recargamos el texto actual para aplicar los cambios
+    btnTranscripciones.textContent = transcripcionesActivadas ? "🔡" : "👄";
 }
 
 function cambiarVelocidadAudio(event, variacion) {

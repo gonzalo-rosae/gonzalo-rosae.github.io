@@ -5,7 +5,7 @@ var nombreAudioActual;
 var btnReanudarAudio, btnAnterior, btnPosterior, btnReducirVelocidad, btnAumentarVelocidad, btnVelocidadAudio, btnMarcas, btnTranscripciones;
 var velocidadAudio = 1;
 var marcasActivadas = true;
-var transcripcionesActivadas = true;
+var transcripcionesActivadas = false;
 var audioActual = null;
 
 async function cargarTextos() {

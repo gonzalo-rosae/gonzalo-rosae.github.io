@@ -86,14 +86,16 @@ function añadirAtajosTeclado() {
 }
 
 function comprobarTest() {
-    if (inputRespuesta.value == datosPregunta.solucion.toLowerCase()) {
+    const respuestaNormalizada = inputRespuesta.value.replace(/[`´]/g, "'");
+
+    if (respuestaNormalizada == datosPregunta.solucion.toLowerCase()) {
         inputRespuesta.classList.add("correcta");
-    }
-    else {
+    } else {
         inputRespuesta.classList.add("incorrecta");
         respuestaCorrecta.innerText = datosPregunta.solucion;
         respuestaCorrecta.classList.remove("oculto");
     }
+
     document.activeElement.blur();
     inputRespuesta.disabled = true;
     btnComprobar.classList.add("invisible");

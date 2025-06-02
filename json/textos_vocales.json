@@ -208,7 +208,7 @@
             "contenido": "We sat in the park, watching the stars and having a laugh as my aunt told stories of her childhood, when she would march around the farm and calm her calf by the hearth. Our hearts were full, enjoying half the night together.",
             "contieneMarcas": true,
             "contieneTranscripciones": false,
-            "marcas": [15,16,35,36,53,54,64,65,116,117,133,134,142,143,151,152,163,164,165,175,176,177,202,203],
+            "marcas": [15,16,35,36,53,54,64,65,116,117,133,134,142,143,151,152,163,164,165,170,171,172,175,176,177,202,203],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "a.1"
@@ -228,7 +228,7 @@
             "contenido": "The girl heard the first word from her firm boss: 'Work hard, and you’ll earn your place in this world.' She felt the urge to turn and leave, but knew it was worth it. The girl’s journey began at birth, with each moment shaping her.",
             "contieneMarcas": true,
             "contieneTranscripciones": false,
-            "marcas": [5,6,20,21,26,27,40,41,52,53,98,99,118,119,127,128,159,160,173,174,180,181,182,197,198,229,230],
+            "marcas": [5,6,10,11,12,20,21,26,27,40,41,52,53,73,74,75,98,99,118,119,127,128,159,160,173,174,180,181,182,197,198,229,230],
             "marcasSordas": [],
             "marcasSonoras": [],
             "nombreAudio": "x."

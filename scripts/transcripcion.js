@@ -13,9 +13,6 @@ async function cargarPreguntas() {
         if (datos.titulo) {
             document.getElementById("titulo").textContent = datos.titulo;
         }
-        if (datos.instrucciones) {
-            //document.getElementById('instrucciones').textContent = datos.instrucciones;
-        }
 
         let ordenTranscripciones = ["vocal corta", "diptongo", "vocal larga"];
         let desbloqueado = sessionStorage.getItem("transcripciones");
@@ -24,15 +21,28 @@ async function cargarPreguntas() {
         respuestaCorrecta = document.getElementById("respuestaCorrecta");
         btnComprobar = document.getElementById("btnComprobar");
         btnNuevaPalabra = document.getElementById("btnNuevaPalabra");
+
         preguntas = datos.preguntas || [];
-        preguntasFiltradas = preguntas.filter(pregunta => ordenTranscripciones.indexOf(pregunta.contiene) <= ordenTranscripciones.indexOf(desbloqueado));
+
+        const nivelMaximo = ordenTranscripciones.indexOf(desbloqueado);
+        preguntasFiltradas = preguntas.filter(p => {
+            const nivelPregunta = ordenTranscripciones.indexOf(p.contiene);
+            return nivelPregunta !== -1 && nivelPregunta <= nivelMaximo;
+        });
+
+        if (preguntasFiltradas.length === 0) {
+            document.querySelector('.envoltura').innerHTML = '<p>No hay preguntas disponibles para este nivel.</p>';
+            return;
+        }
 
         ultimoIndice = parseInt(localStorage.getItem('ultimoIndice') || '0');
         indicesAleatorios = JSON.parse(localStorage.getItem('indicesAleatorios'));
-        if (!indicesAleatorios || ultimoIndice === 0) {
+        if (!indicesAleatorios || !Array.isArray(indicesAleatorios) || indicesAleatorios.length !== preguntasFiltradas.length) {
             indicesAleatorios = Array.from({ length: preguntasFiltradas.length }, (_, i) => i).sort(() => Math.random() - 0.5);
             localStorage.setItem('indicesAleatorios', JSON.stringify(indicesAleatorios));
+            ultimoIndice = 0;
         }
+
         cargarNuevaPregunta();
 
     } catch (error) {
@@ -41,31 +51,25 @@ async function cargarPreguntas() {
 }
 
 function cargarNuevaPregunta() {
-    // Seleccionar la pregunta correspondiente al índice aleatorio actual
-    datosPregunta = preguntasFiltradas[indicesAleatorios[ultimoIndice++]];
+    if (ultimoIndice >= preguntasFiltradas.length) {
+        ultimoIndice = 0;
+    }
 
-    // Verificar si se han recorrido todas las preguntas
-    if (ultimoIndice >= preguntasFiltradas.length) ultimoIndice = 0;
-
-    // Guardar el índice actualizado en `localStorage`
+    datosPregunta = preguntasFiltradas[indicesAleatorios[ultimoIndice]];
+    ultimoIndice++;
     localStorage.setItem('ultimoIndice', ultimoIndice);
 
-    // Actualizar la pregunta en el DOM
     const elementoPregunta = document.querySelector('#pregunta');
     elementoPregunta.textContent = datosPregunta.transcripcion;
 
-    // Resetear el campo de entrada de la respuesta
     const elementoInputRespuesta = document.querySelector('#inputRespuesta');
     elementoInputRespuesta.disabled = false;
     elementoInputRespuesta.value = "";
-    elementoInputRespuesta.classList.remove("correcta");
-    elementoInputRespuesta.classList.remove("incorrecta");
+    elementoInputRespuesta.classList.remove("correcta", "incorrecta");
 
-    // Ajustar la visibilidad de otros elementos según el estado
     btnComprobar.classList.remove("invisible");
     respuestaCorrecta.classList.add("oculto");
 }
-
 
 function añadirAtajosTeclado() {
     document.addEventListener('keydown', function (event) {
@@ -86,9 +90,10 @@ function añadirAtajosTeclado() {
 }
 
 function comprobarTest() {
-    const respuestaNormalizada = inputRespuesta.value.replace(/[`´]/g, "'");
+    const respuestaNormalizada = inputRespuesta.value.trim().toLowerCase().replace(/[`´]/g, "'");
+    const solucionNormalizada = datosPregunta.solucion.trim().toLowerCase().replace(/[`´]/g, "'");
 
-    if (respuestaNormalizada == datosPregunta.solucion.toLowerCase()) {
+    if (respuestaNormalizada === solucionNormalizada) {
         inputRespuesta.classList.add("correcta");
     } else {
         inputRespuesta.classList.add("incorrecta");
@@ -100,7 +105,6 @@ function comprobarTest() {
     inputRespuesta.disabled = true;
     btnComprobar.classList.add("invisible");
 }
-
 
 cargarPreguntas();
 añadirAtajosTeclado();

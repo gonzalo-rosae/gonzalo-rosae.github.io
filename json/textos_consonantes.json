@@ -216,6 +216,15 @@
             "contieneMarcas": true
         },
         {
+            "titulo": "Participios",
+            "contenido": "Yesterday, I watched a thrilling movie and laughed at the jokes. After it ended, I grabbed some snacks and hugged my friend who joined me. We detailed the scenes we liked and kissed each other goodbye. Later, I played some music and relaxed. I responded quickly to the messages I received. I realized I had loved the film and judged it to be one of the best I’d selected. Feeling calmed, I massaged my tired feet and allowed myself to go into an uninterrupted sleep.",
+            "marcas": [77, 78, 251, 252, 368, 369, 457, 458],
+            "marcasSordas": [18, 19, 48, 49, 168, 169, 179, 180, 238, 239],
+            "marcasSonoras": [88, 89, 111, 112, 132, 133, 148, 149, 215, 216, 298, 299, 310, 311, 330, 331, 384, 385, 396, 397, 405, 406, 422, 423],
+            "nombreAudio": "participios",
+            "contieneMarcas": true
+        },
+        {
             "titulo": "Plurales",
             "contenido": "Cats and dogs chase butterflies in gardens near cliffs. Buses and cars pass by open windows as judges watch from their offices. Children sing songs about roses and brushes while playing games with cups and books. Months go by, and houses fill with dusty gloves and old watches. Crabs scuttle on beaches as plans for distant trips take shape. In cozy rooms, people read about famous races, their voices soft like breezes.",
             "marcas": [],

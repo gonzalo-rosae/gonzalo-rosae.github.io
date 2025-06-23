@@ -7,6 +7,23 @@
     "programa": "Gramatical"
   },
   {
+    "identificador": "josepr25",
+    "nombre": "Jose",
+    "apellidos": "Pazos Rodríguez",
+    "genero": "hombre",
+    "programa": "Británico",
+    "progreso": {
+      "consonantes": "1",
+      "consonantesExtra": "0",
+      "textosConsonantes": "5",
+      "vocales": "0",
+      "vocalesExtra": "0",
+      "textosVocales": "0",
+      "transcripciones": "no",
+      "cursoFinalizado": "no"
+    }
+  },
+  {
     "identificador": "vicenteep24",
     "nombre": "Vicente",
     "apellidos": "Esplá Palacio",
@@ -19,7 +36,7 @@
       "vocales": "9",
       "vocalesExtra": "-1",
       "textosVocales": "23",
-      "transcripciones": "vocal larga",     
+      "transcripciones": "vocal larga",
       "cursoFinalizado": "no"
     }
   },
@@ -35,8 +52,8 @@
       "textosConsonantes": "100",
       "vocales": "6",
       "vocalesExtra": "-1",
-      "textosVocales": "100", 
-      "transcripciones": "diptongo",     
+      "textosVocales": "100",
+      "transcripciones": "diptongo",
       "cursoFinalizado": "no"
     }
   },
@@ -52,8 +69,8 @@
       "textosConsonantes": "100",
       "vocales": "8",
       "vocalesExtra": "-1",
-      "textosVocales": "100", 
-      "transcripciones": "vocal larga",     
+      "textosVocales": "100",
+      "transcripciones": "vocal larga",
       "cursoFinalizado": "07/10/2024"
     }
   },
@@ -69,8 +86,8 @@
       "textosConsonantes": "100",
       "vocales": "100",
       "vocalesExtra": "-1",
-      "textosVocales": "100", 
-      "transcripciones": "vocal larga",     
+      "textosVocales": "100",
+      "transcripciones": "vocal larga",
       "cursoFinalizado": "01/01/2000"
     }
   }

@@ -78,11 +78,31 @@
                     }
                 }
 
-                var indiceExtra = parseInt(vocalesExtra, 10);
-                if (indiceExtra != -1) {
-                    const btn = document.getElementById(infoBotones[indiceExtra].id);
-                    btn.onclick = infoBotones[indiceExtra].onclick;
-                    btn.querySelector('.textoBtn').textContent = infoBotones[indiceExtra].texto;
+                var indicesExtra = [];
+
+                if (vocalesExtra.includes("-")) {
+                    const [inicio, fin] = vocalesExtra.split("-").map(n => parseInt(n, 10));
+                    if (!isNaN(inicio) && !isNaN(fin)) {
+                        for (let i = inicio; i <= fin; i++) {
+                            indicesExtra.push(i);
+                        }
+                    }
+                } else {
+                    const unico = parseInt(vocalesExtra, 10);
+                    if (!isNaN(unico)) {
+                        indicesExtra.push(unico);
+                    }
+                }
+                for (let indiceExtra of indicesExtra) {
+                    if (indiceExtra >= 0 && indiceExtra < infoBotones.length) {
+                        var infoBtn = infoBotones[indiceExtra];
+                        var btn = document.getElementById(infoBtn.id);
+                        btn.onclick = infoBtn.onclick;
+                        btn.querySelector('.textoBtn').textContent = infoBtn.texto;
+                        if (infoBtn.nivel == 'Avanzado') {
+                            btn.parentElement.classList.remove("grupoOculto");
+                        }
+                    }
                 }
             }
 

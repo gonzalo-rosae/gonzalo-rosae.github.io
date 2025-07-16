@@ -13,9 +13,9 @@
     "genero": "hombre",
     "programa": "Británico",
     "progreso": {
-      "consonantes": "4",
-      "consonantesExtra": "5-6",
-      "textosConsonantes": "9",
+      "consonantes": "6",
+      "consonantesExtra": "0",
+      "textosConsonantes": "13",
       "vocales": "0",
       "vocalesExtra": "0",
       "textosVocales": "0",
@@ -35,9 +35,9 @@
       "textosConsonantes": "100",
       "vocales": "9",
       "vocalesExtra": "-1",
-      "textosVocales": "24",
+      "textosVocales": "25",
       "transcripciones": "vocal larga",
-      "cursoFinalizado": "no"
+      "cursoFinalizado": "16/07/2025"
     }
   },
   {

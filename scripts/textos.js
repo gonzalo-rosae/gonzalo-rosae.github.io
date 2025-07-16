@@ -128,7 +128,8 @@ function cargarNuevoTexto(sentido) {
                 }
 
                 return `<span class="${clase}">[${fonema}]</span>`;
-            });
+            })
+            .replace(/([‖|])/g, '<span class="fonema fonema-rojo">$1</span>');
         }
         else { contenidoFinal = textoActual.contenido; }
     }

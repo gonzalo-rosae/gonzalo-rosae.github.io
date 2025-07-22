@@ -98,9 +98,9 @@ function cargarNuevoTexto(sentido) {
     } else {
         // Invisibilizamos el botón de marcas
         btnMarcas.classList.add('oculto');
-        btnTranscripciones.classList.remove('oculto');
-
+        
         if (textoActual.contieneTranscripciones && transcripcionesActivadas) {
+            btnTranscripciones.classList.remove('oculto');
             contenidoFinal = textoActual.contenidoTranscrito.replace(/\[([əɪɔɛaʌ])\]/g, (match, fonema) => {
                 let clase = 'fonema ';
 

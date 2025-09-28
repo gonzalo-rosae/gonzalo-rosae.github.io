@@ -2,6 +2,7 @@ let preguntas = [];
 let indicePreguntaActual = 0;
 let cantidadRespuestasCorrectas = 0;
 let opcionesFijas = null;
+let respuestaSeleccionada = false;
 
 async function cargarPreguntas() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -27,6 +28,9 @@ async function cargarPreguntas() {
         }
         if (datos.numRespuestas) {
             document.getElementById("alternativas").className = "de" + datos.numRespuestas + "respuestas";
+        }
+        if (datos.opcionesLargas && datos.opcionesLargas === true) {
+            document.getElementById("alternativas").classList.add("largas");
         }
 
         // Guardar las opciones fijas si están presentes
@@ -80,6 +84,7 @@ function cargarPregunta(indice) {
 }
 
 function verificarRespuesta(indiceSeleccionado, indiceOpcionCorrecta) {
+    respuestaSeleccionada = true;
     const opciones = document.querySelectorAll('.opcion');
 
     opciones.forEach((opcion, i) => {
@@ -108,6 +113,7 @@ function mezclarArray(array) {
 }
 
 function siguientePregunta() {
+    respuestaSeleccionada = false;
     const esUltimaPregunta = indicePreguntaActual === preguntas.length - 1;
     if (esUltimaPregunta) {
         mostrarResultados();
@@ -215,7 +221,7 @@ function añadirAtajosTeclado() {
                 btnVolverEmpezar.click();
             }
         }
-        else if (event.key >= 1 && event.key <= 3 && btnVolverEmpezar.classList.contains('oculto')) {
+        else if (!respuestaSeleccionada && event.key >= 1 && event.key <= 3 && btnVolverEmpezar.classList.contains('oculto')) {
             const alternativas = document.querySelectorAll('#alternativas .opcion');
             const indice = parseInt(event.key) - 1;
 

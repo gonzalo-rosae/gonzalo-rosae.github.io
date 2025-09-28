@@ -1,0 +1,78 @@
+{
+    "titulo": "Pronunciaciones regionales",
+    "instrucciones": "Selecciona la pronunciación británica para las siguientes palabras.",
+    "numRespuestas": 2,
+    "opcionesLargas": true,
+    "preguntas": [
+        {
+            "pregunta": "tomato",
+            "opciones": [
+                "/təˈmɑːtəw/",
+                "/təˈmɛjtəw/"
+            ]
+        },
+        {
+            "pregunta": "schedule",
+            "opciones": [
+                "/ˈʃɛʤʉwl/",
+                "/ˈskɛʤʉwl/"
+            ]
+        },
+        {
+            "pregunta": "either",
+            "opciones": [
+                "/ˈɑjðə/",
+                "/ˈɪjðər/"
+            ]
+        },
+        {
+            "pregunta": "neither",
+            "opciones": [
+                "/ˈnɑjðə/",
+                "/ˈnɪjðər/"
+            ]
+        },
+        {
+            "pregunta": "privacy",
+            "opciones": [
+                "/ˈprɪvəsɪj/",
+                "/ˈprɑjvəsɪj/"
+            ]
+        },
+        {
+            "pregunta": "data",
+            "opciones": [
+                "/ˈdɛjtə/",
+                "/ˈdatə/"
+            ]
+        },
+        {
+            "pregunta": "mobile",
+            "opciones": [
+                "/ˈməwbɑjl/",
+                "/ˈməwbəl/"
+            ]
+        },
+        {
+            "pregunta": "zebra",
+            "opciones": [
+                "/ˈzɛbrə/",
+                "/ˈzɪjbrə/"
+            ]
+        },
+        {
+            "pregunta": "adult",
+            "opciones": [
+                "/ˈadʌlt/",
+                "/əˈdʌlt/"
+            ]
+        },
+        {
+            "pregunta": "advertisement",
+            "opciones": [
+                "/ədˈvəːtɪsmənt/",
+                "/ˈadvərtɑjzmənt/"
+            ]
+        }
+    ]
+}

@@ -22,8 +22,30 @@ h1 {
 
 .contenedorBotones {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.filaArriba {
+    display: flex;
     justify-content: center;
     gap: 30px;
+}
+
+#btnExtra {
+    width: calc(200px * 2 + 30px);
+    /* mismo ancho que los dos botones juntos con el gap */
+    height: 50px;
+    /* altura pequeña */
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
 .btnSeccion {
@@ -42,6 +64,11 @@ h1 {
     border-radius: 20px;
     position: relative;
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+    filter: grayscale(50%);
+}
+
+.btnSeccion:hover {
+    filter: grayscale(0%);
 }
 
 .btnSeccion:not(.prohibido):hover {
@@ -50,8 +77,16 @@ h1 {
     box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
 }
 
+.btnSeccion:not(.prohibido):hover>.textoBtn {
+    background-color: rgba(0, 0, 255, 0.75);
+}
+
 .btnSeccion.prohibido:hover {
     outline: 5px solid red;
+}
+
+.btnSeccion.prohibido:hover>.textoBtn {
+    background-color: rgba(255, 0, 0, 0.75);
 }
 
 #btnCerrarSesion {
@@ -63,6 +98,7 @@ h1 {
     border-radius: 5px;
     padding: 10px;
 }
+
 #btnCerrarSesion:hover {
     cursor: pointer;
     background-color: rgb(255, 70, 70);
@@ -79,6 +115,7 @@ h1 {
     font-size: 1.4em;
     border-radius: 5px;
 }
+
 #btnTranscripciones:hover {
     cursor: pointer;
     background-color: var(--azulTema);
@@ -96,6 +133,7 @@ h1 {
     font-size: 1.4em;
     border-radius: 5px;
 }
+
 #btnCertificado:hover {
     cursor: pointer;
     background-color: var(--azulTema);
@@ -110,12 +148,21 @@ h1 {
     background-image: url('../imagenes/vocales.png');
 }
 
-#btnConsonantes.prohibido, #btnVocales.prohibido {
-    background-image: url('../imagenes/candado.png');
+#btnExtra {
+    background-image: url('../imagenes/extra.png');
+    background-size: 80%;
 }
 
-.textoBtn {
-    background-color: rgba(0, 0, 0, 0.675);
+.btnSeccion.prohibido {
+    background-image: url('../imagenes/candao.png') !important;
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: filter 0.3s ease;
+}
+
+.filaArriba .textoBtn {
+    background-color: rgba(0, 0, 0, 0.75);
     border-radius: 5px;
     padding: 5px;
     position: absolute;
@@ -123,6 +170,13 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
+}
+
+.filaAbajo .textoBtn {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    padding: 5px;
+    width: 10%;
 }
 
 @media (max-width: 600px) {

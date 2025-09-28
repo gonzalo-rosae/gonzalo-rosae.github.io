@@ -1,0 +1,93 @@
+{
+    "titulo": "Erre enlazante",
+    "instrucciones": "Selecciona si en las siguientes frases o palabras ocurre el fenómeno de la erre enlazante.",
+    "numRespuestas": 3,
+    "opcionesLargas": true,
+    "mismasOpciones": [
+        "no",
+        "enlazante común",
+        "enlazante intrusiva"
+    ],
+    "preguntas": [
+        {
+            "pregunta": "car factory",
+            "opciones": [
+                "no",
+                "enlazante común",
+                "enlazante intrusiva"
+            ]
+        },
+        {
+            "pregunta": "raw food",
+            "opciones": [
+                "no",
+                "enlazante común",
+                "enlazante intrusiva"
+            ]
+        },
+        {
+            "pregunta": "me and Tom",
+            "opciones": [
+                "no",
+                "enlazante común",
+                "enlazante intrusiva"
+            ]
+        },
+        {
+            "pregunta": "to a place",
+            "opciones": [
+                "no",
+                "enlazante común",
+                "enlazante intrusiva"
+            ]
+        },
+        {
+            "pregunta": "far away",
+            "opciones": [
+                "enlazante común",
+                "no",
+                "enlazante intrusiva"
+            ]
+        },
+        {
+            "pregunta": "car insurance",
+            "opciones": [
+                "enlazante común",
+                "no",
+                "enlazante intrusiva"
+            ]
+        },
+        {
+            "pregunta": "drawing",
+            "opciones": [
+                "enlazante intrusiva",
+                "no",
+                "enlazante común"
+            ]
+        },
+        {
+            "pregunta": "saw a film",
+            "opciones": [
+                "enlazante intrusiva",
+                "no",
+                "enlazante común"
+            ]
+        },
+        {
+            "pregunta": "Camila and Albert",
+            "opciones": [
+                "enlazante intrusiva",
+                "no",
+                "enlazante común"
+            ]
+        },
+        {
+            "pregunta": "the idea of God",
+            "opciones": [
+                "enlazante intrusiva",
+                "no",
+                "enlazante común"
+            ]
+        }
+    ]
+}

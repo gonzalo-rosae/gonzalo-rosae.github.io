@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal práctica</title>
+    <link rel="icon" href="../imagenes/logo_redondo.png" type="images/x-icon">
+    <link rel="stylesheet" href="../estilos/general.css">
+    <link rel="stylesheet" href="../estilos/menu.css">
+    <script src="../scripts/general.js"></script>
+</head>
+
+<body>
+    <a id="flechaAtras" href="javascript:void(0);" onclick="window.history.back();">←</a>
+    <div class="container">
+        <h1>Extra</h1>
+        <div class="contenedorBotones">
+            <div class="filaBtn">
+                <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
+            <div class="filaBtn">
+                <button id="btn2" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
+            <div class="filaBtn">
+                <button id="btn3" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const identificador = sessionStorage.getItem('idUsuario');
+            const token = sessionStorage.getItem('token');
+            const moduloFinal = sessionStorage.getItem('moduloFinal');
+            const moduloFinalExtra = sessionStorage.getItem('moduloFinalExtra');
+
+            if (!(identificador && tokenEsValido(token, identificador))) {
+                cerrarSesion();
+            } else {
+                cargarBotones(moduloFinal, moduloFinalExtra);
+            }
+        }
+
+        function cargarBotones(moduloFinal, moduloFinalExtra) {
+            var numBotonesDesbloqueados = parseInt(moduloFinal, 10);
+            const infoBotones = [
+                {
+                    id: 'btn1',
+                    texto: 'Test erre enlazante',
+                    nivel: 'Básico',
+                    onclick: () => realizarTest('erre_enlazante'),
+                },
+                {
+                    id: 'btn2',
+                    texto: 'Test pronunciaciones regionales',
+                    nivel: 'Básico',
+                    onclick: () => realizarTest('regionales'),
+                },
+                {
+                    id: 'btn3',
+                    texto: 'Test palabras parónimas',
+                    nivel: 'Básico',
+                    onclick: () => realizarTest('paronimas'),
+                }
+            ];
+
+            for (let i = 0; i < infoBotones.length; i++) {
+                if (i < numBotonesDesbloqueados) {
+                    const infoBtn = infoBotones[i];
+                    const btn = document.getElementById(infoBtn.id);
+                    btn.onclick = infoBtn.onclick;
+                    btn.querySelector('.textoBtn').textContent = infoBtn.texto;
+                    if (infoBtn.nivel == 'Avanzado') {
+                        btn.parentElement.classList.remove("grupoOculto");
+                    }
+                }
+            }
+
+            var indicesExtra = [];
+
+            if (moduloFinalExtra.includes("-")) {
+                const [inicio, fin] = moduloFinalExtra.split("-").map(n => parseInt(n, 10));
+                if (!isNaN(inicio) && !isNaN(fin)) {
+                    for (let i = inicio; i <= fin; i++) {
+                        indicesExtra.push(i);
+                    }
+                }
+            } else {
+                const unico = parseInt(moduloFinalExtra, 10);
+                if (!isNaN(unico)) {
+                    indicesExtra.push(unico);
+                }
+            }
+            for (let indiceExtra of indicesExtra) {
+                if (indiceExtra >= 0 && indiceExtra < infoBotones.length) {
+                    var infoBtn = infoBotones[indiceExtra];
+                    var btn = document.getElementById(infoBtn.id);
+                    btn.onclick = infoBtn.onclick;
+                    btn.querySelector('.textoBtn').textContent = infoBtn.texto;
+                    if (infoBtn.nivel == 'Avanzado') {
+                        btn.parentElement.classList.remove("grupoOculto");
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key >= '1' && event.key <= '3') {
+                let buttonId = 'btn' + event.key;
+
+                let button = document.getElementById(buttonId);
+
+                if (button) {
+                    button.click();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

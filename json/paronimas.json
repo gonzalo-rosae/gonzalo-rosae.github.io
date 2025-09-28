@@ -1,0 +1,168 @@
+{
+    "titulo": "Palabras parónimas",
+    "instrucciones": "Selecciona la pronunciación correcta de las siguientes palabras.",
+    "numRespuestas": 3,
+    "opcionesLargas": true,
+    "preguntas": [
+        {
+            "pregunta": "tough",
+            "opciones": [
+                "/tʌf/",
+                "/ðəw/",
+                "/θoː/"
+            ]
+        },
+        {
+            "pregunta": "though",
+            "opciones": [
+                "/ðəw/",
+                "/tʌf/",
+                "/θʌf/"
+            ]
+        },
+        {
+            "pregunta": "thought",
+            "opciones": [
+                "/θoːt/",
+                "/θʉwt/",
+                "/tʌf/"
+            ]
+        },
+        {
+            "pregunta": "thorough",
+            "opciones": [
+                "/ˈθʌrə/",
+                "/θrʉw/",
+                "/θoːrəf/"
+            ]
+        },
+        {
+            "pregunta": "through",
+            "opciones": [
+                "/θrʉw/",
+                "/θrə/",
+                "/θrʌf/"
+            ]
+        },
+        {
+            "pregunta": "throughout",
+            "opciones": [
+                "/θrʉwˈawt/",
+                "/θrʉwt/",
+                "/ˈθrʌfət/"
+            ]
+        },
+        {
+            "pregunta": "beer",
+            "opciones": [
+                "/bɪː/",
+                "/bɛː/",
+                "/bə/"
+            ]
+        },
+        {
+            "pregunta": "bear",
+            "opciones": [
+                "/bɛː/",
+                "/bɪː/",
+                "/bɑː/"
+            ]
+        },
+        {
+            "pregunta": "beard",
+            "opciones": [
+                "/bɪːd/",
+                "/bɛːd/",
+                "/bəːd/"
+            ]
+        },
+        {
+            "pregunta": "bird",
+            "opciones": [
+                "/bəːd/",
+                "/bɪːd/",
+                "/bɛːd/"
+            ]
+        },
+        {
+            "pregunta": "write",
+            "opciones": [
+                "/rɑjt/",
+                "/rɪjt/",
+                "/wrɑjt/"
+            ]
+        },
+        {
+            "pregunta": "Wright",
+            "opciones": [
+                "/rɑjt/",
+                "/wrɪjt/",
+                "/wrɑjt/"
+            ]
+        },
+        {
+            "pregunta": "right",
+            "opciones": [
+                "/rɑjt/",
+                "/rɪjt/",
+                "/wrɑjt/"
+            ]
+        },
+        {
+            "pregunta": "rite",
+            "opciones": [
+                "/rɑjt/",
+                "/rɪjt/",
+                "/wrɑjt/"
+            ]
+        },
+        {
+            "pregunta": "their",
+            "opciones": [
+                "/ðɛː/",
+                "/ðɪː/",
+                "/ðɑː/"
+            ]
+        },
+        {
+            "pregunta": "they're",
+            "opciones": [
+                "/ðɛː/",
+                "/ðɪː/",
+                "/ðɑː/"
+            ]
+        },
+        {
+            "pregunta": "there",
+            "opciones": [
+                "/ðɛː/",
+                "/ðɪː/",
+                "/ðɑː/"
+            ]
+        },
+        {
+            "pregunta": "quiet",
+            "opciones": [
+                "/ˈkwɑjət/",
+                "/kwɑjt/",
+                "/kwɪt/"
+            ]
+        },
+        {
+            "pregunta": "quite",
+            "opciones": [
+                "/kwɑjt/",
+                "/ˈkwɑjət/",
+                "/kwɪt/"
+            ]
+        },
+        {
+            "pregunta": "quit",
+            "opciones": [
+                "/kwɪt/",
+                "/wɪt/",
+                "/kwɑjt/"
+            ]
+        }
+    ]
+}

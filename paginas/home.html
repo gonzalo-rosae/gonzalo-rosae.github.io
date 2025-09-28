@@ -19,12 +19,19 @@
     <div class="container">
         <h1 id="saludo">Hola, Usuario</h1>
         <div class="contenedorBotones">
-            <button id="btnConsonantes" class="btnSeccion" onclick="irAPagina('consonantes')">
-                <span class="textoBtn">Consonantes</span>
-            </button>
-            <button id="btnVocales" class="btnSeccion" onclick="irAPagina('vocales')">
-                <span class="textoBtn">Vocales</span>
-            </button>
+            <div class="filaArriba">
+                <button id="btnConsonantes" class="btnSeccion" onclick="irAPagina('consonantes')">
+                    <span class="textoBtn">Consonantes</span>
+                </button>
+                <button id="btnVocales" class="btnSeccion" onclick="irAPagina('vocales')">
+                    <span class="textoBtn">Vocales</span>
+                </button>
+            </div>
+            <div class="filaAbajo">
+                <button id="btnExtra" class="btnSeccion" onclick="irAPagina('extra')">
+                    <span class="textoBtn">Extra</span>
+                </button>
+            </div>
         </div>
     </div>
     <button id="btnCertificado" class="oculto" alt="Certificado finalización"
@@ -37,6 +44,7 @@
             nombre = sessionStorage.getItem('nombre');
             genero = sessionStorage.getItem('genero');
             vocales = sessionStorage.getItem('vocales');
+            moduloFinal = sessionStorage.getItem('moduloFinal');
             transcripciones = sessionStorage.getItem('transcripciones');
             cursoFinalizado = sessionStorage.getItem('cursoFinalizado');
             token = sessionStorage.getItem('token');
@@ -53,12 +61,20 @@
                         prohibido();
                     };
                 }
+                // ¿Extra prohibida?
+                const btnExtra = document.getElementById('btnExtra');
+                if (moduloFinal < 1) {
+                    btnExtra.classList.add('prohibido');
+                    btnExtra.onclick = function () {
+                        prohibido();
+                    };
+                }
                 // Consonantes nunca prohibidas
                 if (cursoFinalizado != "no") {
                     document.getElementById("btnTranscripciones").classList.remove("oculto");
                     document.getElementById("btnCertificado").classList.remove("oculto");
                 } else if (transcripciones != "no") {
-                    document.getElementById("btnTranscripciones").classList.remove("oculto");                    
+                    document.getElementById("btnTranscripciones").classList.remove("oculto");
                 }
             } else {
                 cerrarSesion();
@@ -101,7 +117,7 @@
             doc.rect(10, 10, pageWidth - 20, pageHeight - 20); // Margen de 10mm
 
             // 3. Agregar el logotipo
-           
+
 
             // 4. Título principal del certificado en letras blancas
             doc.setFont("helvetica", "bold");
@@ -110,7 +126,7 @@
             doc.text("Certificado de Finalización", pageWidth / 2, 50, { align: "center" });
 
             // 5. Nombre del alumno
-            doc.setFontSize(22);    
+            doc.setFontSize(22);
             var tratamiento = sessionStorage.getItem("genero") == "hombre" ? "don" : "doña";
             doc.setTextColor(...colorNegro);
             doc.text(`Este certificado se otorga a ${tratamiento}:`, pageWidth / 2, 90, { align: "center" });

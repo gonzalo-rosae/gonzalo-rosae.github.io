@@ -29,6 +29,12 @@ body {
     flex-wrap: wrap;
 }
 
+#alternativas.largas {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
 .opcion {
     display: flex;
     justify-content: center;
@@ -54,6 +60,11 @@ body {
 .de3respuestas>.opcion {
     width: 100px;
     height: 100px;
+}
+
+#alternativas.largas>.opcion {
+    width: 98%;
+    height: 70px;
 }
 
 .boton {

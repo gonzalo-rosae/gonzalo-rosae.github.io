@@ -172,6 +172,6 @@ body {
   }
 
   #botonesVelocidad {
-    bottom: 90px;
+    display: none;
   }
 }

@@ -60,7 +60,7 @@
 
                 infoBotones = [
                     { id: 'btn1', texto: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
-                    { id: 'btn2', texto: 'Test schwa', onclick: () => realizarTest('schwa') },
+                    { id: 'btn2', texto: 'Test <em>schwa</em>', onclick: () => realizarTest('schwa') },
                     { id: 'btn6', texto: '🔥', onclick: () => realizarTest('schwa++') },
                     { id: 'btn3', texto: 'Test prefijos', onclick: () => realizarTest('prefijos') },
                     { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
@@ -74,7 +74,7 @@
                     if (i < numBotonesDesbloqueados) {
                         const btn = document.getElementById(infoBotones[i].id);
                         btn.onclick = infoBotones[i].onclick;
-                        btn.querySelector('.textoBtn').textContent = infoBotones[i].texto;
+                        btn.querySelector('.textoBtn').innerHTML = infoBotones[i].texto;
                     }
                 }
 

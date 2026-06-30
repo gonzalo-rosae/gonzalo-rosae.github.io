@@ -1,10 +1,21 @@
 [
   {
-    "identificador": "miguelbs25",
+    "identificador": "miguelbs26",
     "nombre": "Miguel",
     "apellidos": "Barrero Sáez",
     "genero": "hombre",
-    "programa": "Gramatical"
+    "programa": "Británico",
+    "progreso": {
+      "consonantes": "1",
+      "consonantesExtra": "0",
+      "textosConsonantes": "8",
+      "vocales": "1",
+      "vocalesExtra": "0",
+      "moduloFinal": "0",
+      "textosVocales": "0",
+      "transcripciones": "vocal larga",
+      "cursoFinalizado": "no"
+    }
   },
   {
     "identificador": "josepr25",

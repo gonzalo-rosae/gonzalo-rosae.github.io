@@ -1,12 +1,12 @@
 [
   {
     "identificador": "mariaep26",
-    "nombre": "Maria",
+    "nombre": "María",
     "apellidos": "Espinosa Piqueras",
     "genero": "mujer",
     "programa": "Británico",
     "progreso": {
-      "consonantes": "1",
+      "consonantes": "3",
       "consonantesExtra": "0",
       "textosConsonantes": "6",
       "vocales": "0",

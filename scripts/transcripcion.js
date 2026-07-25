@@ -76,7 +76,7 @@ function añadirAtajosTeclado() {
         if (event.key == 'Enter') {
             btnComprobar.click();
         }
-        else if (event.key == 'Escape') {
+        else if (event.key == 'Escape' || event.key == '0') {
             document.activeElement.blur();
         }
         else if (event.key == '<' || event.key == '>') {

@@ -14,27 +14,27 @@
 
 <body>
     <img id="btnCerrarSesion" src="../imagenes/cerrar_sesion.png" alt="Cerrar sesión" onclick="window.history.back()">
-    <button id="btnTranscripciones" class="oculto" alt="Ejercicios transcripción"
+    <button id="btnTranscripciones" class="oculto" alt="Ejercicios transcripción" data-atajo="t"
         onclick="irAPagina('transcripcion')">✏️</button>
     <div class="container">
         <h1 id="saludo">Hola, Usuario</h1>
         <div class="contenedorBotones">
             <div class="filaArriba">
-                <button id="btnConsonantes" class="btnSeccion" onclick="irAPagina('consonantes')">
+                <button id="btnConsonantes" class="btnSeccion" data-atajo="1" onclick="irAPagina('consonantes')">
                     <span class="textoBtn">Consonantes</span>
                 </button>
-                <button id="btnVocales" class="btnSeccion" onclick="irAPagina('vocales')">
+                <button id="btnVocales" class="btnSeccion" data-atajo="2" onclick="irAPagina('vocales')">
                     <span class="textoBtn">Vocales</span>
                 </button>
             </div>
             <div class="filaAbajo">
-                <button id="btnExtra" class="btnSeccion" onclick="irAPagina('extra')">
+                <button id="btnExtra" class="btnSeccion" data-atajo="3" onclick="irAPagina('extra')">
                     <span class="textoBtn">Extra</span>
                 </button>
             </div>
         </div>
     </div>
-    <button id="btnCertificado" class="oculto" alt="Certificado finalización"
+    <button id="btnCertificado" class="oculto" alt="Certificado finalización" data-atajo="4"
         onclick="descargarCertificado()">🏅</button>
 
     <script>
@@ -88,9 +88,15 @@
             const btnConsonantes = document.getElementById("btnConsonantes");
             const btnVocales = document.getElementById("btnVocales");
             const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+            const btnTranscripciones = document.getElementById("btnTranscripciones");
+            const btnCertificado = document.getElementById("btnCertificado");
             document.addEventListener('keydown', function (event) {
                 if (event.key === '1' || event.key == 'c') btnConsonantes.click();
                 else if (event.key === '2' || event.key == 'v') btnVocales.click();
+                else if (event.key === '3' || event.key == 'e') btnExtra.click();
+                else if ((event.key === 't' || event.key == 'T') && !btnTranscripciones.classList.contains('oculto')) btnTranscripciones.click();
+                else if (event.key === '4' && !btnCertificado.classList.contains('oculto')) btnCertificado.click();
+                else if (event.key === 'Escape' || event.key === '0') btnCerrarSesion.click();
             });
         }
 

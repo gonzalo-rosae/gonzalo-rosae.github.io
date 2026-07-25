@@ -21,19 +21,19 @@
             <div id="nombre"></div>
             <div id="contenido">Texto</div>
             <div id="botonesVelocidad">
-                <button id="btnReducirVelocidad" class="boton" onclick="cambiarVelocidadAudio(event, -0.25)"
+                <button id="btnReducirVelocidad" class="boton" data-atajo="−" onclick="cambiarVelocidadAudio(event, -0.25)"
                     oncontextmenu="cambiarVelocidadAudio(event, -1)">➖</button>
                 <span id="btnVelocidadAudio" class="boton" oncontextmenu="cambiarVelocidadAudio(event, 0)">x1</span>
-                <button id="btnAumentarVelocidad" class="boton" onclick="cambiarVelocidadAudio(event, 0.25)"
+                <button id="btnAumentarVelocidad" class="boton" data-atajo="+" onclick="cambiarVelocidadAudio(event, 0.25)"
                     oncontextmenu="cambiarVelocidadAudio(event, 1)">➕</button>
             </div>
-            <button id="btnMarcas" class="boton" onclick="alternarMarcas()">🚀</button>
-            <button id="btnTranscripciones" class="boton" onclick="alternarTranscripciones()">👄</button>
+            <button id="btnMarcas" class="boton" data-atajo="m" onclick="alternarMarcas()">🚀</button>
+            <button id="btnTranscripciones" class="boton" data-atajo="t" onclick="alternarTranscripciones()">👄</button>
             <div id="botonesReproduccion">
-                <button id="btnAnterior" class="boton" onclick="cargarNuevoTexto(-1)">⏪</button>
-                <button id="btnReanudarAudio" class="boton" onclick="reanudarAudio()">▶️</button>
-                <button id="btnPararAudio" class="boton" onclick="reiniciarAudio()">⏹️</button>
-                <button id="btnPosterior" class="boton" onclick="cargarNuevoTexto(1)">⏩</button>
+                <button id="btnAnterior" class="boton" data-atajo="←" onclick="cargarNuevoTexto(-1)">⏪</button>
+                <button id="btnReanudarAudio" class="boton" data-atajo="r" onclick="reanudarAudio()">▶️</button>
+                <button id="btnPararAudio" class="boton" data-atajo="x" onclick="reiniciarAudio()">⏹️</button>
+                <button id="btnPosterior" class="boton" data-atajo="→" onclick="cargarNuevoTexto(1)">⏩</button>
             </div>
         </div>
 </body>

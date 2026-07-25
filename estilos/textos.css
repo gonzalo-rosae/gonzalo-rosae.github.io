@@ -39,10 +39,31 @@ body {
 #nombre {
     position: absolute;
     top: 120px;
-    background-color: white;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--colorLetra);
     max-width: 800px;
     line-height: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.indiceTexto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--azulTema);
+    color: white;
+    font-size: 0.55em;
+    line-height: normal;
+}
+
+.tituloTexto {
+    color: var(--colorLetra);
 }
 
 #contenido {

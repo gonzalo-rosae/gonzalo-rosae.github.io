@@ -17,28 +17,28 @@
         <h1>Consonantes</h1>
         <div class="contenedorBotones">
             <div class="filaBtn">
-                <button id="btn1" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn1" class="btnSeccion" data-atajo="1" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn">
-                <button id="btn2" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn2" class="btnSeccion" data-atajo="2" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn btnPartido">
-                <button id="btn3" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-                <button id="btn4" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn3" class="btnSeccion" data-atajo="3" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn4" class="btnSeccion" data-atajo="4" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn btnPartido">
-                <button id="btn5" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
-                <button id="btn6" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn5" class="btnSeccion" data-atajo="5" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn6" class="btnSeccion" data-atajo="6" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn">
-                <button id="btn7" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn7" class="btnSeccion" data-atajo="7" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
             <div class="filaBtn">
-                <button id="btn8" class="btnSeccion" onclick="prohibido()"><span class="textoBtn">??</span></button>
+                <button id="btn8" class="btnSeccion" data-atajo="8" onclick="prohibido()"><span class="textoBtn">??</span></button>
             </div>
         </div>
     </div>
-    <button id="btnTextos" class="" alt="Textos práctica" onclick="irAPagina('textos')">🗒️</button>
+    <button id="btnTextos" class="" alt="Textos práctica" data-atajo="t" onclick="irAPagina('textos')">🗒️</button>
 
     <script>
         window.onload = function () {
@@ -134,6 +134,8 @@
                 if (button) {
                     button.click();
                 }
+            } else if (event.key === 't' || event.key === 'T') {
+                document.getElementById('btnTextos').click();
             }
         });
     </script>

@@ -2,7 +2,7 @@ var textos;
 var inputRespuesta, respuestaCorrecta;
 var indiceActual;
 var nombreAudioActual;
-var btnReanudarAudio, btnAnterior, btnPosterior, btnReducirVelocidad, btnAumentarVelocidad, btnVelocidadAudio, btnMarcas, btnTranscripciones;
+var btnReanudarAudio, btnPararAudio, btnAnterior, btnPosterior, btnReducirVelocidad, btnAumentarVelocidad, btnVelocidadAudio, btnMarcas, btnTranscripciones;
 var velocidadAudio = 1;
 var marcasActivadas = true;
 var transcripcionesActivadas = false;
@@ -30,6 +30,7 @@ async function cargarTextos() {
         }
 
         btnReanudarAudio = document.getElementById("btnReanudarAudio");
+        btnPararAudio = document.getElementById("btnPararAudio");
         btnAnterior = document.getElementById("btnAnterior");
         btnPosterior = document.getElementById("btnPosterior");
         btnReducirVelocidad = document.getElementById("btnReducirVelocidad");
@@ -72,7 +73,7 @@ function cargarNuevoTexto(sentido) {
     // Actualizar el texto en el DOM
     const elementoNombreTexto = document.querySelector('#nombre');
     const elementoContenidoTexto = document.querySelector('#contenido');
-    elementoNombreTexto.textContent = textoActual.titulo;
+    elementoNombreTexto.innerHTML = `<span class="indiceTexto">${indiceActual + 1}</span><span class="tituloTexto">${textoActual.titulo}</span>`;
     var contenidoFinal;
 
     if (textoActual.contieneMarcas) {
@@ -273,6 +274,12 @@ function añadirAtajosTeclado() {
                 break;
             case 'm':
                 btnMarcas.click();
+                break;
+            case 't':
+                btnTranscripciones.click();
+                break;
+            case 'x':
+                btnPararAudio.click();
                 break;
             case 'r':
             case 's':

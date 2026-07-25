@@ -5,35 +5,8 @@
     "apellidos": "Espinosa Piqueras",
     "genero": "mujer",
     "programa": "Británico",
-    "progreso": {
-      "consonantes": "8",
-      "consonantesExtra": "0",
-      "textosConsonantes": "15",
-      "vocales": "0",
-      "vocalesExtra": "0",
-      "moduloFinal": "0",
-      "textosVocales": "0",
-      "transcripciones": "no",
-      "cursoFinalizado": "no"
-    }
-  },
-  {
-    "identificador": "miguelbs26",
-    "nombre": "Miguel",
-    "apellidos": "Barrero Sáez",
-    "genero": "hombre",
-    "programa": "Británico",
-    "progreso": {
-      "consonantes": "1",
-      "consonantesExtra": "0",
-      "textosConsonantes": "9",
-      "vocales": "1",
-      "vocalesExtra": "0",
-      "moduloFinal": "0",
-      "textosVocales": "2",
-      "transcripciones": "vocal larga",
-      "cursoFinalizado": "no"
-    }
+    "progreso": 25,
+    "cursoFinalizado": "no"
   },
   {
     "identificador": "josepr25",
@@ -41,17 +14,8 @@
     "apellidos": "Pazos Rodríguez",
     "genero": "hombre",
     "programa": "Británico",
-    "progreso": {
-      "consonantes": "8",
-      "consonantesExtra": "0",
-      "textosConsonantes": "15",
-      "vocales": "9",
-      "vocalesExtra": "0",
-      "moduloFinal": "2",
-      "textosVocales": "24",
-      "transcripciones": "vocal larga",
-      "cursoFinalizado": "no"
-    }
+    "progreso": 66,
+    "cursoFinalizado": "no"
   },
   {
     "identificador": "vicenteep24",
@@ -59,17 +23,8 @@
     "apellidos": "Esplá Palacio",
     "genero": "hombre",
     "programa": "Británico",
-    "progreso": {
-      "consonantes": "8",
-      "consonantesExtra": "-1",
-      "textosConsonantes": "100",
-      "vocales": "9",
-      "vocalesExtra": "-1",
-      "moduloFinal": "3",
-      "textosVocales": "25",
-      "transcripciones": "vocal larga",
-      "cursoFinalizado": "16/07/2025"
-    }
+    "progreso": 66,
+    "cursoFinalizado": "16/07/2025"
   },
   {
     "identificador": "julioep24",
@@ -77,17 +32,8 @@
     "apellidos": "Esplá Palacio",
     "genero": "hombre",
     "programa": "Británico",
-    "progreso": {
-      "consonantes": "6",
-      "consonantesExtra": "-1",
-      "textosConsonantes": "100",
-      "vocales": "6",
-      "vocalesExtra": "-1",
-      "moduloFinal": "0",
-      "textosVocales": "100",
-      "transcripciones": "diptongo",
-      "cursoFinalizado": "no"
-    }
+    "progreso": 66,
+    "cursoFinalizado": "no"
   },
   {
     "identificador": "esperanzamm24",
@@ -95,17 +41,8 @@
     "apellidos": "Martínez Montesinos",
     "genero": "mujer",
     "programa": "Británico",
-    "progreso": {
-      "consonantes": "6",
-      "consonantesExtra": "-1",
-      "textosConsonantes": "100",
-      "vocales": "8",
-      "vocalesExtra": "-1",
-      "moduloFinal": "3",
-      "textosVocales": "100",
-      "transcripciones": "vocal larga",
-      "cursoFinalizado": "07/10/2024"
-    }
+    "progreso": 66,
+    "cursoFinalizado": "07/10/2024"
   },
   {
     "identificador": "admin",
@@ -113,16 +50,7 @@
     "apellidos": "ap1 ap2",
     "genero": "hombre",
     "programa": "Británico",
-    "progreso": {
-      "consonantes": "100",
-      "consonantesExtra": "-1",
-      "textosConsonantes": "100",
-      "vocales": "100",
-      "vocalesExtra": "-1",
-      "moduloFinal": "100",
-      "textosVocales": "100",
-      "transcripciones": "vocal larga",
-      "cursoFinalizado": "01/01/2000"
-    }
+    "progreso": 9999,
+    "cursoFinalizado": "01/01/2000"
   }
 ]

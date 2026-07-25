@@ -44,100 +44,78 @@
         window.onload = function () {
             const identificador = sessionStorage.getItem('idUsuario');
             const token = sessionStorage.getItem('token');
-            const consonantes = sessionStorage.getItem('consonantes');
-            const consonantesExtra = sessionStorage.getItem('consonantesExtra');
+            const progreso = parseInt(sessionStorage.getItem('progreso'), 10);
 
             if (!(identificador && tokenEsValido(token, identificador))) {
                 cerrarSesion();
             } else {
-                cargarBotones(consonantes, consonantesExtra);
+                cargarBotones(progreso);
             }
         }
 
-        function cargarBotones(consonantes, consonantesExtra) {
-            var numBotonesDesbloqueados = parseInt(consonantes, 10);
+        function cargarBotones(progreso) {
             const infoBotones = [
                 {
                     id: 'btn1',
                     texto: 'Repaso símbolos',
                     nivel: 'Básico',
+                    desbloqueador: 4,
                     onclick: () => irAPagina('AFI_consonantes'),
                 },
                 {
                     id: 'btn2',
                     texto: 'Test sibilantes',
                     nivel: 'Básico',
+                    desbloqueador: 10,
                     onclick: () => realizarTest('sibilantes'),
                 },
                 {
                     id: 'btn4',
                     texto: 'Test africadas',
                     nivel: 'Básico',
+                    desbloqueador: 9,
                     onclick: () => realizarTest('africadas'),
                 },
                 {
                     id: 'btn5',
                     texto: 'Test participios',
                     nivel: 'Básico',
+                    desbloqueador: 16,
                     onclick: () => realizarTest('participios'),
                 },
                 {
                     id: 'btn6',
                     texto: 'Test plurales',
                     nivel: 'Básico',
+                    desbloqueador: 17,
                     onclick: () => realizarTest('plurales'),
                 },
                 {
                     id: 'btn7',
                     texto: 'Test pronunciación ⟨s⟩',
                     nivel: 'Básico',
+                    desbloqueador: 13,
                     onclick: () => realizarTest('pronunciacionS')
                 },
                 {
                     id: 'btn8',
                     texto: '🔥',
                     nivel: 'Avanzado',
+                    desbloqueador: 14,
                     onclick: () => realizarTest('pronunciacionS++')
                 },
                 {
                     id: 'btn3',
                     texto: '🔥',
                     nivel: 'Avanzado',
+                    desbloqueador: 23,
                     onclick: () => realizarTest('sibilantes++'),
                 }
             ];
 
-            for (let i = 0; i < infoBotones.length; i++) {
-                if (i < numBotonesDesbloqueados) {
-                    const infoBtn = infoBotones[i];
+            for (const infoBtn of infoBotones) {
+                if (progreso >= infoBtn.desbloqueador) {
                     const btn = document.getElementById(infoBtn.id);
-                    btn.onclick = infoBtn.onclick;
-                    btn.querySelector('.textoBtn').textContent = infoBtn.texto;
-                    if (infoBtn.nivel == 'Avanzado') {
-                        btn.parentElement.classList.remove("grupoOculto");
-                    }
-                }
-            }
-
-            var indicesExtra = [];
-
-            if (consonantesExtra.includes("-")) {
-                const [inicio, fin] = consonantesExtra.split("-").map(n => parseInt(n, 10));
-                if (!isNaN(inicio) && !isNaN(fin)) {
-                    for (let i = inicio; i <= fin; i++) {
-                        indicesExtra.push(i);
-                    }
-                }
-            } else {
-                const unico = parseInt(consonantesExtra, 10);
-                if (!isNaN(unico)) {
-                    indicesExtra.push(unico);
-                }
-            }
-            for (let indiceExtra of indicesExtra) {
-                if (indiceExtra >= 0 && indiceExtra < infoBotones.length) {
-                    var infoBtn = infoBotones[indiceExtra];
-                    var btn = document.getElementById(infoBtn.id);
                     btn.onclick = infoBtn.onclick;
                     btn.querySelector('.textoBtn').textContent = infoBtn.texto;
                     if (infoBtn.nivel == 'Avanzado') {

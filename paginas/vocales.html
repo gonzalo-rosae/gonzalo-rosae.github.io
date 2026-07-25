@@ -44,64 +44,34 @@
             window.onload = function () {
                 const identificador = sessionStorage.getItem('idUsuario');
                 const token = sessionStorage.getItem('token');
-                const vocales = sessionStorage.getItem('vocales');
-                const vocalesExtra = sessionStorage.getItem('vocalesExtra');
+                const progreso = parseInt(sessionStorage.getItem('progreso'), 10);
                 var infoBotones;
 
                 if (!(identificador && tokenEsValido(token, identificador))) {
                     cerrarSesion();
                 } else {
-                    cargarBotones(vocales, vocalesExtra);
+                    cargarBotones(progreso);
                 }
             }
 
-            function cargarBotones(vocales, vocalesExtra) {
-                var numBotonesDesbloqueados = parseInt(vocales, 10);
-
+            function cargarBotones(progreso) {
                 infoBotones = [
-                    { id: 'btn1', texto: 'Repaso símbolos', onclick: () => irAPagina('AFI_vocales') },
-                    { id: 'btn2', texto: 'Test <em>schwa</em>', onclick: () => realizarTest('schwa') },
-                    { id: 'btn6', texto: '🔥', onclick: () => realizarTest('schwa++') },
-                    { id: 'btn3', texto: 'Test prefijos', onclick: () => realizarTest('prefijos') },
-                    { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', onclick: () => realizarTest('pronunciacionO') },
-                    { id: 'btn5', texto: '🔥', onclick: () => realizarTest('pronunciacionO++') },
-                    { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', onclick: () => realizarTest('pronunciacionOO') },
-                    { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', onclick: () => realizarTest('pronunciacionA') },
-                    { id: 'btn9', texto: '🔥', onclick: () => realizarTest('pronunciacionA++') }
+                    { id: 'btn1', texto: 'Repaso símbolos', desbloqueador: 26, onclick: () => irAPagina('AFI_vocales') },
+                    { id: 'btn2', texto: 'Test <em>schwa</em>', desbloqueador: 28, onclick: () => realizarTest('schwa') },
+                    { id: 'btn6', texto: '🔥', desbloqueador: 30, onclick: () => realizarTest('schwa++') },
+                    { id: 'btn3', texto: 'Test prefijos', desbloqueador: 35, onclick: () => realizarTest('prefijos') },
+                    { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', desbloqueador: 43, onclick: () => realizarTest('pronunciacionO') },
+                    { id: 'btn5', texto: '🔥', desbloqueador: 43, onclick: () => realizarTest('pronunciacionO++') },
+                    { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', desbloqueador: 43, onclick: () => realizarTest('pronunciacionOO') },
+                    { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', desbloqueador: 60, onclick: () => realizarTest('pronunciacionA') },
+                    { id: 'btn9', texto: '🔥', desbloqueador: 60, onclick: () => realizarTest('pronunciacionA++') }
                 ];
 
-                for (let i = 0; i < infoBotones.length; i++) {
-                    if (i < numBotonesDesbloqueados) {
-                        const btn = document.getElementById(infoBotones[i].id);
-                        btn.onclick = infoBotones[i].onclick;
-                        btn.querySelector('.textoBtn').innerHTML = infoBotones[i].texto;
-                    }
-                }
-
-                var indicesExtra = [];
-
-                if (vocalesExtra.includes("-")) {
-                    const [inicio, fin] = vocalesExtra.split("-").map(n => parseInt(n, 10));
-                    if (!isNaN(inicio) && !isNaN(fin)) {
-                        for (let i = inicio; i <= fin; i++) {
-                            indicesExtra.push(i);
-                        }
-                    }
-                } else {
-                    const unico = parseInt(vocalesExtra, 10);
-                    if (!isNaN(unico)) {
-                        indicesExtra.push(unico);
-                    }
-                }
-                for (let indiceExtra of indicesExtra) {
-                    if (indiceExtra >= 0 && indiceExtra < infoBotones.length) {
-                        var infoBtn = infoBotones[indiceExtra];
-                        var btn = document.getElementById(infoBtn.id);
+                for (const infoBtn of infoBotones) {
+                    if (progreso >= infoBtn.desbloqueador) {
+                        const btn = document.getElementById(infoBtn.id);
                         btn.onclick = infoBtn.onclick;
-                        btn.querySelector('.textoBtn').textContent = infoBtn.texto;
-                        if (infoBtn.nivel == 'Avanzado') {
-                            btn.parentElement.classList.remove("grupoOculto");
-                        }
+                        btn.querySelector('.textoBtn').innerHTML = infoBtn.texto;
                     }
                 }
             }

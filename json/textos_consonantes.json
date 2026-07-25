@@ -4,6 +4,7 @@
     "textos": [
         {
             "titulo": "Fonema /v/",
+            "desbloqueador": 6,
             "contenido": "Victor and Vanessa went to the valley, where vibrant vines climbed the fence. They marveled at the view, with vivid green leaves glowing in the sunlight, and admired the variety of vines growing in every way.",
             "marcas": [],
             "marcasSordas": [],
@@ -27,6 +28,7 @@
         },
         {
             "titulo": "Fonema /z/",
+            "desbloqueador": 6,
             "contenido": "Sara zipped her coat and settled by the stream, feeling the breeze. As she took a sip from her drink, a buzzing sound broke the silence.",
             "marcas": [],
             "marcasSordas": [],
@@ -41,6 +43,7 @@
         },
         {
             "titulo": "Fonema /ʒ/",
+            "desbloqueador": 6,
             "contenido": "The Confucian philosophy emphasizes balance and harmony in life, but the confusion around the concept often leads to errors. Yet, some find these Asian teachings clear.",
             "marcas": [],
             "marcasSordas": [],
@@ -53,6 +56,7 @@
         },
         {
             "titulo": "Fonema /ʤ/",
+            "desbloqueador": 6,
             "contenido": "The professor just told us to choose our projects carefully. She will judge me and Jimmy’s.",
             "marcas": [],
             "marcasSordas": [],
@@ -70,6 +74,7 @@
         },
         {
             "titulo": "Fonemas sonoros inexistentes en español",
+            "desbloqueador": 6,
             "contenido": "In a fine garden, you might find vines that twist and grow. If you sit by the vine, you could sip your tea and listen to the Confucian teachings while enjoying a joke. Sometimes, people might confuse the meaning of words, which can be quite a puzzle. You might wonder if they loathe the challenge or simply enjoy it. On a cold day, a warm drink could make it easier to understand the subtle differences between sounds like fine and vine, or choke and joke.",
             "marcas": [],
             "marcasSordas": [],
@@ -113,6 +118,7 @@
         },
         {
             "titulo": "Relación grafías-fonemas importantes",
+            "desbloqueador": 12,
             "contenido": "During a YouTube tutorial, I saw Portugal's beauty and quantum gadgets. The tutor shared Physics notes from Japan and Germany. It reminded me of a TV show with a Mauritius dish and ancient Asian species. In Brazil, I enjoyed xylophone music and a prized dessert. Munich's architecture school blends design, choir echoes, tech labs, chemistry, and engineering students.",
             "marcas": [],
             "marcasSordas": [],
@@ -122,6 +128,7 @@
         },
         {
             "titulo": "Conjuntos de consonantes (iniciales)",
+            "desbloqueador": 15,
             "contenido": "Steven stared at the sprawling span of the skyline, silently smirking. The stars sparkled brightly, casting a soft glow over the sleeping city. Suddenly, a startling sound snapped him out of his stupor. He spun around, spotting a sneaky squirrel scampering across the street.",
             "marcas": [
                 0,
@@ -168,6 +175,7 @@
         },
         {
             "titulo": "Conjuntos de consonantes (finales)",
+            "desbloqueador": 15,
             "contenido": "The last episode of \"Mask Singer\" left everyone in a gasp. The risks contestants take are truly impressive. From tackling difficult songs to performing acrobatics, participants strive to keep their identities secret. The audience gasps with each reveal, while judges make lists of possible celebrities. Crisps crunch quietly as the tension reaches its peak. In the end, the mask falls, and the mystery is solved in an instant of pure television excitement.",
             "marcas": [
                 6,
@@ -217,6 +225,7 @@
         },
         {
             "titulo": "Participios",
+            "desbloqueador": 16,
             "contenido": "Yesterday, I watched a thrilling movie and laughed at the jokes. After it ended, I grabbed some snacks and hugged my friend who joined me. We detailed the scenes we liked and kissed each other goodbye. Later, I played some music and relaxed. I responded quickly to the messages I received. I realized I had loved the film and judged it to be one of the best I’d selected. Feeling calmed, I massaged my tired feet and allowed myself to go into an uninterrupted sleep.",
             "marcas": [77, 78, 251, 252, 368, 369, 457, 458],
             "marcasSordas": [18, 19, 48, 49, 168, 169, 179, 180, 238, 239],
@@ -226,6 +235,7 @@
         },
         {
             "titulo": "Plurales",
+            "desbloqueador": 17,
             "contenido": "Cats and dogs chase butterflies in gardens near cliffs. Buses and cars pass by open windows as judges watch from their offices. Children sing songs about roses and brushes while playing games with cups and books. Months go by, and houses fill with dusty gloves and old watches. Crabs scuttle on beaches as plans for distant trips take shape. In cozy rooms, people read about famous races, their voices soft like breezes.",
             "marcas": [],
             "marcasSordas": [
@@ -264,6 +274,7 @@
         },
         {
             "titulo": "Grafía ⟨s⟩ problemática (1)",
+            "desbloqueador": 13,
             "contenido": "This is the book his friend recommended, but it wasn’t as interesting as he had hoped. He says it does get better, but it doesn’t start well. It isn’t clear whether it has a role in the plot or the characters, as those details weren't given. He hasn't finished it yet, but these early chapters are slower compared to those in his other novel.",
             "marcas": [],
             "marcasSordas": [
@@ -295,6 +306,7 @@
         },
         {
             "titulo": "Grafía ⟨s⟩ problemática (2)",
+            "desbloqueador": 14,
             "contenido": "Susan, whose presence brought a pleasant surprise, chose to raise a positive proposal during the visit to the museum, but the noise of the busy season caused a brief pause. Her advisor, wise and calm, offered praise, urging her not to lose ease in her position, while others rose to praise her design, a result of much effort and resolve.",
             "marcas": [],
             "marcasSordas": [],
@@ -333,6 +345,7 @@
         },
         {
             "titulo": "Grafías problemáticas",
+            "desbloqueador": 21,
             "contenido": "On a quiet isle, a handsome islander called Thomas answered his grandmother's call, while enjoying a gourmet buffet. He was having two swordfish sandwiches (which contain lots of iron) while watching a cabaret on Windsor's grand aisle. In the distance, a Monet painting hung in a chalet, a testament to the timeless ballet grace.",
             "marcas": [
                 12,
@@ -361,6 +374,7 @@
         },
         {
             "titulo": "Relación grafías-fonemas importantes: excepciones",
+            "desbloqueador": 23,
             "contenido": "In the initial investigation, the patient showed potential improvement, leading to suggestions for different actions. Similar to cases from Mauritius, the city's congestion complicated the process, while a crucial question shaped the understanding of the error quotient. At the same time, television producers faced tension during a mansion session, their mission to ensure passion in a show about Asia met with division and Russian censure. Yet, the occasion brought pleasure as they measured new dimensions of reality and illusion, leaving some unsure of the bold final decision.",
             "marcas": [88,89,90,91,167,168,169,170,217,218,219,220,318,319,320,335,336,337,343,344,345,358,359,360,361,368,369,370,371,372,376,377,378,379,427,428,429,430,435,436,437,438,502,503,504,505,548,549,550,551],
             "marcasSordas": [],
@@ -370,6 +384,7 @@
         },
         {
             "titulo": "Texto repaso general",
+            "desbloqueador": 25,
             "contenido": "In America, an experienced plumber watched in disbelief as a bizarre vision unfolded before him: a massive gorilla had escaped during a cultural tourism event at the zoo. The police could barely contain their surprise when they discovered that the creature showed different interests than expected - instead of causing chaos, it walked straight to the educational center. While visitors nervously waited for answers, the gorilla judged each exhibition with what looked like genuine curiosity, paying special attention to a jazz performance. The zookeeper wanted to ensure everyone's safety but couldn't help but laugh at the unusual situation, as the normally aggressive animal measured each step with unexpected grace. Through careful observation, they finally judged that the gorilla simply wished to explore human culture, creating a surprising fusion of nature and civilization.",
             "marcas": [],
             "marcasSordas": [],

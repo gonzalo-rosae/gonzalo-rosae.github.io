@@ -38,14 +38,12 @@
         onclick="descargarCertificado()">🏅</button>
 
     <script>
-        var identificador, nombre, genero, vocales, cursoFinalizado, token;
+        var identificador, nombre, genero, progreso, cursoFinalizado, token;
         window.onload = function () {
             identificador = sessionStorage.getItem('idUsuario');
             nombre = sessionStorage.getItem('nombre');
             genero = sessionStorage.getItem('genero');
-            vocales = sessionStorage.getItem('vocales');
-            moduloFinal = sessionStorage.getItem('moduloFinal');
-            transcripciones = sessionStorage.getItem('transcripciones');
+            progreso = parseInt(sessionStorage.getItem('progreso'), 10);
             cursoFinalizado = sessionStorage.getItem('cursoFinalizado');
             token = sessionStorage.getItem('token');
 
@@ -53,9 +51,17 @@
                 var saludo = genero.toLowerCase() === 'hombre' ? 'Bienvenido' : 'Bienvenida';
                 saludo = `${saludo}, ${nombre}`;
                 document.getElementById('saludo').textContent = saludo;
+                // ¿Consonantes prohibidas?
+                const btnConsonantes = document.getElementById('btnConsonantes');
+                if (progreso < UMBRALES.seccionConsonantes) {
+                    btnConsonantes.classList.add('prohibido');
+                    btnConsonantes.onclick = function () {
+                        prohibido();
+                    };
+                }
                 // ¿Vocales prohibidas?
                 const btnVocales = document.getElementById('btnVocales');
-                if (vocales < 1) {
+                if (progreso < UMBRALES.seccionVocales) {
                     btnVocales.classList.add('prohibido');
                     btnVocales.onclick = function () {
                         prohibido();
@@ -63,17 +69,16 @@
                 }
                 // ¿Extra prohibida?
                 const btnExtra = document.getElementById('btnExtra');
-                if (moduloFinal < 1) {
+                if (progreso < UMBRALES.seccionExtra) {
                     btnExtra.classList.add('prohibido');
                     btnExtra.onclick = function () {
                         prohibido();
                     };
                 }
-                // Consonantes nunca prohibidas
                 if (cursoFinalizado != "no") {
                     document.getElementById("btnTranscripciones").classList.remove("oculto");
                     document.getElementById("btnCertificado").classList.remove("oculto");
-                } else if (transcripciones != "no") {
+                } else if (progreso >= UMBRALES.transcripcionInicial) {
                     document.getElementById("btnTranscripciones").classList.remove("oculto");
                 }
             } else {

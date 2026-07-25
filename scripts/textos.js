@@ -11,14 +11,12 @@ var audioActual = null;
 async function cargarTextos() {
 
     try {
-        let numTextosDesbloqueados;
+        let progreso = parseInt(sessionStorage.getItem("progreso"), 10);
         let referrer = document.referrer;
         if (referrer.includes("consonantes.html")) {
             jsonUrl = `../json/textos_consonantes.json`;
-            numTextosDesbloqueados = sessionStorage.getItem("textosConsonantes");
         } else if (referrer.includes("vocales.html")) {
             jsonUrl = `../json/textos_vocales.json`;
-            numTextosDesbloqueados = sessionStorage.getItem("textosVocales");
         }
 
         const doc = await fetch(jsonUrl);
@@ -41,7 +39,7 @@ async function cargarTextos() {
         btnTranscripciones = document.getElementById("btnTranscripciones");
 
         // Cogemos solo los textos desbloqueados
-        textos = datos.textos.filter((texto, index) => index < numTextosDesbloqueados) || [];
+        textos = datos.textos.filter(texto => progreso >= texto.desbloqueador) || [];
 
         indiceActual = -1;
         cargarNuevoTexto(1);

@@ -1,3 +1,12 @@
+// Umbrales de progreso que no pertenecen a un test/texto concreto,
+// sino a la entrada a una sección completa o a un nivel de transcripción.
+const UMBRALES = {
+    seccionConsonantes: 4,
+    seccionVocales: 26,
+    seccionExtra: 62,
+    transcripcionInicial: 45
+};
+
 function noDisponible() {
     alert("Lo siento, esta función todavía no está disponible");
 }

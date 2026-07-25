@@ -14,8 +14,12 @@ async function cargarPreguntas() {
             document.getElementById("titulo").textContent = datos.titulo;
         }
 
-        let ordenTranscripciones = ["vocal corta", "diptongo", "vocal larga"];
-        let desbloqueado = sessionStorage.getItem("transcripciones");
+        const nivelesTranscripcion = {
+            "vocal corta": 45,
+            "diptongo": 56,
+            "vocal larga": 61
+        };
+        let progreso = parseInt(sessionStorage.getItem("progreso"), 10);
 
         inputRespuesta = document.getElementById("inputRespuesta");
         respuestaCorrecta = document.getElementById("respuestaCorrecta");
@@ -24,11 +28,7 @@ async function cargarPreguntas() {
 
         preguntas = datos.preguntas || [];
 
-        const nivelMaximo = ordenTranscripciones.indexOf(desbloqueado);
-        preguntasFiltradas = preguntas.filter(p => {
-            const nivelPregunta = ordenTranscripciones.indexOf(p.contiene);
-            return nivelPregunta !== -1 && nivelPregunta <= nivelMaximo;
-        });
+        preguntasFiltradas = preguntas.filter(p => progreso >= nivelesTranscripcion[p.contiene]);
 
         if (preguntasFiltradas.length === 0) {
             document.querySelector('.envoltura').innerHTML = '<p>No hay preguntas disponibles para este nivel.</p>';

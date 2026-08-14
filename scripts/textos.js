@@ -14,9 +14,9 @@ async function cargarTextos() {
         let progreso = parseInt(sessionStorage.getItem("progreso"), 10);
         let referrer = document.referrer;
         if (referrer.includes("consonantes.html")) {
-            jsonUrl = `../json/textos_consonantes.json`;
+            jsonUrl = `../json/textos/consonantes.json`;
         } else if (referrer.includes("vocales.html")) {
-            jsonUrl = `../json/textos_vocales.json`;
+            jsonUrl = `../json/textos/vocales.json`;
         }
 
         const doc = await fetch(jsonUrl);

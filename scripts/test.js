@@ -14,7 +14,7 @@ async function cargarPreguntas() {
     }
 
     try {
-        const respuesta = await fetch(`../json/${nombreTest}.json`);
+        const respuesta = await fetch(`../json/tests/${nombreTest}.json`);
         if (!respuesta.ok) {
             throw new Error('Error al cargar el archivo JSON');
         }

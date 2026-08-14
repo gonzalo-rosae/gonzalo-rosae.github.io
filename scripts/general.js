@@ -35,11 +35,12 @@ function resolverAccion(accion, destino) {
 }
 
 // Carga un catálogo de sección (json/catalogos/consonantes.json, vocales.json o
-// extra.json), y para cada ítem ya desbloqueado según `progreso` asigna su
-// comportamiento y texto al botón #id correspondiente (que debe existir ya en
-// el HTML de la página, con onclick="prohibido()" por defecto). También le
-// añade la insignia de "recién desbloqueado" si corresponde, y la retira al
-// hacer clic. Devuelve la lista de ítems del catálogo, por si la página la
+// extra.json), y para cada ítem ya desbloqueado según `progreso` le quita la
+// clase "prohibido" y asigna su comportamiento y texto al botón #id
+// correspondiente (que debe existir ya en el HTML de la página, con
+// class="btnSeccion prohibido" y onclick="prohibido()" por defecto). También
+// le añade la insignia de "recién desbloqueado" si corresponde, y la retira
+// al hacer clic. Devuelve la lista de ítems del catálogo, por si la página la
 // necesita (p. ej. para atajos de teclado dinámicos).
 async function cargarInfoBotones(rutaCatalogo, progreso, seccion) {
     const identificador = sessionStorage.getItem('idUsuario');
@@ -49,6 +50,7 @@ async function cargarInfoBotones(rutaCatalogo, progreso, seccion) {
     items.forEach(item => {
         if (progreso < item.desbloqueador) return;
         const btn = document.getElementById(item.id);
+        btn.classList.remove('prohibido');
         const claveItem = seccion + ':' + item.destino;
         const accion = resolverAccion(item.accion, item.destino);
         btn.onclick = function () {

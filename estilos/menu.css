@@ -49,6 +49,13 @@ h1 {
     outline: 3px solid white;
 }
 
+/* Mientras un test está bloqueado, todos comparten el mismo gris (no
+   "recuperan" su color propio de fila hasta desbloquearse). !important
+   porque si no, las reglas de color por fila de más abajo (con más
+   selectores y por tanto más especificidad) ganarían. */
+.btnSeccion.prohibido {
+    background-color: #444 !important;
+}
 
 .btnPartido .btnSeccion:nth-child(1) {
     width: calc(80% - 8px);
@@ -57,6 +64,12 @@ h1 {
 
 .btnPartido .btnSeccion:nth-child(2) {
     width: 20%;
+}
+
+/* El candado (🔒) del hueco de los tests avanzados se ve del mismo tamaño que
+   el resto mientras está bloqueado; solo al desbloquearse (deja de tener la
+   clase .prohibido y pasa a mostrar el 🔥) crece hasta su tamaño actual. */
+.btnPartido .btnSeccion:nth-child(2):not(.prohibido) {
     font-size: 22px;
 }
 
@@ -105,7 +118,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .btnPartido .btnSeccion:nth-child(2) {
+    .btnPartido .btnSeccion:nth-child(2):not(.prohibido) {
         font-size: 20px;
     }
 

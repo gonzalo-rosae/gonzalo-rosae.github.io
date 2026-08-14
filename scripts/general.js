@@ -4,7 +4,10 @@ const UMBRALES = {
     seccionConsonantes: 4,
     seccionVocales: 26,
     seccionExtra: 62,
-    transcripcionInicial: 45
+    transcripcionInicial: 45,
+    // El desbloqueador más alto de todo el curso (el último texto de vocales).
+    // Actualízalo a mano si algún día añades contenido con un desbloqueador mayor.
+    progresoMaximo: 66
 };
 
 function noDisponible() {

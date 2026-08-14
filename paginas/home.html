@@ -43,6 +43,18 @@
     <button id="btnCertificado" class="oculto" alt="Certificado finalización" data-atajo="4"
         onclick="descargarCertificado()">🏅</button>
 
+    <div id="barraProgreso" class="barraProgreso">
+        <div class="pistaProgreso">
+            <div id="rellenoProgreso" class="rellenoProgreso">
+                <div id="destacadoProgreso" class="destacadoProgreso"></div>
+            </div>
+            <div class="marcaProgreso marca25"></div>
+            <div class="marcaProgreso marca50"></div>
+            <div class="marcaProgreso marca75"></div>
+            <div class="etiquetaBarraProgreso">PROGRESO</div>
+        </div>
+    </div>
+
     <div id="modalDesbloqueos" class="modalDesbloqueos oculto">
         <div class="cajaDesbloqueos">
             <h2>🔑 ¡Nuevos desbloqueos!</h2>
@@ -96,11 +108,33 @@
                     document.getElementById("btnTranscripciones").classList.remove("oculto");
                 }
 
+                // Barra de progreso general del curso: la colocamos ya (sin animar) en el
+                // porcentaje que tenía la última vez que este alumno entró en este
+                // dispositivo (el mismo dato que usa la animación de desbloqueos de abajo,
+                // así que lo leemos aquí ANTES de que revisarDesbloqueosNuevos lo
+                // sobrescriba). El crecimiento animado hasta el porcentaje actual se dispara
+                // más abajo, DESPUÉS de que revisarDesbloqueosNuevos haya terminado (lo que
+                // incluye esperar a que el alumno cierre el modal de desbloqueos si lo hubo):
+                // si animásemos ya, quedaría escondida detrás del modal y el alumno no la
+                // vería moverse.
+                const progresoAnteriorGuardado = localStorage.getItem('progresoVisto_' + identificador);
+                const progresoAnterior = progresoAnteriorGuardado === null ? progreso : parseInt(progresoAnteriorGuardado, 10);
+                const calcularPorcentaje = valor => Math.min(100, Math.round((valor / UMBRALES.progresoMaximo) * 100));
+                const porcentajeAnterior = calcularPorcentaje(progresoAnterior);
+                const porcentajeActual = calcularPorcentaje(progreso);
+                const rellenoProgreso = document.getElementById('rellenoProgreso');
+                document.getElementById('barraProgreso').title = 'Progreso del curso: ' + porcentajeActual + '%';
+                rellenoProgreso.style.width = porcentajeAnterior + '%';
+                rellenoProgreso.style.height = porcentajeAnterior + '%';
+
                 // Animación de "nuevos desbloqueos" desde la última vez en este dispositivo.
                 // Las insignias de las secciones dependen de lo que esta función registre
-                // como "recién desbloqueado", así que esperamos a que termine antes de calcularlas.
+                // como "recién desbloqueado", así que esperamos a que termine antes de
+                // calcularlas. revisarDesbloqueosNuevos no se da por terminada hasta que el
+                // alumno cierra el modal (si lo hubo), así que la barra crece justo después.
                 revisarDesbloqueosNuevos(identificador, progreso).then(() => {
                     actualizarInsigniasSecciones(identificador, progreso);
+                    animarBarraProgreso(porcentajeAnterior, porcentajeActual);
                 });
             } else {
                 cerrarSesion();
@@ -208,7 +242,10 @@
                 const diferenciaCategoria = ordenCategorias.indexOf(a.categoria) - ordenCategorias.indexOf(b.categoria);
                 return diferenciaCategoria !== 0 ? diferenciaCategoria : a.desbloqueador - b.desbloqueador;
             });
-            mostrarModalDesbloqueos(nuevosItems);
+            // Esperamos a que el alumno cierre el modal antes de dar esto por terminado
+            // (quien llama a revisarDesbloqueosNuevos usa ese momento para lanzar la
+            // animación de la barra de progreso, que si no quedaría oculta detrás del modal).
+            await mostrarModalDesbloqueos(nuevosItems);
         }
 
         // Enciende el circulito de "nuevo" en los 3 botones de sección si
@@ -267,6 +304,9 @@
             }
         }
 
+        // Devuelve una promesa que no se resuelve hasta que el alumno cierra el
+        // modal, para que quien lo llama pueda esperar a ese momento (p. ej. para no
+        // lanzar la animación de la barra de progreso mientras el modal la tapa).
         function mostrarModalDesbloqueos(items) {
             const lista = document.getElementById('listaDesbloqueos');
             lista.innerHTML = '';
@@ -290,11 +330,35 @@
             });
 
             document.getElementById('modalDesbloqueos').classList.remove('oculto');
+
+            return new Promise(resolve => {
+                document.getElementById('btnCerrarDesbloqueos').addEventListener('click', function alCerrar() {
+                    document.getElementById('modalDesbloqueos').classList.add('oculto');
+                    resolve();
+                }, { once: true });
+            });
         }
 
-        document.getElementById('btnCerrarDesbloqueos').addEventListener('click', () => {
-            document.getElementById('modalDesbloqueos').classList.add('oculto');
-        });
+        // Anima el crecimiento de la barra de progreso desde `desde` hasta `hasta`
+        // (en %). Mientras dura, aparece una capa dorada sobre el relleno (en vez
+        // del azul habitual) para que el avance no pase desapercibido; al terminar,
+        // se desvanece de vuelta. Ver .destacadoProgreso en home.css: es una capa
+        // aparte con su propia transición de opacidad (no se cambia el `background`
+        // del relleno directamente) porque un color sólido no se puede animar de
+        // forma fluida hacia/desde un gradiente con esa propiedad.
+        function animarBarraProgreso(desde, hasta) {
+            if (desde === hasta) return;
+            const rellenoProgreso = document.getElementById('rellenoProgreso');
+            const destacadoProgreso = document.getElementById('destacadoProgreso');
+            const duracionMs = 1200;
+            destacadoProgreso.style.opacity = '1';
+            rellenoProgreso.style.transition = `width ${duracionMs}ms ease, height ${duracionMs}ms ease`;
+            rellenoProgreso.style.width = hasta + '%';
+            rellenoProgreso.style.height = hasta + '%';
+            setTimeout(() => {
+                destacadoProgreso.style.opacity = '0';
+            }, duracionMs);
+        }
 
         const { jsPDF } = window.jspdf;
 

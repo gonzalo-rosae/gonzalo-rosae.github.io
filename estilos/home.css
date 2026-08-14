@@ -249,6 +249,159 @@ h1 {
     }
 }
 
+/* Va desde justo debajo de #btnCerrarSesion (arriba a la izquierda) hasta la
+   misma altura que el suelo de #btnCertificado (bottom: 30px), con el mismo
+   ancho que #btnCerrarSesion (45px). No lleva background-color propio: hereda
+   el mismo fondo que el resto de la página (regla * de general.css), así que
+   no se ve como una "caja" aparte. */
+.barraProgreso {
+    position: fixed;
+    top: 95px;
+    bottom: 30px;
+    left: 30px;
+    width: 45px;
+    cursor: default;
+}
+
+.pistaProgreso {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.rellenoProgreso {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(0deg, var(--azulTema), #4fc3f7);
+    border-radius: 5px;
+}
+
+/* Capa dorada que se superpone al relleno mientras la barra crece, para
+   destacar el avance. Un color sólido no se puede transicionar de forma
+   fluida hacia/desde un gradiente con la propiedad `background` (los
+   navegadores no interpolan bien entre gradiente y color plano), así que en
+   vez de cambiar el color del relleno directamente, esta capa aparece y
+   desaparece con `opacity`, que sí anima con total fluidez. */
+.destacadoProgreso {
+    position: absolute;
+    inset: 0;
+    background-color: #ffcc33;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+/* El script (home.html) anima SIEMPRE tanto width como height a la vez, y es
+   el CSS quien decide cuál de las dos manda en cada breakpoint: en escritorio
+   la anchura debe ir siempre al 100% (la altura representa el progreso); en
+   móvil es al revés. El !important es necesario porque, si no, el valor
+   inline puesto por el script ganaría. Cada regla vive en su propio media
+   query — mutuamente excluyentes entre sí — para que nunca compitan dos
+   !important a la vez por la misma propiedad (si no, ganaría siempre el
+   mismo sin importar el breakpoint, que es justo el bug que tuvo esto). */
+@media (min-width: 651px) {
+    .rellenoProgreso {
+        width: 100% !important;
+    }
+}
+
+.marcaProgreso {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.marca25 {
+    bottom: 25%;
+}
+
+.marca50 {
+    bottom: 50%;
+}
+
+.marca75 {
+    bottom: 75%;
+}
+
+.etiquetaBarraProgreso {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    /* rotate(180deg) no cambia el tamaño de la caja (a diferencia de ±90deg),
+       así que sigue centrada sin desbordar la pista, pero invierte el orden de
+       lectura: de arriba-abajo a abajo-arriba. */
+    transform: translateX(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    pointer-events: none;
+}
+
+/* En móvil la barra pasa de vertical (lateral izquierdo) a horizontal, pegada
+   abajo del todo. El relleno crece en anchura en vez de en altura, las marcas
+   se reorientan igual que la propia barra, y "PROGRESO" pasa a escribirse en
+   horizontal centrada en la barra (algo más gruesa aquí para que quepa). Umbral
+   propio (650px) distinto del resto de la página, a petición expresa. */
+@media (max-width: 650px) {
+    .barraProgreso {
+        top: auto;
+        bottom: 22px;
+        left: 20px;
+        right: 20px;
+        width: auto;
+        height: 24px;
+    }
+
+    .rellenoProgreso {
+        width: 0%;
+        /* !important: en móvil es la anchura la que representa el progreso, así
+           que la altura debe ir siempre al 100% pase lo que pase con el inline. */
+        height: 100% !important;
+        background: linear-gradient(90deg, var(--azulTema), #4fc3f7);
+    }
+
+    .marcaProgreso {
+        top: 0;
+        bottom: auto;
+        left: 0;
+        width: 0.5px;
+        height: 100%;
+    }
+
+    .marca25 {
+        left: 25%;
+    }
+
+    .marca50 {
+        left: 50%;
+    }
+
+    .marca75 {
+        left: 75%;
+    }
+
+    .etiquetaBarraProgreso {
+        bottom: auto;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        writing-mode: horizontal-tb;
+        font-size: 10px;
+    }
+}
+
 .modalDesbloqueos {
     position: fixed;
     inset: 0;

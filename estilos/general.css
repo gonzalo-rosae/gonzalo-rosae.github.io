@@ -58,9 +58,9 @@ em {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #ff4646;
-    box-shadow: 0 0 0 2px var(--colorFondo);
+    background-color: #F59E0B;
     pointer-events: none;
+    transition: transform 0.3s ease;
 }
 
 /* Insignia inline junto al título de un texto recién visto por primera vez
@@ -70,7 +70,7 @@ em {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #ff4646;
+    background-color: #F59E0B;
     flex-shrink: 0;
 }
 

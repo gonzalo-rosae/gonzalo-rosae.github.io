@@ -53,6 +53,20 @@ h1 {
     display: inline-block;
 }
 
+/* Cuando el botón se levanta al pasar el ratón (.btnSeccion:not(.prohibido):hover
+   más abajo), la insignia lo acompaña con el mismo desplazamiento. Esto es
+   deliberadamente exclusivo de home.html: solo aquí el propio botón se mueve
+   al pasar el ratón, así que solo aquí tiene sentido que la insignia le
+   acompañe (en menu.css los botones de test no se mueven, y la insignia debe
+   quedarse quieta con ellos). La insignia vive en este contenedor hermano
+   (no dentro de .btnSeccion) para escapar de su filter:grayscale — ver el
+   comentario junto a .insigniaNuevo en general.css — así que .btnSeccion:hover
+   no la alcanza con el combinador ">" normal y usamos :has() para enterarnos
+   desde aquí de que el botón de dentro está en hover. */
+.envolturaSeccion:has(.btnSeccion:hover) .insigniaNuevo {
+    transform: translateY(-5px);
+}
+
 .btnSeccion {
     width: 200px;
     height: 200px;
@@ -66,7 +80,7 @@ h1 {
     display: inline-block;
     transition: all 0.3s ease;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 10px;
     position: relative;
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
     filter: grayscale(50%);

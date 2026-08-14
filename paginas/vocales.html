@@ -41,40 +41,31 @@
         <button id="btnTextos" class="" alt="Textos práctica" data-atajo="t" onclick="irAPagina('textos')">🗒️</button>
 
         <script>
+            // Vacío hasta que resuelva el fetch del catálogo: así una tecla pulsada
+            // justo tras cargar la página no revienta contra un array indefinido.
+            var infoBotones = [];
+
             window.onload = function () {
                 const identificador = sessionStorage.getItem('idUsuario');
                 const token = sessionStorage.getItem('token');
                 const progreso = parseInt(sessionStorage.getItem('progreso'), 10);
-                var infoBotones;
 
                 if (!(identificador && tokenEsValido(token, identificador))) {
                     cerrarSesion();
                 } else {
-                    cargarBotones(progreso);
+                    cargarInfoBotones('../json/catalogos/vocales.json', progreso, 'vocales')
+                        .then(items => { infoBotones = items; });
+                    actualizarInsigniaTextos('vocales', '../json/textos/vocales.json', progreso);
                 }
             }
 
-            function cargarBotones(progreso) {
-                infoBotones = [
-                    { id: 'btn1', texto: 'Repaso símbolos', desbloqueador: 26, onclick: () => irAPagina('AFI_vocales') },
-                    { id: 'btn2', texto: 'Test <em>schwa</em>', desbloqueador: 28, onclick: () => realizarTest('schwa') },
-                    { id: 'btn6', texto: '🔥', desbloqueador: 30, onclick: () => realizarTest('schwa++') },
-                    { id: 'btn3', texto: 'Test prefijos', desbloqueador: 35, onclick: () => realizarTest('prefijos') },
-                    { id: 'btn4', texto: 'Test pronunciación ⟨o⟩', desbloqueador: 43, onclick: () => realizarTest('pronunciacionO') },
-                    { id: 'btn5', texto: '🔥', desbloqueador: 43, onclick: () => realizarTest('pronunciacionO++') },
-                    { id: 'btn7', texto: 'Test pronunciación ⟨oo⟩', desbloqueador: 43, onclick: () => realizarTest('pronunciacionOO') },
-                    { id: 'btn8', texto: 'Test pronunciación ⟨a⟩', desbloqueador: 60, onclick: () => realizarTest('pronunciacionA') },
-                    { id: 'btn9', texto: '🔥', desbloqueador: 60, onclick: () => realizarTest('pronunciacionA++') }
-                ];
-
-                for (const infoBtn of infoBotones) {
-                    if (progreso >= infoBtn.desbloqueador) {
-                        const btn = document.getElementById(infoBtn.id);
-                        btn.onclick = infoBtn.onclick;
-                        btn.querySelector('.textoBtn').innerHTML = infoBtn.texto;
-                    }
-                }
-            }
+            // Si el navegador restaura esta página desde la bfcache (p. ej. al volver
+            // con el botón "atrás"), window.onload no se vuelve a disparar por su
+            // cuenta y las insignias quedarían congeladas con el estado de antes de
+            // salir. Forzamos su recálculo en ese caso.
+            window.addEventListener('pageshow', function (event) {
+                if (event.persisted) window.onload();
+            });
 
             document.addEventListener('keydown', function (event) {
                 if (event.key >= '1' && event.key <= infoBotones.length.toString()) {

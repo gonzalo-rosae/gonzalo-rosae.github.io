@@ -23,6 +23,107 @@ function realizarTest(nombreTest) {
     window.location.href = "/paginas/test.html?nombre=" + encodeURIComponent(nombreTest);
 }
 
+// Traduce el par accion+destino de un ítem de catálogo (json/catalogos/*.json)
+// a la función real que debe ejecutar el botón correspondiente.
+function resolverAccion(accion, destino) {
+    if (accion === 'test') return () => realizarTest(destino);
+    if (accion === 'pagina') return () => irAPagina(destino);
+    return () => prohibido();
+}
+
+// Carga un catálogo de sección (json/catalogos/consonantes.json, vocales.json o
+// extra.json), y para cada ítem ya desbloqueado según `progreso` asigna su
+// comportamiento y texto al botón #id correspondiente (que debe existir ya en
+// el HTML de la página, con onclick="prohibido()" por defecto). También le
+// añade la insignia de "recién desbloqueado" si corresponde, y la retira al
+// hacer clic. Devuelve la lista de ítems del catálogo, por si la página la
+// necesita (p. ej. para atajos de teclado dinámicos).
+async function cargarInfoBotones(rutaCatalogo, progreso, seccion) {
+    const identificador = sessionStorage.getItem('idUsuario');
+    const pendientes = obtenerInsigniasPendientes(identificador);
+    const respuesta = await fetch(rutaCatalogo);
+    const { items } = await respuesta.json();
+    items.forEach(item => {
+        if (progreso < item.desbloqueador) return;
+        const btn = document.getElementById(item.id);
+        const claveItem = seccion + ':' + item.destino;
+        const accion = resolverAccion(item.accion, item.destino);
+        btn.onclick = function () {
+            marcarVisitado(identificador, claveItem);
+            actualizarInsignia(btn, false);
+            accion();
+        };
+        btn.querySelector('.textoBtn').innerHTML = item.texto;
+        if (item.nivel === 'Avanzado') btn.parentElement.classList.remove('grupoOculto');
+        actualizarInsignia(btn, pendientes.has(claveItem));
+    });
+    return items;
+}
+
+// Sistema de insignias ("circulito") para señalar los mismos ítems que
+// aparecen en el modal de "nuevos desbloqueos" de home.html (no todo lo
+// desbloqueado sin abrir, solo lo recién desbloqueado) mientras el alumno no
+// los haya abierto. Se guarda por alumno y por dispositivo/navegador
+// (localStorage), igual que `progresoVisto_<identificador>`.
+function claveInsignias(identificador) {
+    return 'insigniasPendientes_' + identificador;
+}
+
+function obtenerInsigniasPendientes(identificador) {
+    try {
+        const guardado = JSON.parse(localStorage.getItem(claveInsignias(identificador)));
+        return new Set(Array.isArray(guardado) ? guardado : []);
+    } catch (error) {
+        return new Set();
+    }
+}
+
+// Añade al conjunto de insignias pendientes las claves recién desbloqueadas
+// (llamado desde home.html cuando el progreso ha avanzado desde la última vez).
+function agregarInsigniasPendientes(identificador, claves) {
+    if (claves.length === 0) return;
+    const pendientes = obtenerInsigniasPendientes(identificador);
+    claves.forEach(clave => pendientes.add(clave));
+    localStorage.setItem(claveInsignias(identificador), JSON.stringify([...pendientes]));
+}
+
+// Retira la insignia pendiente de un ítem (al abrirlo).
+function marcarVisitado(identificador, clave) {
+    const pendientes = obtenerInsigniasPendientes(identificador);
+    if (!pendientes.has(clave)) return;
+    pendientes.delete(clave);
+    localStorage.setItem(claveInsignias(identificador), JSON.stringify([...pendientes]));
+}
+
+// Crea o retira el circulito de "nuevo" en la esquina superior derecha de un
+// elemento (que debe tener o heredar `position: relative`).
+function actualizarInsignia(elemento, mostrar) {
+    if (!elemento) return;
+    let insignia = elemento.querySelector('.insigniaNuevo');
+    if (mostrar && !insignia) {
+        insignia = document.createElement('span');
+        insignia.className = 'insigniaNuevo';
+        elemento.appendChild(insignia);
+    } else if (!mostrar && insignia) {
+        insignia.remove();
+    }
+}
+
+// Muestra la insignia en el botón #btnTextos si el alumno tiene algún texto
+// recién desbloqueado que todavía no ha abierto.
+async function actualizarInsigniaTextos(seccion, rutaTextos, progreso) {
+    const identificador = sessionStorage.getItem('idUsuario');
+    const pendientes = obtenerInsigniasPendientes(identificador);
+    try {
+        const respuesta = await fetch(rutaTextos);
+        const datos = await respuesta.json();
+        const hayNuevo = datos.textos.some(t => progreso >= t.desbloqueador && pendientes.has(seccion + ':texto:' + t.titulo));
+        actualizarInsignia(document.getElementById('btnTextos'), hayNuevo);
+    } catch (error) {
+        console.error('No se pudo comprobar si hay textos nuevos:', error);
+    }
+}
+
 function cerrarSesion() {
     sessionStorage.removeItem('idUsuario');
     sessionStorage.removeItem('token');

@@ -37,46 +37,17 @@
             if (!(identificador && tokenEsValido(token, identificador))) {
                 cerrarSesion();
             } else {
-                cargarBotones(progreso);
+                cargarInfoBotones('../json/catalogos/extra.json', progreso, 'extra');
             }
         }
 
-        function cargarBotones(progreso) {
-            const infoBotones = [
-                {
-                    id: 'btn1',
-                    texto: 'Test erre enlazante',
-                    nivel: 'Básico',
-                    desbloqueador: 62,
-                    onclick: () => realizarTest('erre_enlazante'),
-                },
-                {
-                    id: 'btn2',
-                    texto: 'Test pronunciaciones regionales',
-                    nivel: 'Básico',
-                    desbloqueador: 63,
-                    onclick: () => realizarTest('regionales'),
-                },
-                {
-                    id: 'btn3',
-                    texto: 'Test palabras parónimas',
-                    nivel: 'Básico',
-                    desbloqueador: 64,
-                    onclick: () => realizarTest('paronimas'),
-                }
-            ];
-
-            for (const infoBtn of infoBotones) {
-                if (progreso >= infoBtn.desbloqueador) {
-                    const btn = document.getElementById(infoBtn.id);
-                    btn.onclick = infoBtn.onclick;
-                    btn.querySelector('.textoBtn').textContent = infoBtn.texto;
-                    if (infoBtn.nivel == 'Avanzado') {
-                        btn.parentElement.classList.remove("grupoOculto");
-                    }
-                }
-            }
-        }
+        // Si el navegador restaura esta página desde la bfcache (p. ej. al volver
+        // con el botón "atrás"), window.onload no se vuelve a disparar por su
+        // cuenta y las insignias quedarían congeladas con el estado de antes de
+        // salir. Forzamos su recálculo en ese caso.
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) window.onload();
+        });
 
         document.addEventListener('keydown', function (event) {
             if (event.key >= '1' && event.key <= '3') {

@@ -7,6 +7,7 @@ var velocidadAudio = 1;
 var marcasActivadas = true;
 var transcripcionesActivadas = false;
 var audioActual = null;
+var seccionTextos;
 
 async function cargarTextos() {
 
@@ -15,8 +16,10 @@ async function cargarTextos() {
         let referrer = document.referrer;
         if (referrer.includes("consonantes.html")) {
             jsonUrl = `../json/textos/consonantes.json`;
+            seccionTextos = 'consonantes';
         } else if (referrer.includes("vocales.html")) {
             jsonUrl = `../json/textos/vocales.json`;
+            seccionTextos = 'vocales';
         }
 
         const doc = await fetch(jsonUrl);
@@ -70,10 +73,19 @@ function cargarNuevoTexto(sentido) {
     // Seleccionar el texto correspondiente al índice actual
     var textoActual = textos[indiceActual];
 
+    // Si el texto estaba pendiente de insignia, esta es la primera vez que se
+    // muestra: lo señalamos en el título y de inmediato lo damos por visitado
+    // (retira su insignia de "nuevo" en el resto del sitio).
+    const identificador = sessionStorage.getItem('idUsuario');
+    const claveTexto = seccionTextos + ':texto:' + textoActual.titulo;
+    const esNuevo = obtenerInsigniasPendientes(identificador).has(claveTexto);
+    marcarVisitado(identificador, claveTexto);
+    actualizarInsigniaSiguiente();
+
     // Actualizar el texto en el DOM
     const elementoNombreTexto = document.querySelector('#nombre');
     const elementoContenidoTexto = document.querySelector('#contenido');
-    elementoNombreTexto.innerHTML = `<span class="indiceTexto">${indiceActual + 1}</span><span class="tituloTexto">${textoActual.titulo}</span>`;
+    elementoNombreTexto.innerHTML = `<span class="indiceTexto">${indiceActual + 1}</span><span class="tituloTexto">${textoActual.titulo}</span>` + (esNuevo ? '<span class="insigniaTexto"></span>' : '');
     var contenidoFinal;
 
     if (textoActual.contieneMarcas) {
@@ -149,6 +161,15 @@ function cargarNuevoTexto(sentido) {
 
     // Insertar el contenido con marcas como HTML
     elementoContenidoTexto.innerHTML = contenidoFinal;
+}
+
+// Mientras queden textos nuevos (desbloqueados y todavía no vistos) entre los
+// cargados, mantiene encendida la insignia del botón de "texto siguiente".
+function actualizarInsigniaSiguiente() {
+    const identificador = sessionStorage.getItem('idUsuario');
+    const pendientes = obtenerInsigniasPendientes(identificador);
+    const quedanNuevos = textos.some(t => pendientes.has(seccionTextos + ':texto:' + t.titulo));
+    actualizarInsignia(btnPosterior, quedanNuevos);
 }
 
 function alternarMarcas() {

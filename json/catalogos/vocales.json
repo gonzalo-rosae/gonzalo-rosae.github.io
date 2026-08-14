@@ -1,0 +1,85 @@
+{
+    "items": [
+        {
+            "id": "btn1",
+            "texto": "Repaso símbolos",
+            "nombreDesbloqueo": "Repaso símbolos vocálicos",
+            "nivel": "Básico",
+            "desbloqueador": 26,
+            "accion": "pagina",
+            "destino": "AFI_vocales"
+        },
+        {
+            "id": "btn2",
+            "texto": "Test <em>schwa</em>",
+            "nombreDesbloqueo": "Test schwa",
+            "nivel": "Básico",
+            "desbloqueador": 28,
+            "accion": "test",
+            "destino": "schwa"
+        },
+        {
+            "id": "btn6",
+            "texto": "🔥",
+            "nombreDesbloqueo": "Test schwa (avanzado)",
+            "nivel": "Avanzado",
+            "desbloqueador": 30,
+            "accion": "test",
+            "destino": "schwa++"
+        },
+        {
+            "id": "btn3",
+            "texto": "Test prefijos",
+            "nombreDesbloqueo": "Test prefijos",
+            "nivel": "Básico",
+            "desbloqueador": 35,
+            "accion": "test",
+            "destino": "prefijos"
+        },
+        {
+            "id": "btn4",
+            "texto": "Test pronunciación ⟨o⟩",
+            "nombreDesbloqueo": "Test pronunciación ⟨o⟩",
+            "nivel": "Básico",
+            "desbloqueador": 43,
+            "accion": "test",
+            "destino": "pronunciacionO"
+        },
+        {
+            "id": "btn5",
+            "texto": "🔥",
+            "nombreDesbloqueo": "Test pronunciación ⟨o⟩ (avanzado)",
+            "nivel": "Avanzado",
+            "desbloqueador": 43,
+            "accion": "test",
+            "destino": "pronunciacionO++"
+        },
+        {
+            "id": "btn7",
+            "texto": "Test pronunciación ⟨oo⟩",
+            "nombreDesbloqueo": "Test pronunciación ⟨oo⟩",
+            "nivel": "Básico",
+            "desbloqueador": 43,
+            "accion": "test",
+            "destino": "pronunciacionOO"
+        },
+        {
+            "id": "btn8",
+            "texto": "Test pronunciación ⟨a⟩",
+            "nombreDesbloqueo": "Test pronunciación ⟨a⟩",
+            "nivel": "Básico",
+            "desbloqueador": 60,
+            "accion": "test",
+            "destino": "pronunciacionA"
+        },
+        {
+            "id": "btn9",
+            "texto": "🔥",
+            "nombreDesbloqueo": "Test pronunciación ⟨a⟩ (avanzado)",
+            "nivel": "Avanzado",
+            "desbloqueador": 60,
+            "accion": "test",
+            "destino": "pronunciacionA++"
+        }
+    ]
+}

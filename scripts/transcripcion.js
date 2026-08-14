@@ -14,11 +14,7 @@ async function cargarPreguntas() {
             document.getElementById("titulo").textContent = datos.titulo;
         }
 
-        const nivelesTranscripcion = {
-            "vocal corta": 45,
-            "diptongo": 56,
-            "vocal larga": 61
-        };
+        const nivelesTranscripcion = datos.niveles || {};
         let progreso = parseInt(sessionStorage.getItem("progreso"), 10);
 
         inputRespuesta = document.getElementById("inputRespuesta");

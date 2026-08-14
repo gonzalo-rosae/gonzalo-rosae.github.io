@@ -1,0 +1,31 @@
+{
+    "items": [
+        {
+            "id": "btn1",
+            "texto": "Test erre enlazante",
+            "nombreDesbloqueo": "Test erre enlazante",
+            "nivel": "Básico",
+            "desbloqueador": 62,
+            "accion": "test",
+            "destino": "erre_enlazante"
+        },
+        {
+            "id": "btn2",
+            "texto": "Test pronunciaciones regionales",
+            "nombreDesbloqueo": "Test pronunciaciones regionales",
+            "nivel": "Básico",
+            "desbloqueador": 63,
+            "accion": "test",
+            "destino": "regionales"
+        },
+        {
+            "id": "btn3",
+            "texto": "Test palabras parónimas",
+            "nombreDesbloqueo": "Test palabras parónimas",
+            "nivel": "Básico",
+            "desbloqueador": 64,
+            "accion": "test",
+            "destino": "paronimas"
+        }
+    ]
+}

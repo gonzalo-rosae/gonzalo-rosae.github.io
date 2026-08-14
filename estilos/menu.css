@@ -42,6 +42,7 @@ h1 {
     border-radius: 5px;
     transition-duration: 0.1s;
     vertical-align: top;
+    position: relative;
 }
 
 .btnSeccion:hover {

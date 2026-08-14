@@ -48,6 +48,11 @@ h1 {
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
+.envolturaSeccion {
+    position: relative;
+    display: inline-block;
+}
+
 .btnSeccion {
     width: 200px;
     height: 200px;
@@ -215,7 +220,7 @@ h1 {
 }
 
 @media (max-width: 500px) {
-    
+
     .filaArriba {
         gap: 20px;
     }
@@ -242,4 +247,93 @@ h1 {
     .textoBtn {
         font-size: 16px;
     }
+}
+
+.modalDesbloqueos {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cajaDesbloqueos {
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 480px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.cajaDesbloqueos * {
+    background-color: #1a1a1a;
+}
+
+.cajaDesbloqueos h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+.listaDesbloqueos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.grupoDesbloqueos {
+    font-size: 0.8em;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.6rem;
+}
+
+.grupoDesbloqueos:first-child {
+    margin-top: 0;
+}
+
+.itemDesbloqueo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: transparent;
+    padding: 0.3rem 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: aparecerDesbloqueo 0.4s ease forwards;
+    animation-delay: calc(var(--i, 0) * 0.12s);
+}
+
+@keyframes aparecerDesbloqueo {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.botonCerrarDesbloqueos {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem;
+    background-color: var(--colorBoton);
+    color: var(--colorLetra);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botonCerrarDesbloqueos:hover {
+    background-color: var(--colorBotonHover);
 }

@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "id": "btn1",
+            "texto": "Repaso símbolos",
+            "nombreDesbloqueo": "Repaso símbolos consonánticos",
+            "nivel": "Básico",
+            "desbloqueador": 4,
+            "accion": "pagina",
+            "destino": "AFI_consonantes"
+        },
+        {
+            "id": "btn2",
+            "texto": "Test africadas",
+            "nombreDesbloqueo": "Test africadas",
+            "nivel": "Básico",
+            "desbloqueador": 9,
+            "accion": "test",
+            "destino": "africadas"
+        },
+        {
+            "id": "btn3",
+            "texto": "Test sibilantes",
+            "nombreDesbloqueo": "Test sibilantes",
+            "nivel": "Básico",
+            "desbloqueador": 10,
+            "accion": "test",
+            "destino": "sibilantes"
+        },
+        {
+            "id": "btn4",
+            "texto": "🔥",
+            "nombreDesbloqueo": "Test sibilantes (avanzado)",
+            "nivel": "Avanzado",
+            "desbloqueador": 23,
+            "accion": "test",
+            "destino": "sibilantes++"
+        },
+        {
+            "id": "btn5",
+            "texto": "Test pronunciación ⟨s⟩",
+            "nombreDesbloqueo": "Test pronunciación ⟨s⟩",
+            "nivel": "Básico",
+            "desbloqueador": 13,
+            "accion": "test",
+            "destino": "pronunciacionS"
+        },
+        {
+            "id": "btn6",
+            "texto": "🔥",
+            "nombreDesbloqueo": "Test pronunciación ⟨s⟩ (avanzado)",
+            "nivel": "Avanzado",
+            "desbloqueador": 14,
+            "accion": "test",
+            "destino": "pronunciacionS++"
+        },
+        {
+            "id": "btn7",
+            "texto": "Test participios",
+            "nombreDesbloqueo": "Test participios",
+            "nivel": "Básico",
+            "desbloqueador": 16,
+            "accion": "test",
+            "destino": "participios"
+        },
+        {
+            "id": "btn8",
+            "texto": "Test plurales",
+            "nombreDesbloqueo": "Test plurales",
+            "nivel": "Básico",
+            "desbloqueador": 17,
+            "accion": "test",
+            "destino": "plurales"
+        }
+    ]
+}

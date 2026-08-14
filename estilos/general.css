@@ -51,6 +51,29 @@ em {
     text-decoration: underline;
 }
 
+.insigniaNuevo {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff4646;
+    box-shadow: 0 0 0 2px var(--colorFondo);
+    pointer-events: none;
+}
+
+/* Insignia inline junto al título de un texto recién visto por primera vez
+   (a diferencia de .insigniaNuevo, no se posiciona en una esquina). */
+.insigniaTexto {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff4646;
+    flex-shrink: 0;
+}
+
 #flechaAtras {
     position: absolute;
     z-index: 100;

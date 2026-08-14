@@ -1,6 +1,11 @@
 {
     "titulo": "Transcripciones",
     "instrucciones": "Deduce la palabra a partir de su transcripción",
+    "niveles": {
+        "vocal corta": 45,
+        "diptongo": 56,
+        "vocal larga": 61
+    },
     "preguntas": [
         {
             "transcripcion": "/ˈlɪtəl/",

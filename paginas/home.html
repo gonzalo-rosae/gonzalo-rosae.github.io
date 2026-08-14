@@ -20,22 +20,36 @@
         <h1 id="saludo">Hola, Usuario</h1>
         <div class="contenedorBotones">
             <div class="filaArriba">
-                <button id="btnConsonantes" class="btnSeccion" data-atajo="1" onclick="irAPagina('consonantes')">
-                    <span class="textoBtn">Consonantes</span>
-                </button>
-                <button id="btnVocales" class="btnSeccion" data-atajo="2" onclick="irAPagina('vocales')">
-                    <span class="textoBtn">Vocales</span>
-                </button>
+                <div class="envolturaSeccion">
+                    <button id="btnConsonantes" class="btnSeccion" data-atajo="1" onclick="irAPagina('consonantes')">
+                        <span class="textoBtn">Consonantes</span>
+                    </button>
+                </div>
+                <div class="envolturaSeccion">
+                    <button id="btnVocales" class="btnSeccion" data-atajo="2" onclick="irAPagina('vocales')">
+                        <span class="textoBtn">Vocales</span>
+                    </button>
+                </div>
             </div>
             <div class="filaAbajo">
-                <button id="btnExtra" class="btnSeccion" data-atajo="3" onclick="irAPagina('extra')">
-                    <span class="textoBtn">Extra</span>
-                </button>
+                <div class="envolturaSeccion">
+                    <button id="btnExtra" class="btnSeccion" data-atajo="3" onclick="irAPagina('extra')">
+                        <span class="textoBtn">Extra</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
     <button id="btnCertificado" class="oculto" alt="Certificado finalización" data-atajo="4"
         onclick="descargarCertificado()">🏅</button>
+
+    <div id="modalDesbloqueos" class="modalDesbloqueos oculto">
+        <div class="cajaDesbloqueos">
+            <h2>🔑 ¡Nuevos desbloqueos!</h2>
+            <div id="listaDesbloqueos" class="listaDesbloqueos"></div>
+            <button id="btnCerrarDesbloqueos" type="button" class="botonCerrarDesbloqueos">Cerrar</button>
+        </div>
+    </div>
 
     <script>
         var identificador, nombre, genero, progreso, cursoFinalizado, token;
@@ -81,6 +95,13 @@
                 } else if (progreso >= UMBRALES.transcripcionInicial) {
                     document.getElementById("btnTranscripciones").classList.remove("oculto");
                 }
+
+                // Animación de "nuevos desbloqueos" desde la última vez en este dispositivo.
+                // Las insignias de las secciones dependen de lo que esta función registre
+                // como "recién desbloqueado", así que esperamos a que termine antes de calcularlas.
+                revisarDesbloqueosNuevos(identificador, progreso).then(() => {
+                    actualizarInsigniasSecciones(identificador, progreso);
+                });
             } else {
                 cerrarSesion();
             }
@@ -99,6 +120,181 @@
                 else if (event.key === 'Escape' || event.key === '0') btnCerrarSesion.click();
             });
         }
+
+        // Si el navegador restaura esta página desde la bfcache (p. ej. al volver
+        // con el botón "atrás" tras visitar una sección), el DOM restaurado
+        // conserva las insignias tal como estaban antes de salir, aunque
+        // localStorage ya se haya actualizado mientras tanto. Las recalculamos
+        // para que reflejen el estado real. (No relanzamos todo window.onload:
+        // volvería a registrar el listener de teclado de ahí arriba).
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) actualizarInsigniasSecciones(identificador, progreso);
+        });
+
+        // Compara el progreso actual con el último visto EN ESTE DISPOSITIVO
+        // (localStorage, por alumno) y anima los tests/textos que se hayan
+        // desbloqueado desde entonces. Si es la primera vez que este alumno
+        // entra desde este dispositivo/navegador no hay nada con qué comparar,
+        // así que no se anima nada: solo se guarda el progreso actual como
+        // punto de partida en silencio (evita que un cambio de dispositivo o
+        // un borrado de caché muestre TODO como recién desbloqueado).
+        async function revisarDesbloqueosNuevos(identificador, progresoActual) {
+            const clave = 'progresoVisto_' + identificador;
+            const valorGuardado = localStorage.getItem(clave);
+
+            if (valorGuardado === null) {
+                localStorage.setItem(clave, progresoActual);
+                return;
+            }
+
+            const progresoAnterior = parseInt(valorGuardado, 10);
+            localStorage.setItem(clave, progresoActual);
+
+            if (progresoActual <= progresoAnterior) return;
+
+            const esNuevo = item => item.desbloqueador > progresoAnterior && item.desbloqueador <= progresoActual;
+            let nuevosItems = [];
+
+            try {
+                const [resConsonantes, resVocales, resExtra, resTextosConsonantes, resTextosVocales, resTranscripciones] = await Promise.all([
+                    fetch('../json/catalogos/consonantes.json'),
+                    fetch('../json/catalogos/vocales.json'),
+                    fetch('../json/catalogos/extra.json'),
+                    fetch('../json/textos/consonantes.json'),
+                    fetch('../json/textos/vocales.json'),
+                    fetch('../json/transcripciones.json')
+                ]);
+                const [datosConsonantes, datosVocales, datosExtra, datosTextosConsonantes, datosTextosVocales, datosTranscripciones] =
+                    await Promise.all([resConsonantes.json(), resVocales.json(), resExtra.json(), resTextosConsonantes.json(), resTextosVocales.json(), resTranscripciones.json()]);
+
+                // `clave` identifica el ítem para el sistema de insignias (mismo formato
+                // que usan cargarInfoBotones/actualizarInsigniaTextos/actualizarInsigniasSecciones).
+                // Las transcripciones no tienen caja propia, así que no llevan clave.
+                const itemsCatalogo = (datos, categoria, seccion) => datos.items
+                    .filter(esNuevo)
+                    .map(item => ({ categoria, nombre: item.nombreDesbloqueo, desbloqueador: item.desbloqueador, clave: seccion + ':' + item.destino }));
+
+                const itemsTextos = (datos, categoria, seccion) => datos.textos
+                    .filter(esNuevo)
+                    .map(t => ({ categoria, nombre: t.titulo, desbloqueador: t.desbloqueador, clave: seccion + ':texto:' + t.titulo }));
+
+                const itemsTranscripciones = Object.entries(datosTranscripciones.niveles || {})
+                    .filter(([, umbral]) => esNuevo({ desbloqueador: umbral }))
+                    .map(([nombreNivel, umbral]) => ({ categoria: 'Transcripciones', nombre: `Transcripciones: nivel ${nombreNivel}`, desbloqueador: umbral }));
+
+                nuevosItems = [].concat(
+                    itemsCatalogo(datosConsonantes, 'Consonantes', 'consonantes'),
+                    itemsTextos(datosTextosConsonantes, 'Textos de consonantes', 'consonantes'),
+                    itemsCatalogo(datosVocales, 'Vocales', 'vocales'),
+                    itemsTextos(datosTextosVocales, 'Textos de vocales', 'vocales'),
+                    itemsTranscripciones,
+                    itemsCatalogo(datosExtra, 'Extra', 'extra')
+                );
+            } catch (error) {
+                console.error('No se pudieron cargar los catálogos para la animación de desbloqueos:', error);
+            }
+
+            if (nuevosItems.length === 0) return;
+
+            // Registramos como insignias pendientes los ítems recién desbloqueados
+            // (excepto transcripciones, que no tienen caja propia donde mostrarla).
+            agregarInsigniasPendientes(identificador, nuevosItems.filter(item => item.clave).map(item => item.clave));
+
+            // Agrupamos por categoría (en vez de una única lista cronológica) para
+            // que la cabecera de cada categoría no aparezca repetida si sus
+            // umbrales se entrelazan con los de otra.
+            const ordenCategorias = ['Consonantes', 'Textos de consonantes', 'Vocales', 'Textos de vocales', 'Transcripciones', 'Extra'];
+            nuevosItems.sort((a, b) => {
+                const diferenciaCategoria = ordenCategorias.indexOf(a.categoria) - ordenCategorias.indexOf(b.categoria);
+                return diferenciaCategoria !== 0 ? diferenciaCategoria : a.desbloqueador - b.desbloqueador;
+            });
+            mostrarModalDesbloqueos(nuevosItems);
+        }
+
+        // Enciende el circulito de "nuevo" en los 3 botones de sección si
+        // dentro de esa sección (tests o textos) hay algo desbloqueado que el
+        // alumno todavía no ha abierto. Se recalcula en cada carga (a
+        // diferencia de la animación de arriba, que solo compara contra la
+        // última visita) porque es un estado derivado, no un evento puntual.
+        //
+        // Cuando el navegador entra en bfcache con un fetch todavía en curso
+        // (p. ej. si el alumno hace clic en "Consonantes" justo mientras esta
+        // función seguía cargando datos), esa petición puede quedar "congelada"
+        // y reanudarse al volver, escribiendo en el DOM con datos obsoletos
+        // DESPUÉS de que la llamada nueva (disparada por pageshow) ya haya
+        // pintado el estado correcto. El contador `idLlamada` descarta el
+        // resultado de cualquier llamada que haya quedado superada por otra más reciente.
+        let ultimaLlamadaInsigniasSecciones = 0;
+        async function actualizarInsigniasSecciones(identificador, progreso) {
+            const idLlamada = ++ultimaLlamadaInsigniasSecciones;
+            const pendientes = obtenerInsigniasPendientes(identificador);
+
+            async function hayNuevoEnCatalogo(rutaCatalogo, seccion) {
+                const respuesta = await fetch(rutaCatalogo);
+                const { items } = await respuesta.json();
+                return items.some(item => progreso >= item.desbloqueador && pendientes.has(seccion + ':' + item.destino));
+            }
+
+            async function hayNuevoEnTextos(rutaTextos, seccion) {
+                const respuesta = await fetch(rutaTextos);
+                const datos = await respuesta.json();
+                return datos.textos.some(t => progreso >= t.desbloqueador && pendientes.has(seccion + ':texto:' + t.titulo));
+            }
+
+            // La insignia se coloca en la envoltura (no en el propio botón): el botón
+            // lleva un filter:grayscale mientras no está en hover, y ese filtro también
+            // apagaría el rojo de la insignia si fuera hija suya.
+            try {
+                const [consoNuevo, consoTextoNuevo] = await Promise.all([
+                    hayNuevoEnCatalogo('../json/catalogos/consonantes.json', 'consonantes'),
+                    hayNuevoEnTextos('../json/textos/consonantes.json', 'consonantes')
+                ]);
+                if (idLlamada !== ultimaLlamadaInsigniasSecciones) return;
+                actualizarInsignia(document.getElementById('btnConsonantes').parentElement, consoNuevo || consoTextoNuevo);
+
+                const [vocNuevo, vocTextoNuevo] = await Promise.all([
+                    hayNuevoEnCatalogo('../json/catalogos/vocales.json', 'vocales'),
+                    hayNuevoEnTextos('../json/textos/vocales.json', 'vocales')
+                ]);
+                if (idLlamada !== ultimaLlamadaInsigniasSecciones) return;
+                actualizarInsignia(document.getElementById('btnVocales').parentElement, vocNuevo || vocTextoNuevo);
+
+                const extraNuevo = await hayNuevoEnCatalogo('../json/catalogos/extra.json', 'extra');
+                if (idLlamada !== ultimaLlamadaInsigniasSecciones) return;
+                actualizarInsignia(document.getElementById('btnExtra').parentElement, extraNuevo);
+            } catch (error) {
+                console.error('No se pudieron comprobar los nuevos desbloqueos de las secciones:', error);
+            }
+        }
+
+        function mostrarModalDesbloqueos(items) {
+            const lista = document.getElementById('listaDesbloqueos');
+            lista.innerHTML = '';
+
+            let categoriaActual = null;
+            let indice = 0;
+            items.forEach(item => {
+                if (item.categoria !== categoriaActual) {
+                    categoriaActual = item.categoria;
+                    const grupo = document.createElement('div');
+                    grupo.className = 'grupoDesbloqueos';
+                    grupo.textContent = categoriaActual;
+                    lista.appendChild(grupo);
+                }
+                const el = document.createElement('div');
+                el.className = 'itemDesbloqueo';
+                el.style.setProperty('--i', indice);
+                el.innerHTML = `<span>🔓</span><span>${item.nombre}</span>`;
+                lista.appendChild(el);
+                indice++;
+            });
+
+            document.getElementById('modalDesbloqueos').classList.remove('oculto');
+        }
+
+        document.getElementById('btnCerrarDesbloqueos').addEventListener('click', () => {
+            document.getElementById('modalDesbloqueos').classList.add('oculto');
+        });
 
         const { jsPDF } = window.jspdf;
 

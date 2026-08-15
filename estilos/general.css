@@ -51,6 +51,22 @@ em {
     text-decoration: underline;
 }
 
+/* La insignia aparece creciendo desde un punto diminuto en vez de aparecer de
+   golpe. Se dispara solo (una vez) cada vez que se crea el elemento, así que
+   no hace falta tocarla desde JS: basta con crear/insertar el span (ver
+   actualizarInsignia en general.js) para que se reproduzca. */
+@keyframes aparecerInsignia {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .insigniaNuevo {
     position: absolute;
     top: -4px;
@@ -61,6 +77,7 @@ em {
     background-color: #F59E0B;
     pointer-events: none;
     transition: transform 0.3s ease;
+    animation: aparecerInsignia 0.4s ease;
 }
 
 /* Insignia inline junto al título de un texto recién visto por primera vez

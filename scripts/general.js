@@ -45,12 +45,12 @@ function resolverAccion(accion, destino) {
 async function cargarInfoBotones(rutaCatalogo, progreso, seccion) {
     const identificador = sessionStorage.getItem('idUsuario');
     const pendientes = obtenerInsigniasPendientes(identificador);
+    const animacionesVistas = obtenerAnimacionesVistas(identificador);
     const respuesta = await fetch(rutaCatalogo);
     const { items } = await respuesta.json();
     items.forEach(item => {
         if (progreso < item.desbloqueador) return;
         const btn = document.getElementById(item.id);
-        btn.classList.remove('prohibido');
         const claveItem = seccion + ':' + item.destino;
         const accion = resolverAccion(item.accion, item.destino);
         btn.onclick = function () {
@@ -58,11 +58,54 @@ async function cargarInfoBotones(rutaCatalogo, progreso, seccion) {
             actualizarInsignia(btn, false);
             accion();
         };
-        btn.querySelector('.textoBtn').innerHTML = item.texto;
         if (item.nivel === 'Avanzado') btn.parentElement.classList.remove('grupoOculto');
-        actualizarInsignia(btn, pendientes.has(claveItem));
+
+        // La animación de apertura es solo para la primera vez que se ve el
+        // botón ya desbloqueado: si el alumno lo ignora y la insignia sigue
+        // pendiente, en la siguiente visita se muestra ya desbloqueado sin
+        // volver a animarlo (por eso animacionesVistas es un registro aparte
+        // de insigniasPendientes, que no se toca hasta que el alumno lo abre).
+        if (pendientes.has(claveItem) && !animacionesVistas.has(claveItem)) {
+            marcarAnimacionVista(identificador, claveItem);
+            animarDesbloqueoTest(btn, item.texto);
+        } else {
+            btn.classList.remove('prohibido');
+            btn.querySelector('.textoBtn').innerHTML = item.texto;
+            actualizarInsignia(btn, pendientes.has(claveItem));
+        }
     });
     return items;
+}
+
+// Anima la apertura de un test recién desbloqueado: el fondo pasa del gris de
+// bloqueado a su color propio (transición ya definida en menu.css sobre
+// .btnSeccion), el candado 🔒 "salta" a 🔓 y un instante después se desvanece
+// para revelar el nombre del test — mientras, la insignia de "nuevo" aparece
+// a la vez creciendo desde un punto diminuto (ver @keyframes aparecerInsignia
+// en general.css). El pequeño retraso inicial deja que la página se asiente
+// antes de empezar, para que la animación no se pierda en la carga.
+function animarDesbloqueoTest(btn, textoFinal) {
+    const textoBtn = btn.querySelector('.textoBtn');
+    const RETRASO_INICIAL = 500;
+    const DURACION_POP = 400;
+    const ESPERA_ABIERTO = 300;
+    const DURACION_DESVANECIDO = 300;
+
+    setTimeout(() => {
+        btn.classList.remove('prohibido');
+        actualizarInsignia(btn, true);
+        textoBtn.textContent = '🔓';
+        textoBtn.classList.add('candadoAbriendose');
+
+        setTimeout(() => {
+            textoBtn.style.opacity = '0';
+            setTimeout(() => {
+                textoBtn.classList.remove('candadoAbriendose');
+                textoBtn.innerHTML = textoFinal;
+                textoBtn.style.opacity = '1';
+            }, DURACION_DESVANECIDO);
+        }, DURACION_POP + ESPERA_ABIERTO);
+    }, RETRASO_INICIAL);
 }
 
 // Sistema de insignias ("circulito") para señalar los mismos ítems que
@@ -98,6 +141,31 @@ function marcarVisitado(identificador, clave) {
     if (!pendientes.has(clave)) return;
     pendientes.delete(clave);
     localStorage.setItem(claveInsignias(identificador), JSON.stringify([...pendientes]));
+}
+
+// Registro de qué ítems ya han reproducido su animación de "recién
+// desbloqueado" (ver animarDesbloqueoTest) alguna vez, para no repetirla en
+// visitas posteriores mientras el alumno lo ignore y la insignia siga
+// pendiente. Deliberadamente independiente de insigniasPendientes: esta se
+// marca la primera vez que se VE el botón desbloqueado, no cuando se ABRE.
+function claveAnimacionesVistas(identificador) {
+    return 'animacionesVistas_' + identificador;
+}
+
+function obtenerAnimacionesVistas(identificador) {
+    try {
+        const guardado = JSON.parse(localStorage.getItem(claveAnimacionesVistas(identificador)));
+        return new Set(Array.isArray(guardado) ? guardado : []);
+    } catch (error) {
+        return new Set();
+    }
+}
+
+function marcarAnimacionVista(identificador, clave) {
+    const vistas = obtenerAnimacionesVistas(identificador);
+    if (vistas.has(clave)) return;
+    vistas.add(clave);
+    localStorage.setItem(claveAnimacionesVistas(identificador), JSON.stringify([...vistas]));
 }
 
 // Crea o retira el circulito de "nuevo" en la esquina superior derecha de un

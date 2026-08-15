@@ -40,7 +40,9 @@ h1 {
     border: none;
     color: white;
     border-radius: 5px;
-    transition-duration: 0.1s;
+    /* background-color va aparte y más lento que el resto (0.1s): es la
+       transición del "desbloqueo", queremos que se note. */
+    transition: all 0.1s ease, background-color 0.6s ease;
     vertical-align: top;
     position: relative;
 }
@@ -91,6 +93,28 @@ h1 {
 
 .textoBtn {
     background-color: transparent;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+/* "Salto" del candado al abrirse (🔒 → 🔓), justo antes de desvanecerse para
+   revelar el nombre del test. Ver animarDesbloqueoTest en general.js. */
+@keyframes popCandado {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.textoBtn.candadoAbriendose {
+    animation: popCandado 0.4s ease;
 }
 
 .contenedorBotones .filaBtn:nth-child(1) .btnSeccion {

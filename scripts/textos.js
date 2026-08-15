@@ -74,18 +74,18 @@ function cargarNuevoTexto(sentido) {
     var textoActual = textos[indiceActual];
 
     // Si el texto estaba pendiente de insignia, esta es la primera vez que se
-    // muestra: lo señalamos en el título y de inmediato lo damos por visitado
-    // (retira su insignia de "nuevo" en el resto del sitio).
+    // muestra: aquí basta con este `esNuevo` (a diferencia de los tests en
+    // general.js, que necesitan un registro aparte) porque para un texto
+    // mostrarlo YA es visitarlo — marcarVisitado se dispara siempre, así que
+    // esNuevo solo puede ser cierto la primera vez que se ve, nunca más.
     const identificador = sessionStorage.getItem('idUsuario');
     const claveTexto = seccionTextos + ':texto:' + textoActual.titulo;
     const esNuevo = obtenerInsigniasPendientes(identificador).has(claveTexto);
     marcarVisitado(identificador, claveTexto);
     actualizarInsigniaSiguiente();
 
-    // Actualizar el texto en el DOM
     const elementoNombreTexto = document.querySelector('#nombre');
     const elementoContenidoTexto = document.querySelector('#contenido');
-    elementoNombreTexto.innerHTML = `<span class="indiceTexto">${indiceActual + 1}</span><span class="tituloTexto">${textoActual.titulo}</span>` + (esNuevo ? '<span class="insigniaTexto"></span>' : '');
     var contenidoFinal;
 
     if (textoActual.contieneMarcas) {
@@ -159,8 +159,64 @@ function cargarNuevoTexto(sentido) {
     var nombre = "texto_" + nombreCorto.replace(/\s+/g, "_");
     nombreAudioActual = `../audios/textos/${nombre}.mp3`;
 
-    // Insertar el contenido con marcas como HTML
-    elementoContenidoTexto.innerHTML = contenidoFinal;
+    // Título y contenido: si es la primera vez que se ve, se revelan con la
+    // misma animación de "desbloqueo" que los tests; si no, se muestran ya
+    // directamente como hasta ahora.
+    if (esNuevo) {
+        animarDesbloqueoTexto(elementoNombreTexto, elementoContenidoTexto, indiceActual, textoActual.titulo, contenidoFinal);
+    } else {
+        elementoNombreTexto.innerHTML = `<span class="indiceTexto">${indiceActual + 1}</span><span class="tituloTexto">${textoActual.titulo}</span>`;
+        elementoContenidoTexto.innerHTML = contenidoFinal;
+    }
+}
+
+// Anima la revelación de un texto recién desbloqueado, en paralelo a
+// animarDesbloqueoTest (general.js) pero adaptada a que aquí no hay una caja
+// bloqueada previa que abrir: se construye una de mentira (🔒 en el título,
+// contenido oculto) y se abre igual que en los tests — candado 🔒→🔓 con
+// "pop", desvanecido y revelación del título real, insignia apareciendo a la
+// vez que el contenido se desvanece hacia dentro.
+function animarDesbloqueoTexto(elementoNombreTexto, elementoContenidoTexto, indice, tituloFinal, contenidoFinal) {
+    const RETRASO_INICIAL = 400;
+    const DURACION_POP = 400;
+    const ESPERA_ABIERTO = 300;
+    const DURACION_DESVANECIDO = 300;
+
+    elementoNombreTexto.innerHTML = `<span class="indiceTexto">${indice + 1}</span><span class="tituloTexto">🔒</span>`;
+
+    // #contenido es el mismo elemento de siempre (no uno nuevo, a diferencia
+    // del título), así que ya tiene su transición de opacidad activa desde el
+    // texto anterior: si nos limitáramos a poner opacity:0 aquí, ese propio
+    // ocultamiento se animaría y se vería la caja vacía desvaneciéndose antes
+    // de que arrancase el resto de la animación. La ocultamos al instante
+    // (sin transición) y solo dejamos la transición para el fundido de
+    // entrada final, más abajo.
+    elementoContenidoTexto.style.transition = 'none';
+    elementoContenidoTexto.style.opacity = '0';
+    elementoContenidoTexto.textContent = '';
+    elementoContenidoTexto.offsetHeight; // fuerza el cambio instantáneo antes de restaurar la transición
+    elementoContenidoTexto.style.transition = '';
+
+    const tituloSpan = elementoNombreTexto.querySelector('.tituloTexto');
+
+    setTimeout(() => {
+        tituloSpan.textContent = '🔓';
+        tituloSpan.classList.add('candadoAbriendose');
+
+        setTimeout(() => {
+            tituloSpan.style.opacity = '0';
+            setTimeout(() => {
+                tituloSpan.classList.remove('candadoAbriendose');
+                tituloSpan.textContent = tituloFinal;
+                tituloSpan.style.opacity = '1';
+                const insignia = document.createElement('span');
+                insignia.className = 'insigniaTexto';
+                elementoNombreTexto.appendChild(insignia);
+                elementoContenidoTexto.innerHTML = contenidoFinal;
+                elementoContenidoTexto.style.opacity = '1';
+            }, DURACION_DESVANECIDO);
+        }, DURACION_POP + ESPERA_ABIERTO);
+    }, RETRASO_INICIAL);
 }
 
 // Mientras queden textos nuevos (desbloqueados y todavía no vistos) entre los

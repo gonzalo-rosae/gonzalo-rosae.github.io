@@ -64,6 +64,8 @@ body {
 
 .tituloTexto {
     color: var(--colorLetra);
+    display: inline-block;
+    transition: opacity 0.3s ease;
 }
 
 #contenido {
@@ -71,6 +73,7 @@ body {
     top: 180px;
     font-size: 1.3em;
     text-align: left;
+    transition: opacity 0.3s ease;
 }
 
 .marcaNeutra:not(.desactivada) {

@@ -97,25 +97,9 @@ h1 {
     transition: opacity 0.3s ease;
 }
 
-/* "Salto" del candado al abrirse (🔒 → 🔓), justo antes de desvanecerse para
-   revelar el nombre del test. Ver animarDesbloqueoTest en general.js. */
-@keyframes popCandado {
-    0% {
-        transform: scale(1);
-    }
-
-    40% {
-        transform: scale(1.5);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.textoBtn.candadoAbriendose {
-    animation: popCandado 0.4s ease;
-}
+/* El "salto" del candado (@keyframes popCandado) y su clase disparadora
+   .candadoAbriendose viven en general.css: se comparten con .tituloTexto en
+   textos.css para el mismo efecto en los textos. */
 
 .contenedorBotones .filaBtn:nth-child(1) .btnSeccion {
     background-color: blue;

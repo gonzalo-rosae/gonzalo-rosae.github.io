@@ -20,10 +20,12 @@
     </div>
 
     <footer>
-        <p>© 2026 Gonzalo de la Rosa Palacio. Todos los derechos reservados.</p>
+        <p>© <span id="anioActual"></span> Gonzalo de la Rosa Palacio. Todos los derechos reservados.</p>
     </footer>
 
     <script>
+        document.getElementById('anioActual').textContent = new Date().getFullYear();
+
         let usuarios = [];
         let input = document.getElementById("inputID");
 

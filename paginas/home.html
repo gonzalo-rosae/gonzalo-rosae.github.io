@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../estilos/home.css">
     <script src="../scripts/general.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
@@ -355,9 +356,64 @@
             rellenoProgreso.style.transition = `width ${duracionMs}ms ease, height ${duracionMs}ms ease`;
             rellenoProgreso.style.width = hasta + '%';
             rellenoProgreso.style.height = hasta + '%';
+            comprobarHitosProgreso(desde, hasta, duracionMs);
             setTimeout(() => {
                 destacadoProgreso.style.opacity = '0';
             }, duracionMs);
+        }
+
+        // Programa un confeti por cada hito 25/50/75/100 que el crecimiento
+        // desde -> hasta atraviese, sincronizado con el instante exacto en que la
+        // barra (en transición CSS durante duracionMs) pasa por ese punto: el
+        // retardo de cada setTimeout es proporcional a la distancia del hito
+        // dentro del recorrido total, así el estallido coincide con el fotograma
+        // en que el relleno dorado toca esa marca, no con un momento arbitrario.
+        // Se compara contra `desde` (el % ya visto en este dispositivo, ver
+        // comentario en window.onload), así que un hito ya superado en una visita
+        // anterior no vuelve a lanzar confeti en cargas posteriores: solo la
+        // primera vez que se cruza.
+        const HITOS_PROGRESO = [25, 50, 75, 100];
+        function comprobarHitosProgreso(desde, hasta, duracionMs) {
+            HITOS_PROGRESO.forEach(hito => {
+                if (desde < hito && hasta >= hito) {
+                    const retardo = duracionMs * (hito - desde) / (hasta - desde);
+                    setTimeout(dispararConfetiDesdeBarra, retardo);
+                }
+            });
+        }
+
+        // Lanza el burst de canvas-confetti desde el borde de avance de la barra
+        // de progreso en el instante en que se llama (getBoundingClientRect lee la
+        // posición ya interpolada por la transición CSS en curso, así que el
+        // origen sigue al relleno mientras sube). En escritorio la barra es
+        // vertical y crece hacia arriba, así que el borde de avance es la parte
+        // superior del relleno; en móvil es horizontal y crece hacia la derecha,
+        // así que el borde de avance es su lado derecho.
+        function dispararConfetiDesdeBarra() {
+            if (typeof confetti !== 'function') return;
+            const rellenoProgreso = document.getElementById('rellenoProgreso');
+            const rect = rellenoProgreso.getBoundingClientRect();
+            const esVertical = window.matchMedia('(min-width: 651px)').matches;
+            const puntoX = esVertical ? rect.left + rect.width / 2 : rect.right;
+            const puntoY = esVertical ? rect.top : rect.top + rect.height / 2;
+
+            const coloresDorados = ['#FFD700', '#F59E0B', '#FFF176', '#22D3EE'];
+            confetti({
+                particleCount: 90,
+                spread: esVertical ? 100 : 80,
+                startVelocity: 42,
+                gravity: 0.9,
+                ticks: 200,
+                scalar: 0.9,
+                angle: esVertical ? 90 : 0,
+                colors: coloresDorados,
+                origin: {
+                    x: puntoX / window.innerWidth,
+                    y: puntoY / window.innerHeight
+                },
+                zIndex: 9999,
+                disableForReducedMotion: true
+            });
         }
 
         const { jsPDF } = window.jspdf;

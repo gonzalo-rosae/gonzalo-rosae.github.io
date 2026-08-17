@@ -9,6 +9,15 @@ body {
     box-sizing: border-box;
 }
 
+/* La regla `*` de general.css pinta el fondo de TODOS los elementos, incluido
+   el <canvas> que canvas-confetti inyecta en <body> para el burst de la barra
+   de progreso: sin esto, ese canvas queda opaco y tapa toda la página. La
+   especificidad de "canvas" (un selector de elemento) le gana a "*" (0
+   especificidad) pase lo que pase, así que no hace falta !important. */
+canvas {
+    background-color: transparent;
+}
+
 .container {
     text-align: center;
     width: 100%;
